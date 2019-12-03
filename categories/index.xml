@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on My New Hugo Site</title>
-    <link>http://www.hishinuma-t.dev/categories/</link>
-    <description>Recent content in Categories on My New Hugo Site</description>
+    <title>Categories on Super Test page!!</title>
+    <link>https://t-hishinuma.github.io/categories/</link>
+    <description>Recent content in Categories on Super Test page!!</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>jp</language>
+    <language>ja</language>
+    <copyright>Toshiaki Hishinuma — All rights reserved.</copyright>
     
-	<atom:link href="http://www.hishinuma-t.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://t-hishinuma.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.hishinuma-t.dev/categories/</loc>
+    <loc>https://t-hishinuma.github.io/categories/</loc>
   </url>
   
   <url>
-    <loc>http://www.hishinuma-t.dev/</loc>
+    <loc>https://t-hishinuma.github.io/</loc>
   </url>
   
   <url>
-    <loc>http://www.hishinuma-t.dev/tags/</loc>
+    <loc>https://t-hishinuma.github.io/tags/</loc>
   </url>
   
 </urlset>
