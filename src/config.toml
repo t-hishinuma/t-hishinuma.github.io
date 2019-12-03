@@ -1,0 +1,4 @@
+baseURL = "http://www.hishinuma-t.dev/"
+languageCode = "jp"
+publishDir= "../"
+title = "My New Hugo Site"
