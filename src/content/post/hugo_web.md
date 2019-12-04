@@ -121,9 +121,16 @@ PrintScreenした画像とかをブログに載せるのがめんどくさい．
 
 今回はscpしたけど，きっとVScodeとかでうまいことやるのがいいんだと思う．
 
+### 追記
+CloudinaryというWebサービスがあって，Upされた画像のサイズとかを最適化して，
+URLで返してくれるサービスがあるとのこと．
+
+それをショートコードで貼るのがおすすめ．．だと言っている[記事][cloud]を見つけた
+
 [hatena]:http://numa0323.hatenablog.jp/
 [slis]:http://www.slis.tsukuba.ac.jp/~s1530534/index.html
 [hugo]:https://github.com/gohugoio/hugo/releases
 [theme]:https://themes.gohugo.io/
 [1]:https://blog.pepese.com/entry/hugo-basics/
 [2]:https://themes.gohugo.io/minimo/
+[cloud]:https://noi-labo.com/hugo-shortcode-for-optimized-images-cloudinary/
