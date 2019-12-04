@@ -1,4 +1,6 @@
-all: 
+all:  build
+
+build:
 	hugo
 
 server:  build
