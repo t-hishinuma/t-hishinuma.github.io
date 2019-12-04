@@ -1,0 +1,3 @@
+[submodule "src/theme/engimo"]
+	path = src/theme/engimo
+	url = https://github.com/achary/engimo.git
