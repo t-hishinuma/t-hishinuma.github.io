@@ -7,7 +7,8 @@ publishDir = "../"
 
 
 disqusShortname = ""
-googleAnalytics = ""
+googleAnalytics = "UA-45816416-4"
+
 
 Paginate = 5
 preserveTaxonomyNames = true
