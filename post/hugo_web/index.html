@@ -361,10 +361,10 @@ Webサイトのテーマが新しいバージョンを要求するものが多�
 <p>Hugoはgoで書かれてて速度がウリとのことで，<strong>このサイト程度なら0.08秒でHTMLを作れた．</strong>
 ここは流石というべきか(なお環境はgcp, 2core, 4GB)．</p>
 <p>生成したHTMLは<code>hugo server</code> コマンドを使えば指定されたポート(default :1313)にWebサーバを立てて結果を確認できる．
-どうやら<code>hugo server</code>コマンドはファイル更新を監視しているので，
+<code>--watch</code>をつければファイル更新を監視してくれるので，
 サーバ立てっぱなしで編集して<code>:wq</code>するとWebサーバも勝手に直っている
 (なお<code>:wq</code>以外の保存方法は認めていない)．</p>
-<p>挙動から見るに，<code>hugo server</code>は<code>hugo</code>コマンドで生成したサイトを見ているわけではなく，
+<p>ただし挙動から見るに，<code>hugo server</code>は<code>hugo</code>コマンドで生成したサイトを見ているわけではなく，
 どこか一時領域にserver用のファイルが別にあるようで (要調査)，
 serverだけ打ってアクセスできてもHTMLが最新になっていないことに注意が必要．</p>
 <p><code>hugo server</code>コマンドは引数なしでも使えるが，外部アクセスの場合はIPなどを渡さないといけないので，
@@ -381,9 +381,13 @@ serverだけ打ってアクセスできてもHTMLが最新になっていない�
 </code></pre></div><p>作業開始とともにtmuxの適当な窓で<code>make server</code>してMarkdownとブラウザを行ったり来たりして，
 作業が終わったら<code>Ctrl-C</code>でサーバを止め，<code>make; git add...</code>していく流れになる．</p>
 <h2 id="web">生成されたWebサイトの性能</h2>
-<p>ここでgoogleのPageSpeed Insightの結果を御覧ください</p>
+<p>ここでgoogleのPageSpeed Insightの結果を御覧ください．</p>
 <p><img src="/images/website_speed.png" alt="speed"></p>
 <p>やった～～～～～～～</p>
+<h2 id="heading2">でも</h2>
+<p>Wordpressだとクリップボードの画像をそのまま貼れたりしたので，
+PrintScreenした画像とかをブログに載せるのがめんどくさい．</p>
+<p>今回はscpしたけど，きっとVScodeとかでうまいことやるのがいいんだと思う．</p>
 
 </div>
 

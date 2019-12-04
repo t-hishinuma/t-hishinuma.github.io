@@ -82,11 +82,11 @@ Hugoはgoで書かれてて速度がウリとのことで，**このサイト程
 ここは流石というべきか(なお環境はgcp, 2core, 4GB)．
 
 生成したHTMLは`hugo server` コマンドを使えば指定されたポート(default :1313)にWebサーバを立てて結果を確認できる．
-どうやら`hugo server`コマンドはファイル更新を監視しているので，
+`--watch`をつければファイル更新を監視してくれるので，
 サーバ立てっぱなしで編集して`:wq`するとWebサーバも勝手に直っている
 (なお`:wq`以外の保存方法は認めていない)．
 
-挙動から見るに，`hugo server`は`hugo`コマンドで生成したサイトを見ているわけではなく，
+ただし挙動から見るに，`hugo server`は`hugo`コマンドで生成したサイトを見ているわけではなく，
 どこか一時領域にserver用のファイルが別にあるようで (要調査)，
 serverだけ打ってアクセスできてもHTMLが最新になっていないことに注意が必要．
 
@@ -109,11 +109,17 @@ server:
 作業が終わったら`Ctrl-C`でサーバを止め，`make; git add...`していく流れになる．
 
 ## 生成されたWebサイトの性能
-ここでgoogleのPageSpeed Insightの結果を御覧ください
+ここでgoogleのPageSpeed Insightの結果を御覧ください．
 
 ![speed](/images/website_speed.png)
 
 やった～～～～～～～
+
+## でも
+Wordpressだとクリップボードの画像をそのまま貼れたりしたので，
+PrintScreenした画像とかをブログに載せるのがめんどくさい．
+
+今回はscpしたけど，きっとVScodeとかでうまいことやるのがいいんだと思う．
 
 [hatena]:http://numa0323.hatenablog.jp/
 [slis]:http://www.slis.tsukuba.ac.jp/~s1530534/index.html
