@@ -13,6 +13,4 @@ mathjax: true
 #cover: "/favicon.ico"
 ---
 
-# hoge
-# fuga
-# piyo
+# Under mainteinance
