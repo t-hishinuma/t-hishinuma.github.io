@@ -1,0 +1,16 @@
+{
+    "version" : "https://jsonfeed.org/version/1",
+    "title" : "Test page!!",
+    "description": "  Test page!!",
+    "home_page_url" : "https://t-hishinuma.github.io/",
+    "feed_url" : "https://t-hishinuma.github.io/index.json",
+    "icon" : "https://t-hishinuma.github.io/apple-touch-icon-180.png",
+    "favicon" : "https://t-hishinuma.github.io/icon-64.png",
+    "author" : {
+        "name" : "Toshiaki Hishinuma",
+        "url": "https://example.org/somepage",
+        "avatar": "https://t-hishinuma.github.io/path/to/some-image.jpg"
+    },
+    "items" : [
+    ]
+}

@@ -1,15 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Super Test page!!</title>
+    <title>Home on hpc::numa.blog()</title>
     <link>https://t-hishinuma.github.io/</link>
-    <description>Recent content on Super Test page!!</description>
+    <description>Recent content in Home on hpc::numa.blog()</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <copyright>Toshiaki Hishinuma — All rights reserved.</copyright>
+    <copyright>Toshiaki Hishinuma 2019 All rights reserved.</copyright>
+    <lastBuildDate>Wed, 04 Dec 2019 13:33:39 +0900</lastBuildDate>
     
-        <atom:link href="https://t-hishinuma.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://t-hishinuma.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>https://t-hishinuma.github.io/about/</link>
+      <pubDate>Tue, 03 Dec 2019 05:50:48 +0900</pubDate>
+      
+      <guid>https://t-hishinuma.github.io/about/</guid>
+      <description>CV gomagoma! goma is goma!</description>
+    </item>
+    
+    <item>
+      <title>Publifications</title>
+      <link>https://t-hishinuma.github.io/pub/</link>
+      <pubDate>Tue, 03 Dec 2019 05:50:48 +0900</pubDate>
+      
+      <guid>https://t-hishinuma.github.io/pub/</guid>
+      <description>publifications journal  ～～に関する研究 補足説明1 ～～に関する研究 補足説明2 ～～に関する研究 補足説明3 ～～に関する研究 補足説明4  国際会議  ～～に関する研究 補足説明1 ～～に関する研究 補足説明2 ～～に関する研究 補足説明3 ～～に関する研究 補足説明4  </description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>https://t-hishinuma.github.io/soft/</link>
+      <pubDate>Tue, 03 Dec 2019 05:50:48 +0900</pubDate>
+      
+      <guid>https://t-hishinuma.github.io/soft/</guid>
+      <description>hoge fuga piyo </description>
+    </item>
+    
+    <item>
+      <title>Aaa</title>
+      <link>https://t-hishinuma.github.io/post/aaa/</link>
+      <pubDate>Wed, 04 Dec 2019 13:33:39 +0900</pubDate>
+      
+      <guid>https://t-hishinuma.github.io/post/aaa/</guid>
+      <description>helloooo</description>
+    </item>
     
   </channel>
 </rss>

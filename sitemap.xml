@@ -1,17 +1,62 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://t-hishinuma.github.io/</loc>
+    <lastmod>2019-12-04T13:33:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://t-hishinuma.github.io/about/</loc>
+    <lastmod>2019-12-03T05:50:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://t-hishinuma.github.io/pub/</loc>
+    <lastmod>2019-12-03T05:50:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://t-hishinuma.github.io/soft/</loc>
+    <lastmod>2019-12-03T05:50:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://t-hishinuma.github.io/post/</loc>
+    <lastmod>2019-12-04T13:33:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://t-hishinuma.github.io/post/aaa/</loc>
+    <lastmod>2019-12-04T13:33:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://t-hishinuma.github.io/tags/etc/</loc>
+    <lastmod>2019-12-04T13:33:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://t-hishinuma.github.io/tags/</loc>
+    <lastmod>2019-12-04T13:33:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://t-hishinuma.github.io/tags/%E9%9B%91%E8%A8%98/</loc>
+    <lastmod>2019-12-04T13:33:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://t-hishinuma.github.io/authors/</loc>
+  </url>
   
   <url>
     <loc>https://t-hishinuma.github.io/categories/</loc>
   </url>
   
   <url>
-    <loc>https://t-hishinuma.github.io/</loc>
-  </url>
-  
-  <url>
-    <loc>https://t-hishinuma.github.io/tags/</loc>
+    <loc>https://t-hishinuma.github.io/series/</loc>
   </url>
   
 </urlset>
