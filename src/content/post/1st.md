@@ -13,3 +13,5 @@ mathjax: true
 ---
 
 helloooo
+
+[ここを参考にして作ってる] (https://blog.pepese.com/entry/hugo-basics/)

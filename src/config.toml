@@ -73,7 +73,7 @@ page = "hishinuma_t" # Twitter page username
 
 [params.seo]
 # Title Separator: - – — · • * ⋆ | ~ « » < >
-titleSeparator = "•"
+titleSeparator = ", "
 
 [params.social]
 email = "hishinuma.toshiaki@gmail.com"

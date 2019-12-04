@@ -19,8 +19,7 @@
       
       <guid>https://t-hishinuma.github.io/post/1st/</guid>
       <description>helloooo
-{{ partial &amp;ldquo;addthis&amp;rdquo; . }}
-{{ partial &amp;ldquo;addthis-script&amp;rdquo; . }}</description>
+[ここを参考にして作ってる] (https://blog.pepese.com/entry/hugo-basics/)</description>
     </item>
     
   </channel>
