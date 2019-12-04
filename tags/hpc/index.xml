@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HPC on hpc::numa.blog()</title>
+    <link>https://t-hishinuma.github.io/tags/hpc/</link>
+    <description>Recent content in HPC on hpc::numa.blog()</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>Toshiaki Hishinuma 2019 All rights reserved.</copyright>
+    <lastBuildDate>Wed, 04 Dec 2019 05:50:48 +0900</lastBuildDate>
+    
+	<atom:link href="https://t-hishinuma.github.io/tags/hpc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ACS</title>
+      <link>https://t-hishinuma.github.io/paper/acs/</link>
+      <pubDate>Wed, 04 Dec 2019 05:50:48 +0900</pubDate>
+      
+      <guid>https://t-hishinuma.github.io/paper/acs/</guid>
+      <description>解説記事です</description>
+    </item>
+    
+  </channel>
+</rss>
