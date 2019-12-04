@@ -13,6 +13,8 @@ mathjax: true
 #cover: "/favicon.ico"
 ---
 
+# 作成中
+
 ## Journal
 * T.Hishinuma, ～～に関する研究\
 * ～～に関する研究

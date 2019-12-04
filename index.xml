@@ -7,19 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Toshiaki Hishinuma 2019 All rights reserved.</copyright>
-    <lastBuildDate>Wed, 04 Dec 2019 05:50:48 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Dec 2019 05:50:48 +0900</lastBuildDate>
     
 	<atom:link href="https://t-hishinuma.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>1st commit</title>
-      <link>https://t-hishinuma.github.io/post/1st/</link>
-      <pubDate>Wed, 04 Dec 2019 05:50:48 +0900</pubDate>
+      <title>test page</title>
+      <link>https://t-hishinuma.github.io/paper/acs/</link>
+      <pubDate>Tue, 03 Dec 2019 05:50:48 +0900</pubDate>
       
-      <guid>https://t-hishinuma.github.io/post/1st/</guid>
-      <description>helloooo
-[ここを参考にして作ってる] (https://blog.pepese.com/entry/hugo-basics/)</description>
+      <guid>https://t-hishinuma.github.io/paper/acs/</guid>
+      <description>解説記事です</description>
     </item>
     
   </channel>
