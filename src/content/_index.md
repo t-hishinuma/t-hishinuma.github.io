@@ -4,6 +4,8 @@ menu:
   - main
   - sidebar
 weight: -1
+
+eyecatch: "images/logo.svg"
 ---
 
 # このページは作成中です (2019/12~)
