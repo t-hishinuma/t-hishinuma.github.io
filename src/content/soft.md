@@ -1,12 +1,18 @@
 ---
-title: "Software"
-menu:
-  - main
-  - sidebar
-date: 2019-12-03T05:50:48+09:00
+linkTitle: "Software"
+title: ""
+weight: 3
+
+date: 2019-12-04T05:50:48+09:00
+#lastmod: 2019-12-07T05:50:48+09:00
+
+menu: {main, sidebar}
 draft: false
-weight: 4
+emoji: true
+mathjax: true
+#cover: "/favicon.ico"
 ---
+
 # hoge
 # fuga
 # piyo

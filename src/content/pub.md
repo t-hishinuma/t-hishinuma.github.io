@@ -1,14 +1,19 @@
 ---
-title: "Publifications"
-menu:
-  - main
-  - sidebar
-date: 2019-12-03T05:50:48+09:00
-draft: false
+linkTitle: "Publications"
+title: "研究業績"
 weight: 3
+
+date: 2019-12-04T05:50:48+09:00
+#lastmod: 2019-12-07T05:50:48+09:00
+
+menu: {main, sidebar}
+draft: false
+emoji: true
+mathjax: true
+#cover: "/favicon.ico"
 ---
-# publifications
-## journal
+
+## Journal
 * ～～に関する研究
 補足説明1
 * ～～に関する研究

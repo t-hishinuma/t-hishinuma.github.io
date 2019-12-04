@@ -7,33 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Toshiaki Hishinuma 2019 All rights reserved.</copyright>
-    <lastBuildDate>Wed, 04 Dec 2019 13:33:39 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 Dec 2019 05:50:48 +0900</lastBuildDate>
     
 	<atom:link href="https://t-hishinuma.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>About</title>
+      <title>菱沼 利彰 (Toshiaki Hishinuma)</title>
       <link>https://t-hishinuma.github.io/about/</link>
-      <pubDate>Tue, 03 Dec 2019 05:50:48 +0900</pubDate>
+      <pubDate>Wed, 04 Dec 2019 05:50:48 +0900</pubDate>
       
       <guid>https://t-hishinuma.github.io/about/</guid>
-      <description>CV gomagoma! goma is goma!</description>
+      <description>筑波大学図書館情報メディア研究科 博士後期課程3年 (休学2年目)
+科学計算総合研究所 研究員</description>
     </item>
     
     <item>
-      <title>Publifications</title>
+      <title>研究業績</title>
       <link>https://t-hishinuma.github.io/pub/</link>
-      <pubDate>Tue, 03 Dec 2019 05:50:48 +0900</pubDate>
+      <pubDate>Wed, 04 Dec 2019 05:50:48 +0900</pubDate>
       
       <guid>https://t-hishinuma.github.io/pub/</guid>
-      <description>publifications journal  ～～に関する研究 補足説明1 ～～に関する研究 補足説明2 ～～に関する研究 補足説明3 ～～に関する研究 補足説明4  国際会議  ～～に関する研究 補足説明1 ～～に関する研究 補足説明2 ～～に関する研究 補足説明3 ～～に関する研究 補足説明4  </description>
+      <description>Journal  ～～に関する研究 補足説明1 ～～に関する研究 補足説明2 ～～に関する研究 補足説明3 ～～に関する研究 補足説明4  国際会議  ～～に関する研究 補足説明1 ～～に関する研究 補足説明2 ～～に関する研究 補足説明3 ～～に関する研究 補足説明4  </description>
     </item>
     
     <item>
-      <title>Software</title>
+      <title></title>
       <link>https://t-hishinuma.github.io/soft/</link>
-      <pubDate>Tue, 03 Dec 2019 05:50:48 +0900</pubDate>
+      <pubDate>Wed, 04 Dec 2019 05:50:48 +0900</pubDate>
       
       <guid>https://t-hishinuma.github.io/soft/</guid>
       <description>hoge fuga piyo </description>
@@ -42,55 +43,12 @@
     <item>
       <title>1st commit</title>
       <link>https://t-hishinuma.github.io/post/1st/</link>
-      <pubDate>Wed, 04 Dec 2019 13:33:39 +0900</pubDate>
+      <pubDate>Wed, 04 Dec 2019 05:50:48 +0900</pubDate>
       
       <guid>https://t-hishinuma.github.io/post/1st/</guid>
-      <description>helloooo</description>
-    </item>
-    
-    <item>
-      <title>2st commit</title>
-      <link>https://t-hishinuma.github.io/post/2nd/</link>
-      <pubDate>Wed, 04 Dec 2019 13:33:39 +0900</pubDate>
-      
-      <guid>https://t-hishinuma.github.io/post/2nd/</guid>
-      <description>helloooo</description>
-    </item>
-    
-    <item>
-      <title>3st commit</title>
-      <link>https://t-hishinuma.github.io/post/3rd/</link>
-      <pubDate>Wed, 04 Dec 2019 13:33:39 +0900</pubDate>
-      
-      <guid>https://t-hishinuma.github.io/post/3rd/</guid>
-      <description>helloooo</description>
-    </item>
-    
-    <item>
-      <title>4st commit</title>
-      <link>https://t-hishinuma.github.io/post/4th/</link>
-      <pubDate>Wed, 04 Dec 2019 13:33:39 +0900</pubDate>
-      
-      <guid>https://t-hishinuma.github.io/post/4th/</guid>
-      <description>helloooo</description>
-    </item>
-    
-    <item>
-      <title>5st commit</title>
-      <link>https://t-hishinuma.github.io/post/5th/</link>
-      <pubDate>Wed, 04 Dec 2019 13:33:39 +0900</pubDate>
-      
-      <guid>https://t-hishinuma.github.io/post/5th/</guid>
-      <description>helloooo</description>
-    </item>
-    
-    <item>
-      <title>6st commit</title>
-      <link>https://t-hishinuma.github.io/post/6th/</link>
-      <pubDate>Wed, 04 Dec 2019 13:33:39 +0900</pubDate>
-      
-      <guid>https://t-hishinuma.github.io/post/6th/</guid>
-      <description>helloooo</description>
+      <description>helloooo
+{{ partial &amp;ldquo;addthis&amp;rdquo; . }}
+{{ partial &amp;ldquo;addthis-script&amp;rdquo; . }}</description>
     </item>
     
   </channel>

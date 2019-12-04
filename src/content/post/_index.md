@@ -1,5 +1,7 @@
 ---
-title: blog
+title: "blog"
+
+linktitle: "blog"
 menu:
   main:
   sidebar:

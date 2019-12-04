@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Toshiaki Hishinuma 2019 All rights reserved.</copyright>
-    <lastBuildDate>Wed, 04 Dec 2019 13:33:39 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 Dec 2019 05:50:48 +0900</lastBuildDate>
     
 	<atom:link href="https://t-hishinuma.github.io/tags/%E9%9B%91%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,55 +15,12 @@
     <item>
       <title>1st commit</title>
       <link>https://t-hishinuma.github.io/post/1st/</link>
-      <pubDate>Wed, 04 Dec 2019 13:33:39 +0900</pubDate>
+      <pubDate>Wed, 04 Dec 2019 05:50:48 +0900</pubDate>
       
       <guid>https://t-hishinuma.github.io/post/1st/</guid>
-      <description>helloooo</description>
-    </item>
-    
-    <item>
-      <title>2st commit</title>
-      <link>https://t-hishinuma.github.io/post/2nd/</link>
-      <pubDate>Wed, 04 Dec 2019 13:33:39 +0900</pubDate>
-      
-      <guid>https://t-hishinuma.github.io/post/2nd/</guid>
-      <description>helloooo</description>
-    </item>
-    
-    <item>
-      <title>3st commit</title>
-      <link>https://t-hishinuma.github.io/post/3rd/</link>
-      <pubDate>Wed, 04 Dec 2019 13:33:39 +0900</pubDate>
-      
-      <guid>https://t-hishinuma.github.io/post/3rd/</guid>
-      <description>helloooo</description>
-    </item>
-    
-    <item>
-      <title>4st commit</title>
-      <link>https://t-hishinuma.github.io/post/4th/</link>
-      <pubDate>Wed, 04 Dec 2019 13:33:39 +0900</pubDate>
-      
-      <guid>https://t-hishinuma.github.io/post/4th/</guid>
-      <description>helloooo</description>
-    </item>
-    
-    <item>
-      <title>5st commit</title>
-      <link>https://t-hishinuma.github.io/post/5th/</link>
-      <pubDate>Wed, 04 Dec 2019 13:33:39 +0900</pubDate>
-      
-      <guid>https://t-hishinuma.github.io/post/5th/</guid>
-      <description>helloooo</description>
-    </item>
-    
-    <item>
-      <title>6st commit</title>
-      <link>https://t-hishinuma.github.io/post/6th/</link>
-      <pubDate>Wed, 04 Dec 2019 13:33:39 +0900</pubDate>
-      
-      <guid>https://t-hishinuma.github.io/post/6th/</guid>
-      <description>helloooo</description>
+      <description>helloooo
+{{ partial &amp;ldquo;addthis&amp;rdquo; . }}
+{{ partial &amp;ldquo;addthis-script&amp;rdquo; . }}</description>
     </item>
     
   </channel>
