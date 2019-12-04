@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on hpc::numa.blog()</title>
+    <link>https://t-hishinuma.github.io/software/</link>
+    <description>Recent content in Software on hpc::numa.blog()</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>Toshiaki Hishinuma 2019 All rights reserved.</copyright>
+    <lastBuildDate>Wed, 04 Dec 2019 05:50:48 +0900</lastBuildDate>
+    
+	<atom:link href="https://t-hishinuma.github.io/software/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

@@ -1,6 +1,6 @@
 ---
 linkTitle: "Software"
-title: ""
+title: "Software"
 weight: 3
 
 date: 2019-12-04T05:50:48+09:00
