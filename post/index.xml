@@ -7,9 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Toshiaki Hishinuma 2019 All rights reserved.</copyright>
+    <lastBuildDate>Thu, 05 Dec 2019 05:00:48 +0900</lastBuildDate>
     
 	<atom:link href="https://t-hishinuma.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Webサイトをgithub pages &#43; Hugoに移行した話</title>
+      <link>https://t-hishinuma.github.io/post/hugo_web/</link>
+      <pubDate>Thu, 05 Dec 2019 05:00:48 +0900</pubDate>
+      
+      <guid>https://t-hishinuma.github.io/post/hugo_web/</guid>
+      <description>はじめに D論の現実逃避でWebページを新しくした．
+まぁ現実逃避だけじゃないよっていう言い訳はあって，今のWebサイトが，
+ 筑波大学の学籍番号のWebページで業績整理 はてなブログに色々書いていた  だったが，いくつもWebサイトを抱えるのは正直嫌だったし，大学の方は卒業すると(卒業できれば)消えてしまう．
+はてなブログをProにすることも考えたが，Wordpressのサービスだけを利用するのに月額1008円． そんなのSaaSの代金としては信じがたい価格だったので， Google Domainsで年額1400円のドメイン取って，github pages (無料) + Hugoで静的Webサイトを作ってみた．
+これなら万が一，github pagesの容量や制限がかかったとしても，手元にHTMLはあるのでサーバ借りて移すだけで簡単であろうというわけである．
+今のところ悪くはないが，静的HTML+CLIなのでWordpressと比べると当然のように出来ないことはある．
+ Blogにコメント欄などをつけられない 業績一覧などをテーブルにして並び替えたり抽出したりできない ブラウザから記事をかけない  1,2は大きい問題ではあるが，ドメイン代の月100円そこらだけで運用できていて， 更新も git push するだけなことを考えると，このくらいは諦めるべきだろう．
+万が一，容量などの問題でgithub pagesに何らかの問題が出て， 自前のVPS等に移行するなら上記を作ってもいいかもしれない．
+作業記録 まぁ調べればすぐ出てくるので細かいことはあまり書かないが， 簡単な作業記録を書いておく．
+読者には，Hugoを使ってのWebサイトの作成手順， Update作業の流れみたいなものを掴んで，「ああ簡単そうだ」くらいの心象をもってもらえたら幸いである．
+ Hugoについてはここを参考にした このページのテーマにはminimoを使った  Hugoインストール 基本的な流れはMarkdownで書かれた記事やyaml or toml形式のconfigを書いて，hugo コマンドでHTMLを生成する．
+hugoのバージョン0.6を使った．
+$ hugo version Hugo Static Site Generator v0.60.1-96066756 linux/amd64 BuildDate: 2019-11-29T14:57:23Z Hugoのインストールは公式githubにdebファイルが置いてあるので，dpkg -iすれば簡単に入る． Windows用にexeも置いてあるようだが，こっちは試していない．
+yumでも入るようだがCentOS7では随分バージョンが古かった． Webサイトのテーマが新しいバージョンを要求するものが多いので， 最新版を公式から落としてくることを勧める．
+hugo new site はじめにhugo new site [dir/]コマンドでテンプレートサイトを作る．</description>
+    </item>
     
   </channel>
 </rss>
