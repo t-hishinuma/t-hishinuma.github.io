@@ -1,6 +1,6 @@
 baseURL = "https://t-hishinuma.github.io/"
 title = "hpc::numa.blog()"
-copyright = "Toshiaki Hishinuma 2019 All rights reserved."
+copyright = "Toshiaki Hishinuma 2020 All rights reserved."
 theme = "engimo"
 publishDir = "../"
 ################################################

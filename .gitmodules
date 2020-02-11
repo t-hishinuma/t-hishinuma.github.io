@@ -1,0 +1,3 @@
+[submodule "HPC4CAE_book"]
+	path = HPC4CAE_book
+	url = https://github.com/t-hishinuma/HPC4CAE_book.git

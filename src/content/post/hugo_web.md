@@ -6,10 +6,10 @@ lastmod: 2019-12-05T05:01:48+09:00
 
 tags: ["雑記", "web"]
 
-draft: false
+draft: true
 emoji: true
 mathjax: true
-#cover: "/favicon.ico"
+cover: "https://storage.cloud.google.com/numa_blog/blog_photo/website_speed.png?hl=ja"
 ---
 
 # はじめに
@@ -111,7 +111,7 @@ server:
 ## 生成されたWebサイトの性能
 ここでgoogleのPageSpeed Insightの結果を御覧ください．
 
-![speed](/images/website_speed.png)
+![speed](https://storage.cloud.google.com/numa_blog/blog_photo/website_speed.png?hl=ja)
 
 やった～～～～～～～
 
@@ -122,10 +122,8 @@ PrintScreenした画像とかをブログに載せるのがめんどくさい．
 今回はscpしたけど，きっとVScodeとかでうまいことやるのがいいんだと思う．
 
 ### 追記
-CloudinaryというWebサービスがあって，Upされた画像のサイズとかを最適化して，
-URLで返してくれるサービスがあるとのこと．
-
-それをショートコードで貼るのがおすすめ．．だと言っている[記事][cloud]を見つけた
+画像はパス指定が面倒くさいし，後でサイズが増えてくるのも嫌なのでgoogle storageに置いてURLをもらうことにした．\
+画像に大量のアクセスがあるとお金がかかるけど，まぁ大きな画像を置くわけでもないので気にしないことにする．
 
 [hatena]:http://numa0323.hatenablog.jp/
 [slis]:http://www.slis.tsukuba.ac.jp/~s1530534/index.html

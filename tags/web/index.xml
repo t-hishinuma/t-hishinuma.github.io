@@ -6,7 +6,7 @@
     <description>Recent content in web on hpc::numa.blog()</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <copyright>Toshiaki Hishinuma 2019 All rights reserved.</copyright>
+    <copyright>Toshiaki Hishinuma 2020 All rights reserved.</copyright>
     <lastBuildDate>Thu, 05 Dec 2019 05:00:48 +0900</lastBuildDate>
     
 	<atom:link href="https://t-hishinuma.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
@@ -33,6 +33,23 @@ hugoのバージョン0.6を使った．
 $ hugo version Hugo Static Site Generator v0.60.1-96066756 linux/amd64 BuildDate: 2019-11-29T14:57:23Z Hugoのインストールは公式githubにdebファイルが置いてあるので，dpkg -iすれば簡単に入る． Windows用にexeも置いてあるようだが，こっちは試していない．
 yumでも入るようだがCentOS7では随分バージョンが古かった． Webサイトのテーマが新しいバージョンを要求するものが多いので， 最新版を公式から落としてくることを勧める．
 hugo new site はじめにhugo new site [dir/]コマンドでテンプレートサイトを作る．</description>
+    </item>
+    
+    <item>
+      <title>Intel Core iシリーズとAMD Ryzenシリーズをカタログ比較すると大差はない</title>
+      <link>https://t-hishinuma.github.io/post/ryzen/</link>
+      <pubDate>Tue, 15 Jan 2019 05:00:48 +0900</pubDate>
+      
+      <guid>https://t-hishinuma.github.io/post/ryzen/</guid>
+      <description>はじめに 自宅のデスクトップを修士のときに買ったHaswellから変えていないので，そろそろ買い換えようと思っている．
+さて，2020/1現在，CPUを選ぼうと思うと没落していたAMDが復活した(?)のでIntelかAMDで2派に分かれる． 巷のポンコツな人たちが「intelの時代は終わった」とか，「Ryzenコスパ最強」とか言っているのをよく見る． 確かに価格.comあたりを見ると上位をAMDが占めているように見える．
+さてAMD最強時代が来たというのは本当か？
+スペックから明らかにAMDが優位なのか？
+これを考える．
+とはいえ全部比較していていても疲れてしまうので，今回は3~8万円くらいの価格帯で何が良いのかを考える．
+人によって違うと思うが，私の感性だとCPUに払う金額は3~8万くらいである． 10万超えると急に高い気がする．3万くらいで収まれば御の字だが中々ないので5万は覚悟．良いものがあれば8万． それ以上安いとちょっとメイン機には向いてない ジャンク好きや省電力，静音にこだわりがなければ，多くの人でもこんなもんじゃないだろうか？
+選ぶポイント ゲームもやる．HPCもやる．普段使いで24時間つけっぱなし．こんな利用をしている自分としては，
+ コアは多いほうが良いだろう． SIMDもあるにこしたことはない 仮想マシンとかはちょいちょい建てる メモリは速いほうがいい． TDPはあんまり気にしない  Target CPU ITX &amp;ndash;&amp;gt; Ryzenはある ATX &amp;ndash;&amp;gt; Itenlはこれだけ</description>
     </item>
     
   </channel>

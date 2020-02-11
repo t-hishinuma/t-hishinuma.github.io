@@ -37,9 +37,9 @@ yumでも入るようだがCentOS7では随分バージョンが古かった． 
 hugo new site はじめにhugo new site [dir/]コマンドでテンプレートサイトを作る．'>
 <meta property='og:url' content='https://t-hishinuma.github.io/post/hugo_web/'>
 <meta property='og:site_name' content='hpc::numa.blog()'>
-<meta property='og:type' content='article'><meta property='article:section' content='post'><meta property='article:tag' content='雑記'><meta property='article:tag' content='web'><meta property='article:published_time' content='2019-12-05T05:00:48&#43;09:00'/><meta property='article:modified_time' content='2019-12-05T05:01:48&#43;09:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://storage.cloud.google.com/numa_blog/blog_photo/website_speed.png?hl=ja'><meta property='article:section' content='post'><meta property='article:tag' content='雑記'><meta property='article:tag' content='web'><meta property='article:published_time' content='2019-12-05T05:00:48&#43;09:00'/><meta property='article:modified_time' content='2019-12-05T05:01:48&#43;09:00'/><meta name='twitter:card' content='summary_large_image'><meta name='twitter:site' content='@hishinuma_t'><meta property='twitter:image' content='https://storage.cloud.google.com/numa_blog/blog_photo/website_speed.png?hl=ja'>
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
   <title>Webサイトをgithub pages &#43; Hugoに移行した話 ,  hpc::numa.blog()</title>
   <link rel='canonical' href='https://t-hishinuma.github.io/post/hugo_web/'>
@@ -64,7 +64,7 @@ if (!doNotTrack) {
   
 
 </head>
-<body class='page type-post has-sidebar has-emoji'>
+<body class='page type-post has-cover has-sidebar has-emoji'>
 
   <div class='site'><div id='sidebar' class='sidebar'>
   <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
@@ -153,6 +153,23 @@ if (!doNotTrack) {
   <header class='item-header'>
     <h3 class='item-title'>
       <a href='/post/hugo_web/'>Webサイトをgithub pages &#43; Hugoに移行した話
+      </a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2019-01-15T05:00:48&#43;09:00'>2019, Jan 15</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/post/ryzen/'>Intel Core iシリーズとAMD Ryzenシリーズをカタログ比較すると大差はない
       </a>
     </h3>
   </header>
@@ -303,11 +320,16 @@ text-align: center;
   </div>
 </header>
 
-  
+  <div class='entry-cover'>
+  <figure class='container cover-normal'>
+    <img src='https://storage.cloud.google.com/numa_blog/blog_photo/website_speed.png?hl=ja'/>
+    
+  </figure>
+</div>
   
 
   <div class='container entry-content'>
-  <h1 id="heading">はじめに</h1>
+  <h1 id="はじめに">はじめに</h1>
 <p>D論の現実逃避でWebページを新しくした．</p>
 <p>まぁ現実逃避だけじゃないよっていう言い訳はあって，今のWebサイトが，</p>
 <ul>
@@ -329,7 +351,7 @@ Google Domainsで年額1400円のドメイン取って，github pages (無料) +
 更新も <code>git push</code> するだけなことを考えると，このくらいは諦めるべきだろう．</p>
 <p>万が一，容量などの問題でgithub pagesに何らかの問題が出て，
 自前のVPS等に移行するなら上記を作ってもいいかもしれない．</p>
-<h1 id="heading1">作業記録</h1>
+<h1 id="作業記録">作業記録</h1>
 <p>まぁ調べればすぐ出てくるので細かいことはあまり書かないが，
 簡単な作業記録を書いておく．</p>
 <p>読者には，Hugoを使ってのWebサイトの作成手順，
@@ -338,7 +360,7 @@ Update作業の流れみたいなものを掴んで，「ああ簡単そうだ�
 <li>Hugoについては<a href="https://blog.pepese.com/entry/hugo-basics/">ここ</a>を参考にした</li>
 <li>このページのテーマには<a href="https://themes.gohugo.io/minimo/">minimo</a>を使った</li>
 </ul>
-<h2 id="hugo">Hugoインストール</h2>
+<h2 id="hugoインストール">Hugoインストール</h2>
 <p>基本的な流れはMarkdownで書かれた記事やyaml or toml形式のconfigを書いて，<code>hugo</code> コマンドでHTMLを生成する．</p>
 <p>hugoのバージョン0.6を使った．</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ hugo version
@@ -380,18 +402,17 @@ serverだけ打ってアクセスできてもHTMLが最新になっていない�
 	hugo server -p <span style="color:#ae81ff">1313</span> --buildDrafts --watch --baseUrl<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>IP<span style="color:#e6db74">}</span> --bind<span style="color:#f92672">=</span>0.0.0.0
 </code></pre></div><p>作業開始とともにtmuxの適当な窓で<code>make server</code>してMarkdownとブラウザを行ったり来たりして，
 作業が終わったら<code>Ctrl-C</code>でサーバを止め，<code>make; git add...</code>していく流れになる．</p>
-<h2 id="web">生成されたWebサイトの性能</h2>
+<h2 id="生成されたwebサイトの性能">生成されたWebサイトの性能</h2>
 <p>ここでgoogleのPageSpeed Insightの結果を御覧ください．</p>
-<p><img src="/images/website_speed.png" alt="speed"></p>
+<p><img src="https://storage.cloud.google.com/numa_blog/blog_photo/website_speed.png?hl=ja" alt="speed"></p>
 <p>やった～～～～～～～</p>
-<h2 id="heading2">でも</h2>
+<h2 id="でも">でも</h2>
 <p>Wordpressだとクリップボードの画像をそのまま貼れたりしたので，
 PrintScreenした画像とかをブログに載せるのがめんどくさい．</p>
 <p>今回はscpしたけど，きっとVScodeとかでうまいことやるのがいいんだと思う．</p>
-<h3 id="heading3">追記</h3>
-<p>CloudinaryというWebサービスがあって，Upされた画像のサイズとかを最適化して，
-URLで返してくれるサービスがあるとのこと．</p>
-<p>それをショートコードで貼るのがおすすめ．．だと言っている<a href="https://noi-labo.com/hugo-shortcode-for-optimized-images-cloudinary/">記事</a>を見つけた</p>
+<h3 id="追記">追記</h3>
+<p>画像はパス指定が面倒くさいし，後でサイズが増えてくるのも嫌なのでgoogle storageに置いてURLをもらうことにした．<br>
+画像に大量のアクセスがあるとお金がかかるけど，まぁ大きな画像を置くわけでもないので気にしないことにする．</p>
 
 </div>
 
@@ -419,6 +440,20 @@ URLで返してくれるサービスがあるとのこと．</p>
 
 </article>
 
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/post/ryzen/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>Intel Core iシリーズとAMD Ryzenシリーズをカタログ比較すると大差はない</a>
+    </div></div>
+</nav>
+
 
 
 
@@ -426,7 +461,7 @@ URLで返してくれるサービスがあるとのこと．</p>
 
       <footer id='footer' class='footer'>
         <div class='container sep-before'><div class='copyright'>
-  <p>Toshiaki Hishinuma 2019 All rights reserved.</p>
+  <p>Toshiaki Hishinuma 2020 All rights reserved.</p>
 </div>
 
         </div>
