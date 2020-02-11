@@ -29,6 +29,7 @@ mathjax: true
 * High performance computing
 	* Sparse matrix operations
 	* BLAS, LAPACK
+	* Lis, Eigen, ARPACK
 * Krylov subspace methods (for liner equations)
 * High precision arithmetics
 	* Double-Double precision
@@ -48,7 +49,7 @@ mathjax: true
 * Python, C#, Ruby, MATLAB, Scilab, Rust?, Julia?
 * etc:
 	* zsh, tmux,  vim, gnuplot, makefile
-	* Linux server (CentOS)
+	* Linux server (RedHat)
 	* Docker, KVM
 	* gitlab-CI
 	* git, svn

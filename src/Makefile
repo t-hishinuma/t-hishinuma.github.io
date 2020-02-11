@@ -1,6 +1,10 @@
 all:  build
 
 build:
+	git submodule foreach git pull origin master
+	make -C ./HPC4CAE_book/ build
+	- rm -rf static/HPC4CAE/
+	mv HPC4CAE_book/HPC4CAE static
 	hugo
 	touch ../.nojekyll
 

@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>研究業績 on hpc::numa.blog()</title>
-    <link>https://t-hishinuma.github.io/paper/</link>
+    <link>https://hishinuma-t.dev/paper/</link>
     <description>Recent content in 研究業績 on hpc::numa.blog()</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <copyright>Toshiaki Hishinuma 2020 All rights reserved.</copyright>
+    <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
     <lastBuildDate>Wed, 04 Dec 2019 05:50:48 +0900</lastBuildDate>
     
-	<atom:link href="https://t-hishinuma.github.io/paper/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hishinuma-t.dev/paper/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
