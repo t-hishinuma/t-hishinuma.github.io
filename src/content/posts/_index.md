@@ -1,6 +1,6 @@
 ---
 title: "blog"
-images: [images/logo.svg]
+images: [images/logo.png]
 
 linktitle: "blog"
 menu:

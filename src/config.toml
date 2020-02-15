@@ -58,6 +58,9 @@ hideMainMenu = false
 rtl = false
 
 ################################################
+[social]
+email = "hishinuma.toshiaki[at]gmail.com"
+twitter = "hishinuma_t"
 
 [params.sidebar]
 enable = true
@@ -71,6 +74,7 @@ sidebar = ["about", "social_menu", "recent_posts", "taxonomy_cloud"]
 
 [params.opengraph.twitter]
 page = "summary" # Twitter page username
+site = "hishinuma_t"
 
 [params.seo]
 # Title Separator: - – — · • * ⋆ | ~ « » < >

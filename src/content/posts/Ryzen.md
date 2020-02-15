@@ -1,6 +1,6 @@
 ---
 title: "Intel Core iシリーズとAMD Ryzenシリーズをカタログ比較すると大差はない"
-images: [images/logo.svg]
+images: [images/logo.png]
 
 date: 2019-01-15T05:00:48+09:00
 
