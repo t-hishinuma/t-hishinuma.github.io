@@ -1,5 +1,6 @@
 ---
 title: "Webサイトをgithub pages + Hugoに移行した話"
+images: [images/logo.svg]
 
 date: 2019-12-05T05:00:48+09:00
 lastmod: 2019-12-05T05:01:48+09:00
