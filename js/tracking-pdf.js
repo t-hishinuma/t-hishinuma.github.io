@@ -36,9 +36,7 @@ function() {
 	$("a").on("click", function() {
 		var url = this.href;
 		if (url && url.match(/\.pdf$/)) {
-			ga('send', {
-				'hitType': 'event', 'download', url
-			});
+			ga('send', 'event', 'download', url);
 		}
 	});
 });
