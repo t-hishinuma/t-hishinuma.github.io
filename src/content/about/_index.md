@@ -5,7 +5,6 @@ images: [images/logo.png]
 weight: 1
 
 date: 2019-12-04T05:50:48+09:00
-#lastmod: 2019-12-07T05:50:48+09:00
 
 menu: {main, sidebar}
 draft: false
@@ -18,7 +17,7 @@ mathjax: true
 	(Researcher, RICOS. Co. Ltd.)
 * 工学院大学 工学研究科 情報学専攻 情報学修士 ([HPCL Lab.][1])\
 	(Master of Informatics, Kogakuin Univ.)
-* 筑波大学図書館情報メディア研究科 博士後期課程3年 (休学2年), ([Hasegawa Lab][2])
+* 筑波大学図書館情報メディア研究科 博士後期課程3年 (休学2年), ([Hasegawa Lab.][2])
 	(Doctoral Program, U. Tsukuba)
 * 情報処理学会 正会員\
    	(Member, Information Processing Society of Japan)
@@ -50,7 +49,7 @@ mathjax: true
 * etc:
 	* zsh, tmux,  vim, gnuplot, makefile
 	* Linux server (RedHat)
-	* Docker, KVM
+	* Docker, KVM, Virtual Box
 	* gitlab-CI
 	* git, svn
 	* gnuplot

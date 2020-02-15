@@ -9,7 +9,7 @@
 <meta property='og:description' content='Toshiaki Hishinuma&#39;s web site'>
 <meta property='og:url' content='https://hishinuma-t.dev/about/'>
 <meta property='og:site_name' content='hpc::numa.blog()'>
-<meta property='og:type' content='website'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='og:updated_time' content='2019-12-04T05:50:48&#43;09:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
+<meta property='og:type' content='website'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='og:updated_time' content='2020-02-15T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
 
 <meta name="generator" content="Hugo 0.64.1" />
 
@@ -120,7 +120,7 @@ if (!doNotTrack) {
   <div class='meta'>
     <span>
   <span class='screen-reader-text'>Posted on </span>
-  <time datetime='2019-12-04T05:50:48&#43;09:00'>2019, Dec 04</time>
+  <time datetime='2020-02-15T00:00:00Z'>2020, Feb 15</time>
 </span>
 
   </div>
@@ -218,7 +218,7 @@ if (!doNotTrack) {
 (Researcher, RICOS. Co. Ltd.)</li>
 <li>工学院大学 工学研究科 情報学専攻 情報学修士 (<a href="http://hpcl.info.kogakuin.ac.jp/">HPCL Lab.</a>)<br>
 (Master of Informatics, Kogakuin Univ.)</li>
-<li>筑波大学図書館情報メディア研究科 博士後期課程3年 (休学2年), (<a href="https://tgosros.wixsite.com/hasegawaken">Hasegawa Lab</a>)
+<li>筑波大学図書館情報メディア研究科 博士後期課程3年 (休学2年), (<a href="https://tgosros.wixsite.com/hasegawaken">Hasegawa Lab.</a>)
 (Doctoral Program, U. Tsukuba)</li>
 <li>情報処理学会 正会員<br>
 (Member, Information Processing Society of Japan)</li>
@@ -265,7 +265,7 @@ if (!doNotTrack) {
 <ul>
 <li>zsh, tmux,  vim, gnuplot, makefile</li>
 <li>Linux server (RedHat)</li>
-<li>Docker, KVM</li>
+<li>Docker, KVM, Virtual Box</li>
 <li>gitlab-CI</li>
 <li>git, svn</li>
 <li>gnuplot</li>
@@ -343,7 +343,7 @@ if (!doNotTrack) {
   <div class='meta'>
     <span>
   <span class='screen-reader-text'>Posted on </span>
-  <time datetime='2019-12-04T05:50:48&#43;09:00'>2019, Dec 04</time>
+  <time datetime='2020-02-15T00:00:00Z'>2020, Feb 15</time>
 </span>
 
   </div>
@@ -381,6 +381,18 @@ if (!doNotTrack) {
 
 <script type='text/javascript' async src='//unpkg.com/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
+
+$(function() {
+  $("a").on("click", function() {
+  var url = this.href;
+  if (url && url.match(/\.pdf$/)) {
+  ga('send', {
+  'hitType': 'pageview',
+  'location': url
+  });
+  }
+  });
+  });
 
 </body>
 

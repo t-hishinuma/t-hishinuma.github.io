@@ -12,7 +12,7 @@ HPCエンジニアの[Hishinuma\_t][1] の個人ページです．
 
 業績やソフトウェアの紹介およびBlog目的で運用しています．
 
-お仕事の依頼等はTwitterのDMか [hishinuma.toshiaki[at]gmail.com] まで
+お仕事の依頼等はTwitterのDMかhishinuma.toshiaki[at]gmail.comまで
 
 プライバシーポリシーについては[こちら](about/privacy)
 

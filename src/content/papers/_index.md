@@ -11,42 +11,58 @@ menu: {main, sidebar}
 draft: false
 emoji: true
 mathjax: true
-#cover: "/favicon.ico"
 ---
 
 # 作成中
 # Journal
 1. 菱沼 利彰, 藤井 昭宏, 田中 輝雄, 長谷川 秀彦.
 AVX2を用いた倍精度BCRS形式疎行列と倍々精度ベクトル積の高速化,
-情報処理学会論文誌コンピューティングシステム(ACS), Vol.7, No.4, pp.25-33 (2014).
+情報処理学会論文誌コンピューティングシステム(ACS), Vol.7, No.4, pp.25-33 (2014).\
+[**paper (PDF)**][ACS48] 
+
+[ACS48]: https://storage.googleapis.com/numa_blog/publications/ACS48.pdf
 
 # Conference Proceedings (with review)
 1. T. Hishinuma, and M. Nakata.
 pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS.
 International Conference on Computational & Experimental Engineering and Sciences.
-Springer, Cham, Vol.1, pp.717-736, ISBN 978-3-030-27053-7 (2019). [[**Web (Springer)**]][icces2019]
+Springer, Cham, Vol.1, pp.717-736, ISBN 978-3-030-27053-7 (2019).\
+[**paper (PDF)**][icces2019] 
+
+[icces2019]: https://storage.googleapis.com/numa_blog/publications/icces2019.pdf
 
 1. T. Hishinuma, T. Sakakibara, A. Fujii, T. Tanaka, and S. Hirasawa.
 Xev-GMP: Automatic Code Generation for GMP Multiple-Precision Code from C Code,
 19th IEEE International Conference on Computational Science and Engineering (CSE 2016),
-pp.1-4, Aug. 24-26, Paris, France (2016).
+pp.1-4, Aug. 24-26, Paris, France (2016).\
+[**paper (PDF)**][CSE2016] 
+
+[CSE2016]: https://storage.googleapis.com/numa_blog/publications/CSE2016.pdf
+
 
 1. T. Hishinuma, T. Tanaka, and H. Hasegawa.
 SIMD Parallel Sparse Matrix-Vector and Transposed-Matrix-Vector Multiplication in DD Precision,
 12th International Meeting High Performance Computing for Computional Science (VECPAR2016),
-pp.1-10, Porto, Portugal, June 28-30 (2016).
+pp.1-10, Porto, Portugal, June 28-30 (2016).\
+[**paper (PDF)**][VECPAR2014] 
+
+[VECPAR2016]: https://storage.googleapis.com/numa_blog/publications/VECPAR2016.pdf
 
 1. T. Hishinuma, A. Fujii, T. Tanaka, and H. Hasegawa.
 AVX acceleration of DD arithmetic between a sparse matrix and vector,
 Lecture Notes in Computer Science 8384, pp. 622-631, Springer, at the Tenth International Conference on Parallel Processing and Applied Mathematics (PPAM 2013),
-Part 1, Sep. 8-11, 2013, Warsaw, Poland, DOI 10.1007/978-3-642-55224-3_58 (2014).
+Part 1, Sep. 8-11, 2013, Warsaw, Poland, DOI 10.1007/978-3-642-55224-3_58 (2014).\
+[**paper (PDF)**][PPAM2013] 
+
+[PPAM2013]: https://storage.googleapis.com/numa_blog/publications/PPAM2013.pdf
 
 1. 菱沼 利彰, 藤井 昭宏, 田中 輝雄, 長谷川 秀彦.
 AVXを用いた倍々精度疎行列ベクトル積の高速化,
 2013年ハイパフォーマンスコンピューティングと計算科学シンポジウム (HPCS2013),
-pp.23-31, 東京, (2013.1).
+pp.23-31, 東京, (2013.1).\
+[**paper (PDF)**][HPCS2013] 
 
-[icces2019]: https://link.springer.com/chapter/10.1007/978-3-030-27053-7_61
+[HPCS2013]: https://storage.googleapis.com/numa_blog/publications/HPCS2013.pdf
 
 # Conference Proceedings (without review)
 1. 菱沼 利彰, 中田 真秀. PEZY-SC2上における倍々精度演算ライブラリpzqdを用いた倍々精度Rgemmの高速化, 情報処理学会研究報告, vol.2018-HPC-167, No. 10, pp. 1-9, 那覇 (2018.12)．
@@ -96,3 +112,42 @@ pp.23-31, 東京, (2013.1).
 1. 菱沼 利彰, 浅川 圭介, 藤井 昭宏, 田中 輝雄, 長谷川 秀彦. 反復解法ライブラリ向け倍々精度演算のAVXを用いた高速化, 情報処理学会研究報告, Vol.2012-HPC-135, No. 16, pp.1-6 (2012.8).
 
 [pzqd-slide]: https://www.slideshare.net/hishinuma/pezysc2rgemm
+
+<!-- PDFs -->
+[VECPAR2014]: https://storage.googleapis.com/numa_blog/publications/VECPAR2014.pdf
+[VECPAR2014_Poster]: https://storage.googleapis.com/numa_blog/publications/VECPAR2014_Poster.pdf
+[PPAM2013]: https://storage.googleapis.com/numa_blog/publications/PPAM2013.pdf
+
+[HPC148]: https://storage.googleapis.com/numa_blog/publications/HPC-148.pdf
+[HPC157]: https://storage.googleapis.com/numa_blog/publications/HPC-157.pdf
+[HPC167]: https://storage.googleapis.com/numa_blog/publications/HPC-167.pdf
+[HPC151]: https://storage.googleapis.com/numa_blog/publications/HPC-151_FX10_DD.pdf
+[HPC152]: https://storage.googleapis.com/numa_blog/publications/HPC-150_sakakibara.pdf
+[SWoPP2014]: https://storage.googleapis.com/numa_blog/publications/SWoPP2014.pdf
+[swopp2012]: https://storage.googleapis.com/numa_blog/publications/SWoPP2012.pdf
+
+[HPCS2013_poster]: https://storage.googleapis.com/numa_blog/publications/HPCS2013_poster1.pdf
+[HPCS2013_poster_paper]: https://storage.googleapis.com/numa_blog/publications/HPCS2013_poster2.pdf
+[HPCS2014]: https://storage.googleapis.com/numa_blog/publications/HPCS2014.pdf
+[HPCS2014_poster]: https://storage.googleapis.com/numa_blog/publications/HPCS2014_poster.pdf
+
+[IPSJ_Hanaue]: https://storage.googleapis.com/numa_blog/publications/IPSJ_Hanaue.pdf
+[IPSJ_Ito]: https://storage.googleapis.com/numa_blog/publications/IPSJ_Ito.pdf
+[IPSJ_Sato]: https://storage.googleapis.com/numa_blog/publications/IPSJ_Sato.pdf
+[IPSJ_doi]: https://storage.googleapis.com/numa_blog/publications/IPSJ_doi.pdf
+[IPSJ_maruchi]: https://storage.googleapis.com/numa_blog/publications/IPSJ_maruchi.pdf
+
+
+[ISAT_hishinuma]: https://storage.googleapis.com/numa_blog/publications/ISAT_01.pdf
+[ISAT_hishinuma_poster]: https://storage.googleapis.com/numa_blog/publications/ISAT_01_poster.pdf
+[ISAT_kayama]: https://storage.googleapis.com/numa_blog/publications/ISAT_02.pdf
+
+[JSIAM_OS2015]: https://storage.googleapis.com/numa_blog/publications/JSIAM_OS2015.pdf
+[JSIAM_OS2016_AT]: https://storage.googleapis.com/numa_blog/publications/JSIAM_OS2016_AT.pdf
+[JSIAM_OS2016_MP]: https://storage.googleapis.com/numa_blog/publications/JSIAM_OS2016_MP.pdf
+[JSIAM_OS2015]: https://storage.googleapis.com/numa_blog/publications/JSIAM_OS2018.pdf
+[MPcomp3]: https://storage.googleapis.com/numa_blog/publications/MPcomp3.pdf
+[MPcomp4]: https://storage.googleapis.com/numa_blog/publications/MPcomp4.pdf
+
+[OpenCAE2018]: https://storage.googleapis.com/numa_blog/publications/OpenCAE2018.pdf
+[PDF]: https://storage.googleapis.com/numa_blog/etc/PDF.jpeg
