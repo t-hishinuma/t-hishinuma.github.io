@@ -15,4 +15,4 @@ server:  build
 	hugo server -p 1313 --buildDrafts --watch --baseUrl=${IP} --bind=0.0.0.0
 
 clean:
-	cd ..; ls | grep -v -E 'src' | xargs rm -r; cd -
+	cd ..; ls | grep -v -E 'src' | grep -v -E 'CNAME' | xargs rm -r; cd -

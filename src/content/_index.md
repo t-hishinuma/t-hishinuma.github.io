@@ -4,7 +4,7 @@ menu:
   - main
   - sidebar
 weight: -1
-images: [images/logo.png]
+images: [images/logo.svg]
 ---
 
 # このページは作成中です (2020/02~)
