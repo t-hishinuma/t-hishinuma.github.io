@@ -13,11 +13,6 @@
   </url>
   
   <url>
-    <loc>https://hishinuma-t.dev/about/privacy/</loc>
-    <lastmod>2019-12-04T05:50:48+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hishinuma-t.dev/papers/</loc>
     <lastmod>2019-12-04T05:50:48+09:00</lastmod>
   </url>
@@ -29,6 +24,11 @@
   
   <url>
     <loc>https://hishinuma-t.dev/posts/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/about/privacy/</loc>
+    <lastmod>2019-12-04T05:50:48+09:00</lastmod>
   </url>
   
   <url>

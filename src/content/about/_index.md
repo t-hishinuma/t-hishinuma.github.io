@@ -13,8 +13,6 @@ mathjax: true
 #cover: "/favicon.ico"
 ---
 
-[プライバシーポリシーについて](./privacy)
-
 # About
 * [科学計算総合研究所][3] 研究員\
 	(Researcher, RICOS. Co. Ltd.)

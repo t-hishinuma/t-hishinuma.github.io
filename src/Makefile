@@ -1,6 +1,7 @@
 all:  build
 
 build:
+	git submodule update --init HPC4CAE_book 
 	git submodule foreach git pull origin master
 	make -C ./HPC4CAE_book/ build
 	- rm -rf static/HPC4CAE/
