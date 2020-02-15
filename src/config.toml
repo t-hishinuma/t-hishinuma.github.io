@@ -70,7 +70,7 @@ sidebar = ["about", "social_menu", "recent_posts", "taxonomy_cloud"]
 #footer = ["social_menu"]
 
 [params.opengraph.twitter]
-page = "hishinuma_t" # Twitter page username
+page = "summary" # Twitter page username
 
 [params.seo]
 # Title Separator: - – — · • * ⋆ | ~ « » < >

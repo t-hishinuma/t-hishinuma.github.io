@@ -13,6 +13,8 @@ mathjax: true
 #cover: "/favicon.ico"
 ---
 
+[プライバシーポリシーについて](./privacy)
+
 # About
 * [科学計算総合研究所][3] 研究員\
 	(Researcher, RICOS. Co. Ltd.)
@@ -93,8 +95,6 @@ mathjax: true
 # 資格等
 * 普通自動車免許 (2009)
 * 基本情報技術者 (2010)
-
-
 
 [1]: http://hpcl.info.kogakuin.ac.jp/
 [2]: https://tgosros.wixsite.com/hasegawaken
