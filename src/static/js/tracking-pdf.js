@@ -15,7 +15,7 @@
 		var url = this.href;
 
  		if (url && url.match(/\.pdf$/)) {
-			ga('event', 'click', {
+			ga('send', 'event', {
 				'event_category': 'download',
 				'location': url
 			});
