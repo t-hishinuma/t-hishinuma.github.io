@@ -18,9 +18,9 @@ mathjax: true
 1. 菱沼 利彰, 藤井 昭宏, 田中 輝雄, 長谷川 秀彦.
 AVX2を用いた倍精度BCRS形式疎行列と倍々精度ベクトル積の高速化,
 情報処理学会論文誌コンピューティングシステム(ACS), Vol.7, No.4, pp.25-33 (2014).\
-[**paper (PDF)**][ACS48] 
+[**paper (PDF)**][ACS48]
 
-[ACS48]: https://storage.googleapis.com/numa_blog/publications/ACS48.pdf
+[ACS48]: https://storage.googleapis.com/numa_blog/publications/ACS48.pdf 
 
 # Conference Proceedings (with review)
 1. T. Hishinuma, and M. Nakata.
@@ -65,11 +65,20 @@ pp.23-31, 東京, (2013.1).\
 [HPCS2013]: https://storage.googleapis.com/numa_blog/publications/HPCS2013.pdf
 
 # Conference Proceedings (without review)
-1. 菱沼 利彰, 中田 真秀. PEZY-SC2上における倍々精度演算ライブラリpzqdを用いた倍々精度Rgemmの高速化, 情報処理学会研究報告, vol.2018-HPC-167, No. 10, pp. 1-9, 那覇 (2018.12)．
+1. 菱沼 利彰, 中田 真秀. PEZY-SC2上における倍々精度演算ライブラリpzqdを用いた倍々精度Rgemmの高速化, 情報処理学会研究報告, vol.2018-HPC-167, No. 10, pp. 1-9, 那覇 (2018.12)．\
+[**paper (PDF)**][HPC167] 
+
+[HPC167]: https://storage.googleapis.com/numa_blog/publications/HPC-167.pdf
  
-1. 菱沼 利彰, 黒澤 範行. PEZY-SC3に向けたPEZY-SCシリーズ向けOpenFOAMの実装と性能評価, オープンCAEシンポジウム2018, pp. 1-6, 川崎 (2018.12)．
+1. 菱沼 利彰, 黒澤 範行. PEZY-SC3に向けたPEZY-SCシリーズ向けOpenFOAMの実装と性能評価, オープンCAEシンポジウム2018, pp. 1-6, 川崎 (2018.12)．\
+[**paper (PDF)**][OpenCAE2018] 
+
+[OpenCAE2018]: https://storage.googleapis.com/numa_blog/publications/OpenCAE2018.pdf
  
-1. 菱沼 利彰, 中田 真秀. PEZY-SC2上における倍々精度Rgemmの実装と評価, 日本応用数理学会 2018年度年会, 「正会員主催OS: 多倍長精度浮動小数点演算の高速化手法と応用」, pp.1-2, 名古屋 (2018.9). [[**Slide**]][pzqd-slide]
+1. 菱沼 利彰, 中田 真秀. PEZY-SC2上における倍々精度Rgemmの実装と評価, 日本応用数理学会 2018年度年会, 「正会員主催OS: 多倍長精度浮動小数点演算の高速化手法と応用」, pp.1-2, 名古屋 (2018.9). \
+[**paper (PDF)**][JSIAM_OS2018], [**Slide (Slideshare)**][pzqd-slide]
+
+[JSIAM_OS2018]: https://storage.googleapis.com/numa_blog/publications/JSIAM_OS2018.pdf
 
 1. T.Hishinuma, R. Sakamoto, H. Ishikawa. Implementation and Evaluation of BLAS on PEZY-SC/SC2 Processor, SIAM Conference on Parallel Processing for Scientific Computing (SIAM PP'18), Waseda, Tokyo (2018).
  
@@ -120,7 +129,6 @@ pp.23-31, 東京, (2013.1).\
 
 [HPC148]: https://storage.googleapis.com/numa_blog/publications/HPC-148.pdf
 [HPC157]: https://storage.googleapis.com/numa_blog/publications/HPC-157.pdf
-[HPC167]: https://storage.googleapis.com/numa_blog/publications/HPC-167.pdf
 [HPC151]: https://storage.googleapis.com/numa_blog/publications/HPC-151_FX10_DD.pdf
 [HPC152]: https://storage.googleapis.com/numa_blog/publications/HPC-150_sakakibara.pdf
 [SWoPP2014]: https://storage.googleapis.com/numa_blog/publications/SWoPP2014.pdf
@@ -145,9 +153,7 @@ pp.23-31, 東京, (2013.1).\
 [JSIAM_OS2015]: https://storage.googleapis.com/numa_blog/publications/JSIAM_OS2015.pdf
 [JSIAM_OS2016_AT]: https://storage.googleapis.com/numa_blog/publications/JSIAM_OS2016_AT.pdf
 [JSIAM_OS2016_MP]: https://storage.googleapis.com/numa_blog/publications/JSIAM_OS2016_MP.pdf
-[JSIAM_OS2015]: https://storage.googleapis.com/numa_blog/publications/JSIAM_OS2018.pdf
 [MPcomp3]: https://storage.googleapis.com/numa_blog/publications/MPcomp3.pdf
 [MPcomp4]: https://storage.googleapis.com/numa_blog/publications/MPcomp4.pdf
 
-[OpenCAE2018]: https://storage.googleapis.com/numa_blog/publications/OpenCAE2018.pdf
 [PDF]: https://storage.googleapis.com/numa_blog/etc/PDF.jpeg
