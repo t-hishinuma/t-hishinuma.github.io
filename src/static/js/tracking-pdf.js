@@ -11,14 +11,14 @@
 // });
 //
 (function ($) {
-	    $('a').on('click', function () {
-			        const $this = $(this);
+	$('a').on('click', function () {
+		var url = this.href;
 
-			        if ($this.get(0).tagName.toLowerCase() === 'png') {
-						            gtag('event', 'click', {
-										                'event_category': 'download',
-										                'event_label': $this.attr('alt')
-										            });
-						        }
-			    });
+ 		if (url && url.match(/\.pdf$/)) {
+			ga('event', 'click', {
+				'event_category': 'download',
+				'location': url
+			});
+		}
+	});
 });
