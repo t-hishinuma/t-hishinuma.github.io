@@ -1,16 +1,86 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>研究業績 on hpc::numa.blog()</title>
+    <title>Papers on hpc::numa.blog()</title>
     <link>https://hishinuma-t.dev/papers/</link>
-    <description>Recent content in 研究業績 on hpc::numa.blog()</description>
+    <description>Recent content in Papers on hpc::numa.blog()</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Wed, 04 Dec 2019 05:50:48 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hishinuma-t.dev/papers/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>研究業績</title>
+      <link>https://hishinuma-t.dev/papers/list/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/list/</guid>
+      <description>作成中 Journal  菱沼 利彰, 藤井 昭宏, 田中 輝雄, 長谷川 秀彦. AVX2を用いた倍精度BCRS形式疎行列と倍々精度ベクトル積の高速化, 情報処理学会論文誌コンピューティングシステム(ACS), Vol.7, No.4, pp.25-33 (2014).
+More Information (pdf, citation, other)  Conference Proceedings (with review)   T. Hishinuma, and M. Nakata. pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS. International Conference on Computational &amp;amp; Experimental Engineering and Sciences. Springer, Cham, Vol.1, pp.717-736, ISBN 978-3-030-27053-7 (2019).
+More Information (pdf, citation, other)
+  T. Hishinuma, T.</description>
+    </item>
+    
+    <item>
+      <title>AVX Acceleration of DD Arithmetic Between a Sparse Matrix and Vector</title>
+      <link>https://hishinuma-t.dev/papers/with_review/ppam2013/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/with_review/ppam2013/</guid>
+      <description>Download PDF  Citation (bibtex) @inproceedings{hishinuma2013ppam, title={AVX acceleration of DD arithmetic between a sparse matrix and vector}, author={Hishinuma, Toshiaki and Fujii, Akihiro and Tanaka, Teruo and Hasegawa, Hidehiko}, booktitle={International Conference on Parallel Processing and Applied Mathematics}, pages={622--631}, year={2013}, organization={Springer} } Abstract High precision arithmetic can improve the convergence of Krylov subspace methods; however, it is very costly. One system of high precision arithmetic is double-double (DD) arithmetic, which uses more than 20 double precision operations for one DD operation.</description>
+    </item>
+    
+    <item>
+      <title>AVX2を用いた倍精度BCRS形式疎行列と倍々精度ベクトル積の高速化</title>
+      <link>https://hishinuma-t.dev/papers/with_review/acs48/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/with_review/acs48/</guid>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma2014acs, title={AVX2 を用いた倍精度 BCRS 形式疎行列と倍々精度ベクトル積の高速化}, author={菱沼利彰 and 藤井昭宏 and 田中輝雄 and 長谷川秀彦}, journal={情報処理学会論文誌コンピューティングシステム (ACS)}, volume={7}, number={4}, pages={25--33}, year={2014} } Abstract 高精度演算を用いることでKrylov部分空間法の収束を改善できるが，高精度演算はコストが高いことが知られている．高精度演算の1つに，倍精度を2つ組み合わせて4倍精度演算を行う倍々精度演算がある．我々は，IntelのSIMD拡張命令であるAVX2を用いてBCRS形式の倍精度疎行列と倍々精度ベクトルの積（DD-SpMV）の高速化を行った．AVX2を用いたCRS形式のDD-SpMVでは，各行で端数処理などを必要とするが，BCRS形式は端数処理をなくし，メモリアクセスを改善できる．しかし，BCRS形式は演算量が増加する．本論文では，AVX2に適したBCRS形式のブロックサイズと，増加した演算量と端数処理の削減，メモリアクセスの改善効果のトレードオフについて示した．実験の結果，AVX2に最も適したブロックサイズは4×1であることが分かった．また，メモリアクセスの改善効果はサイズの大きい問題ほど有効で，行列サイズが10 5以上のとき，演算量が3.3倍以上になるケースにおいても，BCRS4×1にすることでCRS形式の実行時間を約45%に短縮できることを確認した．
+Links 情報処理学会論文誌 コンピューティングシステム
+情報処理学会 電子図書館</description>
+    </item>
+    
+    <item>
+      <title>AVXを用いた倍々精度疎行列ベクトル積の高速化</title>
+      <link>https://hishinuma-t.dev/papers/with_review/hpcs2013/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/with_review/hpcs2013/</guid>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma2013hpcs, title={AVX を用いた倍々精度疎行列ベクトル積の高速化}, author={菱沼利彰 and 藤井昭宏 and 田中輝雄 and 長谷川秀彦}, journal={ハイパフォーマンスコンピューティングと計算科学シンポジウム論文集}, volume={2013}, pages={23--31}, year={2013} } Abstract 計算性能の向上に伴い，高精度による計算が多くの場面で可能となっている．4倍精度を効率良く実現する手法として，2つの倍精度変数で1つの4倍精度変数を表現する倍々精度演算がある．本研究では，疎行列とベクトルの演算に使われる基本演算をAVX命令を用いて高速化し，性能を決定するパラメタについて分析を行うことにより，倍々精度演算をAVXで行う際の効果を示した．AVX命令を用いた場合，同時演算数の増加，3オペランド化によるレジスタ退避，復元処理の減少などの効果が大きく，SSE2の性能と比べて，キャッシュに収まる範囲のベクトル間の演算では約1.7から2.3倍の性能となったが，キャッシュに収まらない場合は，キャッシュアクセス，メモリアクセスが大きなボトルネックになることがわかった．倍精度の疎行列と倍々精度のベクトルの積では，約1.1から1.9倍の性能となり，メモリアクセスはボトルネックとならず，疎行列の1行あたりの非零要素の数が性能に大きな影響を与えていることがわかった．これらの結果から，倍々精度の疎行列ベクトル積の性能を予測する1つの指標を導出した．
+Links HPCS2013
+情報処理学会 電子図書館</description>
+    </item>
+    
+    <item>
+      <title>pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS.</title>
+      <link>https://hishinuma-t.dev/papers/with_review/icces2019/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/with_review/icces2019/</guid>
+      <description>Download PDF  Citation (bibtex) @inproceedings{hishinuma2019pzqd, title={pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS}, author={Hishinuma, Toshiaki and Nakata, Maho}, booktitle={International Conference on Computational \&amp;amp; Experimental Engineering and Sciences}, pages={717--736}, year={2019}, organization={Springer} } Abstract We implemented pzqd, a high precision arithmetic library for the PEZY-SC2 that is based on Hida \etal{}&amp;lsquo;s QD library. PEZY-SC2 is an MIMD (multiple instruction stream, multiple data stream) -type many-core processor. We optimized matrix-matrix multiplication (Rgemm) in double-double precision (DD) on the PEZY-SC2.</description>
+    </item>
+    
+    <item>
+      <title>SIMD Parallel Sparse Matrix-Vector and Transposed-Matrix-Vector Multiplication in DD Precision</title>
+      <link>https://hishinuma-t.dev/papers/with_review/vecpar2016/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/with_review/vecpar2016/</guid>
+      <description>Download PDF  Citation (bibtex) edings{hishinuma2016vecpar, title={SIMD parallel sparse matrix-vector and transposed-matrix-vector multiplication in DD precision}, author={Hishinuma, Toshiaki and Hasegawa, Hidehiko and Tanaka, Teruo}, booktitle={International Conference on Vector and Parallel Processing}, pages={21--34}, year={2016}, organization={Springer} } Abstract We accelerate a double-precision sparse matrix and DD vector multiplication (DD-SpMV) and its transposition and DD vector multiplication (DD-TSpMV) using SIMD AVX2. AVX2 requires changing the memory access pattern to allow four consecutive 64-bit elements to be read at once.</description>
+    </item>
+    
+    <item>
+      <title>Xev-GMP: Automatic Code Generation for GMP Multiple-Precision Code from C Code</title>
+      <link>https://hishinuma-t.dev/papers/with_review/cse2016/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/with_review/cse2016/</guid>
+      <description>Download PDF  Citation (bibtex) @inproceedings{hishinuma2016cse, author={T. {Hishinuma} and T. {Sakakibara} and A. {Fujii} and T. {Tanaka} and S. {Hirasawa}}, booktitle={2016 IEEE Intl Conference on Computational Science and Engineering (CSE) and IEEE Intl Conference on Embedded and Ubiquitous Computing (EUC) and 15th Intl Symposium on Distributed Computing and Applications for Business Engineering (DCABES)}, title={Xev-GMP: Automatic Code Generation for GMP Multiple-Precision Code from C Code}, year={2016}, month={Aug},} volume={}, number={}, pages={295-298}, doi={10.1109/CSE-EUC-DCABES.2016.200}, Abstract We propose directive-based automatic code generation for a multiple-precision code from a C code with double precision.</description>
+    </item>
     
   </channel>
 </rss>

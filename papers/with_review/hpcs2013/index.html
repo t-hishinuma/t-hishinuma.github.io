@@ -2,31 +2,23 @@
 <html lang='en'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='当サイトが使用しているアクセス解析ツールについて 当サイトではGoogleによるアクセス解析ツールGoogleアナリティクスを利用しています． Googleアナリティクスはトラフィックデータの収集のためにCookieを使用しています． このトラフィックデータは匿名で収集されており，個人を特定するものではありません． この機能はCookieを無効にすることで収集を拒否することが可能です． この規約に関しての詳しい情報はGoogleのWebサイトでご確認ください．
-個人情報の第三者への開示 当サイトを通じて得られた個人情報は適切に管理し，以下に該当する場合を除いて第三者に開示することはありません．
- 本人のご了解がある場合 法令等への協力のため、開示が必要となる場合 個人情報の開示、訂正、追加、削除、利用停止  本人からの個人データの開示，訂正，追加，削除ご希望の場合には， ご本人であることを確認させていただいた上，速やかに対応させていただきます．
-免責事項 当サイトからリンクやバナーなどによって他のサイトに移動された場合， 移動先サイトで提供される情報、サービス等について一切の責任を負いません．
-当サイトのコンテンツや情報について，可能な限り正確な情報を掲載するよう努めておりますが， 誤情報が入り込んだり，情報が古くなっていることがあります．
-当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねます． 修正が必要な箇所を発見された場合はメールまたはTwitterのDMにてお報せください．
-広告の配信について 当サイトには第三者による広告サービスを利用しているページや，利用しているページへのリンクを含みます． このような広告配信事業者はユーザーの興味に応じた商品やサービスの広告を表示するためCookie を使用することがあります． これらの広告に関する詳細は広告配信元のWebサイトからご確認ください．'>
+<meta name='description' content='Download PDF  Citation (bibtex) @article{hishinuma2013hpcs, title={AVX を用いた倍々精度疎行列ベクトル積の高速化}, author={菱沼利彰 and 藤井昭宏 and 田中輝雄 and 長谷川秀彦}, journal={ハイパフォーマンスコンピューティングと計算科学シンポジウム論文集}, volume={2013}, pages={23--31}, year={2013} } Abstract 計算性能の向上に伴い，高精度による計算が多くの場面で可能となっている．4倍精度を効率良く実現する手法として，2つの倍精度変数で1つの4倍精度変数を表現する倍々精度演算がある．本研究では，疎行列とベクトルの演算に使われる基本演算をAVX命令を用いて高速化し，性能を決定するパラメタについて分析を行うことにより，倍々精度演算をAVXで行う際の効果を示した．AVX命令を用いた場合，同時演算数の増加，3オペランド化によるレジスタ退避，復元処理の減少などの効果が大きく，SSE2の性能と比べて，キャッシュに収まる範囲のベクトル間の演算では約1.7から2.3倍の性能となったが，キャッシュに収まらない場合は，キャッシュアクセス，メモリアクセスが大きなボトルネックになることがわかった．倍精度の疎行列と倍々精度のベクトルの積では，約1.1から1.9倍の性能となり，メモリアクセスはボトルネックとならず，疎行列の1行あたりの非零要素の数が性能に大きな影響を与えていることがわかった．これらの結果から，倍々精度の疎行列ベクトル積の性能を予測する1つの指標を導出した．
+Links HPCS2013
+情報処理学会 電子図書館'>
 <meta name='theme-color' content='black'>
 
-<meta property='og:title' content='プライバシーポリシーについて ,  hpc::numa.blog()'>
-<meta property='og:description' content='当サイトが使用しているアクセス解析ツールについて 当サイトではGoogleによるアクセス解析ツールGoogleアナリティクスを利用しています． Googleアナリティクスはトラフィックデータの収集のためにCookieを使用しています． このトラフィックデータは匿名で収集されており，個人を特定するものではありません． この機能はCookieを無効にすることで収集を拒否することが可能です． この規約に関しての詳しい情報はGoogleのWebサイトでご確認ください．
-個人情報の第三者への開示 当サイトを通じて得られた個人情報は適切に管理し，以下に該当する場合を除いて第三者に開示することはありません．
- 本人のご了解がある場合 法令等への協力のため、開示が必要となる場合 個人情報の開示、訂正、追加、削除、利用停止  本人からの個人データの開示，訂正，追加，削除ご希望の場合には， ご本人であることを確認させていただいた上，速やかに対応させていただきます．
-免責事項 当サイトからリンクやバナーなどによって他のサイトに移動された場合， 移動先サイトで提供される情報、サービス等について一切の責任を負いません．
-当サイトのコンテンツや情報について，可能な限り正確な情報を掲載するよう努めておりますが， 誤情報が入り込んだり，情報が古くなっていることがあります．
-当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねます． 修正が必要な箇所を発見された場合はメールまたはTwitterのDMにてお報せください．
-広告の配信について 当サイトには第三者による広告サービスを利用しているページや，利用しているページへのリンクを含みます． このような広告配信事業者はユーザーの興味に応じた商品やサービスの広告を表示するためCookie を使用することがあります． これらの広告に関する詳細は広告配信元のWebサイトからご確認ください．'>
-<meta property='og:url' content='https://hishinuma-t.dev/about/privacy/'>
+<meta property='og:title' content='AVXを用いた倍々精度疎行列ベクトル積の高速化 ,  hpc::numa.blog()'>
+<meta property='og:description' content='Download PDF  Citation (bibtex) @article{hishinuma2013hpcs, title={AVX を用いた倍々精度疎行列ベクトル積の高速化}, author={菱沼利彰 and 藤井昭宏 and 田中輝雄 and 長谷川秀彦}, journal={ハイパフォーマンスコンピューティングと計算科学シンポジウム論文集}, volume={2013}, pages={23--31}, year={2013} } Abstract 計算性能の向上に伴い，高精度による計算が多くの場面で可能となっている．4倍精度を効率良く実現する手法として，2つの倍精度変数で1つの4倍精度変数を表現する倍々精度演算がある．本研究では，疎行列とベクトルの演算に使われる基本演算をAVX命令を用いて高速化し，性能を決定するパラメタについて分析を行うことにより，倍々精度演算をAVXで行う際の効果を示した．AVX命令を用いた場合，同時演算数の増加，3オペランド化によるレジスタ退避，復元処理の減少などの効果が大きく，SSE2の性能と比べて，キャッシュに収まる範囲のベクトル間の演算では約1.7から2.3倍の性能となったが，キャッシュに収まらない場合は，キャッシュアクセス，メモリアクセスが大きなボトルネックになることがわかった．倍精度の疎行列と倍々精度のベクトルの積では，約1.1から1.9倍の性能となり，メモリアクセスはボトルネックとならず，疎行列の1行あたりの非零要素の数が性能に大きな影響を与えていることがわかった．これらの結果から，倍々精度の疎行列ベクトル積の性能を予測する1つの指標を導出した．
+Links HPCS2013
+情報処理学会 電子図書館'>
+<meta property='og:url' content='https://hishinuma-t.dev/papers/with_review/hpcs2013/'>
 <meta property='og:site_name' content='hpc::numa.blog()'>
-<meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='about'><meta property='article:published_time' content='2020-02-15T00:00:00Z'/><meta property='article:modified_time' content='2020-02-15T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='papers'><meta property='article:tag' content='paper'><meta property='article:published_time' content='2019-12-19T00:00:00Z'/><meta property='article:modified_time' content='2019-12-19T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
 
 <meta name="generator" content="Hugo 0.64.1" />
 
-  <title>プライバシーポリシーについて ,  hpc::numa.blog()</title>
-  <link rel='canonical' href='https://hishinuma-t.dev/about/privacy/'>
+  <title>AVXを用いた倍々精度疎行列ベクトル積の高速化 ,  hpc::numa.blog()</title>
+  <link rel='canonical' href='https://hishinuma-t.dev/papers/with_review/hpcs2013/'>
   
   
   <link rel='icon' href='/favicon.ico'>
@@ -48,7 +40,7 @@ if (!doNotTrack) {
   
 
 </head>
-<body class='page type-about has-sidebar'>
+<body class='page type-papers has-sidebar has-emoji'>
 
   <div class='site'><div id='sidebar' class='sidebar'>
   <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
@@ -281,7 +273,7 @@ if (!doNotTrack) {
   <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'>プライバシーポリシーについて</h1>
+      <h1 class='title'>AVXを用いた倍々精度疎行列ベクトル積の高速化</h1>
       
 
     </div>
@@ -295,7 +287,7 @@ if (!doNotTrack) {
   
 </svg>
 <span class='screen-reader-text'>Posted on </span>
-  <time class='entry-date' datetime='2020-02-15T00:00:00Z'>2020, Feb 15</time>
+  <time class='entry-date' datetime='2019-12-19T00:00:00Z'>2019, Dec 19</time>
 </span>
 
   
@@ -357,43 +349,63 @@ text-align: center;
   
 
   <div class='container entry-content'>
-  <h1 id="当サイトが使用しているアクセス解析ツールについて">当サイトが使用しているアクセス解析ツールについて</h1>
-<p>当サイトではGoogleによるアクセス解析ツールGoogleアナリティクスを利用しています．
-Googleアナリティクスはトラフィックデータの収集のためにCookieを使用しています．
-このトラフィックデータは匿名で収集されており，個人を特定するものではありません．
-この機能はCookieを無効にすることで収集を拒否することが可能です．
-この規約に関しての詳しい情報はGoogleのWebサイトでご確認ください．</p>
-<h1 id="個人情報の第三者への開示">個人情報の第三者への開示</h1>
-<p>当サイトを通じて得られた個人情報は適切に管理し，以下に該当する場合を除いて第三者に開示することはありません．</p>
-<ul>
-<li>本人のご了解がある場合</li>
-<li>法令等への協力のため、開示が必要となる場合</li>
-<li>個人情報の開示、訂正、追加、削除、利用停止</li>
-</ul>
-<p>本人からの個人データの開示，訂正，追加，削除ご希望の場合には，
-ご本人であることを確認させていただいた上，速やかに対応させていただきます．</p>
-<h1 id="免責事項">免責事項</h1>
-<p>当サイトからリンクやバナーなどによって他のサイトに移動された場合，
-移動先サイトで提供される情報、サービス等について一切の責任を負いません．</p>
-<p>当サイトのコンテンツや情報について，可能な限り正確な情報を掲載するよう努めておりますが，
-誤情報が入り込んだり，情報が古くなっていることがあります．</p>
-<p>当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねます．
-修正が必要な箇所を発見された場合はメールまたはTwitterのDMにてお報せください．</p>
-<h1 id="広告の配信について">広告の配信について</h1>
-<p>当サイトには第三者による広告サービスを利用しているページや，利用しているページへのリンクを含みます．
-このような広告配信事業者はユーザーの興味に応じた商品やサービスの広告を表示するためCookie を使用することがあります．
-これらの広告に関する詳細は広告配信元のWebサイトからご確認ください．</p>
+  <h1 id="download-pdf-httpsstoragegoogleapiscomnuma_blogetcicon_pdfpng1">Download PDF <a href="https://storage.googleapis.com/numa_blog/publications/HPCS2013.pdf"><img src="https://storage.googleapis.com/numa_blog/etc/icon_pdf.png" alt=""></a></h1>
+<h1 id="citation-bibtex">Citation (bibtex)</h1>
+<pre><code>@article{hishinuma2013hpcs,
+	title={AVX を用いた倍々精度疎行列ベクトル積の高速化},
+	author={菱沼利彰 and 藤井昭宏 and 田中輝雄 and 長谷川秀彦},
+	journal={ハイパフォーマンスコンピューティングと計算科学シンポジウム論文集},
+	volume={2013},
+	pages={23--31},
+	year={2013}
+}
+</code></pre><h1 id="abstract">Abstract</h1>
+<p>計算性能の向上に伴い，高精度による計算が多くの場面で可能となっている．4倍精度を効率良く実現する手法として，2つの倍精度変数で1つの4倍精度変数を表現する倍々精度演算がある．本研究では，疎行列とベクトルの演算に使われる基本演算をAVX命令を用いて高速化し，性能を決定するパラメタについて分析を行うことにより，倍々精度演算をAVXで行う際の効果を示した．AVX命令を用いた場合，同時演算数の増加，3オペランド化によるレジスタ退避，復元処理の減少などの効果が大きく，SSE2の性能と比べて，キャッシュに収まる範囲のベクトル間の演算では約1.7から2.3倍の性能となったが，キャッシュに収まらない場合は，キャッシュアクセス，メモリアクセスが大きなボトルネックになることがわかった．倍精度の疎行列と倍々精度のベクトルの積では，約1.1から1.9倍の性能となり，メモリアクセスはボトルネックとならず，疎行列の1行あたりの非零要素の数が性能に大きな影響を与えていることがわかった．これらの結果から，倍々精度の疎行列ベクトル積の性能を予測する1つの指標を導出した．</p>
+<h1 id="links">Links</h1>
+<p><a href="http://sighpc.ipsj.or.jp/hpcs/oldconfs/hpcs2013/index.html">HPCS2013</a></p>
+<p><a href="https://ipsj.ixsq.nii.ac.jp/ej/?action=repository_action_common_download&amp;item_id=87831&amp;item_no=1&amp;attribute_id=1&amp;file_no=1">情報処理学会 電子図書館</a></p>
 
 </div>
 
   
 <footer class='entry-footer'>
-  <div class='container sep-before'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/paper/'>paper</a></div>
+
   </div>
 </footer>
 
 
 </article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/papers/with_review/icces2019/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS.</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/papers/with_review/acs48/'>
+        <span class='screen-reader-text'>Next post: </span>AVX2を用いた倍精度BCRS形式疎行列と倍々精度ベクトル積の高速化<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
 
 
 

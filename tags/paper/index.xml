@@ -1,56 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on hpc::numa.blog()</title>
-    <link>https://hishinuma-t.dev/</link>
-    <description>Recent content in Home on hpc::numa.blog()</description>
+    <title>paper on hpc::numa.blog()</title>
+    <link>https://hishinuma-t.dev/tags/paper/</link>
+    <description>Recent content in paper on hpc::numa.blog()</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Sat, 15 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://hishinuma-t.dev/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hishinuma-t.dev/tags/paper/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>研究業績</title>
-      <link>https://hishinuma-t.dev/papers/list/</link>
-      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://hishinuma-t.dev/papers/list/</guid>
-      <description>作成中 Journal  菱沼 利彰, 藤井 昭宏, 田中 輝雄, 長谷川 秀彦. AVX2を用いた倍精度BCRS形式疎行列と倍々精度ベクトル積の高速化, 情報処理学会論文誌コンピューティングシステム(ACS), Vol.7, No.4, pp.25-33 (2014).
-More Information (pdf, citation, other)  Conference Proceedings (with review)   T. Hishinuma, and M. Nakata. pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS. International Conference on Computational &amp;amp; Experimental Engineering and Sciences. Springer, Cham, Vol.1, pp.717-736, ISBN 978-3-030-27053-7 (2019).
-More Information (pdf, citation, other)
-  T. Hishinuma, T.</description>
-    </item>
-    
-    <item>
-      <title>Works (Software and Documents)</title>
-      <link>https://hishinuma-t.dev/works/list/</link>
-      <pubDate>Wed, 04 Dec 2019 05:50:48 +0900</pubDate>
-      
-      <guid>https://hishinuma-t.dev/works/list/</guid>
-      <description>Documents CAEエンジニアのためのHPC (書き途中, ほぼ白紙)
-Software Lis_DD_AVXkernels
-LisのDD機能をAVX, AVX2に拡張する差分，およびマージスクリプト
-DD-AVX_v3
-Library of High Precision Sparse Matrix Operations Accelerated by SIMD AVX</description>
-    </item>
-    
-    <item>
-      <title>プライバシーポリシーについて</title>
-      <link>https://hishinuma-t.dev/about/privacy/</link>
-      <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hishinuma-t.dev/about/privacy/</guid>
-      <description>当サイトが使用しているアクセス解析ツールについて 当サイトではGoogleによるアクセス解析ツールGoogleアナリティクスを利用しています． Googleアナリティクスはトラフィックデータの収集のためにCookieを使用しています． このトラフィックデータは匿名で収集されており，個人を特定するものではありません． この機能はCookieを無効にすることで収集を拒否することが可能です． この規約に関しての詳しい情報はGoogleのWebサイトでご確認ください．
-個人情報の第三者への開示 当サイトを通じて得られた個人情報は適切に管理し，以下に該当する場合を除いて第三者に開示することはありません．
- 本人のご了解がある場合 法令等への協力のため、開示が必要となる場合 個人情報の開示、訂正、追加、削除、利用停止  本人からの個人データの開示，訂正，追加，削除ご希望の場合には， ご本人であることを確認させていただいた上，速やかに対応させていただきます．
-免責事項 当サイトからリンクやバナーなどによって他のサイトに移動された場合， 移動先サイトで提供される情報、サービス等について一切の責任を負いません．
-当サイトのコンテンツや情報について，可能な限り正確な情報を掲載するよう努めておりますが， 誤情報が入り込んだり，情報が古くなっていることがあります．
-当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねます． 修正が必要な箇所を発見された場合はメールまたはTwitterのDMにてお報せください．
-広告の配信について 当サイトには第三者による広告サービスを利用しているページや，利用しているページへのリンクを含みます． このような広告配信事業者はユーザーの興味に応じた商品やサービスの広告を表示するためCookie を使用することがあります． これらの広告に関する詳細は広告配信元のWebサイトからご確認ください．</description>
-    </item>
     
     <item>
       <title>AVX Acceleration of DD Arithmetic Between a Sparse Matrix and Vector</title>

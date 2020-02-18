@@ -13,12 +13,12 @@
   </url>
   
   <url>
-    <loc>https://hishinuma-t.dev/papers/</loc>
-    <lastmod>2019-12-04T05:50:48+09:00</lastmod>
+    <loc>https://hishinuma-t.dev/papers/list/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hishinuma-t.dev/works/</loc>
+    <loc>https://hishinuma-t.dev/works/list/</loc>
     <lastmod>2019-12-04T05:50:48+09:00</lastmod>
   </url>
   
@@ -32,6 +32,56 @@
   </url>
   
   <url>
+    <loc>https://hishinuma-t.dev/papers/with_review/ppam2013/</loc>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/papers/with_review/acs48/</loc>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/papers/with_review/hpcs2013/</loc>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/tags/paper/</loc>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/papers/</loc>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/papers/with_review/icces2019/</loc>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/papers/with_review/vecpar2016/</loc>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/tags/</loc>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/papers/with_review/cse2016/</loc>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/works/</loc>
+    <lastmod>2019-12-04T05:50:48+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hishinuma-t.dev/authors/</loc>
   </url>
   
@@ -41,10 +91,6 @@
   
   <url>
     <loc>https://hishinuma-t.dev/series/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hishinuma-t.dev/tags/</loc>
   </url>
   
 </urlset>
