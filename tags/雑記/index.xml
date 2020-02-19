@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>blog on hpc::numa.blog()</title>
-    <link>https://hishinuma-t.dev/posts/</link>
-    <description>Recent content in blog on hpc::numa.blog()</description>
+    <title>雑記 on hpc::numa.blog()</title>
+    <link>https://hishinuma-t.dev/tags/%E9%9B%91%E8%A8%98/</link>
+    <description>Recent content in 雑記 on hpc::numa.blog()</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
     <lastBuildDate>Wed, 19 Feb 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://hishinuma-t.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hishinuma-t.dev/tags/%E9%9B%91%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
