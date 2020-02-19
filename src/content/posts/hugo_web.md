@@ -14,9 +14,11 @@ mathjax: true
 # はじめに
 Webページを新しくした．
 
-今，2つのWebページを持っていて，いくつもWebサイトを抱えるのは正直嫌だったのと，大学の方は卒業すると(卒業できれば)消えてしまう．
+今，2つのWebページを持っている．それぞれ
 1. 筑波大学の[学籍番号のWebページ][slis]で業績整理
 1. はてなブログに色々[書いていた][hatena]
+
+いくつもWebサイトを抱えるのは正直嫌だったのと，大学の方は卒業すると(卒業できれば)消えてしまう．
 
 
 はてなブログをProにすることも考えたが，Wordpressのサービスだけを利用するのに月額1008円．
@@ -30,7 +32,7 @@ github ioというのはgithubのトップディレクトリにindex.htmlがあ�
 あまりに大量のトラフィックがあるとgithubから怒られるらしい(どう考えてもいらぬ心配)．
 
 このページは既に[私のgithub](https://github.com/t-hishinuma/t-hishinuma.github.io)に置かれていて，
-例えばこのページは `src/content/posts/hugo\_web.md` から生成されて `/posts`に生成されているはずである．
+例えばこのページは `src/content/posts/hugo_web.md` から生成されて `/posts`に生成されているはずである．
 
 これなら万が一，github pagesの容量や制限がかかったとしても，手元にHTMLはあるのでサーバ借りて移すだけで簡単であろうというわけである．
 
@@ -116,16 +118,19 @@ server:
 作業開始とともにtmuxの適当な窓で`make server`してMarkdownとブラウザを行ったり来たりして，
 作業が終わったら`Ctrl-C`でサーバを止め，`make; git add...`していく流れになる．
 
+## 画像の貼り方
+画像はパス指定が面倒くさいし，後でサイズが増えてくるのも嫌なのでgoogle cloud storageに置いてURLをもらうことにした．\
+画像に大量のアクセスがあるとお金がかかるけど，まぁ大きな画像を置くわけでもないので気にしないことにする．
+
 ## 生成されたWebサイトの性能
 ここでgoogleのPageSpeed Insightの結果を御覧ください．
 
 ![speed](https://storage.cloud.google.com/numa_blog/blog_photo/website_speed.png?hl=ja)
 
-やった～～～～～～～
+やった～～～～～～～\
+githubとgoogle cloud storageの速度が少し不安だったが無事100点であった．
+ということで，ここで楽しく過ごしていこうと思う．
 
-## 画像の貼り方
-画像はパス指定が面倒くさいし，後でサイズが増えてくるのも嫌なのでgoogle storageに置いてURLをもらうことにした．\
-画像に大量のアクセスがあるとお金がかかるけど，まぁ大きな画像を置くわけでもないので気にしないことにする．
 
 [hatena]:http://numa0323.hatenablog.jp/
 [slis]:http://www.slis.tsukuba.ac.jp/~s1530534/index.html
