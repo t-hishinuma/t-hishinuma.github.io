@@ -6,7 +6,7 @@ date: 2020-02-19
 
 emoji: true
 mathjax: true
-tags: ["paper"]
+tags: ["paper", "DD+SIMD"]
 ---
 
 # Download PDF [![](https://storage.googleapis.com/numa_blog/etc/icon_pdf.png)][ACS48] 

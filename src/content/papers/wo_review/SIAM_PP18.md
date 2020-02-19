@@ -6,7 +6,7 @@ date: 2020-02-19
 
 emoji: true
 mathjax: true
-tags: ["paper"]
+tags: ["paper", "PEZY"]
 ---
 
 # Abstract

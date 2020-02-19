@@ -19,6 +19,7 @@
   
   <url>
     <loc>https://hishinuma-t.dev/works/list/</loc>
+    <lastmod>2020-02-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -41,6 +42,11 @@
   </url>
   
   <url>
+    <loc>https://hishinuma-t.dev/tags/dd&#43;simd/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hishinuma-t.dev/papers/wo_review/siam_pp18/</loc>
     <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
@@ -52,6 +58,11 @@
   
   <url>
     <loc>https://hishinuma-t.dev/papers/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/tags/pezy/</loc>
     <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -91,6 +102,11 @@
   </url>
   
   <url>
+    <loc>https://hishinuma-t.dev/works/</loc>
+    <lastmod>2020-02-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hishinuma-t.dev/about/privacy/</loc>
     <lastmod>2020-02-16T00:00:00+00:00</lastmod>
   </url>
@@ -105,10 +121,6 @@
   
   <url>
     <loc>https://hishinuma-t.dev/series/</loc>
-  </url>
-  
-  <url>
-    <loc>https://hishinuma-t.dev/works/</loc>
   </url>
   
 </urlset>

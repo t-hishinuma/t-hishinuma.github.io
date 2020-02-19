@@ -7,6 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
+    <lastBuildDate>Sun, 16 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hishinuma-t.dev/works/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,14 +15,16 @@
     <item>
       <title>Works (Software and Documents)</title>
       <link>https://hishinuma-t.dev/works/list/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/works/list/</guid>
       <description>Documents CAEエンジニアのためのHPC (書き途中, ほぼ白紙)
 Software Lis_DD_AVXkernels
 LisのDD機能をAVX, AVX2に拡張する差分，およびマージスクリプト
 DD-AVX_v3
-Library of High Precision Sparse Matrix Operations Accelerated by SIMD AVX</description>
+Library of High Precision Sparse Matrix Operations Accelerated by SIMD AVX
+**Xev-GMP-Web
+Xev-GMP-Web converts a C source code which uses double variables into a C source code which uses GNU GMP library.</description>
     </item>
     
   </channel>
