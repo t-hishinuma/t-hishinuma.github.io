@@ -13,12 +13,48 @@
     
     
     <item>
+      <title>An Evaluation of Double-Double Precision Operation for Iterative Solver Library Using AVX</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/isat_hishinuma/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/isat_hishinuma/</guid>
+      <description>Download PDF  Download Poster PDF  </description>
+    </item>
+    
+    <item>
       <title>AVX Acceleration of DD Arithmetic Between a Sparse Matrix and Vector</title>
       <link>https://hishinuma-t.dev/papers/with_review/ppam2013/</link>
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/with_review/ppam2013/</guid>
       <description>Download PDF  Citation (bibtex) @inproceedings{hishinuma2013ppam, title={AVX acceleration of DD arithmetic between a sparse matrix and vector}, author={Hishinuma, Toshiaki and Fujii, Akihiro and Tanaka, Teruo and Hasegawa, Hidehiko}, booktitle={International Conference on Parallel Processing and Applied Mathematics}, pages={622--631}, year={2013}, organization={Springer} } Abstract High precision arithmetic can improve the convergence of Krylov subspace methods; however, it is very costly. One system of high precision arithmetic is double-double (DD) arithmetic, which uses more than 20 double precision operations for one DD operation.</description>
+    </item>
+    
+    <item>
+      <title>AVX2 acceleration of SpMV and vector operations with Double-double precision vectors</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/pmaa18/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/pmaa18/</guid>
+      <description>Download Slide  </description>
+    </item>
+    
+    <item>
+      <title>AVX2を用いた倍々精度反復解法の高速化</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/hpc148/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/hpc148/</guid>
+      <description>Download PDF  </description>
+    </item>
+    
+    <item>
+      <title>AVX2を用いた倍々精度演算の反復解法への適用と評価</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/jsiam_os_2016_at/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/jsiam_os_2016_at/</guid>
+      <description>Download PDF  </description>
     </item>
     
     <item>
@@ -33,6 +69,24 @@ Links 情報処理学会論文誌 コンピューティングシステム
     </item>
     
     <item>
+      <title>AVX2を用いた倍精度疎行列と倍々精度ベクトルの積における精度と性能</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/jsiam_os2015/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/jsiam_os2015/</guid>
+      <description>Download PDF  </description>
+    </item>
+    
+    <item>
+      <title>AVXを用いた倍々精度疎行列ベクトル積 -転置行列-</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/hpcs2013_poster/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/hpcs2013_poster/</guid>
+      <description>Download PDF  Download Poster PDF  </description>
+    </item>
+    
+    <item>
       <title>AVXを用いた倍々精度疎行列ベクトル積の高速化</title>
       <link>https://hishinuma-t.dev/papers/with_review/hpcs2013/</link>
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
@@ -44,12 +98,120 @@ Links HPCS2013
     </item>
     
     <item>
+      <title>AVXを用いた倍々精度疎行列ベクトル積の高速化</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/mpcomp3/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/mpcomp3/</guid>
+      <description>Download Slide  </description>
+    </item>
+    
+    <item>
+      <title>Fast computation of double precision sparse matrix in BCRS and DD vector product using AVX2</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/vecpar2014/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/vecpar2014/</guid>
+      <description>Download PDF  Download Poster PDF  </description>
+    </item>
+    
+    <item>
+      <title>GMPを用いた混合精度型プログラムの自動生成機構の提案</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/jsiam_os_2016_mp/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/jsiam_os_2016_mp/</guid>
+      <description>Download PDF  </description>
+    </item>
+    
+    <item>
+      <title>Intel/KNLにおける倍々精度疎行列ベクトル積の特性評価</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/ipsj_doi/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/ipsj_doi/</guid>
+      <description>Download PDF  </description>
+    </item>
+    
+    <item>
+      <title>Knights Landingにおける倍々精度基本演算のハイブリッド並列の特性評価</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/ipsj_ito/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/ipsj_ito/</guid>
+      <description>Download PDF  </description>
+    </item>
+    
+    <item>
+      <title>Many Integrated Corearchitecture における倍々精度疎行列ベクトル積</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/hpc145/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/hpc145/</guid>
+      <description>Download PDF  </description>
+    </item>
+    
+    <item>
+      <title>Robust and Fast BiCG Method using SIMD-Accelerated DD Arithmetic</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/precon2017/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/precon2017/</guid>
+      <description>Download Slide  </description>
+    </item>
+    
+    <item>
+      <title>Shorting of Transfer Duration Using File Transfer Striping</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/isat_kayama/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/isat_kayama/</guid>
+      <description>Download PDF  </description>
+    </item>
+    
+    <item>
       <title>SIMD Parallel Sparse Matrix-Vector and Transposed-Matrix-Vector Multiplication in DD Precision</title>
       <link>https://hishinuma-t.dev/papers/with_review/vecpar2016/</link>
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/with_review/vecpar2016/</guid>
       <description>Download PDF  Citation (bibtex) edings{hishinuma2016vecpar, title={SIMD parallel sparse matrix-vector and transposed-matrix-vector multiplication in DD precision}, author={Hishinuma, Toshiaki and Hasegawa, Hidehiko and Tanaka, Teruo}, booktitle={International Conference on Vector and Parallel Processing}, pages={21--34}, year={2016}, organization={Springer} } Abstract We accelerate a double-precision sparse matrix and DD vector multiplication (DD-SpMV) and its transposition and DD vector multiplication (DD-TSpMV) using SIMD AVX2. AVX2 requires changing the memory access pattern to allow four consecutive 64-bit elements to be read at once.</description>
+    </item>
+    
+    <item>
+      <title>京・FX10における倍々精度演算の高速化</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/hpc151/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/hpc151/</guid>
+      <description>Download PDF  </description>
+    </item>
+    
+    <item>
+      <title>倍精度BCRS形式疎行列と倍々精度ベクトル積のAVX2による高速計算</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/mpcomp4/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/mpcomp4/</guid>
+      <description>Download Slide  </description>
+    </item>
+    
+    <item>
+      <title>反復解法ライブラリ向け倍々精度演算のAVXを用いた高速化</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/hpc135/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/hpc135/</guid>
+      <description>Download PDF  </description>
+    </item>
+    
+    <item>
+      <title>疎行列ベクトル積に対するOpenMPスケジューリング方式の分析</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/hpcs2014/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/hpcs2014/</guid>
+      <description>Download PDF  Download Poster PDF  </description>
     </item>
     
   </channel>
