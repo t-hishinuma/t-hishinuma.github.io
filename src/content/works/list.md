@@ -4,8 +4,7 @@ title: "Works (Software and Documents)"
 weight: 3
 images: [images/logo.png]
 
-date: 2019-12-04T05:50:48+09:00
-#lastmod: 2019-12-07T05:50:48+09:00
+date: 2020-2-16
 
 menu: {main, sidebar}
 draft: false

@@ -2,21 +2,19 @@
 <html lang='en'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='Toshiaki Hishinuma&#39;s web site'>
+<meta name='description' content='Download PDF  SlideShare '>
 <meta name='theme-color' content='black'>
 
-<meta property='og:title' content='Authors ,  hpc::numa.blog()'>
-<meta property='og:description' content='Toshiaki Hishinuma&#39;s web site'>
-<meta property='og:url' content='https://hishinuma-t.dev/authors/'>
+<meta property='og:title' content='PEZY-SC2上における倍々精度Rgemmの実装と評価 ,  hpc::numa.blog()'>
+<meta property='og:description' content='Download PDF  SlideShare '>
+<meta property='og:url' content='https://hishinuma-t.dev/papers/wo_review/jsiam_os2018/'>
 <meta property='og:site_name' content='hpc::numa.blog()'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content='2020-02-19T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='papers'><meta property='article:tag' content='paper'><meta property='article:published_time' content='2020-02-19T00:00:00Z'/><meta property='article:modified_time' content='2020-02-19T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
 
 <meta name="generator" content="Hugo 0.64.1" />
 
-  <title>Authors ,  hpc::numa.blog()</title>
-  <link rel='canonical' href='https://hishinuma-t.dev/authors/'>
-  
-    <link href="https://hishinuma-t.dev/authors/index.xml" rel="alternate" type="application/rss+xml" title="hpc::numa.blog()" />
+  <title>PEZY-SC2上における倍々精度Rgemmの実装と評価 ,  hpc::numa.blog()</title>
+  <link rel='canonical' href='https://hishinuma-t.dev/papers/wo_review/jsiam_os2018/'>
   
   
   <link rel='icon' href='/favicon.ico'>
@@ -38,7 +36,7 @@ if (!doNotTrack) {
   
 
 </head>
-<body class='taxonomyTerm type-authors taxonomy-author has-sidebar'>
+<body class='page type-papers has-sidebar has-emoji'>
 
   <div class='site'><div id='sidebar' class='sidebar'>
   <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
@@ -267,23 +265,133 @@ if (!doNotTrack) {
       <main id='content'>
 
 
-<header class='header'>
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'>Authors</h1>
-
+      <h1 class='title'>PEZY-SC2上における倍々精度Rgemmの実装と評価</h1>
       
 
     </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2020-02-19T00:00:00Z'>2020, Feb 19</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+One min read
+</span>
+
+
+  
+  
+</div>
+
+
+  
+
+
+<style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left; 
+height: 36px; 
+width: 32px; 
+float: left; 
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.pinterest:hover > svg {fill: #CB2027;}
+#share-buttons > div.gplus:hover > svg {fill: #dd4b39;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.pinterest > svg {height: 20px; margin-top: 9px;}
+#share-buttons > div.gplus > svg {height: 17px; margin-top: 9px; position: relative; left: 1px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+<span style="color: silver;">Share on: </span><div id="share-buttons">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="Hishinuma_t">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+
   </div>
 </header>
 
-
-<div class='container list-container'>
-  <ul class='list'>
   
-  </ul>
+  
+
+  <div class='container entry-content'>
+  <h1 id="download-pdf-httpsstoragegoogleapiscomnuma_blogetcicon_pdfpng1">Download PDF <a href="https://storage.googleapis.com/numa_blog/publications/JSIAM_OS2018.pdf"><img src="https://storage.googleapis.com/numa_blog/etc/icon_pdf.png" alt=""></a></h1>
+<h1 id="slidesharepzqd-slide"><a href="https://www.slideshare.net/hishinuma/pezysc2rgemm">SlideShare</a></h1>
+
 </div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/paper/'>paper</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/papers/wo_review/hpc167/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>PEZY-SC2上における倍々精度演算ライブラリpzqdを用いた倍々精度Rgemmの高速化</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/papers/wo_review/siam_pp18/'>
+        <span class='screen-reader-text'>Next post: </span>Implementation and Evaluation of BLAS on PEZY-SC/SC2 Processor<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+
 
       </main>
 
@@ -302,4 +410,25 @@ if (!doNotTrack) {
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

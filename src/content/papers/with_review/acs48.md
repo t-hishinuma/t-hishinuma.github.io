@@ -2,7 +2,7 @@
 title: "AVX2を用いた倍精度BCRS形式疎行列と倍々精度ベクトル積の高速化"
 images: [images/logo.png]
 
-date: 2019-12-19
+date: 2020-02-19
 
 emoji: true
 mathjax: true

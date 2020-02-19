@@ -4,22 +4,21 @@
   
   <url>
     <loc>https://hishinuma-t.dev/</loc>
-    <lastmod>2020-02-15T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hishinuma-t.dev/about/</loc>
-    <lastmod>2019-12-04T05:50:48+09:00</lastmod>
+    <lastmod>2020-02-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hishinuma-t.dev/papers/list/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hishinuma-t.dev/works/list/</loc>
-    <lastmod>2019-12-04T05:50:48+09:00</lastmod>
   </url>
   
   <url>
@@ -27,58 +26,73 @@
   </url>
   
   <url>
-    <loc>https://hishinuma-t.dev/about/privacy/</loc>
-    <lastmod>2020-02-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hishinuma-t.dev/papers/with_review/ppam2013/</loc>
-    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hishinuma-t.dev/papers/with_review/acs48/</loc>
-    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hishinuma-t.dev/papers/with_review/hpcs2013/</loc>
-    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/papers/wo_review/siam_pp18/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hishinuma-t.dev/tags/paper/</loc>
-    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hishinuma-t.dev/papers/</loc>
-    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/papers/wo_review/jsiam_os2018/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/papers/wo_review/hpc167/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/papers/wo_review/opencae2018/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hishinuma-t.dev/papers/with_review/icces2019/</loc>
-    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hishinuma-t.dev/papers/with_review/vecpar2016/</loc>
-    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hishinuma-t.dev/tags/</loc>
-    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hishinuma-t.dev/papers/with_review/cse2016/</loc>
-    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hishinuma-t.dev/works/</loc>
-    <lastmod>2019-12-04T05:50:48+09:00</lastmod>
+    <loc>https://hishinuma-t.dev/about/privacy/</loc>
+    <lastmod>2020-02-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -91,6 +105,10 @@
   
   <url>
     <loc>https://hishinuma-t.dev/series/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/works/</loc>
   </url>
   
 </urlset>

@@ -2,7 +2,7 @@
 title: "pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS."
 images: [images/logo.png]
 
-date: 2019-12-19
+date: 2020-02-19
 
 emoji: true
 mathjax: true

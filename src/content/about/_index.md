@@ -4,7 +4,7 @@ title: "菱沼 利彰 (Toshiaki Hishinuma)"
 images: [images/logo.png]
 weight: 1
 
-date: 2019-12-04T05:50:48+09:00
+date: 2020-02-16
 
 menu: {main, sidebar}
 draft: false

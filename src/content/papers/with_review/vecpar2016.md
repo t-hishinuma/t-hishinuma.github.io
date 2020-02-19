@@ -2,7 +2,7 @@
 title: "SIMD Parallel Sparse Matrix-Vector and Transposed-Matrix-Vector Multiplication in DD Precision"
 images: [images/logo.png]
 
-date: 2019-12-19
+date: 2020-02-19
 
 emoji: true
 mathjax: true
