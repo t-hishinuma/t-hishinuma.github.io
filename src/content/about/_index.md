@@ -12,7 +12,7 @@ emoji: true
 mathjax: true
 ---
 
-# About
+# Current Status
 * [科学計算総合研究所][3] 研究員\
 	(Researcher, RICOS. Co. Ltd.)
 * 工学院大学 工学研究科 情報学専攻 情報学修士 ([HPCL Lab.][1])\
@@ -33,7 +33,7 @@ mathjax: true
 * High precision arithmetics
 	* Double-Double precision
 	* GMP, MPFR
-* Optimize CAE softwares
+* Optimize CAE Softwares
 	* FrontISTR
 	* OpenFOAM
 

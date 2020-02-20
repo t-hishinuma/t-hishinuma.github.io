@@ -56,7 +56,7 @@ More Information (pdf, citation, other)</description>
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/wo_review/hpc148/</guid>
-      <description>Download PDF  </description>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc148, title ={AVX2を用いた倍々精度反復解法の高速化} author={佐々木信一 and 菱沼利彰 and 藤井昭宏 and 田中輝雄} journal={{情報処理学会研究報告}}, volume={2018-HPC-148}, number={9}, pages={1--7}, year={2015} } </description>
     </item>
     
     <item>
@@ -150,7 +150,7 @@ Links HPCS2013
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/wo_review/hpc152/</guid>
-      <description>Download PDF  </description>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc152, title={GMPライブラリを用いた任意多倍長プログラムへの自動変換機構の提案} author={榊原巧磨 and 佐々木信一 and 菱沼利彰 and 藤井昭宏 and 田中輝雄 and 平澤将一} journal={{情報処理学会研究報告}}, volume={2018-HPC-152}, number={6}, pages={1--8}, year={2015} } </description>
     </item>
     
     <item>
@@ -195,7 +195,7 @@ Links HPCS2013
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/wo_review/hpc145/</guid>
-      <description>Download PDF  </description>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc145, title={Many Integrated Corearchitecture における倍々精度疎行列ベクトル積} author={佐々木信一 and 菱沼利彰 and 藤井昭宏 and 田中輝雄} journal={{情報処理学会研究報告}}, volume={2018-HPC-145}, number={16}, pages={1--7}, year={2014} } </description>
     </item>
     
     <item>
@@ -213,7 +213,7 @@ Links HPCS2013
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/wo_review/hpc167/</guid>
-      <description>Download PDF  </description>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc167, title={PEZY-SC2 上における倍々精度演算ライブラリ pzqd を用いた倍々精度 Rgemm の高速化}, author={菱沼利彰 and 中田真秀}, journal={{情報処理学会研究報告}}, volume={2018-HPC-167}, number={10}, pages={1--9}, year={2018} } </description>
     </item>
     
     <item>
@@ -285,7 +285,7 @@ Links HPCS2013
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/wo_review/hpc151/</guid>
-      <description>Download PDF  </description>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc151, title={京・FX10における倍々精度演算の高速化} author={佐々木信一 and 菱沼利彰 and 藤井昭宏 and 田中輝雄 and 椋木大地 and 今村俊幸} journal={{情報処理学会研究報告}}, volume={2018-HPC-151}, number={15}, pages={1--7}, year={2015} } </description>
     </item>
     
     <item>
@@ -303,7 +303,7 @@ Links HPCS2013
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/wo_review/hpc135/</guid>
-      <description>Download PDF  </description>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc167, title={反復解法ライブラリ向け倍々精度演算のAVXを用いた高速化} author={菱沼利彰 and 浅川圭介 and 藤井昭宏 and 田中輝雄 and 長谷川秀彦} journal={{情報処理学会研究報告}}, volume={2018-HPC-135}, number={16}, pages={1--8}, year={2012} } </description>
     </item>
     
     <item>
@@ -312,7 +312,7 @@ Links HPCS2013
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/wo_review/hpc157/</guid>
-      <description>Download PDF  </description>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc157, title={多倍長精度プログラムの自動生成機構Xev-GMPにおける混合精度プログラムの生成と評価} author={榊原巧磨 and 佐々木信一 and 菱沼利彰 and 藤井昭宏 and 田中輝雄 and 平澤将一} author={斯波柾 and 菱沼利彰 and 田中輝雄 and 藤井昭宏 and 平澤将一} journal={{情報処理学会研究報告}}, volume={2018-HPC-157}, number={3}, pages={1--8}, year={2016} } </description>
     </item>
     
     <item>

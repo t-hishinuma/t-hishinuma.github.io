@@ -36,7 +36,7 @@
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/wo_review/hpc167/</guid>
-      <description>Download PDF  </description>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc167, title={PEZY-SC2 上における倍々精度演算ライブラリ pzqd を用いた倍々精度 Rgemm の高速化}, author={菱沼利彰 and 中田真秀}, journal={{情報処理学会研究報告}}, volume={2018-HPC-167}, number={10}, pages={1--9}, year={2018} } </description>
     </item>
     
     <item>
