@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>AVX Acceleration of DD Arithmetic Between a Sparse Matrix and Vector</title>
+      <link>https://hishinuma-t.dev/papers/with_review/ppam2013/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/with_review/ppam2013/</guid>
+      <description>Download PDF  Citation (bibtex) @inproceedings{hishinuma2013ppam, title={AVX acceleration of DD arithmetic between a sparse matrix and vector}, author={Hishinuma, Toshiaki and Fujii, Akihiro and Tanaka, Teruo and Hasegawa, Hidehiko}, booktitle={International Conference on Parallel Processing and Applied Mathematics}, pages={622--631}, year={2013}, organization={Springer} } Abstract High precision arithmetic can improve the convergence of Krylov subspace methods; however, it is very costly. One system of high precision arithmetic is double-double (DD) arithmetic, which uses more than 20 double precision operations for one DD operation.</description>
+    </item>
+    
+    <item>
       <title>Implementation and Evaluation of BLAS on PEZY-SC/SC2 Processor</title>
       <link>https://hishinuma-t.dev/papers/wo_review/siam_pp18/</link>
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
@@ -45,7 +54,7 @@
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/wo_review/opencae2018/</guid>
-      <description>Download PDF  </description>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_opencae2018, title={{PEZY-SC3に向けたPEZY-SCシリーズ向けOpenFOAMの実装と性能評価}}, author={菱沼利彰 and 黒澤範行}, journal={{オープンCAEシンポジウム2018 梗概集}}, pages={1--6}, number={A25}, year={2018} } </description>
     </item>
     
     <item>
@@ -55,6 +64,15 @@
       
       <guid>https://hishinuma-t.dev/papers/with_review/icces2019/</guid>
       <description>Download PDF  Citation (bibtex) @inproceedings{hishinuma2019pzqd, title={pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS}, author={Hishinuma, Toshiaki and Nakata, Maho}, booktitle={International Conference on Computational \&amp;amp; Experimental Engineering and Sciences}, pages={717--736}, year={2019}, organization={Springer} } Abstract We implemented pzqd, a high precision arithmetic library for the PEZY-SC2 that is based on Hida \etal{}&amp;lsquo;s QD library. PEZY-SC2 is an MIMD (multiple instruction stream, multiple data stream) -type many-core processor. We optimized matrix-matrix multiplication (Rgemm) in double-double precision (DD) on the PEZY-SC2.</description>
+    </item>
+    
+    <item>
+      <title>SIMD Parallel Sparse Matrix-Vector and Transposed-Matrix-Vector Multiplication in DD Precision</title>
+      <link>https://hishinuma-t.dev/papers/with_review/vecpar2016/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/with_review/vecpar2016/</guid>
+      <description>Download PDF  Citation (bibtex) edings{hishinuma2016vecpar, title={SIMD parallel sparse matrix-vector and transposed-matrix-vector multiplication in DD precision}, author={Hishinuma, Toshiaki and Hasegawa, Hidehiko and Tanaka, Teruo}, booktitle={International Conference on Vector and Parallel Processing}, pages={21--34}, year={2016}, organization={Springer} } Abstract We accelerate a double-precision sparse matrix and DD vector multiplication (DD-SpMV) and its transposition and DD vector multiplication (DD-TSpMV) using SIMD AVX2. AVX2 requires changing the memory access pattern to allow four consecutive 64-bit elements to be read at once.</description>
     </item>
     
   </channel>

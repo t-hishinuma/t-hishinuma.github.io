@@ -12,7 +12,12 @@ emoji: true
 mathjax: true
 ---
 
-# 作成中
+# Tag Search
+[High precision arithmetic](/tags/multi-precision),
+[With Review](/tags/with_review),
+[PEZY](/tags/pezy),
+[SIMD](/tags/simd),
+[poster](/tags/poster),
 
 # Journal
 1. 菱沼 利彰, 藤井 昭宏, 田中 輝雄, 長谷川 秀彦, 
@@ -62,7 +67,7 @@ PEZY-SC2上における倍々精度演算ライブラリpzqdを用いた倍々�
 
 1. 菱沼 利彰, 黒澤 範行, 
 PEZY-SC3に向けたPEZY-SCシリーズ向けOpenFOAMの実装と性能評価,
-オープンCAEシンポジウム2018, pp. 1--6, 川崎, 2018.12. \
+オープンCAEシンポジウム2018, A25, pp. 1--6, 川崎, 2018.12. \
 [**More Information (pdf, citation, other)**](/papers/wo_review/opencae2018)
  
 1. 菱沼 利彰, 中田 真秀, 
@@ -162,7 +167,7 @@ Eugene, Oregon, USA, July 2014 (Poster presentation).\
 1. 佐々木 信一, 菱沼 利彰, 藤井 昭宏, 田中 輝雄, 
 Many Integrated Corearchitecture における倍々精度疎行列ベクトル積,
 情報処理学会研究報告, vol. 2014-HPC-145 (SWoPP2014), No. 16, pp. 1--7, 2014.7.\
-[**More Information (pdf, citation, other)**](/papers/wo_review/HPC145)
+[**More Information (pdf, citation, other)**](/papers/wo_review/hpc145)
  
 1. 佐藤 真之介, 菱沼 利彰, 藤井 昭宏, 田中 輝雄,
 AVXを用いたBCRS形式疎行列ベクトル積の特性評価,

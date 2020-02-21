@@ -83,11 +83,6 @@
   </url>
   
   <url>
-    <loc>https://hishinuma-t.dev/tags/dd&#43;simd/</loc>
-    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hishinuma-t.dev/papers/wo_review/vecpar2014/</loc>
     <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
@@ -128,6 +123,11 @@
   </url>
   
   <url>
+    <loc>https://hishinuma-t.dev/tags/multi-precision/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hishinuma-t.dev/tags/paper/</loc>
     <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
@@ -158,6 +158,11 @@
   </url>
   
   <url>
+    <loc>https://hishinuma-t.dev/tags/poster/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hishinuma-t.dev/papers/with_review/icces2019/</loc>
     <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
@@ -169,6 +174,11 @@
   
   <url>
     <loc>https://hishinuma-t.dev/papers/wo_review/isat_kayama/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/tags/simd/</loc>
     <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -189,6 +199,11 @@
   
   <url>
     <loc>https://hishinuma-t.dev/posts/hugo_web/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/tags/with_review/</loc>
     <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
   

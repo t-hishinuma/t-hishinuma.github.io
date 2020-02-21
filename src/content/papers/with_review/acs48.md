@@ -6,7 +6,7 @@ date: 2020-02-19
 
 emoji: true
 mathjax: true
-tags: ["paper", "DD+SIMD"]
+tags: ["Paper", "Multi-Precision", "SIMD", "with_review"]
 ---
 
 # Download PDF [![](https://storage.googleapis.com/numa_blog/etc/icon_pdf.png)][ACS48] 
@@ -17,9 +17,9 @@ tags: ["paper", "DD+SIMD"]
 
 ```
 @article{hishinuma2014acs,
-	title={AVX2 を用いた倍精度 BCRS 形式疎行列と倍々精度ベクトル積の高速化},
+	title={{AVX2 を用いた倍精度 BCRS 形式疎行列と倍々精度ベクトル積の高速化}},
 	author={菱沼利彰 and 藤井昭宏 and 田中輝雄 and 長谷川秀彦},
-	journal={情報処理学会論文誌コンピューティングシステム (ACS)},
+	journal={{情報処理学会論文誌コンピューティングシステム (ACS)}},
 	volume={7},
 	number={4},
 	pages={25--33},
