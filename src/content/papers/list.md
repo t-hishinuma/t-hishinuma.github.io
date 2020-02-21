@@ -17,7 +17,7 @@ mathjax: true
 [With Review](/tags/with_review),
 [PEZY](/tags/pezy),
 [SIMD](/tags/simd),
-[poster](/tags/poster),
+[Poster](/tags/poster),
 
 # Journal
 1. 菱沼 利彰, 藤井 昭宏, 田中 輝雄, 長谷川 秀彦, 
