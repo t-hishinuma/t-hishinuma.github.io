@@ -2,9 +2,9 @@
 title: "Webサイトをgithub pages + Hugoに移行した話"
 images: [images/logo.png]
 
-date: 2020-02-19
+date: 2020-02-21
 
-tags: ["雑記", "web"]
+tags: ["雑記", "Web"]
 
 draft: false
 emoji: true
