@@ -7,7 +7,6 @@ weight: -1
 images: [images/logo.png]
 ---
 
-# このページは作成中です (2020/02~)
 HPCエンジニアの[Hishinuma\_t][1] の個人ページです．
 
 業績やソフトウェアの紹介およびBlog目的で運用しています．
