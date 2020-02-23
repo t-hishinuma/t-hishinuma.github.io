@@ -29,7 +29,9 @@ int main(){
 char str[128];
 __float128 a;
 
-a = 1.2345678901234567890q;
+__float128 a = 1.2345678901234567890q;
+__float128 b = 1.234;
+a = a + b;
 
 quadmath_snprintf(str,128,"%.40Qf",a);
 printf("%s",str);

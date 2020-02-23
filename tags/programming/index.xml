@@ -22,7 +22,7 @@
 簡単な使い方としては， libquadmathを使うことになる．
 __float128 型を宣言して使う．倍精度を代入して使うこともできる． 4倍精度数を表現したい場合には後ろに q をつけて使う．
 四則演算子や代入なども使えるが，printfだけはchar型の配列に変換してから使う必要がある． 適当なサンプルは以下のとおり：
-#include&amp;lt;quadmath.h&amp;gt;#include&amp;lt;stdio.h&amp;gt;int main(){ char str[128]; __float128 a; a = 1.2345678901234567890q; quadmath_snprintf(str,128,&amp;#34;%.40Qf&amp;#34;,a); printf(&amp;#34;%s&amp;#34;,str); return (0); } $ g++ -lquadmath -m128bit-long-double test.c こんな感じに作れる．I/Oがなければ同じプログラムでtemplate使って共通化できるが， I/Oだけは色々調べたがどうしようもなさそうだった．
+#include&amp;lt;quadmath.h&amp;gt;#include&amp;lt;stdio.h&amp;gt;int main(){ char str[128]; __float128 a; __float128 a = 1.2345678901234567890q; __float128 b = 1.234; a = a + b; quadmath_snprintf(str,128,&amp;#34;%.40Qf&amp;#34;,a); printf(&amp;#34;%s&amp;#34;,str); return (0); } $ g++ -lquadmath -m128bit-long-double test.c こんな感じに作れる．I/Oがなければ同じプログラムでtemplate使って共通化できるが， I/Oだけは色々調べたがどうしようもなさそうだった．
 試しに内積を実装して時間を測ってみた．
 コードはここにおいた．
 出力を外に出せば，普通に倍精度と共通化してtemplateで作れた．
@@ -31,7 +31,7 @@ gcpで16コアのHaswellマシンを借りて実行してみた．
 gccはgcc version 8.2.1 20180905 (Red Hat 8.2.1-3)
 OSはCentOS Linux release 8.0.1905 (Core)
 表 各ベクトルサイズにおける倍精度と4倍精度の実行時間 [ms]
-    double quad     10^3 0.028 0.48   10^6 0.</description>
+    double quad     10^3 0.</description>
     </item>
     
   </channel>
