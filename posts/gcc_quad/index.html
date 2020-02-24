@@ -3,39 +3,37 @@
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <meta name='description' content='2011年，5月のリリースでgcc4.6から4倍精度が入った． 昔のブログで軽く使い方を書いたが他のサイトに情報があまり増えてなかったし，私の記事もできが悪かったのでこっちに移転したので改めてまとめてみた．
-簡単な使い方としては， libquadmathを使うことになる．
+使い方 簡単な使い方としては， libquadmathを使うことになる．
 __float128 型を宣言して使う．倍精度を代入して使うこともできる． 4倍精度数を表現したい場合には後ろに q をつけて使う．
 四則演算子や代入なども使えるが，printfだけはchar型の配列に変換してから使う必要がある． 適当なサンプルは以下のとおり：
 #include&lt;quadmath.h&gt;#include&lt;stdio.h&gt;int main(){ char str[128]; __float128 a = 1.2345678901234567890q; __float128 b = 1.234; a = a &#43; b; quadmath_snprintf(str,128,&#34;%.40Qf&#34;,a); printf(&#34;%s&#34;,str); return (0); } $ g&#43;&#43; -lquadmath -m128bit-long-double test.c こんな感じに作れる．I/Oがなければ同じプログラムでtemplate使って共通化できるが， I/Oだけは色々調べたがどうしようもなさそうだった．
-試しに内積を実装して時間を測ってみた．
+性能評価 試しに内積を実装して時間を測ってみた．
 コードはここにおいた．
 出力を外に出せば，普通に倍精度と共通化してtemplateで作れた．
 gcpで16コアのHaswellマシンを借りて実行してみた．
 あんまり参考にはならないが Intel(R) Xeon(R) CPU @ 2.30GHzとのこと．
 gccはgcc version 8.2.1 20180905 (Red Hat 8.2.1-3)
-OSはCentOS Linux release 8.0.1905 (Core)
-表 各ベクトルサイズにおける倍精度と4倍精度の実行時間 [ms]
-    double quad     10^3 0.'>
+OSはCentOS Linux release 8.0.1905 (Core)\
+表 各ベクトルサイズにおける倍精度と4倍精度の実行時間 [ms] (-O0, 最適化オプションなし，16 threads)'>
 <meta name='theme-color' content='black'>
 
 <meta property='og:title' content='gccの4倍精度の使い方と性能 [gcc quadruple precision] ,  hpc::numa.blog()'>
 <meta property='og:description' content='2011年，5月のリリースでgcc4.6から4倍精度が入った． 昔のブログで軽く使い方を書いたが他のサイトに情報があまり増えてなかったし，私の記事もできが悪かったのでこっちに移転したので改めてまとめてみた．
-簡単な使い方としては， libquadmathを使うことになる．
+使い方 簡単な使い方としては， libquadmathを使うことになる．
 __float128 型を宣言して使う．倍精度を代入して使うこともできる． 4倍精度数を表現したい場合には後ろに q をつけて使う．
 四則演算子や代入なども使えるが，printfだけはchar型の配列に変換してから使う必要がある． 適当なサンプルは以下のとおり：
 #include&lt;quadmath.h&gt;#include&lt;stdio.h&gt;int main(){ char str[128]; __float128 a = 1.2345678901234567890q; __float128 b = 1.234; a = a &#43; b; quadmath_snprintf(str,128,&#34;%.40Qf&#34;,a); printf(&#34;%s&#34;,str); return (0); } $ g&#43;&#43; -lquadmath -m128bit-long-double test.c こんな感じに作れる．I/Oがなければ同じプログラムでtemplate使って共通化できるが， I/Oだけは色々調べたがどうしようもなさそうだった．
-試しに内積を実装して時間を測ってみた．
+性能評価 試しに内積を実装して時間を測ってみた．
 コードはここにおいた．
 出力を外に出せば，普通に倍精度と共通化してtemplateで作れた．
 gcpで16コアのHaswellマシンを借りて実行してみた．
 あんまり参考にはならないが Intel(R) Xeon(R) CPU @ 2.30GHzとのこと．
 gccはgcc version 8.2.1 20180905 (Red Hat 8.2.1-3)
-OSはCentOS Linux release 8.0.1905 (Core)
-表 各ベクトルサイズにおける倍精度と4倍精度の実行時間 [ms]
-    double quad     10^3 0.'>
+OSはCentOS Linux release 8.0.1905 (Core)\
+表 各ベクトルサイズにおける倍精度と4倍精度の実行時間 [ms] (-O0, 最適化オプションなし，16 threads)'>
 <meta property='og:url' content='https://hishinuma-t.dev/posts/gcc_quad/'>
 <meta property='og:site_name' content='hpc::numa.blog()'>
-<meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='HPC'><meta property='article:tag' content='Multi-precision'><meta property='article:tag' content='Programming'><meta property='article:published_time' content='2020-02-23T00:00:00Z'/><meta property='article:modified_time' content='2020-02-23T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='HPC'><meta property='article:tag' content='Multi-precision'><meta property='article:tag' content='Programming'><meta property='article:published_time' content='2020-02-24T00:00:00Z'/><meta property='article:modified_time' content='2020-02-24T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
 
 <meta name="generator" content="Hugo 0.64.1" />
 
@@ -178,7 +176,7 @@ if (!doNotTrack) {
   <div class='meta'>
     <span>
   <span class='screen-reader-text'>Posted on </span>
-  <time datetime='2020-02-23T00:00:00Z'>2020, Feb 23</time>
+  <time datetime='2020-02-24T00:00:00Z'>2020, Feb 24</time>
 </span>
 
   </div>
@@ -327,7 +325,7 @@ if (!doNotTrack) {
   
 </svg>
 <span class='screen-reader-text'>Posted on </span>
-  <time class='entry-date' datetime='2020-02-23T00:00:00Z'>2020, Feb 23</time>
+  <time class='entry-date' datetime='2020-02-24T00:00:00Z'>2020, Feb 24</time>
 </span>
 
   
@@ -391,6 +389,7 @@ text-align: center;
   <div class='container entry-content'>
   <p>2011年，5月のリリースでgcc4.6から4倍精度が入った．
 昔のブログで軽く使い方を書いたが他のサイトに情報があまり増えてなかったし，私の記事もできが悪かったのでこっちに移転したので改めてまとめてみた．</p>
+<h1 id="使い方">使い方</h1>
 <p>簡単な使い方としては，
 <a href="https://gcc.gnu.org/onlinedocs/libquadmath/">libquadmath</a>を使うことになる．</p>
 <p><code>__float128</code> 型を宣言して使う．倍精度を代入して使うこともできる．
@@ -414,14 +413,15 @@ printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</spa
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ g++ -lquadmath -m128bit-long-double test.c
 </code></pre></div><p>こんな感じに作れる．I/Oがなければ同じプログラムでtemplate使って共通化できるが，
 I/Oだけは色々調べたがどうしようもなさそうだった．</p>
+<h1 id="性能評価">性能評価</h1>
 <p>試しに内積を実装して時間を測ってみた．<br>
 コードは<a href="https://github.com/t-hishinuma/gcc_quad_test">ここ</a>においた．</p>
 <p>出力を外に出せば，普通に倍精度と共通化してtemplateで作れた．</p>
 <p>gcpで16コアのHaswellマシンを借りて実行してみた．<br>
 あんまり参考にはならないが <code>Intel(R) Xeon(R) CPU @ 2.30GHz</code>とのこと．</p>
 <p>gccは<code>gcc version 8.2.1 20180905 (Red Hat 8.2.1-3)</code><br>
-OSは<code>CentOS Linux release 8.0.1905 (Core)</code></p>
-<p><strong>表 各ベクトルサイズにおける倍精度と4倍精度の実行時間 [ms]</strong></p>
+OSは<code>CentOS Linux release 8.0.1905 (Core)</code>\</p>
+<p><strong>表 各ベクトルサイズにおける倍精度と4倍精度の実行時間 [ms] (-O0, 最適化オプションなし，16 threads)</strong></p>
 <table>
 <thead>
 <tr>
@@ -449,6 +449,77 @@ OSは<code>CentOS Linux release 8.0.1905 (Core)</code></p>
 </tbody>
 </table>
 <p>まぁ7~8倍くらい時間がかかるが，並列化も簡単でコードも倍精度から移行するのはあまり難しくはない．</p>
+<h2 id="加筆">加筆</h2>
+<p>最適化オプションを付けていなかったのと，スレッド数を変えたりしていなかった．
+内積だし大して考えなくてもいいだろうとタカをくくっていたが，実験してみたら色々と想像より変化があったので加筆する．<br>
+オプションは上記のものに加えて <code>-O3 -fopenmp</code> をつけた．</p>
+<p><strong>表 各ベクトルサイズにおける倍精度と4倍精度の実行時間 [ms] (1 thread)</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>double</th>
+<th>quad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10^3</td>
+<td>0.013</td>
+<td>0.051</td>
+</tr>
+<tr>
+<td>10^6</td>
+<td>2.14</td>
+<td>51.6</td>
+</tr>
+<tr>
+<td>10^9</td>
+<td>1987</td>
+<td>53611</td>
+</tr>
+</tbody>
+</table>
+<p><strong>表 各ベクトルサイズにおける倍精度と4倍精度の実行時間 [ms] (16 threads)</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>double</th>
+<th>quad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10^3</td>
+<td>0.003</td>
+<td>0.025</td>
+</tr>
+<tr>
+<td>10^6</td>
+<td>1.28</td>
+<td>6.25</td>
+</tr>
+<tr>
+<td>10^9</td>
+<td>218</td>
+<td>6112</td>
+</tr>
+</tbody>
+</table>
+<p>マルチスレッド化の効果はサイズ10^9でdoubleが9.1倍，quadは8/77倍でそれなりに出ている．
+16倍出ない理由はわからない．どちらもメモリでサチっているということだろうか？(<strong>quadもサチるか？？要調査</strong>)</p>
+<p>ただ16 threads同士の最適化オプションあり/なしがちょっと問題で，
+doubleはかなり最適化が効いてO3とO0で4.1倍も速くなったが，
+quadだとほとんど効果がない．libquadmathを呼んでいるだけだから確かにこうなるだろうが，
+オプションあり同士だと30倍の性能差がある．
+やはりquadmathは遅い．．</p>
+<h2 id="今後の課題">今後の課題</h2>
+<ul>
+<li>こういうの内積でやるのが正しいか？(コメントありましたら<a href="https://github.com/t-hishinuma/t-hishinuma.github.io/issues">Issue</a>かTwitterで)</li>
+<li>libquadmathの4倍精度の実装についてまとめたい</li>
+<li>QDライブラリについてまとめたい</li>
+</ul>
 
 </div>
 

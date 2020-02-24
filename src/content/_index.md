@@ -13,6 +13,9 @@ HPCエンジニアの[Hishinuma\_t][1] の個人ページです．
 
 お仕事の依頼等はTwitterのDMかhishinuma.toshiaki[at]gmail.comまで
 
+このブログについてなにかコメントありましたら[Issue][3]かTwitterまで
+
 プライバシーポリシーについては[こちら](about/privacy)
 
 [1]:https://twitter.com/Hishinuma_t
+[2]: https://github.com/t-hishinuma/t-hishinuma.github.io/issues
