@@ -12,7 +12,7 @@ mathjax: true
 ---
 # TL; DR
 
-github.ioとHugoでWebページを移行したぜ！
+github pagesとHugoでWebページを移行したぜ！
 
 # はじめに
 要するにWebページを新しい技術(?)を試しつつ作った．
@@ -27,17 +27,25 @@ github.ioとHugoでWebページを移行したぜ！
 はてなブログをProにすることも考えたが，Wordpressのサービスだけを利用するのに月額1008円．
 そんなのWordpressのSaaSの代金としては信じがたい価格のように思えた
 (だってconohaとかさくらインターネットで他のことにも使える2 coreくらいのVPSが借りられてしまう)ので，
-Google Domainsで年額1400円のドメイン取って，github.io (無料) + Hugoで静的Webサイトを作ってみた．
+Google Domainsで年額1400円のドメイン取って，github pages (無料) + Hugoで静的Webサイトを作ってみた．
 
 それぞれ簡単に説明すると，HugoはMarkdownからhtmlを生成するツールで，
 HTMLを直接書かなくていいから楽だというもの．
 記事はmarkdownで書いて，全体設定はtomlファイルで指定すると，Hugoコマンドがうまいことhtmlを生成してくれる．
 
-github.ioというのはgithubのトップディレクトリにindex.htmlがあればWebページを公開してくれるというサービスで，独自のドメインも設定できる．
-独自のドメインにこだわらなければ完全に無料で使えるが，
-あまりに大量のトラフィックがあるとgithubから怒られるらしい(どう考えてもいらぬ心配)．
+github pagesというのはgithubのトップディレクトリにindex.htmlがあればWebページを公開してくれるというサービスで，独自のドメインも設定できる．
+独自のドメインにこだわらなければ完全に無料で使える．
+そうそう超えないだろうけどgithub pagesには[いくつかの制限][git_limit]がある．
+執筆している2020年2月の時点では：
+> GitHub Pages サイトには、次の使用制限があります:
+> GitHub Pages ソースリポジトリには、1GB の推奨上限があります。詳しい情報については、「私のディスク容量はいくつですか？」を参照してください。
+> 公開されたGitHub Pagesのサイトは1GB以上であってはなりません。
+> GitHub Pages サイトには、月当たり 100GB のソフトな帯域幅制限があります。
+> GitHub Pages サイトには、時間当たり 10 ビルドのソフトな制限があります。
 
-このページは既に[私のgithub](https://github.com/t-hishinuma/t-hishinuma.github.io)に置かれていて，
+とのことだが，まぁ基本的にいらぬ心配だろう．
+
+このページは既にMarkdownごと[私のgithub](https://github.com/t-hishinuma/t-hishinuma.github.io)に置かれていて，
 例えばこのページは `src/content/posts/hugo_web.md` から生成されて `/posts`に生成されているはずである．
 これなら万が一，github pagesの容量や制限がかかったとしても，手元にHTMLはあるのでサーバ借りて移すだけで簡単であろうというわけである．
 
@@ -150,7 +158,7 @@ server:
 ## 生成されたWebサイトの性能
 ここでgoogleのPageSpeed Insightの結果を御覧ください．
 
-![speed](https://storage.cloud.google.com/numa_blog/blog_photo/website_speed.png?hl=ja)
+![speed](https://storage.googleapis.com/numa_blog/blog_photo/website_speed.png)
 
 やった～～～～～～～\
 githubとgoogle cloud storageの速度が少し不安だったが無事100点であった．
@@ -164,3 +172,4 @@ githubとgoogle cloud storageの速度が少し不安だったが無事100点で
 [1]:https://blog.pepese.com/entry/hugo-basics/
 [2]:https://themes.gohugo.io/minimo/
 [cloud]:https://noi-labo.com/hugo-shortcode-for-optimized-images-cloudinary/
+[git_limit]: https://help.github.com/ja/github/working-with-github-pages/about-github-pages
