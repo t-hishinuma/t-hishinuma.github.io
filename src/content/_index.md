@@ -15,6 +15,8 @@ HPCエンジニアの[Hishinuma\_t][1] の個人ページです．
 
 このブログについてなにかコメントありましたら[Issue][2]かTwitterまで
 
+応援してくださる方: [欲しい物リスト][4]
+
 プライバシーポリシーについては[こちら](about/privacy)
 
 ## Current Status
@@ -28,3 +30,4 @@ HPCエンジニアの[Hishinuma\_t][1] の個人ページです．
 [1]: https://twitter.com/Hishinuma_t
 [2]: https://github.com/t-hishinuma/t-hishinuma.github.io/issues
 [3]: https://www.ricos.co.jp/
+[4]: https://www.amazon.co.jp/hz/wishlist/ls/2PFMM9FT4AVRC?&sort=priority
