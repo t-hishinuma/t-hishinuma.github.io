@@ -69,7 +69,8 @@ enable = true
 #header = ["breadcrumbs"]
 homepage = ["recent_posts"]
 #sidebar = ["about","search","sidebar_menu","taxonomy_cloud"]
-sidebar = ["about", "social_menu", "recent_posts", "taxonomy_cloud"]
+#sidebar = ["about", "social_menu", "recent_posts", "taxonomy_cloud"]
+sidebar = ["about", "social_menu", "taxonomy_cloud", "recent_posts"]
 #footer = ["social_menu"]
 
 [params.opengraph.twitter]
@@ -125,10 +126,10 @@ author = "authors"
 category = "categories"
 series = "series"
 tag = "tags"
+shuffle = false
 
 [permalinks]
 page = "/:slug/"
-
 
 [blackfriday]
 hrefTargetBlank = true
