@@ -2,19 +2,53 @@
 <html lang='en'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='Download Slide  '>
+<meta name='description' content='はじめに ちょっと前にすぐに導入方法とかコマンドを忘れて仕方がないので， bashrcに関数作ってGCPでよく使うコマンドを整理したので，忘れないうちにここに書いておく．
+テスト用なんかでマシンを立てて，ペペッとコマンド流したいときにやるための：
+ マシン一覧取得 マシン起動・停止 マシン接続 マシン削除  という作業を瞬殺する
+バイナリをtar.gzで落としてくるのでちゃんと動くか不安だったが，CygwinとWindows上のVM Ubuntu18.04と実機のCentOS8では動いた．
+WSLとMac？しらないけど動くんじゃない
+google cloud sdkのinstall くわしいことは公式
+yum とか apt でも入るって公式には書いてあるけどgoogleの認証情報を渡すコマンドをシステムに入れるのもなあとか思いながら(たぶん認証情報はユーザの場所に置かれるんだろうけど)，tar.gzがあったのでそっちを使うことにした．
+まず落としてきて，
+wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-280.0.0-linux-x86_64.tar.gz 入れたら解凍して /bin にパス通す．
+sh ./install.sh すればいいって公式には書いてあるけど，どこに入るのかよくわかんないから信じずに自分でパスを通しているポンコツが私です．
+gcloud components update するとupdateされるので知らんけどとりあえずやる
+初期設定 gcloud init するとgoogleアカウントの認証がはじまる． なんか適当にやってるとURLが出てくるのでコピってブラウザに貼ると認証する．
+gcloud compute instances list とかやるとマシンのリストが出てくれば勝ち
+使う 上で書いたgcloud compute instances listとか，
+gcloud compute instances start とか
+やれば良いんだけどコマンドが長くてカロリーの無駄． 新しいマシンを作る設定とかは更に長くてオプションも多いし疲れる．
+ってことでbashrcに関数作って纏めた．
+alias glist=&#39;gcloud compute instances list&#39; alias gssh_up=&#39;gcloud compute config-ssh&#39; gstart() {gcloud compute instances start $1; gcloud compute config-ssh} gstop() {gcloud compute instances stop $1} gtest_up(){ gcloud compute instances create $1 \ --boot-disk-auto-delete \ --maintenance-policy TERMINATE \ --preemptible \ --zone us-central1-a \ --image-family ubuntu-2004-lts --image-project ubuntu-os-cloud \ --custom-cpu 8 \ --custom-memory 16 \ --boot-disk-size 10 \ } gtest_up は与えられた引数の名前のマシンはubuntu20.'>
 <meta name='theme-color' content='black'>
 
-<meta property='og:title' content='倍精度BCRS形式疎行列と倍々精度ベクトル積のAVX2による高速計算 ,  hpc::numa.blog()'>
-<meta property='og:description' content='Download Slide  '>
-<meta property='og:url' content='https://hishinuma-t.dev/papers/wo_review/mpcomp4/'>
+<meta property='og:title' content='gcloud cloud sdkを使いやすいように環境を整理したので勉強したことをまとめる ,  hpc::numa.blog()'>
+<meta property='og:description' content='はじめに ちょっと前にすぐに導入方法とかコマンドを忘れて仕方がないので， bashrcに関数作ってGCPでよく使うコマンドを整理したので，忘れないうちにここに書いておく．
+テスト用なんかでマシンを立てて，ペペッとコマンド流したいときにやるための：
+ マシン一覧取得 マシン起動・停止 マシン接続 マシン削除  という作業を瞬殺する
+バイナリをtar.gzで落としてくるのでちゃんと動くか不安だったが，CygwinとWindows上のVM Ubuntu18.04と実機のCentOS8では動いた．
+WSLとMac？しらないけど動くんじゃない
+google cloud sdkのinstall くわしいことは公式
+yum とか apt でも入るって公式には書いてあるけどgoogleの認証情報を渡すコマンドをシステムに入れるのもなあとか思いながら(たぶん認証情報はユーザの場所に置かれるんだろうけど)，tar.gzがあったのでそっちを使うことにした．
+まず落としてきて，
+wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-280.0.0-linux-x86_64.tar.gz 入れたら解凍して /bin にパス通す．
+sh ./install.sh すればいいって公式には書いてあるけど，どこに入るのかよくわかんないから信じずに自分でパスを通しているポンコツが私です．
+gcloud components update するとupdateされるので知らんけどとりあえずやる
+初期設定 gcloud init するとgoogleアカウントの認証がはじまる． なんか適当にやってるとURLが出てくるのでコピってブラウザに貼ると認証する．
+gcloud compute instances list とかやるとマシンのリストが出てくれば勝ち
+使う 上で書いたgcloud compute instances listとか，
+gcloud compute instances start とか
+やれば良いんだけどコマンドが長くてカロリーの無駄． 新しいマシンを作る設定とかは更に長くてオプションも多いし疲れる．
+ってことでbashrcに関数作って纏めた．
+alias glist=&#39;gcloud compute instances list&#39; alias gssh_up=&#39;gcloud compute config-ssh&#39; gstart() {gcloud compute instances start $1; gcloud compute config-ssh} gstop() {gcloud compute instances stop $1} gtest_up(){ gcloud compute instances create $1 \ --boot-disk-auto-delete \ --maintenance-policy TERMINATE \ --preemptible \ --zone us-central1-a \ --image-family ubuntu-2004-lts --image-project ubuntu-os-cloud \ --custom-cpu 8 \ --custom-memory 16 \ --boot-disk-size 10 \ } gtest_up は与えられた引数の名前のマシンはubuntu20.'>
+<meta property='og:url' content='https://hishinuma-t.dev/posts/gcp_setup/'>
 <meta property='og:site_name' content='hpc::numa.blog()'>
-<meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='papers'><meta property='article:tag' content='Multi-Precision'><meta property='article:tag' content='SIMD'><meta property='article:published_time' content='2020-02-19T00:00:00Z'/><meta property='article:modified_time' content='2020-02-19T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='HPC'><meta property='article:tag' content='Software'><meta property='article:published_time' content='2020-05-03T00:00:00Z'/><meta property='article:modified_time' content='2020-05-03T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
 
 <meta name="generator" content="Hugo 0.68.3" />
 
-  <title>倍精度BCRS形式疎行列と倍々精度ベクトル積のAVX2による高速計算 ,  hpc::numa.blog()</title>
-  <link rel='canonical' href='https://hishinuma-t.dev/papers/wo_review/mpcomp4/'>
+  <title>gcloud cloud sdkを使いやすいように環境を整理したので勉強したことをまとめる ,  hpc::numa.blog()</title>
+  <link rel='canonical' href='https://hishinuma-t.dev/posts/gcp_setup/'>
   
   
   <link rel='icon' href='/favicon.ico'>
@@ -36,7 +70,7 @@ if (!doNotTrack) {
   
 
 </head>
-<body class='page type-papers has-sidebar has-emoji'>
+<body class='page type-posts has-sidebar has-emoji'>
 
   <div class='site'><div id='sidebar' class='sidebar'>
   <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
@@ -289,7 +323,7 @@ if (!doNotTrack) {
   <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'>倍精度BCRS形式疎行列と倍々精度ベクトル積のAVX2による高速計算</h1>
+      <h1 class='title'>gcloud cloud sdkを使いやすいように環境を整理したので勉強したことをまとめる</h1>
       
 
     </div>
@@ -303,7 +337,7 @@ if (!doNotTrack) {
   
 </svg>
 <span class='screen-reader-text'>Posted on </span>
-  <time class='entry-date' datetime='2020-02-19T00:00:00Z'>2020, Feb 19</time>
+  <time class='entry-date' datetime='2020-05-03T00:00:00Z'>2020, May 03</time>
 </span>
 
   
@@ -365,7 +399,91 @@ text-align: center;
   
 
   <div class='container entry-content'>
-  <h1 id="download-slide-httpsstoragegoogleapiscomnuma_blogetcicon_pdfpng1">Download Slide <a href="https://storage.googleapis.com/numa_blog/publications/MPcomp4.pdf"><img src="https://storage.googleapis.com/numa_blog/etc/icon_pdf.png" alt=""></a></h1>
+  <h1 id="はじめに">はじめに</h1>
+<p>ちょっと前にすぐに導入方法とかコマンドを忘れて仕方がないので，
+bashrcに関数作ってGCPでよく使うコマンドを整理したので，忘れないうちにここに書いておく．</p>
+<p>テスト用なんかでマシンを立てて，ペペッとコマンド流したいときにやるための：</p>
+<ul>
+<li>マシン一覧取得</li>
+<li>マシン起動・停止</li>
+<li>マシン接続</li>
+<li>マシン削除</li>
+</ul>
+<p>という作業を瞬殺する</p>
+<p>バイナリをtar.gzで落としてくるのでちゃんと動くか不安だったが，CygwinとWindows上のVM Ubuntu18.04と実機のCentOS8では動いた．<br>
+WSLとMac？しらないけど動くんじゃない</p>
+<h1 id="google-cloud-sdkのinstall">google cloud sdkのinstall</h1>
+<p>くわしいことは<a href="https://cloud.google.com/sdk/install?hl=ja">公式</a></p>
+<p><code>yum</code> とか <code>apt</code> でも入るって公式には書いてあるけどgoogleの認証情報を渡すコマンドをシステムに入れるのもなあとか思いながら(たぶん認証情報はユーザの場所に置かれるんだろうけど)，tar.gzがあったのでそっちを使うことにした．</p>
+<p>まず落としてきて，</p>
+<pre><code>wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-280.0.0-linux-x86_64.tar.gz
+</code></pre><p>入れたら解凍して <code>/bin</code> にパス通す．</p>
+<p><code>sh ./install.sh</code> すればいいって公式には書いてあるけど，どこに入るのかよくわかんないから信じずに自分でパスを通しているポンコツが私です．</p>
+<pre><code>gcloud components update
+</code></pre><p>するとupdateされるので知らんけどとりあえずやる</p>
+<h1 id="初期設定">初期設定</h1>
+<pre><code>gcloud init
+</code></pre><p>するとgoogleアカウントの認証がはじまる．
+なんか適当にやってるとURLが出てくるのでコピってブラウザに貼ると認証する．</p>
+<pre><code>gcloud compute instances list
+</code></pre><p>とかやるとマシンのリストが出てくれば勝ち</p>
+<h1 id="使う">使う</h1>
+<p>上で書いた<code>gcloud compute instances list</code>とか，<br>
+<code>gcloud compute instances start</code> とか<br>
+やれば良いんだけどコマンドが長くてカロリーの無駄．
+新しいマシンを作る設定とかは更に長くてオプションも多いし疲れる．</p>
+<p>ってことでbashrcに関数作って纏めた．</p>
+<pre><code>alias glist='gcloud compute instances list'
+alias gssh_up='gcloud compute config-ssh'
+
+gstart() {gcloud compute instances start $1; gcloud compute config-ssh}
+gstop() {gcloud compute instances stop $1}
+
+gtest_up(){
+	gcloud compute instances create $1 \
+		--boot-disk-auto-delete \
+		--maintenance-policy TERMINATE \
+		--preemptible \
+		--zone us-central1-a \
+		--image-family ubuntu-2004-lts --image-project ubuntu-os-cloud \
+		--custom-cpu 8 \
+		--custom-memory 16 \
+		--boot-disk-size 10 \
+}
+</code></pre><p><code>gtest_up</code> は与えられた引数の名前のマシンはubuntu20.04LTSの8 core, 16 GBのマシンをHDD 10GBで構築する</p>
+<p>設定の中ははお好みで変えて下さい (とくにzoneとかは自分の好きな所に)．</p>
+<p>マシン設定や，皆が大好きなお金の話にもう少し触れておくと，</p>
+<ul>
+<li><code>apt update -y</code> したあとに実際使える<code>/</code> の容量は8.1GB</li>
+<li>プリエンティブが有効なので，(2020/05/05現在で)1時間あたり$0.068で7円くらい</li>
+<li>この料金はコア数の分がほとんどなので ($0.05くらい)，さらにメモリをケチることはあんまり効果がない</li>
+</ul>
+<p>という感じです．<br>
+コア多めにしてるのはビルドが速くなることを期待しています．</p>
+<p>ちなみに <code>gssh_up</code>でやってる <code>gloud compute config-ssh</code> っていうのが最高で，
+起動中のマシンのIPとかを調べてきて<code>.ssh/config</code> に追記してくれるコマンドです．</p>
+<p><code>gtest_up goma</code> して<code>gssh_up</code> するとこんなふうに追記される．</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Host goma.us-central1-a.hishinuma-project
+    HostName XXXXXXXXXXXX
+    IdentityFile /home/gusta/.ssh/google_compute_engine
+    UserKnownHostsFile<span style="color:#f92672">=</span>XXXXXXXXXXXXXXXXXXX
+    HostKeyAlias<span style="color:#f92672">=</span>XXXXXXXXXXXXXXXXXXXXXXX
+    IdentitiesOnly<span style="color:#f92672">=</span>yes
+    CheckHostIP<span style="color:#f92672">=</span>no
+</code></pre></div><p>あとは <code>ssh goma.us-central1-a.hishinuma-project</code> するだけ</p>
+<p>完璧や！</p>
+<p>ちなみに<code>gtest_up</code>の中に<code>gssh_up</code>を入れてみたら作成直後だと変なIPを取ってきてダメでした．
+<code>sleep</code> とか入れるのが良いと思います．</p>
+<p>まとめると，</p>
+<ul>
+<li><code>glist</code> してリスト見る</li>
+<li><code>gtest_up goma</code> してサーバを建てる</li>
+<li><code>sleep 60</code> // 起動待ち</li>
+<li><code>gssh_up</code> <code>sshd_config</code> を更新する</li>
+<li>sshする // ここにコマンド与えて全自動にしてる</li>
+<li><code>gdel goma</code> でマシン殺す</li>
+</ul>
+<p>こんな感じにすると1時間7円かかるけど8コアマシンでテストを全自動にできて幸せ</p>
 
 </div>
 
@@ -377,7 +495,7 @@ text-align: center;
   <line x1="7" y1="7" x2="7" y2="7"/>
   
 </svg>
-<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/multi-precision/'>Multi-Precision</a>, <a class='tag' href='/tags/simd/'>SIMD</a></div>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/hpc/'>HPC</a>, <a class='tag' href='/tags/software/'>Software</a></div>
 
   </div>
 </footer>
@@ -387,7 +505,7 @@ text-align: center;
 
 <nav class='entry-nav'>
   <div class='container'><div class='prev-entry sep-before'>
-      <a href='/papers/wo_review/hpc135/'>
+      <a href='/posts/gcc_quad/'>
         <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <line x1="20" y1="12" x2="4" y2="12"/>
@@ -395,10 +513,10 @@ text-align: center;
   
 </svg>
  Previous</span>
-        <span class='screen-reader-text'>Previous post: </span>反復解法ライブラリ向け倍々精度演算のAVXを用いた高速化</a>
+        <span class='screen-reader-text'>Previous post: </span>gccの4倍精度の使い方と性能 [gcc quadruple precision]</a>
     </div><div class='next-entry sep-before'>
-      <a href='/papers/wo_review/hpc151/'>
-        <span class='screen-reader-text'>Next post: </span>京・FX10における倍々精度演算の高速化<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+      <a href='/posts/numa_benchmark/'>
+        <span class='screen-reader-text'>Next post: </span>数値計算用のベンチマークを取れるコンテナを作っている (OpenBLAS, cuBLAS, fftw, cufft)<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <line x1="4" y1="12" x2="20" y2="12"/>
   <polyline points="14 6 20 12 14 18"/>
