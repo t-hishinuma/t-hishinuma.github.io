@@ -43,7 +43,7 @@ gcloud compute instances start とか
 alias glist=&#39;gcloud compute instances list&#39; alias gssh_up=&#39;gcloud compute config-ssh&#39; gstart() {gcloud compute instances start $1; gcloud compute config-ssh} gstop() {gcloud compute instances stop $1} gtest_up(){ gcloud compute instances create $1 \ --boot-disk-auto-delete \ --maintenance-policy TERMINATE \ --preemptible \ --zone us-central1-a \ --image-family ubuntu-2004-lts --image-project ubuntu-os-cloud \ --custom-cpu 8 \ --custom-memory 16 \ --boot-disk-size 10 \ } gtest_up は与えられた引数の名前のマシンはubuntu20.'>
 <meta property='og:url' content='https://hishinuma-t.dev/posts/gcp_setup/'>
 <meta property='og:site_name' content='hpc::numa.blog()'>
-<meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='HPC'><meta property='article:tag' content='Software'><meta property='article:published_time' content='2020-05-03T00:00:00Z'/><meta property='article:modified_time' content='2020-05-03T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='HPC'><meta property='article:tag' content='Software'><meta property='article:published_time' content='2020-05-04T00:00:00Z'/><meta property='article:modified_time' content='2020-05-04T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
 
 <meta name="generator" content="Hugo 0.68.3" />
 
@@ -225,7 +225,7 @@ if (!doNotTrack) {
   </div>
   <header class='item-header'>
     <h3 class='item-title'>
-      <a href='/posts/numa_benchmark/'>数値計算用のベンチマークを取れるコンテナを作っている (OpenBLAS, cuBLAS, fftw, cufft)
+      <a href='/posts/gcp_setup/'>gcloud cloud sdkを使いやすいように環境を整理した
       </a>
     </h3>
   </header>
@@ -236,13 +236,13 @@ if (!doNotTrack) {
   <div class='meta'>
     <span>
   <span class='screen-reader-text'>Posted on </span>
-  <time datetime='2020-05-03T00:00:00Z'>2020, May 03</time>
+  <time datetime='2020-05-04T00:00:00Z'>2020, May 04</time>
 </span>
 
   </div>
   <header class='item-header'>
     <h3 class='item-title'>
-      <a href='/posts/gcp_setup/'>gcloud cloud sdkを使いやすいように環境を整理した
+      <a href='/posts/numa_benchmark/'>数値計算用のベンチマークを取れるコンテナを作っている (OpenBLAS, cuBLAS, fftw, cufft)
       </a>
     </h3>
   </header>
@@ -337,7 +337,7 @@ if (!doNotTrack) {
   
 </svg>
 <span class='screen-reader-text'>Posted on </span>
-  <time class='entry-date' datetime='2020-05-03T00:00:00Z'>2020, May 03</time>
+  <time class='entry-date' datetime='2020-05-04T00:00:00Z'>2020, May 04</time>
 </span>
 
   
@@ -505,7 +505,7 @@ gtest_up(){
 
 <nav class='entry-nav'>
   <div class='container'><div class='prev-entry sep-before'>
-      <a href='/posts/gcc_quad/'>
+      <a href='/posts/numa_benchmark/'>
         <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <line x1="20" y1="12" x2="4" y2="12"/>
@@ -513,17 +513,7 @@ gtest_up(){
   
 </svg>
  Previous</span>
-        <span class='screen-reader-text'>Previous post: </span>gccの4倍精度の使い方と性能 [gcc quadruple precision]</a>
-    </div><div class='next-entry sep-before'>
-      <a href='/posts/numa_benchmark/'>
-        <span class='screen-reader-text'>Next post: </span>数値計算用のベンチマークを取れるコンテナを作っている (OpenBLAS, cuBLAS, fftw, cufft)<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <line x1="4" y1="12" x2="20" y2="12"/>
-  <polyline points="14 6 20 12 14 18"/>
-  
-</svg>
-</span>
-      </a>
+        <span class='screen-reader-text'>Previous post: </span>数値計算用のベンチマークを取れるコンテナを作っている (OpenBLAS, cuBLAS, fftw, cufft)</a>
     </div></div>
 </nav>
 

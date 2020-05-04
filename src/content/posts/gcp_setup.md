@@ -2,7 +2,7 @@
 title: "gcloud cloud sdkを使いやすいように環境を整理した"
 images: [images/logo.png]
 
-date: 2020-05-05
+date: 2020-05-04
 
 tags: ["HPC", "Software"]
 
