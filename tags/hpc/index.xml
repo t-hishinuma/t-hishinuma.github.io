@@ -7,10 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hishinuma-t.dev/tags/hpc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>数値計算用のベンチマークを取れるコンテナを作っている (OpenBLAS, cuBLAS, fftw, cufft)</title>
+      <link>https://hishinuma-t.dev/posts/numa_benchmark/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/numa_benchmark/</guid>
+      <description>TL; DR 検索するとCineBenchやゲーム系のベンチマークとかいう何をやっているのか良くわからん結果ばっかりで数値計算の役に立たないのしかでてこない．
+STREAMとDGEMM/SGEMMとFFTをCPUとGPUで回してくれるだけでいいんだ！と思うんだけど，冷静に考えるとそういうライブラリってベンチマーク機能が付いてるわけじゃない (てかSTREAMって使いにくいよね．．．)．
+ベンチマーク結果はIntelとかNvidiaも出しているけど，アーキごとに項目が整っているとは言いにくい．
+数値計算の結果は少ない人数しか興味がなかったのは昔の話で，最近は機械学習の人とかもBLASとかFFTの結果を知りたいはずだから需要がある気がしてるんだけど，統一されたベンチマークがでてくる気配はない．
+ベンチマークは比較に意味があるので多くの人が回してくれることが望ましいけど， 我々みたいに自分でOpenBLASだのcuBLASだとfftwだの落としてビルドして，自分でC++でベンチマークコード書いて，自分でsedとかawkとか叩いてgnuplotで整形できる人ばっかりじゃないはず．
+そうだ．コンテナ使って数値計算ライブラリの評価が簡単にやれるやつ作ろう．と思い立ってから早かった手作りベンチマークコンテナ
+最近はDockerでGPGPUするのも簡単になったしUbuntu 20.04ではDockerがaptで入るようになったしな！
+あ，名前は numa_benchmarkにしました．
+NUMerical linear Algebra Benchmarkの略であってhishinumaとは関係ありません．本当です．
+で，どうやって使うの コードはここにおいて作ってる．ちゃんとCPUとGPUの両方に対応してる．
+https://github.com/t-hishinuma/numa_benchmark
+コンテナ内に中にrunってコマンドが仕込んであって，実行するとそれを回してくれるようにした．かんたん．
+runするとOpenBLASをビルドしていろんなサイズでベンチマークしてくれる．
+いまは dot と gemm のベンチマークだけけど， だいたいコンテナ落とす時間も含めて10分くらいで終わるんじゃないかな． 機能面はこれから増やしていくつもり (STREAMはdotがあるからいいかな．．？いいよね．．？)．
+DockerHubにも上げてあるので，サイズとかデフォルト設定でいい人は
+docker run hishinumat/numa_benchmark run するだけで簡単にベンチマークしてyaml形式で標準出力に結果を出してくる．
+サイズとか色々変えたい人はgitからconfigを落としてきて，書き換えて，configのある場所をdockerにマウントすればそのとおりに実行される．
+$PWD のマウントで良ければ make benchmark すればdockerコマンド打たなくてよい
+git clone git@github.com:t-hishinuma/numa_benchmark.git # vim benchmark_config # if need to change make benchmark 自分でconfigを食わせた場合は結果はresult/に出てくる． せっかくの仮想化だから，pythonのライブラリなんかもコンテナに混ぜて，yamlを元にmatplotlibでプロットしたpngとhtmlも出力してくれるようにした．
+でもコードはPythonなんもわからんおじさんすぎてあまりにも適当．
+この辺手伝ってくれる人が居たらとても喜びます
+結果はこんな感じで，だいたい欲しい情報はでていると思う．
+- {&amp;quot;type&amp;quot; : &amp;quot;blas3&amp;quot;, &amp;quot;func&amp;quot; : &amp;quot;sgemm&amp;quot;, &amp;quot;arch&amp;quot; : &amp;quot;cpu&amp;quot;, &amp;quot;# of threads&amp;quot; : 4, &amp;quot;size&amp;quot; : 200, &amp;quot;time [s]&amp;quot; : 0.</description>
+    </item>
     
     <item>
       <title>gccの4倍精度の使い方と性能 [gcc quadruple precision]</title>
