@@ -44,32 +44,6 @@ git clone git@github.com:t-hishinuma/numa_benchmark.git # vim benchmark_config #
     </item>
     
     <item>
-      <title>gcloud cloud sdkを使いやすいように環境を整理した</title>
-      <link>https://hishinuma-t.dev/posts/gcp_setup/</link>
-      <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hishinuma-t.dev/posts/gcp_setup/</guid>
-      <description>はじめに ちょっと前にすぐに導入方法とかコマンドを忘れて仕方がないので， bashrcに関数作ってGCPでよく使うコマンドを整理したので，忘れないうちにここに書いておく．
-テスト用なんかでマシンを立てて，ペペッとコマンド流したいときにやるための：
- マシン一覧取得 マシン起動・停止 マシン接続 マシン削除  という作業を瞬殺する
-バイナリをtar.gzで落としてくるのでちゃんと動くか不安だったが，CygwinとWindows上のVM Ubuntu18.04と実機のCentOS8では動いた．
-WSLとMac？しらないけど動くんじゃない
-google cloud sdkのinstall くわしいことは公式
-yum とか apt でも入るって公式には書いてあるけどgoogleの認証情報を渡すコマンドをシステムに入れるのもなあとか思いながら(たぶん認証情報はユーザの場所に置かれるんだろうけど)，tar.gzがあったのでそっちを使うことにした．
-まず落としてきて，
-wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-280.0.0-linux-x86_64.tar.gz 入れたら解凍して /bin にパス通す．
-sh ./install.sh すればいいって公式には書いてあるけど，どこに入るのかよくわかんないから信じずに自分でパスを通しているポンコツが私です．
-gcloud components update するとupdateされるので知らんけどとりあえずやる
-初期設定 gcloud init するとgoogleアカウントの認証がはじまる． なんか適当にやってるとURLが出てくるのでコピってブラウザに貼ると認証する．
-gcloud compute instances list とかやるとマシンのリストが出てくれば勝ち
-使う 上で書いたgcloud compute instances listとか，
-gcloud compute instances start とか
-やれば良いんだけどコマンドが長くてカロリーの無駄． 新しいマシンを作る設定とかは更に長くてオプションも多いし疲れる．
-ってことでbashrcに関数作って纏めた．
-alias glist=&#39;gcloud compute instances list&#39; alias gssh_up=&#39;gcloud compute config-ssh&#39; gstart() {gcloud compute instances start $1; gcloud compute config-ssh} gstop() {gcloud compute instances stop $1} gtest_up(){ gcloud compute instances create $1 \ --boot-disk-auto-delete \ --maintenance-policy TERMINATE \ --preemptible \ --zone us-central1-a \ --image-family ubuntu-2004-lts --image-project ubuntu-os-cloud \ --custom-cpu 8 \ --custom-memory 16 \ --boot-disk-size 10 \ } gtest_up は与えられた引数の名前のマシンはubuntu20.</description>
-    </item>
-    
-    <item>
       <title>gccの4倍精度の使い方と性能 [gcc quadruple precision]</title>
       <link>https://hishinuma-t.dev/posts/gcc_quad/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
