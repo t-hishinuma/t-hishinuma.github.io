@@ -19,11 +19,11 @@ google analyticsの結果を見るとこのページはPEZYと4倍精度とい�
 今回はGMPに着目して，機能面や実装面について紹介していきたいと思います．
 ただ，GMPにはいろいろな難しい特徴があり，正直私もあまり詳しい事は言えないので，フォロワー2500人記念とかぶち上げておいてあれですが， 今回の記事では私が現状で知っているGMPの実装についてちゃんとまとめ，使い方と性能を簡単に見ることにします． (GMPで論文何件か書いたとは思えないほど内部の実装に自信がないおじさん)
 GMPを用いたプログラム GMPはGNU Multi Precision Arithmetic Libraryのことで，float128などが4倍精度固定であるのに対し， GMPは変数の宣言時，またはどこかでデフォルトの仮数部の精度を指定することで任意の精度型を作ることができます．
-ただし，指数部を動的に伸ばしたり，自動的に選択するような機能はついていません(そんなことをしたらメモリが大変なことに)．
+ただし，仮数部を自動的に伸ばしたり，自動的に選択するような機能はついていません(そんなことをしたらメモリが大変なことに)．
 指数部については固定で，仮数部を指定していくことになります． そのため例題などではよく円周率などが扱われる印象があります．
-ここではC&#43;&#43;版のgmpgxx.hを使ってGMPの多倍長浮動小数点型であるmpf_tのC&#43;&#43; Wrapper, mpf_classを使ってみます． C&#43;&#43;版を使えば演算子オーバーロードによって比較的簡単に実装することができます．
+ここではC&#43;&#43;版のgmpxx.hを使ってGMPの多倍長浮動小数点型であるmpf_tのC&#43;&#43; Wrapper, mpf_classを使ってみます． C&#43;&#43;版を使えば演算子オーバーロードによって比較的簡単に実装することができます．
 すべての変数が同じ精度で良い場合は，mpf_set_default_prec()という関数を使って精度を指定すればよいです． 簡単なプログラムは以下のようになります．
-#include&lt;gmpgxx.h&gt;#include&lt;iostream&gt;int main(){ mpf_set_default_prec(1024); mpf_class a(1.5); // a = 1.5 	mpf_class b = 1.0; mpf_class c = 0.0; c = a &#43; b; std::cout &lt;&lt; c &lt;&lt; std::endl; return 0; } ね？簡単でしょ？'>
+#include&lt;gmpxx.h&gt;#include&lt;iostream&gt;int main(){ mpf_set_default_prec(1024); mpf_class a(1.5); // a = 1.5 	mpf_class b = 1.0; mpf_class c = 0.0; c = a &#43; b; std::cout &lt;&lt; c &lt;&lt; std::endl; return 0; } ね？簡単でしょ？'>
 <meta name='theme-color' content='black'>
 
 <meta property='og:title' content='gmpの実装とC&#43;&#43;からの利用法，性能について [gmp multi-precision] ,  hpc::numa.blog()'>
@@ -44,11 +44,11 @@ google analyticsの結果を見るとこのページはPEZYと4倍精度とい�
 今回はGMPに着目して，機能面や実装面について紹介していきたいと思います．
 ただ，GMPにはいろいろな難しい特徴があり，正直私もあまり詳しい事は言えないので，フォロワー2500人記念とかぶち上げておいてあれですが， 今回の記事では私が現状で知っているGMPの実装についてちゃんとまとめ，使い方と性能を簡単に見ることにします． (GMPで論文何件か書いたとは思えないほど内部の実装に自信がないおじさん)
 GMPを用いたプログラム GMPはGNU Multi Precision Arithmetic Libraryのことで，float128などが4倍精度固定であるのに対し， GMPは変数の宣言時，またはどこかでデフォルトの仮数部の精度を指定することで任意の精度型を作ることができます．
-ただし，指数部を動的に伸ばしたり，自動的に選択するような機能はついていません(そんなことをしたらメモリが大変なことに)．
+ただし，仮数部を自動的に伸ばしたり，自動的に選択するような機能はついていません(そんなことをしたらメモリが大変なことに)．
 指数部については固定で，仮数部を指定していくことになります． そのため例題などではよく円周率などが扱われる印象があります．
-ここではC&#43;&#43;版のgmpgxx.hを使ってGMPの多倍長浮動小数点型であるmpf_tのC&#43;&#43; Wrapper, mpf_classを使ってみます． C&#43;&#43;版を使えば演算子オーバーロードによって比較的簡単に実装することができます．
+ここではC&#43;&#43;版のgmpxx.hを使ってGMPの多倍長浮動小数点型であるmpf_tのC&#43;&#43; Wrapper, mpf_classを使ってみます． C&#43;&#43;版を使えば演算子オーバーロードによって比較的簡単に実装することができます．
 すべての変数が同じ精度で良い場合は，mpf_set_default_prec()という関数を使って精度を指定すればよいです． 簡単なプログラムは以下のようになります．
-#include&lt;gmpgxx.h&gt;#include&lt;iostream&gt;int main(){ mpf_set_default_prec(1024); mpf_class a(1.5); // a = 1.5 	mpf_class b = 1.0; mpf_class c = 0.0; c = a &#43; b; std::cout &lt;&lt; c &lt;&lt; std::endl; return 0; } ね？簡単でしょ？'>
+#include&lt;gmpxx.h&gt;#include&lt;iostream&gt;int main(){ mpf_set_default_prec(1024); mpf_class a(1.5); // a = 1.5 	mpf_class b = 1.0; mpf_class c = 0.0; c = a &#43; b; std::cout &lt;&lt; c &lt;&lt; std::endl; return 0; } ね？簡単でしょ？'>
 <meta property='og:url' content='https://hishinuma-t.dev/posts/gmp/'>
 <meta property='og:site_name' content='hpc::numa.blog()'>
 <meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='HPC'><meta property='article:tag' content='Multi-precision'><meta property='article:tag' content='Programming'><meta property='article:published_time' content='2020-05-18T00:00:00Z'/><meta property='article:modified_time' content='2020-05-18T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
@@ -435,14 +435,14 @@ google analyticsの結果を見るとこのページはPEZYと4倍精度とい�
 <h1 id="gmpを用いたプログラム">GMPを用いたプログラム</h1>
 <p>GMPはGNU Multi Precision Arithmetic Libraryのことで，float128などが4倍精度固定であるのに対し，
 GMPは変数の宣言時，またはどこかでデフォルトの仮数部の精度を指定することで任意の精度型を作ることができます．<br>
-ただし，指数部を動的に伸ばしたり，自動的に選択するような機能はついていません(そんなことをしたらメモリが大変なことに)．</p>
+ただし，仮数部を自動的に伸ばしたり，自動的に選択するような機能はついていません(そんなことをしたらメモリが大変なことに)．</p>
 <p>指数部については固定で，仮数部を指定していくことになります．
 そのため例題などではよく円周率などが扱われる印象があります．</p>
-<p>ここではC++版の<code>gmpgxx.h</code>を使ってGMPの多倍長浮動小数点型である<code>mpf_t</code>のC++ Wrapper, <code>mpf_class</code>を使ってみます．
+<p>ここではC++版の<code>gmpxx.h</code>を使ってGMPの多倍長浮動小数点型である<code>mpf_t</code>のC++ Wrapper, <code>mpf_class</code>を使ってみます．
 C++版を使えば演算子オーバーロードによって比較的簡単に実装することができます．</p>
 <p>すべての変数が同じ精度で良い場合は，<code>mpf_set_default_prec()</code>という関数を使って精度を指定すればよいです．
 簡単なプログラムは以下のようになります．</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;gmpgxx.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;gmpxx.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
 	mpf_set_default_prec(<span style="color:#ae81ff">1024</span>);
@@ -497,6 +497,7 @@ C++版を使えば演算子オーバーロードによって比較的簡単に�
 <code>_mp_prec</code>には<code>_mp_d</code>の配列の長さ+1が入ります．<br>
 つまり指数部64bitなら1+1=2, 128bitなら2+1=3, 512bitなら8+1=9です．</p>
 <p><code>_mp_size</code>は<code>_mp_d</code>の配列の何番目まで値が入っているかです．</p>
+<p>簡単な構造体なので，データサイズなどを計算するのは簡単かと思います．</p>
 <p>問題になるのは，<code>_mp_size</code>です．
 アルゴリズムを切り替える<code>THRESHOLD</code>は<code>_mp_size</code>を見るものがほとんどです．
 つまりどれだけ大きい数で初期化したとしても値が1であれば最も軽いアルゴリズムで，<code>_mp_d</code>の先頭要素だけが使われるので
