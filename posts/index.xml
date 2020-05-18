@@ -7,10 +7,38 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Mon, 04 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hishinuma-t.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gmpの実装とC&#43;&#43;からの利用法，性能について [gmp multi-precision]</title>
+      <link>https://hishinuma-t.dev/posts/gmp/</link>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/gmp/</guid>
+      <description>はじめに そろそろTwitterのフォロワーが2500人を迎えるということで， やはりこのままマイナーな世界を深堀りするのでなく，もっと大衆受けする．．そんな存在になりたいと思いました．
+皆が見てくれるような一般的な話題ってなんなのか？
+私は考えました．
+google analyticsの結果を見るとこのページはPEZYと4倍精度という検索ワードでくる人がほとんどのようですが， そんな一部の研究者しか使わないものでなく，もっとマスに訴えかけるような，そんなテーマを考えました．
+選ばれたのはGNUでした
+そう．GNUに媚びて生きていこう．
+つまり今回のテーマはGMPです．
+なんと四則演算やFFTについて触れます．全国民がオオウケ間違いなしです．
+まぁ真面目に導入すると，2月頃にgccのfloat128の性能について書いたのがそこそこ閲覧数が多かったので， 他の高精度演算ライブラリについてもちょっと書くかー，と思って第2弾としてGMPを取りあげてみるということです．．
+実際はもっと前から書いていたのですが，細部が書けずにいて，2500人だしここで公開しようと思い立って今に至ります．
+様々な言語で多倍長整数は標準サポートされることも多くなってきましたが， 浮動小数点に関してはほとんど見かけませんし，実装自体も少ないです．
+やはり浮動小数点演算は癖が強い(指数部が伸びるのか，仮数部が伸びるのか，どのくらい時間がかかるのか)や， ツールそのものがどういった機能を持っているかが分かりにくいです．
+今回はGMPに着目して，機能面や実装面について紹介していきたいと思います．
+ただ，GMPにはいろいろな難しい特徴があり，正直私もあまり詳しい事は言えないので，フォロワー2500人記念とかぶち上げておいてあれですが， 今回の記事では私が現状で知っているGMPの実装についてちゃんとまとめ，使い方と性能を簡単に見ることにします． (GMPで論文何件か書いたとは思えないほど内部の実装に自信がないおじさん)
+GMPを用いたプログラム GMPはGNU Multi Precision Arithmetic Libraryのことで，float128などが4倍精度固定であるのに対し， GMPは変数の宣言時，またはどこかでデフォルトの仮数部の精度を指定することで任意の精度型を作ることができます．
+ただし，指数部を動的に伸ばしたり，自動的に選択するような機能はついていません(そんなことをしたらメモリが大変なことに)．
+仮数部については固定で，指数部を指定していくことになります． そのため例題などではよく円周率などが扱われる印象があります．
+ここではC++版のgmpgxx.hを使ってGMPの多倍長浮動小数点型であるmpf_tのC++ Wrapper, mpf_classを使ってみます． C++版を使えば演算子オーバーロードによって比較的簡単に実装することができます．
+すべての変数が同じ精度で良い場合は，mpf_set_default_prec()という関数を使って精度を指定すればよいです． 簡単なプログラムは以下のようになります．
+#include&amp;lt;gmpgxx.h&amp;gt;#include&amp;lt;iostream&amp;gt;int main(){ mpf_set_default_prec(1024); mpf_class a(1.5); // a = 1.5 	mpf_class b = 1.0; mpf_class c = 0.0; c = a + b; std::cout &amp;lt;&amp;lt; c &amp;lt;&amp;lt; std::endl; return 0; } ね？簡単でしょ？</description>
+    </item>
     
     <item>
       <title>gcloud cloud sdkを使いやすいように環境を整理した</title>
