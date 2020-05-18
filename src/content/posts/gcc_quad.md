@@ -50,7 +50,7 @@ I/Oだけは色々調べたがどうしようもなさそうだった．
 # 性能評価
 
 試しに内積を実装して時間を測ってみた．\
-コードは[ここ][1]においた．
+コードは[ここ][1]においた (リポジトリを移動しました, 2020/05/18)．
 
 出力を外に出せば，普通に倍精度と共通化してtemplateで作れた．
 
@@ -105,6 +105,6 @@ quadだとほとんど効果がない．libquadmathを呼んでいるだけだ�
 * libquadmathの4倍精度の実装についてまとめたい
 * QDライブラリについてまとめたい
 
-[1]: https://github.com/t-hishinuma/gcc_quad_test
+[1]: https://github.com/t-hishinuma/high_precision_benchmark
 [quad]: https://gcc.gnu.org/onlinedocs/libquadmath/ 
 [3]: https://github.com/t-hishinuma/t-hishinuma.github.io/issues

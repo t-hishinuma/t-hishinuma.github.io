@@ -8,7 +8,7 @@ __float128 型を宣言して使う．倍精度を代入して使うこともで
 四則演算子や代入なども使えるが，printfだけはchar型の配列に変換してから使う必要がある． 適当なサンプルは以下のとおり：
 #include&lt;quadmath.h&gt;#include&lt;stdio.h&gt;int main(){ char str[128]; __float128 a = 1.2345678901234567890q; __float128 b = 1.234; a = a &#43; b; quadmath_snprintf(str,128,&#34;%.40Qf&#34;,a); printf(&#34;%s&#34;,str); return (0); } $ g&#43;&#43; -lquadmath -m128bit-long-double test.c こんな感じに作れる．I/Oがなければ同じプログラムでtemplate使って共通化できるが， I/Oだけは色々調べたがどうしようもなさそうだった．
 性能評価 試しに内積を実装して時間を測ってみた．
-コードはここにおいた．
+コードはここにおいた (リポジトリを移動しました, 2020/05/18)．
 出力を外に出せば，普通に倍精度と共通化してtemplateで作れた．
 gcpで16コアのHaswellマシンを借りて実行してみた．
 あんまり参考にはならないが Intel(R) Xeon(R) CPU @ 2.30GHzとのこと．
@@ -24,7 +24,7 @@ __float128 型を宣言して使う．倍精度を代入して使うこともで
 四則演算子や代入なども使えるが，printfだけはchar型の配列に変換してから使う必要がある． 適当なサンプルは以下のとおり：
 #include&lt;quadmath.h&gt;#include&lt;stdio.h&gt;int main(){ char str[128]; __float128 a = 1.2345678901234567890q; __float128 b = 1.234; a = a &#43; b; quadmath_snprintf(str,128,&#34;%.40Qf&#34;,a); printf(&#34;%s&#34;,str); return (0); } $ g&#43;&#43; -lquadmath -m128bit-long-double test.c こんな感じに作れる．I/Oがなければ同じプログラムでtemplate使って共通化できるが， I/Oだけは色々調べたがどうしようもなさそうだった．
 性能評価 試しに内積を実装して時間を測ってみた．
-コードはここにおいた．
+コードはここにおいた (リポジトリを移動しました, 2020/05/18)．
 出力を外に出せば，普通に倍精度と共通化してtemplateで作れた．
 gcpで16コアのHaswellマシンを借りて実行してみた．
 あんまり参考にはならないが Intel(R) Xeon(R) CPU @ 2.30GHzとのこと．
@@ -417,7 +417,7 @@ printf(<span style="color:#e6db74">&#34;%s&#34;</span>,str);
 I/Oだけは色々調べたがどうしようもなさそうだった．</p>
 <h1 id="性能評価">性能評価</h1>
 <p>試しに内積を実装して時間を測ってみた．<br>
-コードは<a href="https://github.com/t-hishinuma/gcc_quad_test">ここ</a>においた．</p>
+コードは<a href="https://github.com/t-hishinuma/high_precision_benchmark">ここ</a>においた (リポジトリを移動しました, 2020/05/18)．</p>
 <p>出力を外に出せば，普通に倍精度と共通化してtemplateで作れた．</p>
 <p>gcpで16コアのHaswellマシンを借りて実行してみた．<br>
 あんまり参考にはならないが <code>Intel(R) Xeon(R) CPU @ 2.30GHz</code>とのこと．</p>

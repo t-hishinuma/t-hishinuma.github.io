@@ -24,7 +24,7 @@ __float128 型を宣言して使う．倍精度を代入して使うこともで
 四則演算子や代入なども使えるが，printfだけはchar型の配列に変換してから使う必要がある． 適当なサンプルは以下のとおり：
 #include&amp;lt;quadmath.h&amp;gt;#include&amp;lt;stdio.h&amp;gt;int main(){ char str[128]; __float128 a = 1.2345678901234567890q; __float128 b = 1.234; a = a + b; quadmath_snprintf(str,128,&amp;#34;%.40Qf&amp;#34;,a); printf(&amp;#34;%s&amp;#34;,str); return (0); } $ g++ -lquadmath -m128bit-long-double test.c こんな感じに作れる．I/Oがなければ同じプログラムでtemplate使って共通化できるが， I/Oだけは色々調べたがどうしようもなさそうだった．
 性能評価 試しに内積を実装して時間を測ってみた．
-コードはここにおいた．
+コードはここにおいた (リポジトリを移動しました, 2020/05/18)．
 出力を外に出せば，普通に倍精度と共通化してtemplateで作れた．
 gcpで16コアのHaswellマシンを借りて実行してみた．
 あんまり参考にはならないが Intel(R) Xeon(R) CPU @ 2.30GHzとのこと．
