@@ -26,7 +26,7 @@ GMPを用いたプログラム GMPはGNU Multi Precision Arithmetic Libraryの�
 #include&lt;gmpxx.h&gt;#include&lt;iostream&gt;int main(){ mpf_set_default_prec(1024); mpf_class a(1.5); // a = 1.5 	mpf_class b = 1.0; mpf_class c = 0.0; c = a &#43; b; std::cout &lt;&lt; c &lt;&lt; std::endl; return 0; } ね？簡単でしょ？'>
 <meta name='theme-color' content='black'>
 
-<meta property='og:title' content='gmpの実装とC&#43;&#43;からの利用法，性能について [gmp multi-precision] ,  hpc::numa.blog()'>
+<meta property='og:title' content='gmpの実装とC&#43;&#43;からの利用法，性能について(1) [gmp multi-precision] ,  hpc::numa.blog()'>
 <meta property='og:description' content='はじめに そろそろTwitterのフォロワーが2500人を迎えるそうです． やはりマイナーな世界だけを深堀りするのでなく， もっと大衆受けする活動をしていくべきだと思いました．
 そう，つまりマスに訴えかけることでHPC界のヒカキンのような存在になるのです．
 では皆が見てくれるような一般的な話題ってなんなのか？
@@ -55,7 +55,7 @@ GMPを用いたプログラム GMPはGNU Multi Precision Arithmetic Libraryの�
 
 <meta name="generator" content="Hugo 0.68.3" />
 
-  <title>gmpの実装とC&#43;&#43;からの利用法，性能について [gmp multi-precision] ,  hpc::numa.blog()</title>
+  <title>gmpの実装とC&#43;&#43;からの利用法，性能について(1) [gmp multi-precision] ,  hpc::numa.blog()</title>
   <link rel='canonical' href='https://hishinuma-t.dev/posts/gmp/'>
   
   
@@ -162,7 +162,7 @@ if (!doNotTrack) {
       </li><li>
         <a href='/tags/paper/' style='font-size:1.7586206896551724em'>Paper</a>
       </li><li>
-        <a href='/tags/pezy/' style='font-size:1.206896551724138em'>PEZY</a>
+        <a href='/tags/pezy/' style='font-size:1.1724137931034484em'>PEZY</a>
       </li><li>
         <a href='/tags/poster/' style='font-size:1.103448275862069em'>Poster</a>
       </li><li>
@@ -233,7 +233,7 @@ if (!doNotTrack) {
   </div>
   <header class='item-header'>
     <h3 class='item-title'>
-      <a href='/posts/gmp/'>gmpの実装とC&#43;&#43;からの利用法，性能について [gmp multi-precision]
+      <a href='/posts/gmp/'>gmpの実装とC&#43;&#43;からの利用法，性能について(1) [gmp multi-precision]
       </a>
     </h3>
   </header>
@@ -331,7 +331,7 @@ if (!doNotTrack) {
   <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'>gmpの実装とC&#43;&#43;からの利用法，性能について [gmp multi-precision]</h1>
+      <h1 class='title'>gmpの実装とC&#43;&#43;からの利用法，性能について(1) [gmp multi-precision]</h1>
       
 
     </div>
@@ -458,9 +458,9 @@ C++版を使えば演算子オーバーロードによって比較的簡単に�
 	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
 </code></pre></div><p>ね？簡単でしょ？</p>
-<p>こんな感じでC++のクラスを使って実装できます．最初に1024bitを指定しているため，a,b,cは仮数部1024の浮動小数点数になります．</p>
+<p>こんな感じでC++のクラスを使って実装できます．最初に1024 bitを指定しているため，a,b,cは仮数部1024 bitの浮動小数点数になります．</p>
 <p>なお，コンストラクタで精度を指定することもでき，
-<code>mpf_class a(1.5,512)</code>などとするとaだけ512bitで宣言できます．</p>
+<code>mpf_class a(1.5,512)</code>などとするとaだけ512 bitで宣言できます．</p>
 <p>数学関数とかもだいたいあります．詳しくは本家を見て下さい．</p>
 <h1 id="gmpの実装">GMPの実装</h1>
 <p>さて，ここではGMPの内部実装について触れます．</p>
@@ -473,7 +473,8 @@ C++版を使えば演算子オーバーロードによって比較的簡単に�
 <p>まず，congigure時に<code>gmp.h</code>や<code>gmp-mparam.h</code>が生成される仕組みになっています．<br>
 ここで様々なアーキテクチャごとの設定が反映されたヘッダファイルが生成されます．</p>
 <p>ヘッダ生成時に行われる大きな切り替えとして，<a href="https://gmplib.org/manual/Algorithms.html#Algorithms">精度によって演算に用いられるアルゴリズムが異なる</a>ということがあります．<br>
-これは<code>XX_THRESHOLD</code>という変数で決まるので，grepで探してみればわかります(XXはいろんなアルゴリズムの名前が入る)．</p>
+これは<code>XX_THRESHOLD</code>という変数で決まるので，grepで探してみればわかります(XXはいろんなアルゴリズムの名前が入る)．
+詳しい切り替えなどについては次回の記事で触れたいと思います．</p>
 <p>何もアーキテクチャを指定しなければ<code>gmp_impl.h</code>という<a href="https://github.com/alisw/GMP/blob/master/gmp-impl.h">ヘッダファイル</a>によって決まりますが，
 <code>tune/</code> というところでもアーキテクチャごとに色々書いてあるようなので，
 実際にどれが呼ばれるのかはconfigure時に判定される．．．のだと思います (要調査)．</p>

@@ -13,15 +13,6 @@
     
     
     <item>
-      <title>AVX Acceleration of DD Arithmetic Between a Sparse Matrix and Vector</title>
-      <link>https://hishinuma-t.dev/papers/with_review/ppam2013/</link>
-      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hishinuma-t.dev/papers/with_review/ppam2013/</guid>
-      <description>Download PDF  Citation (bibtex) @inproceedings{hishinuma2013ppam, title={AVX acceleration of DD arithmetic between a sparse matrix and vector}, author={Hishinuma, Toshiaki and Fujii, Akihiro and Tanaka, Teruo and Hasegawa, Hidehiko}, booktitle={International Conference on Parallel Processing and Applied Mathematics}, pages={622--631}, year={2013}, organization={Springer} } Abstract High precision arithmetic can improve the convergence of Krylov subspace methods; however, it is very costly. One system of high precision arithmetic is double-double (DD) arithmetic, which uses more than 20 double precision operations for one DD operation.</description>
-    </item>
-    
-    <item>
       <title>Implementation and Evaluation of BLAS on PEZY-SC/SC2 Processor</title>
       <link>https://hishinuma-t.dev/papers/wo_review/siam_pp18/</link>
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
