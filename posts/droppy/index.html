@@ -2,9 +2,12 @@
 <html lang='en'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='はじめに サーバ上で作業をしていて，手元のファイルをupload / downloadしたいことがよくあると思う． 大きいファイルを1回送るくらいならやるんだが， たとえばgnuplotやLaTex, Doxygenと格闘しているときなんかは サーバ上で生成された画像をdownloadしたり，手元でAdobeなどで作った画像を何度もUploadするようなシチュエーションが生まれる．
-閲覧は一過性のもので，セキュリティとかは気にしないことにする
-Downloadや閲覧はあんまり問題にならなくて，httpサーバを立てればいいので
+<meta name='description' content='はじめに サーバ上で作業をしていて，手元のファイルをupload / downloadしたいことがよくあると思う．
+大きいファイルを1回送るくらいならやるが， たとえばgnuplotやLaTex, Doxygenと格闘しているときなんかは サーバ上で生成された画像をdownloadしたり，手元でAdobeなどで作った画像を何度もUploadするようなシチュエーションが生まれる．
+基本的に全てのマシンに同じ環境を構築したいので，マウントするなどのOS依存っぽいことや， 謎のフリーソフトを全部の端末に入れて回るみたいなことはやりたくない． (手動だし)
+サーバ側ではコマンド一発で構築できて，クライアント側では導入作業なく利用できるファイルのdonwload/uploadはないものかと思い， dockerで構築できて，ブラウザから利用できる物を探した．
+利用は作業中だけの一過性のものなので，セキュリティとかは気にしなくて良いことにする．
+Download, 閲覧はあんまり問題にならなくて，httpサーバを立てればいいので
  nginxをdockerであげてみたり (dockerhub) cargoで入れられてディレクトリを一発で公開できるやつを使ったり (basic-http-server)  他にもやりようはいくらでもある．
 ちなみに2.は
 cargo install basic-http-server basic-http-server -x -a 0.0.0.0:8080&quot; で現在いるディレクトリがhttpで公開されてこんな風に見える
@@ -14,14 +17,16 @@ droppy 結論から言うとdroppyというのが軽くて良さそうだとい�
 root権限でuploadなんかされたらたまったもんじゃないので，ユーザをちゃんと指定してあげることにして，次のようにすればOK． configのフォルダをマウントしてオプションを色々設定できるみたいだけど，ディレクトリ一覧が見れてちょっとuploadできればいいのでデフォルトに任せた．
 docker run -p 8080:8989 -v $PWD:/files/ -e UID=$(id -u) -e GID=$(id -g) silverwind/droppy 見た目はこんな感じ．画面分割もできる． 上げるとユーザ名を聞かれるが，適当なユーザ名とパスワードを入れるとログインできる． aとかbとかでいい．真面目にやる場合はconfigで設定するんだと思う．
 いいところ
- ドラッグアンドドロップでファイルやディレクトリを送れる スクリーンショットを取ってペーストボタンを押すとちゃんとファイルとして保存される (素晴らしい！) 画像などはブラウザ上で閲覧できる テキストファイルなどはエディタが出てきて編集できる ディレクトリ作成，ファイル削除，リネームなどの簡単な作業ができる docker imagesで確認すると99.5 MBしかない．  悔しいところ
- PDFの閲覧をしようとすると中に組み込まれてる謎のビューアが立ち上がるが，日本語のPDFは文字化けして死んだ ファイルを開くとエディタが上がるがエディタが選べない (実は選べるのかも) 実行可能ファイルやシェルスクリプト，Makefileの実行などはできない  日本語PDFの閲覧で文字化けするのはちょっと致命的だったが，ダウンロードするかsimple-http-serverで見ればよいのでなんとかならんこともない． こういうブログみたいなのを書くときには結構便利そうな感じがした．'>
+ ドラッグアンドドロップでファイルやディレクトリを送れる スクリーンショットを取ってペーストボタンを押すとちゃんとファイルとして保存される (素晴らしい！) 画像などはブラウザ上で閲覧できる テキストファイルなどはエディタが出てきて編集できる ディレクトリ作成，ファイル削除，リネームなどの簡単な作業ができる docker imagesで確認すると99.5 MBしかない．  悔しいところ'>
 <meta name='theme-color' content='black'>
 
 <meta property='og:title' content='ブラウザからサーバにファイルをuploadするためにdroppyを試す ,  hpc::numa.blog()'>
-<meta property='og:description' content='はじめに サーバ上で作業をしていて，手元のファイルをupload / downloadしたいことがよくあると思う． 大きいファイルを1回送るくらいならやるんだが， たとえばgnuplotやLaTex, Doxygenと格闘しているときなんかは サーバ上で生成された画像をdownloadしたり，手元でAdobeなどで作った画像を何度もUploadするようなシチュエーションが生まれる．
-閲覧は一過性のもので，セキュリティとかは気にしないことにする
-Downloadや閲覧はあんまり問題にならなくて，httpサーバを立てればいいので
+<meta property='og:description' content='はじめに サーバ上で作業をしていて，手元のファイルをupload / downloadしたいことがよくあると思う．
+大きいファイルを1回送るくらいならやるが， たとえばgnuplotやLaTex, Doxygenと格闘しているときなんかは サーバ上で生成された画像をdownloadしたり，手元でAdobeなどで作った画像を何度もUploadするようなシチュエーションが生まれる．
+基本的に全てのマシンに同じ環境を構築したいので，マウントするなどのOS依存っぽいことや， 謎のフリーソフトを全部の端末に入れて回るみたいなことはやりたくない． (手動だし)
+サーバ側ではコマンド一発で構築できて，クライアント側では導入作業なく利用できるファイルのdonwload/uploadはないものかと思い， dockerで構築できて，ブラウザから利用できる物を探した．
+利用は作業中だけの一過性のものなので，セキュリティとかは気にしなくて良いことにする．
+Download, 閲覧はあんまり問題にならなくて，httpサーバを立てればいいので
  nginxをdockerであげてみたり (dockerhub) cargoで入れられてディレクトリを一発で公開できるやつを使ったり (basic-http-server)  他にもやりようはいくらでもある．
 ちなみに2.は
 cargo install basic-http-server basic-http-server -x -a 0.0.0.0:8080&quot; で現在いるディレクトリがhttpで公開されてこんな風に見える
@@ -31,8 +36,7 @@ droppy 結論から言うとdroppyというのが軽くて良さそうだとい�
 root権限でuploadなんかされたらたまったもんじゃないので，ユーザをちゃんと指定してあげることにして，次のようにすればOK． configのフォルダをマウントしてオプションを色々設定できるみたいだけど，ディレクトリ一覧が見れてちょっとuploadできればいいのでデフォルトに任せた．
 docker run -p 8080:8989 -v $PWD:/files/ -e UID=$(id -u) -e GID=$(id -g) silverwind/droppy 見た目はこんな感じ．画面分割もできる． 上げるとユーザ名を聞かれるが，適当なユーザ名とパスワードを入れるとログインできる． aとかbとかでいい．真面目にやる場合はconfigで設定するんだと思う．
 いいところ
- ドラッグアンドドロップでファイルやディレクトリを送れる スクリーンショットを取ってペーストボタンを押すとちゃんとファイルとして保存される (素晴らしい！) 画像などはブラウザ上で閲覧できる テキストファイルなどはエディタが出てきて編集できる ディレクトリ作成，ファイル削除，リネームなどの簡単な作業ができる docker imagesで確認すると99.5 MBしかない．  悔しいところ
- PDFの閲覧をしようとすると中に組み込まれてる謎のビューアが立ち上がるが，日本語のPDFは文字化けして死んだ ファイルを開くとエディタが上がるがエディタが選べない (実は選べるのかも) 実行可能ファイルやシェルスクリプト，Makefileの実行などはできない  日本語PDFの閲覧で文字化けするのはちょっと致命的だったが，ダウンロードするかsimple-http-serverで見ればよいのでなんとかならんこともない． こういうブログみたいなのを書くときには結構便利そうな感じがした．'>
+ ドラッグアンドドロップでファイルやディレクトリを送れる スクリーンショットを取ってペーストボタンを押すとちゃんとファイルとして保存される (素晴らしい！) 画像などはブラウザ上で閲覧できる テキストファイルなどはエディタが出てきて編集できる ディレクトリ作成，ファイル削除，リネームなどの簡単な作業ができる docker imagesで確認すると99.5 MBしかない．  悔しいところ'>
 <meta property='og:url' content='https://hishinuma-t.dev/posts/droppy/'>
 <meta property='og:site_name' content='hpc::numa.blog()'>
 <meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='Software'><meta property='article:published_time' content='2020-06-29T00:00:00Z'/><meta property='article:modified_time' content='2020-06-29T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
@@ -392,12 +396,16 @@ text-align: center;
 
   <div class='container entry-content'>
   <h1 id="はじめに">はじめに</h1>
-<p>サーバ上で作業をしていて，手元のファイルをupload / downloadしたいことがよくあると思う．
-大きいファイルを1回送るくらいならやるんだが，
+<p>サーバ上で作業をしていて，手元のファイルをupload / downloadしたいことがよくあると思う．</p>
+<p>大きいファイルを1回送るくらいならやるが，
 たとえばgnuplotやLaTex, Doxygenと格闘しているときなんかは
 サーバ上で生成された画像をdownloadしたり，手元でAdobeなどで作った画像を何度もUploadするようなシチュエーションが生まれる．</p>
-<p>閲覧は一過性のもので，セキュリティとかは気にしないことにする</p>
-<p>Downloadや閲覧はあんまり問題にならなくて，httpサーバを立てればいいので</p>
+<p>基本的に全てのマシンに同じ環境を構築したいので，マウントするなどのOS依存っぽいことや，
+謎のフリーソフトを全部の端末に入れて回るみたいなことはやりたくない． (手動だし)</p>
+<p>サーバ側ではコマンド一発で構築できて，クライアント側では導入作業なく利用できるファイルのdonwload/uploadはないものかと思い，
+dockerで構築できて，ブラウザから利用できる物を探した．</p>
+<p>利用は作業中だけの一過性のものなので，セキュリティとかは気にしなくて良いことにする．</p>
+<p>Download, 閲覧はあんまり問題にならなくて，httpサーバを立てればいいので</p>
 <ol>
 <li>nginxをdockerであげてみたり (<a href="https://hub.docker.com/_/nginx">dockerhub</a>)</li>
 <li>cargoで入れられてディレクトリを一発で公開できるやつを使ったり (<a href="https://github.com/brson/basic-http-server">basic-http-server</a>)</li>
@@ -407,7 +415,7 @@ text-align: center;
 <pre><code>cargo install basic-http-server
 basic-http-server -x -a 0.0.0.0:8080&quot;
 </code></pre><p>で現在いるディレクトリがhttpで公開されてこんな風に見える</p>
-<p><img src="images/simple-http.png" alt="simple-http"></p>
+<p><img src="/images/simple-http.png" alt="simple-http"></p>
 <p>問題はuploadである．特に↑の画像みたいなスクリーンショットをmarkdownに貼るなんてやろうと思った日には
 スクリーンショットをファイルに保存してターミナル開いてscpするとかしないといけないので発狂しそうになる．</p>
 <h1 id="droppy">droppy</h1>
@@ -418,26 +426,26 @@ basic-http-server -x -a 0.0.0.0:8080&quot;
 configのフォルダをマウントしてオプションを色々設定できるみたいだけど，ディレクトリ一覧が見れてちょっとuploadできればいいのでデフォルトに任せた．</p>
 <pre><code>docker run -p 8080:8989 -v $PWD:/files/ -e UID=$(id -u) -e GID=$(id -g) silverwind/droppy
 </code></pre><p>見た目はこんな感じ．画面分割もできる．
-<img src="images/droppy.png" alt="droppy"></p>
+<img src="/images/droppy.png" alt="droppy"></p>
 <p>上げるとユーザ名を聞かれるが，適当なユーザ名とパスワードを入れるとログインできる．
 aとかbとかでいい．真面目にやる場合はconfigで設定するんだと思う．</p>
 <p>いいところ</p>
 <ul>
 <li>ドラッグアンドドロップでファイルやディレクトリを送れる</li>
-<li>スクリーンショットを取ってペーストボタンを押すとちゃんとファイルとして保存される (素晴らしい！)</li>
+<li><strong>スクリーンショットを取ってペーストボタンを押すとちゃんとファイルとして保存される (素晴らしい！)</strong></li>
 <li>画像などはブラウザ上で閲覧できる</li>
 <li>テキストファイルなどはエディタが出てきて編集できる</li>
 <li>ディレクトリ作成，ファイル削除，リネームなどの簡単な作業ができる</li>
-<li>docker imagesで確認すると99.5 MBしかない．</li>
+<li><strong>docker imagesで確認すると99.5 MBしかない．</strong></li>
 </ul>
 <p>悔しいところ</p>
 <ul>
-<li>PDFの閲覧をしようとすると中に組み込まれてる謎のビューアが立ち上がるが，日本語のPDFは文字化けして死んだ</li>
+<li><strong>PDFの閲覧をしようとすると中に組み込まれてる謎のビューアが立ち上がるが，日本語のPDFは文字化けして死んだ</strong></li>
 <li>ファイルを開くとエディタが上がるがエディタが選べない (実は選べるのかも)</li>
-<li>実行可能ファイルやシェルスクリプト，Makefileの実行などはできない</li>
+<li>実行可能ファイルやシェルスクリプト，Makefileの実行などはできない (これは期待してないのでまぁいい)</li>
 </ul>
-<p>日本語PDFの閲覧で文字化けするのはちょっと致命的だったが，ダウンロードするかsimple-http-serverで見ればよいのでなんとかならんこともない．
-こういうブログみたいなのを書くときには結構便利そうな感じがした．</p>
+<p>日本語PDFの閲覧で文字化けするのはちょっと致命的だったが，ダウンロードするかsimple-http-serverで見ればよいのでなんとかならんこともない．</p>
+<p>こういうブログみたいなのを書くときには結構便利そうな感じがした．</p>
 
 </div>
 
