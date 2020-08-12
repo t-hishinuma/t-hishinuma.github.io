@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SX-Aurora on hpc::numa.blog()</title>
+    <link>https://hishinuma-t.dev/tags/sx-aurora/</link>
+    <description>Recent content in SX-Aurora on hpc::numa.blog()</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
+    <lastBuildDate>Fri, 31 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://hishinuma-t.dev/tags/sx-aurora/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SX-Aurora TSUBASAにおける有限要素解析のための共役勾配法の性能評価</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/hpc175/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/hpc175/</guid>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc175, title={SX-Aurora TSUBASAにおける有限要素解析のための共役勾配法の性能評価}, author={菱沼,利彰 and 井原,遊 and 高村,守幸 and 平野,哲 and 萩原,孝 and 岩田,直樹 and 奥田,洋司}, journal={{情報処理学会研究報告}}, volume={2020-HPC-175}, number={18}, pages={1--10}, year={2020} } Links 情報処理学会 電子図書館</description>
+    </item>
+    
+  </channel>
+</rss>
