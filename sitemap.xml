@@ -73,6 +73,26 @@
   </url>
   
   <url>
+    <loc>https://hishinuma-t.dev/tags/paper/</loc>
+    <lastmod>2020-03-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/papers/</loc>
+    <lastmod>2020-03-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/tags/simd/</loc>
+    <lastmod>2020-03-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/papers/dr_thesis/</loc>
+    <lastmod>2020-03-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hishinuma-t.dev/posts/gcc_quad/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
   </url>
@@ -188,16 +208,6 @@
   </url>
   
   <url>
-    <loc>https://hishinuma-t.dev/tags/paper/</loc>
-    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hishinuma-t.dev/papers/</loc>
-    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hishinuma-t.dev/tags/pezy/</loc>
     <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
@@ -234,11 +244,6 @@
   
   <url>
     <loc>https://hishinuma-t.dev/papers/wo_review/isat_kayama/</loc>
-    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hishinuma-t.dev/tags/simd/</loc>
     <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url>
   

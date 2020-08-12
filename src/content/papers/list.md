@@ -60,6 +60,15 @@ pp. 23--31, 東京, 2013.1. \
 [**More Information (pdf, citation, other)**](/papers/with_review/hpcs2013)
 
 # Conference Proceedings (without review)
+1. 菱沼 利彰, 井原 遊, 高村 守幸, 平野 哲, 萩原 孝, 岩田 直樹, 奥田 洋司,
+SX-Aurora TSUBASAにおける有限要素解析のための共役勾配法の性能評価,
+情報処理学会研究報告, Vol. 2020-HPC-175, No. 18, pp. 1--10, 那覇, 2020.07．\
+[**More Information (pdf, citation, other)**](/papers/wo_review/hpc175)
+
+1. PEZY-SC2上における倍々精度演算ライブラリpzqdを用いた倍々精度Rgemmの高速化,
+情報処理学会研究報告, Vol. 2018-HPC-167, No. 10, pp. 1--9, 那覇, 2018.12．\
+[**More Information (pdf, citation, other)**](/papers/wo_review/hpc167)
+
 1. 菱沼 利彰, 中田 真秀, 
 PEZY-SC2上における倍々精度演算ライブラリpzqdを用いた倍々精度Rgemmの高速化,
 情報処理学会研究報告, Vol. 2018-HPC-167, No. 10, pp. 1--9, 那覇, 2018.12．\
@@ -212,3 +221,7 @@ P-E12-I, Kogakuin University, Tokyo, Oct., 2012 (Poster presentation).\
 反復解法ライブラリ向け倍々精度演算のAVXを用いた高速化,
 情報処理学会研究報告, vol. 2012-HPC-135 (SWoPP2012), No. 16, pp. 1--6, 鳥取, 2012.8.\
 [**More Information (pdf, citation, other)**](/papers/wo_review/hpc135)
+
+# Dr. Thesis
+1. SIMD演算を用いた高精度疎行列計算ソフトウェアの高速化, 筑波大学博士論文, 2020/03/25 修了, 博士 (情報学)． \
+[**More Information (pdf, citation, other)**](/papers/dr_thesis/)
