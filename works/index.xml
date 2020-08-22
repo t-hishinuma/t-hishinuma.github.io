@@ -25,7 +25,10 @@ Library of High Precision Sparse Matrix Operations Accelerated by SIMD AVX
 Xev-GMP-Web
 Xev-GMP-Web converts a C source code which uses double variables into a C source code which uses GNU GMP library.
 Documents CAEエンジニアのためのHPC (書き途中, ほぼ白紙)
-Other 菱沼 利彰, 加山 英賢. 通信のストライピングによる高速データ転送, 第1回ICTプログラミングコンテスト, GMOクラウド賞 受賞, 東京, 2012年5月.</description>
+Other   博士論文を情報処理学会 2019年度研究会推薦博士論文速報にて取り上げていただきました．URL, (魚拓)
+  上記の研究会推薦博士論文速報が情報処理 第61巻，第9月号に掲載されました．URL (記念写真1, 2)
+  菱沼 利彰, 加山 英賢. 通信のストライピングによる高速データ転送, 第1回ICTプログラミングコンテスト, GMOクラウド賞 受賞, 東京, 2012年5月.
+  </description>
     </item>
     
   </channel>
