@@ -44,10 +44,10 @@ GMPを用いたプログラム GMPはGNU Multi Precision Arithmetic Libraryの�
     
     <item>
       <title>gcloud cloud sdkを使いやすいように環境を整理した</title>
-      <link>https://hishinuma-t.dev/posts/gcp_setup/</link>
+      <link>https://hishinuma-t.dev/posts/tools/gcp_setup/</link>
       <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://hishinuma-t.dev/posts/gcp_setup/</guid>
+      <guid>https://hishinuma-t.dev/posts/tools/gcp_setup/</guid>
       <description>はじめに ちょっと前にすぐに導入方法とかコマンドを忘れて仕方がないので， bashrcに関数作ってGCPでよく使うコマンドを整理したので，忘れないうちにここに書いておく．
 テスト用なんかでマシンを立てて，ペペッとコマンド流したいときにやるための：
  マシン一覧取得 マシン起動・停止 マシン接続 マシン削除  という作業を瞬殺する

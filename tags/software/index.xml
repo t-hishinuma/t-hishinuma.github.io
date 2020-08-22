@@ -13,21 +13,37 @@
     
     
     <item>
-      <title>tmuxでAlt&#43;矢印キーでペインサイズを変更する</title>
-      <link>https://hishinuma-t.dev/posts/tmux_arrow/</link>
+      <title>scpで圧縮転送，踏み台など</title>
+      <link>https://hishinuma-t.dev/posts/tools/scp_command/</link>
       <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://hishinuma-t.dev/posts/tmux_arrow/</guid>
+      <guid>https://hishinuma-t.dev/posts/tools/scp_command/</guid>
+      <description>はじめに 以下の記事は昔のブログに書いてて，忘れたら見に行ってたんだけど，昔のブログはそろそろ潰そうかと思っているので，ここに書き直す．
+  ファイルを圧縮して高速転送．トラフィックを減らす．
+scp -C file usr@name:~/
+  暗号化方式を変える(ローカルで暗号化は雑でいいから早く送りたいなど)
+scp -c arcfour128 file usr@name:~/
+  踏み台経由の転送
+scp -o &#39;ProxyCommand ssh 192.168.0.1 -W %h:%p&#39; file user@name:~/
+  以上です．おやすみ．</description>
+    </item>
+    
+    <item>
+      <title>tmuxでAlt&#43;矢印キーでペインサイズを変更する</title>
+      <link>https://hishinuma-t.dev/posts/tools/tmux_arrow/</link>
+      <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/tools/tmux_arrow/</guid>
       <description>よく忘れるので書いておきます
 bind-key -n M-Up resize-pane -U 5 bind-key -n M-Down resize-pane -D 5 bind-key -n M-Left resize-pane -L 5 bind-key -n M-Right resize-pane -R 5 tmuxも色々カスタマイズできるけど，基本的に必須なのはこれくらいですかね．．</description>
     </item>
     
     <item>
       <title>ブラウザからサーバにファイルをuploadするためにdroppyを試す</title>
-      <link>https://hishinuma-t.dev/posts/droppy/</link>
+      <link>https://hishinuma-t.dev/posts/tools/droppy/</link>
       <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://hishinuma-t.dev/posts/droppy/</guid>
+      <guid>https://hishinuma-t.dev/posts/tools/droppy/</guid>
       <description>はじめに サーバ上で作業をしていて，手元のファイルをupload / downloadしたいことがよくあると思う．
 大きいファイルを1回送るくらいならやるが， たとえばgnuplotやLaTex, Doxygenと格闘しているときなんかは サーバ上で生成された画像をdownloadしたり，手元でAdobeなどで作った画像を何度もUploadするようなシチュエーションが生まれる．
 基本的に全てのマシンに同じ環境を構築したいので，マウントするなどのOS依存っぽいことや， 謎のフリーソフトを全部の端末に入れて回るみたいなことはやりたくない． (手動だし)
@@ -48,10 +64,10 @@ docker run -p 8080:8989 -v $PWD:/files/ -e UID=$(id -u) -e GID=$(id -g) silverwi
     
     <item>
       <title>gcloud cloud sdkを使いやすいように環境を整理した</title>
-      <link>https://hishinuma-t.dev/posts/gcp_setup/</link>
+      <link>https://hishinuma-t.dev/posts/tools/gcp_setup/</link>
       <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://hishinuma-t.dev/posts/gcp_setup/</guid>
+      <guid>https://hishinuma-t.dev/posts/tools/gcp_setup/</guid>
       <description>はじめに ちょっと前にすぐに導入方法とかコマンドを忘れて仕方がないので， bashrcに関数作ってGCPでよく使うコマンドを整理したので，忘れないうちにここに書いておく．
 テスト用なんかでマシンを立てて，ペペッとコマンド流したいときにやるための：
  マシン一覧取得 マシン起動・停止 マシン接続 マシン削除  という作業を瞬殺する

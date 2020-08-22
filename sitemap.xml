@@ -28,6 +28,11 @@
   </url>
   
   <url>
+    <loc>https://hishinuma-t.dev/posts/tools/scp_command/</loc>
+    <lastmod>2020-08-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hishinuma-t.dev/tags/software/</loc>
     <lastmod>2020-08-22T00:00:00+00:00</lastmod>
   </url>
@@ -38,7 +43,7 @@
   </url>
   
   <url>
-    <loc>https://hishinuma-t.dev/posts/tmux_arrow/</loc>
+    <loc>https://hishinuma-t.dev/posts/tools/tmux_arrow/</loc>
     <lastmod>2020-08-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -63,7 +68,7 @@
   </url>
   
   <url>
-    <loc>https://hishinuma-t.dev/posts/droppy/</loc>
+    <loc>https://hishinuma-t.dev/posts/tools/droppy/</loc>
     <lastmod>2020-06-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -88,7 +93,7 @@
   </url>
   
   <url>
-    <loc>https://hishinuma-t.dev/posts/gcp_setup/</loc>
+    <loc>https://hishinuma-t.dev/posts/tools/gcp_setup/</loc>
     <lastmod>2020-05-04T00:00:00+00:00</lastmod>
   </url>
   

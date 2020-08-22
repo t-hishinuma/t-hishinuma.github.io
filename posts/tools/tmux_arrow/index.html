@@ -2,21 +2,21 @@
 <html lang='en'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='Toshiaki Hishinuma&#39;s web site'>
+<meta name='description' content='よく忘れるので書いておきます
+bind-key -n M-Up resize-pane -U 5 bind-key -n M-Down resize-pane -D 5 bind-key -n M-Left resize-pane -L 5 bind-key -n M-Right resize-pane -R 5 tmuxも色々カスタマイズできるけど，基本的に必須なのはこれくらいですかね．．'>
 <meta name='theme-color' content='black'>
 
-<meta property='og:title' content='Papers ,  hpc::numa.blog()'>
-<meta property='og:description' content='Toshiaki Hishinuma&#39;s web site'>
-<meta property='og:url' content='https://hishinuma-t.dev/papers/'>
+<meta property='og:title' content='tmuxでAlt&#43;矢印キーでペインサイズを変更する ,  hpc::numa.blog()'>
+<meta property='og:description' content='よく忘れるので書いておきます
+bind-key -n M-Up resize-pane -U 5 bind-key -n M-Down resize-pane -D 5 bind-key -n M-Left resize-pane -L 5 bind-key -n M-Right resize-pane -R 5 tmuxも色々カスタマイズできるけど，基本的に必須なのはこれくらいですかね．．'>
+<meta property='og:url' content='https://hishinuma-t.dev/posts/tools/tmux_arrow/'>
 <meta property='og:site_name' content='hpc::numa.blog()'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content='2020-08-22T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='Software'><meta property='article:published_time' content='2020-08-22T00:00:00Z'/><meta property='article:modified_time' content='2020-08-22T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hishinuma_t'>
 
 <meta name="generator" content="Hugo 0.68.3" />
 
-  <title>Papers ,  hpc::numa.blog()</title>
-  <link rel='canonical' href='https://hishinuma-t.dev/papers/'>
-  
-    <link href="https://hishinuma-t.dev/papers/index.xml" rel="alternate" type="application/rss+xml" title="hpc::numa.blog()" />
+  <title>tmuxでAlt&#43;矢印キーでペインサイズを変更する ,  hpc::numa.blog()</title>
+  <link rel='canonical' href='https://hishinuma-t.dev/posts/tools/tmux_arrow/'>
   
   
   <link rel='icon' href='/favicon.ico'>
@@ -38,7 +38,7 @@ if (!doNotTrack) {
   
 
 </head>
-<body class='section type-papers has-sidebar'>
+<body class='page type-posts has-sidebar has-emoji'>
 
   <div class='site'><div id='sidebar' class='sidebar'>
   <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
@@ -289,180 +289,137 @@ if (!doNotTrack) {
       <main id='content'>
 
 
-<header class='header'>
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'>Papers</h1>
-
+      <h1 class='title'>tmuxでAlt&#43;矢印キーでペインサイズを変更する</h1>
       
 
     </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2020-08-22T00:00:00Z'>2020, Aug 22</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+One min read
+</span>
+
+
+  
+  
+</div>
+
+
+  
+
+
+<style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left; 
+height: 36px; 
+width: 32px; 
+float: left; 
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.pinterest:hover > svg {fill: #CB2027;}
+#share-buttons > div.gplus:hover > svg {fill: #dd4b39;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.pinterest > svg {height: 20px; margin-top: 9px;}
+#share-buttons > div.gplus > svg {height: 17px; margin-top: 9px; position: relative; left: 1px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+<span style="color: silver;">Share on: </span><div id="share-buttons">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="Hishinuma_t">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+
   </div>
 </header>
 
+  
+  
 
+  <div class='container entry-content'>
+  <p>よく忘れるので書いておきます</p>
+<pre><code>bind-key -n M-Up resize-pane -U 5
+bind-key -n M-Down resize-pane -D 5
+bind-key -n M-Left resize-pane -L 5
+bind-key -n M-Right resize-pane -R 5
+</code></pre><p>tmuxも色々カスタマイズできるけど，基本的に必須なのはこれくらいですかね．．</p>
 
-
-<div class='container list-container'>
-  <ul class='list'>
-    
-      <li class='item'>
-  <div class='meta'>
-    <span>
-  <span class='screen-reader-text'>Posted on </span>
-  <time datetime='2020-02-19T00:00:00Z'>2020, Feb 19</time>
-</span>
-
-  </div>
-  <header class='item-header'>
-    <h3 class='item-title'>
-      <a href='/papers/wo_review/jsiam_os_2016_mp/'>GMPを用いた混合精度型プログラムの自動生成機構の提案
-      </a>
-    </h3>
-  </header>
-</li>
-
-    
-      <li class='item'>
-  <div class='meta'>
-    <span>
-  <span class='screen-reader-text'>Posted on </span>
-  <time datetime='2020-02-19T00:00:00Z'>2020, Feb 19</time>
-</span>
-
-  </div>
-  <header class='item-header'>
-    <h3 class='item-title'>
-      <a href='/papers/wo_review/hpc152/'>GMPライブラリを用いた任意多倍長プログラムへの自動変換機構の提案
-      </a>
-    </h3>
-  </header>
-</li>
-
-    
-      <li class='item'>
-  <div class='meta'>
-    <span>
-  <span class='screen-reader-text'>Posted on </span>
-  <time datetime='2020-02-19T00:00:00Z'>2020, Feb 19</time>
-</span>
-
-  </div>
-  <header class='item-header'>
-    <h3 class='item-title'>
-      <a href='/papers/wo_review/ipsj_hanaue/'>Hierarchical Diagonal Blockingを用いた疎行列ベクトル積の特性評価
-      </a>
-    </h3>
-  </header>
-</li>
-
-    
-      <li class='item'>
-  <div class='meta'>
-    <span>
-  <span class='screen-reader-text'>Posted on </span>
-  <time datetime='2020-02-19T00:00:00Z'>2020, Feb 19</time>
-</span>
-
-  </div>
-  <header class='item-header'>
-    <h3 class='item-title'>
-      <a href='/papers/wo_review/siam_pp18/'>Implementation and Evaluation of BLAS on PEZY-SC/SC2 Processor
-      </a>
-    </h3>
-  </header>
-</li>
-
-    
-      <li class='item'>
-  <div class='meta'>
-    <span>
-  <span class='screen-reader-text'>Posted on </span>
-  <time datetime='2020-02-19T00:00:00Z'>2020, Feb 19</time>
-</span>
-
-  </div>
-  <header class='item-header'>
-    <h3 class='item-title'>
-      <a href='/papers/wo_review/ipsj_doi/'>Intel/KNLにおける倍々精度疎行列ベクトル積の特性評価
-      </a>
-    </h3>
-  </header>
-</li>
-
-    
-  </ul>
+</div>
 
   
-<nav id='pagination'>
-  <div class='page-links'>
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/software/'>Software</a></div>
 
-    
-    <a class='page-link prev' href='/papers/page/3/'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/posts/tools/droppy/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <line x1="20" y1="12" x2="4" y2="12"/>
   <polyline points="10 18 4 12 10 6"/>
   
 </svg>
-<span class='screen-reader-text'>Previous page</span>
-    </a>
-    
-      
-      <a class='page-link' href='/papers/'>
-        <span class='screen-reader-text'>Page: </span>1</a>
-      
-    
-      
-        <span class='page-link dots'>&hellip;</span>
-        
-      
-    
-      
-      <a class='page-link' href='/papers/page/3/'>
-        <span class='screen-reader-text'>Page: </span>3</a>
-      
-    
-      
-      <span aria-current='page' class='page-link current'>
-        <span class='screen-reader-text'>Current page: </span>4</span>
-      
-    
-      
-      <a class='page-link' href='/papers/page/5/'>
-        <span class='screen-reader-text'>Page: </span>5</a>
-      
-    
-      
-        <span class='page-link dots'>&hellip;</span>
-        
-      
-    
-      
-        
-      
-    
-      
-      <a class='page-link' href='/papers/page/8/'>
-        <span class='screen-reader-text'>Page: </span>8</a>
-      
-    
-
-    
-    <a class='page-link next' href='/papers/page/5/'>
-      <span class='screen-reader-text'>Next page</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>ブラウザからサーバにファイルをuploadするためにdroppyを試す</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/posts/tools/scp_command/'>
+        <span class='screen-reader-text'>Next post: </span>scpで圧縮転送，踏み台など<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <line x1="4" y1="12" x2="20" y2="12"/>
   <polyline points="14 6 20 12 14 18"/>
   
 </svg>
-</a>
-    
-
-  </div>
+</span>
+      </a>
+    </div></div>
 </nav>
 
 
-</div>
+
 
       </main>
 
@@ -481,4 +438,25 @@ if (!doNotTrack) {
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
