@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Fri, 31 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hishinuma-t.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -40,6 +40,16 @@ Other   博士論文を情報処理学会 2019年度研究会推薦博士論文�
   上記の研究会推薦博士論文速報が情報処理 第61巻，第9月号に掲載されました．URL (記念写真1, 2)
   菱沼 利彰, 加山 英賢. 通信のストライピングによる高速データ転送, 第1回ICTプログラミングコンテスト, GMOクラウド賞 受賞, 東京, 2012年5月.
   </description>
+    </item>
+    
+    <item>
+      <title>tmuxでAlt&#43;矢印キーでペインサイズを変更する</title>
+      <link>https://hishinuma-t.dev/posts/tmux_arrow/</link>
+      <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/tmux_arrow/</guid>
+      <description>よく忘れるので書いておきます
+bind-key -n M-Up resize-pane -U 5 bind-key -n M-Down resize-pane -D 5 bind-key -n M-Left resize-pane -L 5 bind-key -n M-Right resize-pane -R 5 tmuxも色々カスタマイズできるけど，基本的に必須なのはこれくらいですかね．．</description>
     </item>
     
     <item>
