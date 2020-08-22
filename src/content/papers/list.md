@@ -62,7 +62,7 @@ pp. 23--31, 東京, 2013.1. \
 # Conference Proceedings (without review)
 1. 菱沼 利彰, 井原 遊, 高村 守幸, 平野 哲, 萩原 孝, 岩田 直樹, 奥田 洋司,
 SX-Aurora TSUBASAにおける有限要素解析のための共役勾配法の性能評価,
-情報処理学会研究報告, Vol. 2020-HPC-175, No. 18, pp. 1--10, 那覇, 2020.07．\
+情報処理学会研究報告, Vol. 2020-HPC-175 (SWoPP2020), No. 18, pp. 1--10, 2020.07．\
 [**More Information (pdf, citation, other)**](/papers/wo_review/hpc175)
 
 1. PEZY-SC2上における倍々精度演算ライブラリpzqdを用いた倍々精度Rgemmの高速化,
