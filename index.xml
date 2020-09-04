@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Sat, 22 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hishinuma-t.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -40,6 +40,15 @@ Other   博士論文を情報処理学会 2019年度研究会推薦博士論文�
   上記の研究会推薦博士論文速報が情報処理 第61巻，第9月号に掲載されました．URL (記念写真1, 2)
   菱沼 利彰, 加山 英賢. 通信のストライピングによる高速データ転送, 第1回ICTプログラミングコンテスト, GMOクラウド賞 受賞, 東京, 2012年5月.
   </description>
+    </item>
+    
+    <item>
+      <title>今更だけどgithub sctionsを試す</title>
+      <link>https://hishinuma-t.dev/posts/tools/github_actions/</link>
+      <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/tools/github_actions/</guid>
+      <description>はじめに </description>
     </item>
     
     <item>
