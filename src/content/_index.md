@@ -9,7 +9,7 @@ images: [images/logo.png]
 
 HPCエンジニアの[Hishinuma\_t][1] の個人ページです．
 
-[github][5], [Twitter][2], [Linkedin][6]
+SNSアカウント等：[github][5], [Twitter][2], [Linkedin][6]
 
 業績やソフトウェアの紹介およびBlog目的で運用しています．
 
@@ -22,8 +22,8 @@ HPCエンジニアの[Hishinuma\_t][1] の個人ページです．
 プライバシーポリシーについては[こちら](about/privacy)
 
 ## Current Status
-* [科学計算総合研究所][3] 研究員\
-	(Researcher, RICOS. Co. Ltd.)
+* [科学計算総合研究所][3] 主任研究員\
+	(Chief Researcher, RICOS. Co. Ltd.)
 * 筑波大学 図書館情報メディア研究科 博士 (情報学) \
 	(Ph.D. in Informatics, Univ. of Tsukuba)
 * 情報処理学会 正会員\

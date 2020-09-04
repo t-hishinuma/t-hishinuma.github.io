@@ -13,8 +13,8 @@ mathjax: true
 ---
 
 # Current Status
-* [科学計算総合研究所][3] 研究員\
-	(Researcher, RICOS. Co. Ltd.)
+* [科学計算総合研究所][3] 主任研究員\
+	(Chief Researcher, RICOS. Co. Ltd.)
 * 筑波大学 図書館情報メディア研究科 博士 (情報学) \
 	(Ph.D. in Informatics, Univ. of Tsukuba)
 * 情報処理学会 正会員\
@@ -39,12 +39,13 @@ mathjax: true
 	* SIMD (AVX512, AVX2, AVX)
 	* Multi-threading (OpenMP, pthread)
 	* GPGPU (CUDA, OpenACC, OpenCL)
+	* SX-Aurora TSUBASA
 	* PEZY-SC2 (PZCL)
-	* MPI
-* Python, C#, Ruby, MATLAB, Scilab, Rust?, Julia?
+	* Multi-Process (MPI)
+* Python, C#, Ruby, MATLAB, Scilab, Rust?, Fortran?
 * etc:
 	* zsh, tmux, vim, gnuplot, makefile, awk, sed...
-	* Linux server (RedHat)
+	* Linux server (Ubuntsu, RedHat)
 	* Docker, KVM, Virtual Box
 	* git, svn
 	* gitlab-CI
@@ -84,8 +85,8 @@ mathjax: true
 * 2020.03 筑波大学 図書館情報メディア研究科 図書館情報メディア専攻 修了(情報学博士)\
 (Doctor of philosophy in informatics, Univ. of Tsukuba)
 
-# Hoby
-* hogehoge...
+* 2020.07 ~ 株式会社 科学計算総合研究所, 主任研究員\
+(Chief Researcher, Research Institute for Computational Science Co. Ltd. (RICOS Co. Ltd.))
 
 # 資格等
 * 博士 (情報学)　(2020)
@@ -96,4 +97,3 @@ mathjax: true
 [1]: http://hpcl.info.kogakuin.ac.jp/
 [2]: https://tgosros.wixsite.com/hasegawaken
 [3]: https://www.ricos.co.jp/
-	([Hasegawa Lab.][2])
