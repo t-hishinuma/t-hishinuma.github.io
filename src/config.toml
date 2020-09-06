@@ -1,10 +1,9 @@
 baseURL = "https://hishinuma-t.dev/"
 title = "hpc::numa.blog()"
 copyright = "Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved."
-theme = "engimo"
+theme = "minimo"
 publishDir = "../"
 ################################################
-
 
 disqusShortname = ""
 googleAnalytics = "UA-45816416-4"
@@ -52,7 +51,6 @@ hideEntryNavigation = ["page"] # boolean / array of sections
 hideEntryMeta = ["page"] # boolean / array of sections
 showReadingTime = true
 showLastmod = true
-taxonomyCloudShuffle = false
 accentColor = "black"
 hideMainMenu = false
 rtl = false
@@ -68,10 +66,7 @@ enable = true
 [params.widgets]
 #header = ["breadcrumbs"]
 homepage = ["recent_posts"]
-#sidebar = ["about","search","sidebar_menu","taxonomy_cloud"]
-#sidebar = ["about", "social_menu", "recent_posts", "taxonomy_cloud"]
-sidebar = ["about", "social_menu", "taxonomy_cloud", "recent_posts"]
-#footer = ["social_menu"]
+sidebar = ["about", "social_menu", "recent_posts"]
 
 [params.opengraph.twitter]
 page = "summary" # Twitter page username
@@ -103,8 +98,8 @@ dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author=
 enable = true
 apiEndpoint = "https://api.staticman.net/v2/entry"
 maxDepth = 2
-username = "achary"
-repository = "engimo"
+username = "t-hishinuma"
+repository = "minimo"
 branch = "master"
 
 # Utterances: https://utteranc.es
@@ -114,19 +109,12 @@ issueTerm = "pathname" # pathname / url / title
 
 [params.comments.utterances.github]
 username = "t-hishinuma"
-repository = "engimo"
+repository = "minimo"
 
 [params.search.algolia]
 appId = ""
 indexName = ""
 searchApiKey = ""
-
-[taxonomies]
-author = "authors"
-category = "categories"
-series = "series"
-tag = "tags"
-shuffle = false
 
 [permalinks]
 page = "/:slug/"
