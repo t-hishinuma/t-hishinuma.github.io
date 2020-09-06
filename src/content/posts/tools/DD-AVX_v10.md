@@ -6,7 +6,7 @@ date: 2020-09-06
 
 tags: ["HPC", "Multi-precision", "Programming", "Software"]
 
-draft: true
+draft: false
 emoji: true
 mathjax: true
 ---
