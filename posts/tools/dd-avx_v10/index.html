@@ -19,10 +19,11 @@ DD型を簡単に扱う方法はBailey, Hida先生のQDライブラリの dd_rea
 これが地獄の始まりでした(車輪の再発明ってレベルじゃないぞ1年かかったわ)
 ということでDD-AVX_v3では5つのクラスを提供している．
 Scalar  d_real (alias of double) dd_real (provided by the QD Library)  Vector  d_real_vector dd_real_vector  Sparse matrix (CRS format)  d_real_SpMat  スカラやベクタの四則演算レベルから基本的な機能を実装してある． これらはD/DDのキャストや代入などもサポートしているため， 連立一次方程式ソルバをtemplateで実装すれば同じI/Fで倍精度とDD型を使える．
+現状ではテスト不足で疎行列型はファイルからのI/Oしかできないのと，SpMVしか実装できないです．v1.1でTSpMVと行列I/Fは追加予定
 内部ではすべての方の組み合わせに対してAVX / AVX2のintrinsicsを使って最適化してあるため， どの変数を入れてもDDにキャストされるわけではなく，ちゃんと入力に応じたDDのアルゴリズムが呼ばれるようになっている．
 ちなみにaxpyの内部実装はこんな感じ↓
 https://github.com/t-hishinuma/DD-AVX_v3/blob/master/src/vector/blas/axpy.cpp
-具体的にはBLAS Lv.1のaxpyを様々な精度で呼ぶサンプルを見るとわかりやすい．'>
+具体的にはBLAS Lv.'>
 <meta name='theme-color' content='black'>
 
 <meta property='og:title' content='混合精度疎行列計算ライブラリDD-AVX v3のv1.0をリリースした ,  hpc::numa.blog()'>
@@ -43,10 +44,11 @@ DD型を簡単に扱う方法はBailey, Hida先生のQDライブラリの dd_rea
 これが地獄の始まりでした(車輪の再発明ってレベルじゃないぞ1年かかったわ)
 ということでDD-AVX_v3では5つのクラスを提供している．
 Scalar  d_real (alias of double) dd_real (provided by the QD Library)  Vector  d_real_vector dd_real_vector  Sparse matrix (CRS format)  d_real_SpMat  スカラやベクタの四則演算レベルから基本的な機能を実装してある． これらはD/DDのキャストや代入などもサポートしているため， 連立一次方程式ソルバをtemplateで実装すれば同じI/Fで倍精度とDD型を使える．
+現状ではテスト不足で疎行列型はファイルからのI/Oしかできないのと，SpMVしか実装できないです．v1.1でTSpMVと行列I/Fは追加予定
 内部ではすべての方の組み合わせに対してAVX / AVX2のintrinsicsを使って最適化してあるため， どの変数を入れてもDDにキャストされるわけではなく，ちゃんと入力に応じたDDのアルゴリズムが呼ばれるようになっている．
 ちなみにaxpyの内部実装はこんな感じ↓
 https://github.com/t-hishinuma/DD-AVX_v3/blob/master/src/vector/blas/axpy.cpp
-具体的にはBLAS Lv.1のaxpyを様々な精度で呼ぶサンプルを見るとわかりやすい．'>
+具体的にはBLAS Lv.'>
 <meta property='og:url' content='https://hishinuma-t.dev/posts/tools/dd-avx_v10/'>
 <meta property='og:site_name' content='hpc::numa.blog()'>
 <meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='HPC'><meta property='article:tag' content='Multi-precision'><meta property='article:tag' content='Programming'><meta property='article:tag' content='Software'><meta property='article:published_time' content='2020-09-06T00:00:00Z'/><meta property='article:modified_time' content='2020-09-06T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@summary'>
@@ -373,6 +375,7 @@ One min read
 <p>スカラやベクタの四則演算レベルから基本的な機能を実装してある．
 これらはD/DDのキャストや代入などもサポートしているため，
 連立一次方程式ソルバをtemplateで実装すれば同じI/Fで倍精度とDD型を使える．</p>
+<p><strong>現状ではテスト不足で疎行列型はファイルからのI/Oしかできないのと，SpMVしか実装できないです．v1.1でTSpMVと行列I/Fは追加予定</strong></p>
 <p>内部ではすべての方の組み合わせに対してAVX / AVX2のintrinsicsを使って最適化してあるため，
 どの変数を入れてもDDにキャストされるわけではなく，ちゃんと入力に応じたDDのアルゴリズムが呼ばれるようになっている．</p>
 <p>ちなみにaxpyの内部実装はこんな感じ↓</p>
