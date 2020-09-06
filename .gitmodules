@@ -7,3 +7,6 @@
 [submodule "src/themes/themes"]
 	path = src/themes/themes
 	url = git@github.com:MunifTanjim/minimo.git
+[submodule "src/themes/minimo"]
+	path = src/themes/minimo
+	url = git@github.com:MunifTanjim/minimo.git
