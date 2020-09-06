@@ -17,7 +17,7 @@ mathjax: true
 # Software
 **[DD-AVX\_v3][DDAVX3]**\
 	Library of High Precision Sparse Matrix Operations Accelerated by SIMD AVX\
-    [v.1.0 release blog](https://hishinuma-t.dev/posts/tools/github_actions/posts/tools/dd-avx_v10/)
+    [v.1.0 release blog](https://hishinuma-t.dev/posts/tools/dd-avx_v10/)
 
 **[numa_benchmark][numa_bench]**\
     NUMerical linear Algebra Benchmark (with docker)
