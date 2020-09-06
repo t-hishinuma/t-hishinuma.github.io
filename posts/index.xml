@@ -41,15 +41,6 @@ https://github.com/t-hishinuma/DD-AVX_v3/blob/master/test/vector_blas/axpy.cpp</
     </item>
     
     <item>
-      <title>今更だけどgithub sctionsを試す</title>
-      <link>https://hishinuma-t.dev/posts/tools/github_actions/</link>
-      <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hishinuma-t.dev/posts/tools/github_actions/</guid>
-      <description>はじめに </description>
-    </item>
-    
-    <item>
       <title>scpで圧縮転送，踏み台など</title>
       <link>https://hishinuma-t.dev/posts/tools/scp_command/</link>
       <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>

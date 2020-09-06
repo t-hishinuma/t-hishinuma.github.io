@@ -31,6 +31,7 @@ More Information (pdf, citation, other)  Conference Proceedings (with review)   
       <guid>https://hishinuma-t.dev/works/list/</guid>
       <description>Software DD-AVX_v3
 Library of High Precision Sparse Matrix Operations Accelerated by SIMD AVX
+v.1.0 release blog
 numa_benchmark
 NUMerical linear Algebra Benchmark (with docker)
 Xev-GMP-Web
@@ -69,15 +70,6 @@ https://github.com/t-hishinuma/DD-AVX_v3/blob/master/src/vector/blas/axpy.cpp
 具体的にはBLAS Lv.1のaxpyを様々な精度で呼ぶサンプルを見るとわかりやすい．
 いかに狂気の産物かがわかると思う．
 https://github.com/t-hishinuma/DD-AVX_v3/blob/master/test/vector_blas/axpy.cpp</description>
-    </item>
-    
-    <item>
-      <title>今更だけどgithub sctionsを試す</title>
-      <link>https://hishinuma-t.dev/posts/tools/github_actions/</link>
-      <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hishinuma-t.dev/posts/tools/github_actions/</guid>
-      <description>はじめに </description>
     </item>
     
     <item>

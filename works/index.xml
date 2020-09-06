@@ -20,6 +20,7 @@
       <guid>https://hishinuma-t.dev/works/list/</guid>
       <description>Software DD-AVX_v3
 Library of High Precision Sparse Matrix Operations Accelerated by SIMD AVX
+v.1.0 release blog
 numa_benchmark
 NUMerical linear Algebra Benchmark (with docker)
 Xev-GMP-Web
