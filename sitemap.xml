@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://hishinuma-t.dev/</loc>
-    <lastmod>2020-09-06T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -28,27 +28,42 @@
   </url>
   
   <url>
+    <loc>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020/</loc>
+    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/tags/multi-precision/</loc>
+    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/tags/paper/</loc>
+    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/papers/</loc>
+    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/tags/software/</loc>
+    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/tags/</loc>
+    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hishinuma-t.dev/tags/hpc/</loc>
     <lastmod>2020-09-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hishinuma-t.dev/tags/multi-precision/</loc>
-    <lastmod>2020-09-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hishinuma-t.dev/tags/programming/</loc>
-    <lastmod>2020-09-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hishinuma-t.dev/tags/software/</loc>
-    <lastmod>2020-09-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hishinuma-t.dev/tags/</loc>
     <lastmod>2020-09-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -65,16 +80,6 @@
   <url>
     <loc>https://hishinuma-t.dev/posts/tools/tmux_arrow/</loc>
     <lastmod>2020-08-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hishinuma-t.dev/tags/paper/</loc>
-    <lastmod>2020-07-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hishinuma-t.dev/papers/</loc>
-    <lastmod>2020-07-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -329,6 +334,10 @@
   
   <url>
     <loc>https://hishinuma-t.dev/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020_doi/</loc>
   </url>
   
 </urlset>

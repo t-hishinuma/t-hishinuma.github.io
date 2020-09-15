@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Fri, 31 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hishinuma-t.dev/tags/paper/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AVX2を用いた高速な倍々精度疎行列計算ソフトウェアの有限要素解析への適用可能性評価</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020/</guid>
+      <description>Citation (bibtex) @article{hishinuma_jsism2020, title={{AVX2を用いた高速な倍々精度疎行列計算ソフトウェアの有限要素解析への適用可能性評価}}, author={菱沼利彰 and 森田直樹}, journal={{日本応用数理学会 2020年度年会}}, pages={417--418}, year={2020} } Link: https://annual2020.jsiam.org/</description>
+    </item>
     
     <item>
       <title>SX-Aurora TSUBASAにおける有限要素解析のための共役勾配法の性能評価</title>
@@ -239,6 +248,15 @@ Links HPCS2013
       
       <guid>https://hishinuma-t.dev/papers/wo_review/hpc157/</guid>
       <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc157, title={{多倍長精度プログラムの自動生成機構Xev-GMPにおける混合精度プログラムの生成と評価}}, author={榊原巧磨 and 佐々木信一 and 菱沼利彰 and 藤井昭宏 and 田中輝雄 and 平澤将一}, author={斯波柾 and 菱沼利彰 and 田中輝雄 and 藤井昭宏 and 平澤将一}, journal={{情報処理学会研究報告}}, volume={2018-HPC-157}, number={3}, pages={1--8}, year={2016} } </description>
+    </item>
+    
+    <item>
+      <title>Intel Xeonプロセッサ上におけるAVX512を用いた倍々精度演算の性能評価</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020_doi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020_doi/</guid>
+      <description>@article{doi_jsiam2020, title={{Intel Xeonプロセッサ上におけるAVX512を用いた倍々精度演算の性能評価}}, author={土肥樹 and 菱沼利彰 and 田中輝雄 and 藤井 昭宏}, journal={{日本応用数理学会 2020年度年会}}, pages={107--108}, year={2020} } Link: https://annual2020.jsiam.org/</description>
     </item>
     
   </channel>

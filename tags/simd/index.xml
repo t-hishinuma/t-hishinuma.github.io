@@ -178,5 +178,14 @@ Links HPCS2013
       <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc167, title={{反復解法ライブラリ向け倍々精度演算のAVXを用いた高速化}}, author={菱沼利彰 and 浅川圭介 and 藤井昭宏 and 田中輝雄 and 長谷川秀彦}, journal={{情報処理学会研究報告}}, volume={2018-HPC-135}, number={16}, pages={1--8}, year={2012} } </description>
     </item>
     
+    <item>
+      <title>Intel Xeonプロセッサ上におけるAVX512を用いた倍々精度演算の性能評価</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020_doi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020_doi/</guid>
+      <description>@article{doi_jsiam2020, title={{Intel Xeonプロセッサ上におけるAVX512を用いた倍々精度演算の性能評価}}, author={土肥樹 and 菱沼利彰 and 田中輝雄 and 藤井 昭宏}, journal={{日本応用数理学会 2020年度年会}}, pages={107--108}, year={2020} } Link: https://annual2020.jsiam.org/</description>
+    </item>
+    
   </channel>
 </rss>

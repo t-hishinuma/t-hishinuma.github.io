@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Sun, 06 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hishinuma-t.dev/tags/software/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AVX2を用いた高速な倍々精度疎行列計算ソフトウェアの有限要素解析への適用可能性評価</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020/</guid>
+      <description>Citation (bibtex) @article{hishinuma_jsism2020, title={{AVX2を用いた高速な倍々精度疎行列計算ソフトウェアの有限要素解析への適用可能性評価}}, author={菱沼利彰 and 森田直樹}, journal={{日本応用数理学会 2020年度年会}}, pages={417--418}, year={2020} } Link: https://annual2020.jsiam.org/</description>
+    </item>
     
     <item>
       <title>混合精度疎行列計算ライブラリDD-AVX v3のv1.0をリリースした</title>

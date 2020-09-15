@@ -60,6 +60,16 @@ pp. 23--31, 東京, 2013.1. \
 [**More Information (pdf, citation, other)**](/papers/with_review/hpcs2013)
 
 # Conference Proceedings (without review)
+1. 菱沼 利彰, 森田 直樹, 
+AVX2を用いた高速な倍々精度疎行列計算ソフトウェアの有限要素解析への適用可能性評価, 
+日本応用数理学会 2020年度年会, 「正会員主催OS: 多倍長精度浮動小数点演算の高速化手法と応用」, pp.417--418, オンライン開催, 2020.9. \
+[**More Information (pdf, citation, other)**](/papers/wo_review/jsiam_os2020)
+
+1. 土肥 樹, 菱沼 利彰, 田中 輝雄, 藤井 昭宏,
+Intel Xeonプロセッサ上におけるAVX512を用いた倍々精度演算の性能評価, 
+日本応用数理学会 2020年度年会, 「正会員主催OS: 先進的環境における数値計算と関連HPC技術」, pp.107--108, オンライン開催, 2020.9. \
+[**More Information (pdf, citation, other)**](/papers/wo_review/jsiam_os2020_doi)
+
 1. 菱沼 利彰, SX-Aurora TSUBASAにおける有限要素解析の性能評価
 第61回FrontISTR研究会，2020.08 (口頭発表，<https://www.frontistr.com/event/>)．
 

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Sun, 06 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hishinuma-t.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -42,6 +42,15 @@ Documents CAEエンジニアのためのHPC (書き途中, ほぼ白紙)
 Other   博士論文を情報処理学会 2019年度研究会推薦博士論文速報にて取り上げていただきました．URL, (魚拓)
   上記の研究会推薦博士論文速報が情報処理 第61巻，第9月号に掲載されました．URL (記念写真1, 2)
   菱沼 利彰, 加山 英賢. 通信のストライピングによる高速データ転送, 第1回ICTプログラミングコンテスト, GMOクラウド賞 受賞, 東京, 2012年5月.</description>
+    </item>
+    
+    <item>
+      <title>AVX2を用いた高速な倍々精度疎行列計算ソフトウェアの有限要素解析への適用可能性評価</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020/</guid>
+      <description>Citation (bibtex) @article{hishinuma_jsism2020, title={{AVX2を用いた高速な倍々精度疎行列計算ソフトウェアの有限要素解析への適用可能性評価}}, author={菱沼利彰 and 森田直樹}, journal={{日本応用数理学会 2020年度年会}}, pages={417--418}, year={2020} } Link: https://annual2020.jsiam.org/</description>
     </item>
     
     <item>
@@ -584,6 +593,15 @@ Links HPCS2013
 当サイトのコンテンツや情報について，可能な限り正確な情報を掲載するよう努めておりますが， 誤情報が入り込んだり，情報が古くなっていることがあります．
 当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねます． 修正が必要な箇所を発見された場合はメールまたはTwitterのDMにてお報せください．
 広告の配信について 当サイトには第三者による広告サービスを利用しているページや，利用しているページへのリンクを含みます． このような広告配信事業者はユーザーの興味に応じた商品やサービスの広告を表示するためCookie を使用することがあります． これらの広告に関する詳細は広告配信元のWebサイトからご確認ください．</description>
+    </item>
+    
+    <item>
+      <title>Intel Xeonプロセッサ上におけるAVX512を用いた倍々精度演算の性能評価</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020_doi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020_doi/</guid>
+      <description>@article{doi_jsiam2020, title={{Intel Xeonプロセッサ上におけるAVX512を用いた倍々精度演算の性能評価}}, author={土肥樹 and 菱沼利彰 and 田中輝雄 and 藤井 昭宏}, journal={{日本応用数理学会 2020年度年会}}, pages={107--108}, year={2020} } Link: https://annual2020.jsiam.org/</description>
     </item>
     
   </channel>
