@@ -193,7 +193,7 @@ Links HPCS2013
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/with_review/icces2019/</guid>
-      <description>Download PDF  Citation (bibtex) @inproceedings{hishinuma2019pzqd, title={pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS}, author={Hishinuma, Toshiaki and Nakata, Maho}, booktitle={International Conference on Computational \&amp;amp; Experimental Engineering and Sciences}, pages={717--736}, year={2019}, organization={Springer} } Abstract We implemented pzqd, a high precision arithmetic library for the PEZY-SC2 that is based on Hida \etal{}&amp;lsquo;s QD library. PEZY-SC2 is an MIMD (multiple instruction stream, multiple data stream) -type many-core processor. We optimized matrix-matrix multiplication (Rgemm) in double-double precision (DD) on the PEZY-SC2.</description>
+      <description>Download PDF  Citation (bibtex) @inproceedings{hishinuma2019pzqd, title={pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS}, author={Hishinuma, Toshiaki and Nakata, Maho}, booktitle={International Conference on Computational \&amp;amp; Experimental Engineering and Sciences}, pages={717--736}, year={2019}, organization={Springer} } Abstract We implemented pzqd, a high precision arithmetic library for the PEZY-SC2 that is based on Hida \etal{}&amp;rsquo;s QD library. PEZY-SC2 is an MIMD (multiple instruction stream, multiple data stream) -type many-core processor. We optimized matrix-matrix multiplication (Rgemm) in double-double precision (DD) on the PEZY-SC2.</description>
     </item>
     
     <item>

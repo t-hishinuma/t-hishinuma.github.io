@@ -9,7 +9,7 @@ images: [images/logo.png]
 
 HPCエンジニアの[Hishinuma\_t][1] の個人ページです．
 
-SNSアカウント等：[github][5], [Twitter][2], [Linkedin][6]
+SNSアカウント等：[github][5], [Twitter][2], [Linkedin][6], [researchmap][7]
 
 業績やソフトウェアの紹介およびBlog目的で運用しています．
 
@@ -35,4 +35,4 @@ SNSアカウント等：[github][5], [Twitter][2], [Linkedin][6]
 [4]: https://www.amazon.co.jp/hz/wishlist/ls/2PFMM9FT4AVRC?&sort=priority
 [5]: https://github.com/t-hishinuma/
 [6]: https://www.linkedin.com/in/toshiaki-hishinuma-a34247157/
-
+[7]: https://researchmap.jp/hishinuma-t
