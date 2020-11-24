@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hishinuma-t.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>研究業績</title>
+      <link>https://hishinuma-t.dev/papers/list/</link>
+      <pubDate>Tue, 24 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/list/</guid>
+      <description>Tag Search High precision arithmetic, With Review, PEZY, SIMD, Poster,
+Journal  菱沼 利彰, 藤井 昭宏, 田中 輝雄, 長谷川 秀彦, AVX2を用いた倍精度BCRS形式疎行列と倍々精度ベクトル積の高速化, 情報処理学会論文誌コンピューティングシステム(ACS), Vol. 7, No.4, pp. 25&amp;ndash;33, 2014.
+More Information (pdf, citation, other)  Conference Proceedings (with review)   Toshiaki Hishinuma and Maho Nakata, pzqd: PEZY-SC2 acceleration of double-double precision arithmetic library for high-precision BLAS, International Conference on Computational and Experimental Engineering and Sciences, Mechanisms and Machine Science, Vol. 75, Springer, pp.</description>
+    </item>
     
     <item>
       <title>Works (Software and Documents)</title>
