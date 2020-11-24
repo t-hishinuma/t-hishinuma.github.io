@@ -13,17 +13,6 @@
     
     
     <item>
-      <title>研究業績</title>
-      <link>https://hishinuma-t.dev/papers/list/</link>
-      <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hishinuma-t.dev/papers/list/</guid>
-      <description>Tag Search High precision arithmetic, With Review, PEZY, SIMD, Poster,
-Journal  菱沼 利彰, 藤井 昭宏, 田中 輝雄, 長谷川 秀彦, AVX2を用いた倍精度BCRS形式疎行列と倍々精度ベクトル積の高速化, 情報処理学会論文誌コンピューティングシステム(ACS), Vol. 7, No.4, pp. 25&amp;ndash;33, 2014.
-More Information (pdf, citation, other)  Conference Proceedings (with review)   Toshiaki Hishinuma and Maho Nakata, pzqd: PEZY-SC2 acceleration of double-double precision arithmetic library for high-precision BLAS, International Conference on Computational and Experimental Engineering and Sciences, Mechanisms and Machine Science, Vol. 75, Springer, pp.</description>
-    </item>
-    
-    <item>
       <title>AVX2を用いた高速な倍々精度疎行列計算ソフトウェアの有限要素解析への適用可能性評価</title>
       <link>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020/</link>
       <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
@@ -38,7 +27,7 @@ More Information (pdf, citation, other)  Conference Proceedings (with review)   
       <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/wo_review/hpc175/</guid>
-      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc175, title={SX-Aurora TSUBASAにおける有限要素解析のための共役勾配法の性能評価}, author={菱沼,利彰 and 井原,遊 and 高村,守幸 and 平野,哲 and 萩原,孝 and 岩田,直樹 and 奥田,洋司}, journal={{情報処理学会研究報告}}, volume={2020-HPC-175}, number={18}, pages={1--10}, year={2020} } Links 情報処理学会 電子図書館</description>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc175, title={SX-Aurora TSUBASAにおける有限要素解析のための共役勾配法の性能評価}, author={{菱沼 利彰, 井原 遊, 高村 守幸, 平野 哲, 萩原 孝, 岩田 直樹, 奥田 洋司}}, journal={{情報処理学会研究報告}}, volume={2020-HPC-175}, number={18}, pages={1--10}, year={2020} } Links 情報処理学会 電子図書館</description>
     </item>
     
     <item>

@@ -4,7 +4,7 @@ title: "研究業績"
 weight: 3
 images: [images/logo.png]
 
-date: 2020-02-16
+date: 2020-11-25
 
 menu: {main, sidebar}
 draft: false
@@ -60,6 +60,9 @@ pp. 23--31, 東京, 2013.1. \
 [**More Information (pdf, citation, other)**](/papers/with_review/hpcs2013)
 
 # Conference Proceedings (without review)
+1. 五十嵐 亮, 菱沼 利彰, 森田 直樹, 井原 遊, PRIMEHPC FX700におけるFrontISTRの性能評価, 
+第62回FrontISTR研究会，2020.11 (口頭発表，<https://www.frontistr.com/event/>)．
+
 1. 菱沼 利彰, 森田 直樹, 
 AVX2を用いた高速な倍々精度疎行列計算ソフトウェアの有限要素解析への適用可能性評価, 
 日本応用数理学会 2020年度年会, 「正会員主催OS: 多倍長精度浮動小数点演算の高速化手法と応用」, pp.417--418, オンライン開催, 2020.9. \
