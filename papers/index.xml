@@ -360,5 +360,14 @@ Links HPCS2013
       <description>@article{doi_jsiam2020, title={{Intel Xeonプロセッサ上におけるAVX512を用いた倍々精度演算の性能評価}}, author={土肥樹 and 菱沼利彰 and 田中輝雄 and 藤井 昭宏}, journal={{日本応用数理学会 2020年度年会}}, pages={107--108}, year={2020} } Link: https://annual2020.jsiam.org/</description>
     </item>
     
+    <item>
+      <title>SX-Aurora TSUBASAでのFrontISTRの性能評価</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/opencae2020/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/opencae2020/</guid>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_opencae_fistr2020, title={{SX-Aurora TSUBASAでのFrontISTRの性能評価}}, author={{菱沼 利彰, 五十嵐 亮, 森田 直樹, 高村 守幸, 平野 哲, 萩原 孝, 岩田 直樹, 井原 遊, 奥田 洋司}}, journal={{オープンCAE・FrontISTR合同シンポジウム2020 梗概集}}, pages={1--10}, number={B-16}, year={2020} } </description>
+    </item>
+    
   </channel>
 </rss>

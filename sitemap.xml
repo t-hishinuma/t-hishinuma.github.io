@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://hishinuma-t.dev/</loc>
-    <lastmod>2020-11-24T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -24,7 +24,27 @@
   
   <url>
     <loc>https://hishinuma-t.dev/posts/</loc>
-    <lastmod>2020-09-06T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/tags/hpc/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/tags/sx-aurora/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/tags/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/posts/advent2020/super_con_poem_day13/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -53,16 +73,6 @@
   </url>
   
   <url>
-    <loc>https://hishinuma-t.dev/tags/</loc>
-    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hishinuma-t.dev/tags/hpc/</loc>
-    <lastmod>2020-09-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hishinuma-t.dev/tags/programming/</loc>
     <lastmod>2020-09-06T00:00:00+00:00</lastmod>
   </url>
@@ -80,11 +90,6 @@
   <url>
     <loc>https://hishinuma-t.dev/posts/tools/tmux_arrow/</loc>
     <lastmod>2020-08-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hishinuma-t.dev/tags/sx-aurora/</loc>
-    <lastmod>2020-07-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -338,6 +343,10 @@
   
   <url>
     <loc>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020_doi/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/papers/wo_review/opencae2020/</loc>
   </url>
   
 </urlset>

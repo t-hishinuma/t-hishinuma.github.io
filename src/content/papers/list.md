@@ -60,6 +60,19 @@ pp. 23--31, 東京, 2013.1. \
 [**More Information (pdf, citation, other)**](/papers/with_review/hpcs2013)
 
 # Conference Proceedings (without review)
+1. 菱沼 利彰, 五十嵐 亮, 森田 直樹, 高村 守幸, 平野 哲, 萩原 孝, 岩田 直樹, 井原 遊, 奥田 洋司,
+SX-Aurora TSUBASAでのFrontISTRの性能評価, オープンCAE・FrontISTR合同シンポジウム2020, 2020.12. \
+[**More Information (pdf, citation, other)**](/papers/wo_review/opencae2020/)
+
+1. 堀江 正信, 森田 直樹, 菱沼 利彰, 井原 遊, 三目 直登,
+Graph convolutional network を用いたメッシュベース数値解析の汎用的な学習, オープンCAE・FrontISTR合同シンポジウム2020, 2020.12. 
+(<http://www.opencae.or.jp/activity/symposium/ocfis2020/ocfis2020-workshop/>)
+
+1. 菱沼 利彰, 森田 直樹, 
+AVX2を用いた高速な倍々精度疎行列計算ソフトウェアの開発と構造解析ソフトウェアへの応用,
+第4回 精度保証付き数値計算の実問題への応用研究集会 (NVR 2020), 2020.11. 
+(口頭発表, <http://verifiedby.me/nvr2020/>)
+
 1. 五十嵐 亮, 菱沼 利彰, 森田 直樹, 井原 遊, PRIMEHPC FX700におけるFrontISTRの性能評価, 
 第62回FrontISTR研究会，2020.11 (口頭発表，<https://www.frontistr.com/event/>)．
 
