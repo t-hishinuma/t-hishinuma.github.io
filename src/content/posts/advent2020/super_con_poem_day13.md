@@ -12,7 +12,7 @@ mathjax: true
 ---
 
 # はじめに
-この記事は[スパコンポエムAdC2020](https://qiita.com/telmin_orca/items/e145e132365588be4453)13日目の記事です．
+この記事は[スパコンポエムAdC2020](https://qiita.com/advent-calendar/2020/sc_poem)13日目の記事です．
 
 [山田先輩](https://twitter.com/telmin_orca)に誘われたはいいものの，私はQiitaのテーマカラーの緑が嫌いなので自分のブログに勝手に書きます．
 
@@ -227,7 +227,7 @@ void main(int argc, char** argv){
 
 それではコンパイルです．普通にVHにsshして
 VE用のバイナリと
-> nc++ 2.5.1 -O3 -fopenmp -mvector test.cpp -o ve.out
+> nc++ -O3 -fopenmp -mvector test.cpp -o ve.out
 
 VH用のバイナリを作ります
 > g++ 2.5.1 -O3 -fopenmp test.cpp -o vh.out
