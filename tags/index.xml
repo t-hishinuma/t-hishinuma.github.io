@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hishinuma-t.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,27 @@
     <item>
       <title>HPC</title>
       <link>https://hishinuma-t.dev/tags/hpc/</link>
-      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/tags/hpc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multi-Precision</title>
+      <link>https://hishinuma-t.dev/tags/multi-precision/</link>
+      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/tags/multi-precision/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://hishinuma-t.dev/tags/programming/</link>
+      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/tags/programming/</guid>
       <description></description>
     </item>
     
@@ -27,15 +45,6 @@
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/tags/sx-aurora/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Multi-Precision</title>
-      <link>https://hishinuma-t.dev/tags/multi-precision/</link>
-      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hishinuma-t.dev/tags/multi-precision/</guid>
       <description></description>
     </item>
     
@@ -54,15 +63,6 @@
       <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/tags/software/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
-      <link>https://hishinuma-t.dev/tags/programming/</link>
-      <pubDate>Sun, 06 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hishinuma-t.dev/tags/programming/</guid>
       <description></description>
     </item>
     
