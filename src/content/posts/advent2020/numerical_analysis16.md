@@ -1,5 +1,5 @@
 ---
-title: "混合精度Krylov部分空間法による連立一次方程式の求解について"
+title: "混合精度Krylov部分空間法による連立一次方程式の求解について (前編)"
 images: [images/logo.png]
 
 date: 2020-12-15
@@ -10,6 +10,9 @@ draft: false
 emoji: true
 mathjax: true
 ---
+
+**20201217追記：よくよく読み返してみるとタイトルが「混合精度」なのに話してることが「高精度」だけで精度を混ぜる話なんにもしてないことに気づいたのでこっそり「前編」だったことにしました．後編は今度書きます．**
+
 
 # はじめに
 **この記事は[数値計算 Advent Calendar 2020](https://qiita.com/advent-calendar/2020/numerical_analysis)の16日目の記事です．**
