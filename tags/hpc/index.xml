@@ -13,12 +13,13 @@
     
     
     <item>
-      <title>混合精度Krylov部分空間法による連立一次方程式の求解について</title>
+      <title>混合精度Krylov部分空間法による連立一次方程式の求解について (前編)</title>
       <link>https://hishinuma-t.dev/posts/advent2020/numerical_analysis16/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/posts/advent2020/numerical_analysis16/</guid>
-      <description>はじめに この記事は数値計算 Advent Calendar 2020の16日目の記事です．
+      <description>20201217追記：よくよく読み返してみるとタイトルが「混合精度」なのに話してることが「高精度」だけで精度を混ぜる話なんにもしてないことに気づいたのでこっそり「前編」だったことにしました．後編は今度書きます．
+はじめに この記事は数値計算 Advent Calendar 2020の16日目の記事です．
 みなさん連立一次方程式解いてますか？
 この研究は脳筋マゾヒストが何も分からずにKrylov部分空間法という闇を殴り続けている過程について書きます．
 本記事では連立一次方程式解法の1つのカテゴリであるKrylov部分空間法と， Krylov部分空間法を高精度演算で行うことについて扱います．
