@@ -13,8 +13,11 @@ mathjax: true
 #cover: "/favicon.ico"
 ---
 
-
 # Software
+**[monolish][monolish]**\
+    monolish: MONOlithic LIner equation Solvers for Highly-parallel architecture\
+    This software is created by [RICOS Co. Ltd.](https://www.ricos.co.jp/)
+
 **[DD-AVX\_v3][DDAVX3]**\
 	Library of High Precision Sparse Matrix Operations Accelerated by SIMD AVX\
     [v.1.0 release blog](https://hishinuma-t.dev/posts/tools/dd-avx_v10/)
@@ -23,12 +26,13 @@ mathjax: true
     NUMerical linear Algebra Benchmark (with docker)
 
 **[Xev-GMP-Web][Xev-GMP]**\
-		Xev-GMP-Web converts a C source code which uses double variables into a C source code which uses GNU GMP library.
+	Xev-GMP-Web converts a C source code which uses double variables into a C source code which uses GNU GMP library.
 
 **[Lis_DD_AVXkernels][DDAVX1]**\
-		LisのDD機能をAVX, AVX2に拡張する差分，およびマージスクリプト
+	LisのDD機能をAVX, AVX2に拡張する差分，およびマージスクリプト
 
 
+[monolish]: https://github.com/ricosjp/monolish
 [hpc4cae]: /HPC4CAE/index.html
 [DDAVX1]: https://github.com/t-hishinuma/Lis_DD_AVXkernels
 [DDAVX3]: https://github.com/t-hishinuma/DD-AVX_v3

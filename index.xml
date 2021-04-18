@@ -20,7 +20,8 @@
       <guid>https://hishinuma-t.dev/papers/list/</guid>
       <description>Tag Search High precision arithmetic, With Review, PEZY, SIMD, Poster,
 Journal  菱沼 利彰, 藤井 昭宏, 田中 輝雄, 長谷川 秀彦, AVX2を用いた倍精度BCRS形式疎行列と倍々精度ベクトル積の高速化, 情報処理学会論文誌コンピューティングシステム(ACS), Vol. 7, No.4, pp. 25&amp;ndash;33, 2014.
-More Information (pdf, citation, other)  Conference Proceedings (with review)   Toshiaki Hishinuma and Maho Nakata, pzqd: PEZY-SC2 acceleration of double-double precision arithmetic library for high-precision BLAS, International Conference on Computational and Experimental Engineering and Sciences, Mechanisms and Machine Science, Vol. 75, Springer, pp.</description>
+More Information (pdf, citation, other)  Conference Proceedings (with review)   Masanobu Horie, Naoki Morita, Toshiaki Hishinuma, Yu Ihara, and Naoto Mitsume, Isometric Transformation Invariant and Equivariant Graph Convolutional Networks, International Conference on Learning Representations (ICLR), 2021. [arXiv]
+  Toshiaki Hishinuma and Maho Nakata, pzqd: PEZY-SC2 acceleration of double-double precision arithmetic library for high-precision BLAS, International Conference on Computational and Experimental Engineering and Sciences, Mechanisms and Machine Science, Vol.</description>
     </item>
     
     <item>
@@ -29,7 +30,10 @@ More Information (pdf, citation, other)  Conference Proceedings (with review)   
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/works/list/</guid>
-      <description>Software DD-AVX_v3
+      <description>Software monolish
+monolish: MONOlithic LIner equation Solvers for Highly-parallel architecture
+This software is created by RICOS Co. Ltd.
+DD-AVX_v3
 Library of High Precision Sparse Matrix Operations Accelerated by SIMD AVX
 v.1.0 release blog
 numa_benchmark
@@ -39,9 +43,7 @@ Xev-GMP-Web converts a C source code which uses double variables into a C source
 Lis_DD_AVXkernels
 LisのDD機能をAVX, AVX2に拡張する差分，およびマージスクリプト
 Documents CAEエンジニアのためのHPC (書き途中, ほぼ白紙)
-Other   博士論文を情報処理学会 2019年度研究会推薦博士論文速報にて取り上げていただきました．URL, (魚拓)
-  上記の研究会推薦博士論文速報が情報処理 第61巻，第9月号に掲載されました．URL (記念写真1, 2)
-  菱沼 利彰, 加山 英賢. 通信のストライピングによる高速データ転送, 第1回ICTプログラミングコンテスト, GMOクラウド賞 受賞, 東京, 2012年5月.</description>
+Other   博士論文を情報処理学会 2019年度研究会推薦博士論文速報にて取り上げていただきました．URL, (魚拓)</description>
     </item>
     
     <item>

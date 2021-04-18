@@ -26,6 +26,9 @@ AVX2を用いた倍精度BCRS形式疎行列と倍々精度ベクトル積の高
 [**More Information (pdf, citation, other)**](/papers/with_review/acs48/)
 
 # Conference Proceedings (with review)
+1. Masanobu Horie, Naoki Morita, Toshiaki Hishinuma, Yu Ihara, and Naoto Mitsume,
+[Isometric Transformation Invariant and Equivariant Graph Convolutional Networks](https://openreview.net/forum?id=FX0vR39SJ5q),
+International Conference on Learning Representations (ICLR), 2021. \[[arXiv](https://arxiv.org/abs/2005.06316)\]
 
 1. Toshiaki Hishinuma and Maho Nakata, 
 pzqd: PEZY-SC2 acceleration of double-double precision arithmetic library for high-precision BLAS,
@@ -60,6 +63,11 @@ pp. 23--31, 東京, 2013.1. \
 [**More Information (pdf, citation, other)**](/papers/with_review/hpcs2013)
 
 # Conference Proceedings (without review)
+1. Toshiaki Hishinuma, Ryo Igarashi, Naoki Morita, Yu Ihara, Moriyuki Takamura, Hiroshi Hirano, Takashi Hagiwara, Naoki Iwata, and Hiroshi Okuda,
+Acceleration of Structural Analysis Software FrontISTR on NEC SX-Aurora TSUBASA,
+[Workbench on Sustained Simulation Performance 2021 (WSSP2021) March 2021](https://www.teraflop-workbench.de/htm/events/31thWorkshop_program.htm) 
+March 2021, ([Talk](https://fs.hlrs.de/projects/teraflop/31stWorkshop_talks/WSSP2021_hishinuma.pdf)).
+
 1. 菱沼 利彰, 五十嵐 亮, 森田 直樹, 高村 守幸, 平野 哲, 萩原 孝, 岩田 直樹, 井原 遊, 奥田 洋司,
 SX-Aurora TSUBASAでのFrontISTRの性能評価, オープンCAE・FrontISTR合同シンポジウム2020, 2020.12. \
 [**More Information (pdf, citation, other)**](/papers/wo_review/opencae2020/)
