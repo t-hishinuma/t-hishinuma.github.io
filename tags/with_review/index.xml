@@ -44,6 +44,15 @@ Links HPCS2013
     </item>
     
     <item>
+      <title>Effectiveness of performance tuning techniques for general matrix multiplication on the pezy-sc2</title>
+      <link>https://hishinuma-t.dev/papers/with_review/heart2019/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/with_review/heart2019/</guid>
+      <description>Citation (bibtex) @inproceedings{10.1145/3337801.3337817, author = {Matsumoto, Kazuya and Nakasato, Naohito and Hishinuma, Toshiaki}, title = {Effectiveness of Performance Tuning Techniques for General Matrix Multiplication on the PEZY-SC2}, year = {2019}, isbn = {9781450372558}, publisher = {Association for Computing Machinery}, address = {New York, NY, USA}, url = {https://doi.org/10.1145/3337801.3337817}, doi = {10.1145/3337801.3337817}, booktitle = {Proceedings of the 10th International Symposium on Highly-Efficient Accelerators and Reconfigurable Technologies}, articleno = {8}, numpages = {6}, location = {Nagasaki, Japan}, series = {HEART 2019} } Links ACM</description>
+    </item>
+    
+    <item>
       <title>pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS.</title>
       <link>https://hishinuma-t.dev/papers/with_review/icces2019/</link>
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>

@@ -2,21 +2,19 @@
 <html lang='en' dir='auto'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='Toshiaki Hishinuma&#39;s web site'>
+<meta name='description' content='Citation (bibtex) @inproceedings{10.1145/3337801.3337817, author = {Matsumoto, Kazuya and Nakasato, Naohito and Hishinuma, Toshiaki}, title = {Effectiveness of Performance Tuning Techniques for General Matrix Multiplication on the PEZY-SC2}, year = {2019}, isbn = {9781450372558}, publisher = {Association for Computing Machinery}, address = {New York, NY, USA}, url = {https://doi.org/10.1145/3337801.3337817}, doi = {10.1145/3337801.3337817}, booktitle = {Proceedings of the 10th International Symposium on Highly-Efficient Accelerators and Reconfigurable Technologies}, articleno = {8}, numpages = {6}, location = {Nagasaki, Japan}, series = {HEART 2019} } Links ACM'>
 <meta name='theme-color' content='black'>
 
-<meta property='og:title' content='菱沼 利彰 (Toshiaki Hishinuma) ,  hpc::numa.blog()'>
-<meta property='og:description' content='Toshiaki Hishinuma&#39;s web site'>
-<meta property='og:url' content='https://hishinuma-t.dev/about/'>
+<meta property='og:title' content='Effectiveness of performance tuning techniques for general matrix multiplication on the pezy-sc2 ,  hpc::numa.blog()'>
+<meta property='og:description' content='Citation (bibtex) @inproceedings{10.1145/3337801.3337817, author = {Matsumoto, Kazuya and Nakasato, Naohito and Hishinuma, Toshiaki}, title = {Effectiveness of Performance Tuning Techniques for General Matrix Multiplication on the PEZY-SC2}, year = {2019}, isbn = {9781450372558}, publisher = {Association for Computing Machinery}, address = {New York, NY, USA}, url = {https://doi.org/10.1145/3337801.3337817}, doi = {10.1145/3337801.3337817}, booktitle = {Proceedings of the 10th International Symposium on Highly-Efficient Accelerators and Reconfigurable Technologies}, articleno = {8}, numpages = {6}, location = {Nagasaki, Japan}, series = {HEART 2019} } Links ACM'>
+<meta property='og:url' content='https://hishinuma-t.dev/papers/with_review/heart2019/'>
 <meta property='og:site_name' content='hpc::numa.blog()'>
-<meta property='og:type' content='website'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='og:updated_time' content='2021-05-07T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@summary'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='papers'><meta property='article:tag' content='Paper'><meta property='article:tag' content='Multi-Precision'><meta property='article:tag' content='PEZY'><meta property='article:tag' content='with_review'><meta property='article:published_time' content='2020-02-19T00:00:00Z'/><meta property='article:modified_time' content='2020-02-19T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@summary'>
 
 <meta name="generator" content="Hugo 0.74.3" />
 
-  <title>菱沼 利彰 (Toshiaki Hishinuma) ,  hpc::numa.blog()</title>
-  <link rel='canonical' href='https://hishinuma-t.dev/about/'>
-  
-    <link href="https://hishinuma-t.dev/about/index.xml" rel="alternate" type="application/rss+xml" title="hpc::numa.blog()" />
+  <title>Effectiveness of performance tuning techniques for general matrix multiplication on the pezy-sc2 ,  hpc::numa.blog()</title>
+  <link rel='canonical' href='https://hishinuma-t.dev/papers/with_review/heart2019/'>
   
   
   <link rel='icon' href='/favicon.ico'>
@@ -38,7 +36,7 @@ if (!doNotTrack) {
   
 
 </head>
-<body class='section type-about has-sidebar has-emoji'>
+<body class='page type-papers has-sidebar has-emoji'>
 
   <div class='site'><div id='sidebar' class='sidebar'>
   <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
@@ -224,8 +222,8 @@ if (!doNotTrack) {
 </button>
     <ul><li class='item'>
         <a href='/'>Home</a>
-      </li><li class='item current'>
-        <a aria-current='page' href='/about/'>About</a>
+      </li><li class='item'>
+        <a href='/about/'>About</a>
       </li><li class='item'>
         <a href='/papers/list/'>Publications</a>
       </li><li class='item'>
@@ -248,185 +246,117 @@ if (!doNotTrack) {
       <main id='content'>
 
 
-<header class='header'>
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'>菱沼 利彰 (Toshiaki Hishinuma)</h1>
-
+      <h1 class='title'>Effectiveness of performance tuning techniques for general matrix multiplication on the pezy-sc2</h1>
       
 
     </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2020-02-19T00:00:00Z'>2020, Feb 19</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+
+</svg>
+One min read
+</span>
+
+
+</div>
+
+
   </div>
 </header>
 
-
-
-<div class='entry'>
-  <div class='container entry-content'>
-  <h1 id="current-status">Current Status</h1>
-<ul>
-<li><a href="https://www.ricos.co.jp/">科学計算総合研究所</a> 主任研究員<br>
-(Chief Researcher, RICOS. Co. Ltd.)</li>
-<li>筑波大学 図書館情報メディア研究科 博士 (情報学)<br>
-(Ph.D. in Informatics, Univ. of Tsukuba)</li>
-<li>情報処理学会 正会員<br>
-(Member, Information Processing Society of Japan)</li>
-</ul>
-<h1 id="domain-of-expertise">Domain of expertise</h1>
-<ul>
-<li>High performance computing for Linear algebra
-<ul>
-<li>Sparse matrix operations</li>
-<li>BLAS, LAPACK</li>
-<li>Lis, Eigen, ARPACK, PETSc</li>
-<li>Krylov subspace methods (for liner equations)</li>
-</ul>
-</li>
-<li>High precision arithmetics
-<ul>
-<li>Double-Double precision</li>
-<li>GMP, MPFR</li>
-</ul>
-</li>
-<li>Optimize CAE Softwares
-<ul>
-<li>FrontISTR</li>
-<li>OpenFOAM</li>
-</ul>
-</li>
-</ul>
-<h1 id="skills">Skills</h1>
-<ul>
-<li>Programming Languages
-<ul>
-<li>C/C++, x86 / 64 asm (well)</li>
-<li>MATLAB, Scilab, C#, Vlang (previously used)</li>
-<li>Rust, Fortran (normal)</li>
-<li>Python, Ruby, Go (learning)</li>
-</ul>
-</li>
-<li>Parallelization
-<ul>
-<li>SIMD (AVX512, AVX2, AVX, ARM NEON, ARM SVE?)</li>
-<li>Multi-threading (OpenMP, pthread)</li>
-<li>Multi-Process (MPI)</li>
-</ul>
-</li>
-<li>Performance Tuning on Special Hardware
-<ul>
-<li>NVIDIA GPGPU (CUDA, OpenACC, OpenCL, OpenMP Offloading)</li>
-<li>SX-Aurora TSUBASA</li>
-<li>A64fx (ARM SVE)</li>
-<li>PEZY-SC2 (PZCL)</li>
-<li>SPARC64 VII</li>
-<li>Xeon Phi?</li>
-<li>AMD APU? (OpenCL)</li>
-</ul>
-</li>
-<li>etc:
-<ul>
-<li>zsh, tmux, vim, gnuplot, GNU Make, awk, sed&hellip;</li>
-<li>Linux server (Ubuntu, RedHat)</li>
-<li>Docker, KVM, Virtual Box</li>
-<li>git, svn</li>
-<li>github actions, gitlab-CI</li>
-<li>LaTeX</li>
-<li>HTML, Markdown, javascript (this blog is written in Markdown, and generated by Hugo)</li>
-</ul>
-</li>
-</ul>
-<h1 id="career">Career</h1>
-<ul>
-<li>
-<p>1990.03 生まれ<br>
-(birth)</p>
-</li>
-<li>
-<p>2009.04 工学院大学情報学部情報デザイン学科 入学<br>
-(Department of Information Design, Faculty of informatics, Kogakuin Univ : matriculate)</p>
-</li>
-<li>
-<p>2013.03 工学院大学情報学部情報デザイン学科 卒業<br>
-(Department of Information Design, Faculty of informatics, Kogakuin Univ : graduate)</p>
-</li>
-<li>
-<p>2013.04 工学院大学 工学研究科 情報学専攻 入学<br>
-(Major of Informatics, Graduate School, Kogakuin Univ. : matriculate)</p>
-</li>
-<li>
-<p>2015.03 工学院大学 工学研究科 情報学専攻 修了(情報学修士)<br>
-(Major of Informatics, Graduate School, Kogakuin Univ. : graduate, Master of Informatics)</p>
-</li>
-<li>
-<p>2015.04 ~ 2018.03 工学院大学 客員研究員<br>
-(Visiting researcher, Kogakuin Univ.)</p>
-</li>
-<li>
-<p>2015.04 筑波大学　図書館情報メディア研究科 図書館情報メディア専攻 入学 (<a href="https://tgosros.wixsite.com/hasegawaken">Hasegawa Lab</a>)<br>
-(Doctoral Program, Library, Information and Media Studies, University of Tsukuba : matriculate)</p>
-</li>
-<li>
-<p>2015.06 ~ 2015.12 リサーチアシスタント (筑波大学) , 「大規模なユーザ生成コンテンツ集合からの知識発見<br>
-(Research Assistant (U. of Tsukuba), &ldquo;Knowledge Discovery from Large-scale User-generated Content Set&rdquo;)</p>
-</li>
-<li>
-<p>2016.04 ~ 2017.03 サーチアシスタント (筑波大学) , 「数値計算ライブラリによる 超並列複合システムの階層的抽象化に関する研究<br>
-(Research Assistant (U. of Tsukuba), &ldquo;A study of hierarchical abstraction by numerical library for massively-parallel heterogeneous systems&rdquo;)</p>
-</li>
-<li>
-<p>2017.04 ~ 2019.04 株式会社 PEZY Computing, ソフトウェアエンジニア<br>
-(Software Engineer, PEZY Compuing K.K.)</p>
-</li>
-<li>
-<p>2019.05 ~ 株式会社 科学計算総合研究所, 研究員<br>
-(Researcher, Research Institute for Computational Science Co. Ltd. (RICOS Co. Ltd.))</p>
-</li>
-<li>
-<p>2020.03 筑波大学 図書館情報メディア研究科 図書館情報メディア専攻 修了(情報学博士)<br>
-(Doctor of philosophy in informatics, Univ. of Tsukuba)</p>
-</li>
-<li>
-<p>2020.07 ~ 株式会社 科学計算総合研究所, 主任研究員<br>
-(Chief Researcher, Research Institute for Computational Science Co. Ltd. (RICOS Co. Ltd.))</p>
-</li>
-</ul>
-<h1 id="資格等">資格等</h1>
-<ul>
-<li>博士 (情報学)　(2020)</li>
-<li>修士 (情報学)　(2015)</li>
-<li>基本情報技術者 (2010)</li>
-<li>普通自動車免許 (2009)</li>
-</ul>
-
-</div>
-
-</div>
-
-
-<div class='container list-container'>
-  <ul class='list'>
-    
-      <li class='item'>
-  <div class='meta'>
-    <span>
-  <span class='screen-reader-text'>Posted on </span>
-  <time datetime='2020-02-16T00:00:00Z'>2020, Feb 16</time>
-</span>
-
-  </div>
-  <header class='item-header'>
-    <h3 class='item-title'>
-      <a href='/about/privacy/'>プライバシーポリシーについて</a>
-    </h3>
-  </header>
-</li>
-
-    
-  </ul>
-
+  
   
 
+  <div class='container entry-content'>
+  <h1 id="citation-bibtex">Citation (bibtex)</h1>
+<pre><code>@inproceedings{10.1145/3337801.3337817,
+author = {Matsumoto, Kazuya and Nakasato, Naohito and Hishinuma, Toshiaki},
+title = {Effectiveness of Performance Tuning Techniques for General Matrix Multiplication on the PEZY-SC2},
+year = {2019},
+isbn = {9781450372558},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3337801.3337817},
+doi = {10.1145/3337801.3337817},
+booktitle = {Proceedings of the 10th International Symposium on Highly-Efficient Accelerators and Reconfigurable Technologies},
+articleno = {8},
+numpages = {6},
+location = {Nagasaki, Japan},
+series = {HEART 2019}
+}
+</code></pre><h1 id="links">Links</h1>
+<p><a href="https://dl.acm.org/doi/10.1145/3337801.3337817">ACM</a></p>
+
 </div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/paper/'>Paper</a>, <a class='tag' href='/tags/multi-precision/'>Multi-Precision</a>, <a class='tag' href='/tags/pezy/'>PEZY</a>, <a class='tag' href='/tags/with_review/'>with_review</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/papers/wo_review/vecpar2014/'>
+        <span aria-hidden='true'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>Fast computation of double precision sparse matrix in BCRS and DD vector product using AVX2</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/papers/wo_review/mpcomp3/'>
+        <span class='screen-reader-text'>Next post: </span>AVXを用いた倍々精度疎行列ベクトル積の高速化<span aria-hidden='true'>Next <svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+
 
       </main>
 
