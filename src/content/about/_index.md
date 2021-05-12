@@ -81,7 +81,7 @@ mathjax: true
 (Doctoral Program, Library, Information and Media Studies, University of Tsukuba : matriculate)
 * 2015.06 ~ 2015.12 リサーチアシスタント (筑波大学) , 「大規模なユーザ生成コンテンツ集合からの知識発見\
 (Research Assistant (U. of Tsukuba), "Knowledge Discovery from Large-scale User-generated Content Set")
-* 2016.04 ~ 2017.03 サーチアシスタント (筑波大学) , 「数値計算ライブラリによる 超並列複合システムの階層的抽象化に関する研究\
+* 2016.04 ~ 2017.03 リサーチアシスタント (筑波大学) , 「数値計算ライブラリによる 超並列複合システムの階層的抽象化に関する研究\
 (Research Assistant (U. of Tsukuba), "A study of hierarchical abstraction by numerical library for massively-parallel heterogeneous systems")
 
 * 2017.04 ~ 2019.04 株式会社 PEZY Computing, ソフトウェアエンジニア\
