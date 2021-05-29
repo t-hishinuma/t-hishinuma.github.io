@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://hishinuma-t.dev/</loc>
-    <lastmod>2021-05-07T00:00:00+00:00</lastmod>
+    <lastmod>2021-05-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -24,12 +24,22 @@
   
   <url>
     <loc>https://hishinuma-t.dev/posts/</loc>
-    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
+    <lastmod>2021-05-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/posts/gcp_thread/</loc>
+    <lastmod>2021-05-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hishinuma-t.dev/tags/hpc/</loc>
-    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
+    <lastmod>2021-05-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/tags/</loc>
+    <lastmod>2021-05-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -39,11 +49,6 @@
   
   <url>
     <loc>https://hishinuma-t.dev/tags/programming/</loc>
-    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hishinuma-t.dev/tags/</loc>
     <lastmod>2020-12-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -130,6 +135,11 @@
   <url>
     <loc>https://hishinuma-t.dev/papers/dr_thesis/</loc>
     <lastmod>2020-03-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hishinuma-t.dev/posts/monolish/v0_14_0/</loc>
+    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>

@@ -7,10 +7,39 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Tue, 15 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 29 May 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hishinuma-t.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GCPにおけるvCPUはハイパースレッディングが有効なので実際半分という話</title>
+      <link>https://hishinuma-t.dev/posts/gcp_thread/</link>
+      <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/gcp_thread/</guid>
+      <description>はじめに 会社で，GCPとかAWSは仮想環境だし，ハードウェア環境が良くわからないからHPCの評価に使いたくないんだよねーみたいな話をしていたとき， そういえばこの話ってどこにも書いてないなと思ったので，常識なのかもしれないけど書いておく．
+冒頭でネタバレをするとGCPではハイパースレッディングが有効なので，指定したコア数は物理コアとしては半分になる．
+GCPやAWSでは仮想マシンを立てるとき，仮想CPU数(vCPU)を設定できる．
+ただ，近年の殆どのマシンにはハイパースレッディング・テクノロジーというのが入っているので， 仮想CPUと言われたときに物理コアが何コアぶんなのかという疑問がある． 当然ではあるが，これは仮想マシンなので/proc/cpuinfoなどからは確認できないし，TOPコマンドなどでも確認できない．
+DGEMMのプログラムのスレッド数を変化させて回した時，スレッド数に対してどのくらいスケールするのかを確認したので書いておく．
+ちなみに私はGCPがメインなので，AWSでも同じかどうかはわからない．
+Test bed Ubuntu20.04でaptで落ちてくるOpenBLASに含まれるDGEMMを実行する．
+マシン設定は以下の通りで，32 vCPUで120GBのメモリを搭載した．
+実験 N=M=K=5000の行列に対するOpenBLASのDGEMMを10回実行した平均時間を測った．
+あんまり関係ないと思うけど，呼び出す側のプログラムをコンパイルしたのはgcc 9.3.0で-O3をつけた．
+OMP_NUM_THREADSを変更してスレッド数を変化させた結果を以下に示す．
+縦軸が性能で，横軸がスレッド数である．
+見ての通りスレッド数が16以上になると性能が低下する．
+これは行列をスレッドに対して均等分割しているため，17スレッドでは特定の物理コアが2倍の計算をさせられているためである．
+このことから，GCPではハイパースレッディングが有効なため，実際に使える物理コア数は指定された数の半分ということがわかる．
+では1coreと2coreの違いは？？ こうなると1コアとはなんなのか？
+GCPの1コアマシンと2コアマシンを作って同じことをやってみた結果を以下に示す．
+   　 GCP 1core GCP 2core     1thread 38.695 38.864   2threads none 38.917    見ての通り2コアのマシンの1スレッドと2スレッドの性能は変わらない．
+また，1コアのマシンと2コアのマシンの性能も変わらない．
+もしかすると1コアのマシンには専有できずに2人のユーザが詰め込まれるのかもしれないが， 1時間くらい回し続けたがそういう兆候は見えなかった．
+とはいえ，奇数コアにするときは物理コアを専有できないという意味になるのだと考えられるので，注意が必要だと思われる．</description>
+    </item>
     
     <item>
       <title>混合精度Krylov部分空間法による連立一次方程式の求解について (前編)</title>
@@ -241,6 +270,19 @@ git clone git@github.com:t-hishinuma/numa_benchmark.git # vim benchmark_config #
 この辺手伝ってくれる人が居たらとても喜びます
 結果はこんな感じで，だいたい欲しい情報はでていると思う．
 - {&amp;quot;type&amp;quot; : &amp;quot;blas3&amp;quot;, &amp;quot;func&amp;quot; : &amp;quot;sgemm&amp;quot;, &amp;quot;arch&amp;quot; : &amp;quot;cpu&amp;quot;, &amp;quot;# of threads&amp;quot; : 4, &amp;quot;size&amp;quot; : 200, &amp;quot;time [s]&amp;quot; : 0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hishinuma-t.dev/posts/monolish/v0_14_0/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/monolish/v0_14_0/</guid>
+      <description>2011年，5月のリリースでgcc4.6から4倍精度が入った． 昔のブログで軽く使い方を書いたが他のサイトに情報があまり増えてなかったし，私の記事もできが悪かったのでこっちに移転したので改めてまとめてみた．
+g++ -fopenacc -foffload=nvptx-none=&amp;quot;-misa=sm_35&amp;quot; -O3 -std=c++11 -fopenmp -fcf-protection=none acc.cpp -o acc.out mkoffload: fatal error: either &#39;-fopenacc&#39; or &#39;-fopenmp&#39; must be set compilation terminated. lto-wrapper: fatal error: /usr/lib/gcc/x86_64-linux-gnu/10//accel/nvptx-none/mkoffload returned 1 exit status compilation terminated. /usr/bin/ld: error: lto-wrapper failed collect2: error: ld returned 1 exit status make: *** [Makefile:22: acc.out] Error 1 使い方 簡単な使い方としては， libquadmathを使うことになる．
+__float128 型を宣言して使う．倍精度を代入して使うこともできる． 4倍精度数を表現したい場合には後ろに q をつけて使う．
+四則演算子や代入なども使えるが，printfだけはchar型の配列に変換してから使う必要がある． 適当なサンプルは以下のとおり：
+#include&amp;lt;quadmath.h&amp;gt;#include&amp;lt;stdio.h&amp;gt;int main(){ char str[128]; __float128 a = 1.2345678901234567890q; __float128 b = 1.</description>
     </item>
     
     <item>

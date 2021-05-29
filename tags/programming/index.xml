@@ -135,6 +135,19 @@ git clone git@github.com:t-hishinuma/numa_benchmark.git # vim benchmark_config #
     </item>
     
     <item>
+      <title></title>
+      <link>https://hishinuma-t.dev/posts/monolish/v0_14_0/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/monolish/v0_14_0/</guid>
+      <description>2011年，5月のリリースでgcc4.6から4倍精度が入った． 昔のブログで軽く使い方を書いたが他のサイトに情報があまり増えてなかったし，私の記事もできが悪かったのでこっちに移転したので改めてまとめてみた．
+g++ -fopenacc -foffload=nvptx-none=&amp;quot;-misa=sm_35&amp;quot; -O3 -std=c++11 -fopenmp -fcf-protection=none acc.cpp -o acc.out mkoffload: fatal error: either &#39;-fopenacc&#39; or &#39;-fopenmp&#39; must be set compilation terminated. lto-wrapper: fatal error: /usr/lib/gcc/x86_64-linux-gnu/10//accel/nvptx-none/mkoffload returned 1 exit status compilation terminated. /usr/bin/ld: error: lto-wrapper failed collect2: error: ld returned 1 exit status make: *** [Makefile:22: acc.out] Error 1 使い方 簡単な使い方としては， libquadmathを使うことになる．
+__float128 型を宣言して使う．倍精度を代入して使うこともできる． 4倍精度数を表現したい場合には後ろに q をつけて使う．
+四則演算子や代入なども使えるが，printfだけはchar型の配列に変換してから使う必要がある． 適当なサンプルは以下のとおり：
+#include&amp;lt;quadmath.h&amp;gt;#include&amp;lt;stdio.h&amp;gt;int main(){ char str[128]; __float128 a = 1.2345678901234567890q; __float128 b = 1.</description>
+    </item>
+    
+    <item>
       <title>gccの4倍精度の使い方と性能 [gcc quadruple precision]</title>
       <link>https://hishinuma-t.dev/posts/gcc_quad/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
