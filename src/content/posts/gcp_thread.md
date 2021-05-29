@@ -1,5 +1,5 @@
 ---
-title: "GCPにおけるvCPUはハイパースレッディングが有効なので実際半分という話"
+title: "GCPにおけるvCPUはハイパースレッディングが有効なので実際のコア数は半分という話"
 images: [images/logo.png]
 
 date: 2021-05-29

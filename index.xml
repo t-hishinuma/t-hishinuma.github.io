@@ -47,7 +47,7 @@ Other   博士論文を情報処理学会 2019年度研究会推薦博士論文�
     </item>
     
     <item>
-      <title>GCPにおけるvCPUはハイパースレッディングが有効なので実際半分という話</title>
+      <title>GCPにおけるvCPUはハイパースレッディングが有効なので実際のコア数は半分という話</title>
       <link>https://hishinuma-t.dev/posts/gcp_thread/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
