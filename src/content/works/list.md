@@ -40,7 +40,9 @@ mathjax: true
 
 # Documents
 
-**[CAEエンジニアのためのHPC (書き途中, ほぼ白紙)][hpc4cae]**
+* [CAEエンジニアのためのHPC (書き途中, ほぼ白紙)][hpc4cae]
+
+* [禁煙を始めたので記録をつける](/non-smoking/index.html)
 
 # Other
 * 博士論文を情報処理学会 2019年度研究会推薦博士論文速報にて取り上げていただきました．[URL][hakushi], ([魚拓][gyotaku])

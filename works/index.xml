@@ -30,8 +30,7 @@ Xev-GMP-Web
 Xev-GMP-Web converts a C source code which uses double variables into a C source code which uses GNU GMP library.
 Lis_DD_AVXkernels
 LisのDD機能をAVX, AVX2に拡張する差分，およびマージスクリプト
-Documents CAEエンジニアのためのHPC (書き途中, ほぼ白紙)
-Other   博士論文を情報処理学会 2019年度研究会推薦博士論文速報にて取り上げていただきました．URL, (魚拓)</description>
+Documents   CAEエンジニアのためのHPC (書き途中, ほぼ白紙)</description>
     </item>
     
   </channel>
