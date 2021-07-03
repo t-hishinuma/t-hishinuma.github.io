@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on hpc::numa.blog()</title>
+    <link>https://hishinuma-t.dev/tags/software/</link>
+    <description>Recent content in Software on hpc::numa.blog()</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
+    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://hishinuma-t.dev/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AVX2を用いた高速な倍々精度疎行列計算ソフトウェアの有限要素解析への適用可能性評価</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/jsiam_os2020/</guid>
+      <description>Citation (bibtex) @article{hishinuma_jsism2020, title={{AVX2を用いた高速な倍々精度疎行列計算ソフトウェアの有限要素解析への適用可能性評価}}, author={菱沼利彰 and 森田直樹}, journal={{日本応用数理学会 2020年度年会}}, pages={417--418}, year={2020} } Link: https://annual2020.jsiam.org/</description>
+    </item>
+    
+    <item>
+      <title>混合精度疎行列計算ライブラリDD-AVX v3のv1.0をリリースした</title>
+      <link>https://hishinuma-t.dev/posts/tools/dd-avx_v10/</link>
+      <pubDate>Sun, 06 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/tools/dd-avx_v10/</guid>
+      <description>はじめに DD-AVX_v3という名前なのにv1.0とはこれいかに？
+ま，まぁとりあえずリリースしたんじゃよ
+githubから落としてこられる↓
+https://github.com/t-hishinuma/DD-AVX_v3
+DD-AVX_v3ってなに？ 一言でいうとSIMDで高速化した倍精度とDouble-Double精度のSparse BLAS．
+混合精度のKrylov部分空間法をいかに簡単かつ高速に実装できるかを考えて作ったライブラリ．
+悪条件な問題を解こうとしたとき，高精度演算を使うことで丸め誤差による近似解の収束の影響を抑えて早く収束できる．
+ただ，例えば行列は他のライブラリから降ってくるので倍精度でよいとか， 残差の計算は別に倍精度でも良いとか，様々な理由ですべてを倍々精度にしなくても良いというシチュエーションがある．
+しかし，変数の精度をどうすれば効率的に計算できるのかはよくわからないし， 普通に考えれば独自型と標準型を組み合わせたコードで変数の型をコロコロ変えるのは吐き気がするレベルで面倒くさい．
+私は博士に進学する前は高精度なシミュレーションをやりたいと思ったものだが， 倍精度とDDを組み合わせたKrylov部分空間法を簡単に作るのがそもそも面倒臭すぎる ということで始まったのがDD-AVXライブラリで，色々とI/Fを変えているうちにv3になってしまったということである．
+DD型を簡単に扱う方法はBailey, Hida先生のQDライブラリの dd_real 型を使うことになるのだが， ベクトルや行列を std::vector&amp;lt;dd_real&amp;gt; のようにして宣言することになる．
+このときメモリレイアウト的には下のようなAoS型になる． これが倍精度と組み合わせて混合精度演算をしたり，並列化をしようとしたときに非常に遅くなる．
+そこでSoA型にしようとなるのだが，これは std::vector のようなベクトルを簡単に使うI/Fが利用できなくなる．
+じゃあSoA型に気合で std::vector っぽい主要機能を全部書いてやればいいやんけ
+これが地獄の始まりでした(車輪の再発明ってレベルじゃないぞ1年かかったわ)
+ということでDD-AVX_v3では5つのクラスを提供している．
+Scalar  d_real (alias of double) dd_real (provided by the QD Library)  Vector  d_real_vector dd_real_vector  Sparse matrix (CRS format)  d_real_SpMat  スカラやベクタの四則演算レベルから基本的な機能を実装してある． これらはD/DDのキャストや代入などもサポートしているため， 連立一次方程式ソルバをtemplateで実装すれば同じI/Fで倍精度とDD型を使える．
+現状ではテスト不足で疎行列型はファイルからのI/Oしかできないのと，SpMVしか実装できないです．v1.1でTSpMVと行列I/Fは追加予定
+内部ではすべての方の組み合わせに対してAVX / AVX2のintrinsicsを使って最適化してあるため， どの変数を入れてもDDにキャストされるわけではなく，ちゃんと入力に応じたDDのアルゴリズムが呼ばれるようになっている．
+ちなみにaxpyの内部実装はこんな感じ↓
+https://github.com/t-hishinuma/DD-AVX_v3/blob/master/src/vector/blas/axpy.cpp
+具体的にはBLAS Lv.</description>
+    </item>
+    
+    <item>
+      <title>scpで圧縮転送，踏み台など</title>
+      <link>https://hishinuma-t.dev/posts/tools/scp_command/</link>
+      <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/tools/scp_command/</guid>
+      <description>はじめに 以下の記事は昔のブログに書いてて，忘れたら見に行ってたんだけど，昔のブログはそろそろ潰そうかと思っているので，ここに書き直す．
+  ファイルを圧縮して高速転送．トラフィックを減らす．
+scp -C file usr@name:~/
+  暗号化方式を変える(ローカルで暗号化は雑でいいから早く送りたいなど)
+scp -c arcfour128 file usr@name:~/
+  踏み台経由の転送
+scp -o &#39;ProxyCommand ssh 192.168.0.1 -W %h:%p&#39; file user@name:~/
+  以上です．おやすみ．</description>
+    </item>
+    
+    <item>
+      <title>tmuxでAlt&#43;矢印キーでペインサイズを変更する</title>
+      <link>https://hishinuma-t.dev/posts/tools/tmux_arrow/</link>
+      <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/tools/tmux_arrow/</guid>
+      <description>よく忘れるので書いておきます
+bind-key -n M-Up resize-pane -U 5 bind-key -n M-Down resize-pane -D 5 bind-key -n M-Left resize-pane -L 5 bind-key -n M-Right resize-pane -R 5 tmuxも色々カスタマイズできるけど，基本的に必須なのはこれくらいですかね．．</description>
+    </item>
+    
+    <item>
+      <title>ブラウザからサーバにファイルをuploadするためにdroppyを試す</title>
+      <link>https://hishinuma-t.dev/posts/tools/droppy/</link>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/tools/droppy/</guid>
+      <description>はじめに サーバ上で作業をしていて，手元のファイルをupload / downloadしたいことがよくあると思う．
+大きいファイルを1回送るくらいならやるが， たとえばgnuplotやLaTex, Doxygenと格闘しているときなんかは サーバ上で生成された画像をdownloadしたり，手元でAdobeなどで作った画像を何度もUploadするようなシチュエーションが生まれる．
+基本的に全てのマシンに同じ環境を構築したいので，マウントするなどのOS依存っぽいことや， 謎のフリーソフトを全部の端末に入れて回るみたいなことはやりたくない． (手動だし)
+サーバ側ではコマンド一発で構築できて，クライアント側では導入作業なく利用できるファイルのdonwload/uploadはないものかと思い， dockerで構築できて，ブラウザから利用できる物を探した．
+利用は作業中だけの一過性のものなので，セキュリティとかは気にしなくて良いことにする．
+Download, 閲覧はあんまり問題にならなくて，httpサーバを立てればいいので
+ nginxをdockerであげてみたり (dockerhub) cargoで入れられてディレクトリを一発で公開できるやつを使ったり (basic-http-server)  他にもやりようはいくらでもある．
+ちなみに2.は
+cargo install basic-http-server basic-http-server -x -a 0.0.0.0:8080&amp;quot; で現在いるディレクトリがhttpで公開されてこんな風に見える
+問題はuploadである．特に↑の画像みたいなスクリーンショットをmarkdownに貼るなんてやろうと思った日には スクリーンショットをファイルに保存してターミナル開いてscpするとかしないといけないので発狂しそうになる．
+droppy 結論から言うとdroppyというのが軽くて良さそうだということが分かった．
+これ自体はnpmのライブラリなのでnode.jsを入れなきゃいけないかと思ったらちゃんとdockerが公開されていた． なんとdocker imagesで確認すると99.5 MBしかない．
+root権限でuploadなんかされたらたまったもんじゃないので，ユーザをちゃんと指定してあげることにして，次のようにすればOK． configのフォルダをマウントしてオプションを色々設定できるみたいだけど，ディレクトリ一覧が見れてちょっとuploadできればいいのでデフォルトに任せた．
+docker run -p 8080:8989 -v $PWD:/files/ -e UID=$(id -u) -e GID=$(id -g) silverwind/droppy 見た目はこんな感じ．画面分割もできる． 上げるとユーザ名を聞かれるが，適当なユーザ名とパスワードを入れるとログインできる． aとかbとかでいい．真面目にやる場合はconfigで設定するんだと思う．
+いいところ
+ ドラッグアンドドロップでファイルやディレクトリを送れる スクリーンショットを取ってペーストボタンを押すとちゃんとファイルとして保存される (素晴らしい！) 画像などはブラウザ上で閲覧できる テキストファイルなどはエディタが出てきて編集できる ディレクトリ作成，ファイル削除，リネームなどの簡単な作業ができる docker imagesで確認すると99.5 MBしかない．  悔しいところ</description>
+    </item>
+    
+    <item>
+      <title>gcloud cloud sdkを使いやすいように環境を整理した</title>
+      <link>https://hishinuma-t.dev/posts/tools/gcp_setup/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/tools/gcp_setup/</guid>
+      <description>はじめに ちょっと前にすぐに導入方法とかコマンドを忘れて仕方がないので， bashrcに関数作ってGCPでよく使うコマンドを整理したので，忘れないうちにここに書いておく．
+テスト用なんかでマシンを立てて，ペペッとコマンド流したいときにやるための：
+ マシン一覧取得 マシン起動・停止 マシン接続 マシン削除  という作業を瞬殺する
+バイナリをtar.gzで落としてくるのでちゃんと動くか不安だったが，CygwinとWindows上のVM Ubuntu18.04と実機のCentOS8では動いた．
+WSLとMac？しらないけど動くんじゃない
+google cloud sdkのinstall くわしいことは公式
+yum とか apt でも入るって公式には書いてあるけどgoogleの認証情報を渡すコマンドをシステムに入れるのもなあとか思いながら(たぶん認証情報はユーザの場所に置かれるんだろうけど)，tar.gzがあったのでそっちを使うことにした．
+まず落としてきて，
+wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-280.0.0-linux-x86_64.tar.gz 入れたら解凍して /bin にパス通す．
+sh ./install.sh すればいいって公式には書いてあるけど，どこに入るのかよくわかんないから信じずに自分でパスを通しているポンコツが私です．
+gcloud components update するとupdateされるので知らんけどとりあえずやる
+初期設定 gcloud init するとgoogleアカウントの認証がはじまる． なんか適当にやってるとURLが出てくるのでコピってブラウザに貼ると認証する．
+gcloud compute instances list とかやるとマシンのリストが出てくれば勝ち
+使う 上で書いたgcloud compute instances listとか，
+gcloud compute instances start とか
+やれば良いんだけどコマンドが長くてカロリーの無駄． 新しいマシンを作る設定とかは更に長くてオプションも多いし疲れる．
+ってことでbashrcに関数作って纏めた．
+alias glist=&#39;gcloud compute instances list&#39; alias gssh_up=&#39;gcloud compute config-ssh&#39; gstart() {gcloud compute instances start $1; gcloud compute config-ssh} gstop() {gcloud compute instances stop $1} gtest_up(){ gcloud compute instances create $1 \ --boot-disk-auto-delete \ --maintenance-policy TERMINATE \ --preemptible \ --zone us-central1-a \ --image-family ubuntu-2004-lts --image-project ubuntu-os-cloud \ --custom-cpu 8 \ --custom-memory 16 \ --boot-disk-size 10 \ } gtest_up は与えられた引数の名前のマシンはubuntu20.</description>
+    </item>
+    
+    <item>
+      <title>数値計算用のベンチマークを取れるコンテナを作っている (OpenBLAS, cuBLAS, fftw, cufft)</title>
+      <link>https://hishinuma-t.dev/posts/numa_benchmark/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/numa_benchmark/</guid>
+      <description>TL; DR 検索するとCineBenchやゲーム系のベンチマークとかいう何をやっているのか良くわからん結果ばっかりで数値計算の役に立たないのしかでてこない．
+STREAMとDGEMM/SGEMMとFFTをCPUとGPUで回してくれるだけでいいんだ！と思うんだけど，冷静に考えるとそういうライブラリってベンチマーク機能が付いてるわけじゃない (てかSTREAMって使いにくいよね．．．)．
+ベンチマーク結果はIntelとかNvidiaも出しているけど，アーキごとに項目が整っているとは言いにくい．
+数値計算の結果は少ない人数しか興味がなかったのは昔の話で，最近は機械学習の人とかもBLASとかFFTの結果を知りたいはずだから需要がある気がしてるんだけど，統一されたベンチマークがでてくる気配はない．
+ベンチマークは比較に意味があるので多くの人が回してくれることが望ましいけど， 我々みたいに自分でOpenBLASだのcuBLASだとfftwだの落としてビルドして，自分でC++でベンチマークコード書いて，自分でsedとかawkとか叩いてgnuplotで整形できる人ばっかりじゃないはず．
+そうだ．コンテナ使って数値計算ライブラリの評価が簡単にやれるやつ作ろう．と思い立ってから早かった手作りベンチマークコンテナ
+最近はDockerでGPGPUするのも簡単になったしUbuntu 20.04ではDockerがaptで入るようになったしな！
+あ，名前は numa_benchmarkにしました．
+NUMerical linear Algebra Benchmarkの略であってhishinumaとは関係ありません．本当です．
+で，どうやって使うの コードはここにおいて作ってる．ちゃんとCPUとGPUの両方に対応してる．
+https://github.com/t-hishinuma/numa_benchmark
+コンテナ内に中にrunってコマンドが仕込んであって，実行するとそれを回してくれるようにした．かんたん．
+runするとOpenBLASをビルドしていろんなサイズでベンチマークしてくれる．
+いまは dot と gemm のベンチマークだけけど， だいたいコンテナ落とす時間も含めて10分くらいで終わるんじゃないかな． 機能面はこれから増やしていくつもり (STREAMはdotがあるからいいかな．．？いいよね．．？)．
+DockerHubにも上げてあるので，サイズとかデフォルト設定でいい人は
+docker run hishinumat/numa_benchmark run するだけで簡単にベンチマークしてyaml形式で標準出力に結果を出してくる．
+サイズとか色々変えたい人はgitからconfigを落としてきて，書き換えて，configのある場所をdockerにマウントすればそのとおりに実行される．
+$PWD のマウントで良ければ make benchmark すればdockerコマンド打たなくてよい
+git clone git@github.com:t-hishinuma/numa_benchmark.git # vim benchmark_config # if need to change make benchmark 自分でconfigを食わせた場合は結果はresult/に出てくる． せっかくの仮想化だから，pythonのライブラリなんかもコンテナに混ぜて，yamlを元にmatplotlibでプロットしたpngとhtmlも出力してくれるようにした．
+でもコードはPythonなんもわからんおじさんすぎてあまりにも適当．
+この辺手伝ってくれる人が居たらとても喜びます
+結果はこんな感じで，だいたい欲しい情報はでていると思う．
+- {&amp;quot;type&amp;quot; : &amp;quot;blas3&amp;quot;, &amp;quot;func&amp;quot; : &amp;quot;sgemm&amp;quot;, &amp;quot;arch&amp;quot; : &amp;quot;cpu&amp;quot;, &amp;quot;# of threads&amp;quot; : 4, &amp;quot;size&amp;quot; : 200, &amp;quot;time [s]&amp;quot; : 0.</description>
+    </item>
+    
+  </channel>
+</rss>
