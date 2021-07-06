@@ -5,3 +5,4 @@
 - [Day 2](./day_2.md)
 - [Day 3](./day_3.md)
 - [Day 4](./day_4.md)
+- [Day 5](./day_5.md)
