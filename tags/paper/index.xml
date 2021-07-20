@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Jul 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hishinuma-t.dev/tags/paper/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>統一的なオープンソース線形代数ライブラリmonolishの提案</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/hpc180/</link>
+      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/hpc180/</guid>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc180, title={統一的なオープンソース線形代数ライブラリmonolishの提案}, author={{菱沼 利彰，五十嵐 亮，寺村 俊紀，森田 直樹，井原 遊}}, journal={{情報処理学会研究報告}}, volume={2021-HPC-180}, number={3}, pages={1--11}, year={2021} } Links 情報処理学会 電子図書館</description>
+    </item>
     
     <item>
       <title>AVX2を用いた高速な倍々精度疎行列計算ソフトウェアの有限要素解析への適用可能性評価</title>
@@ -27,7 +36,7 @@
       <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/wo_review/hpc175/</guid>
-      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc175, title={SX-Aurora TSUBASAにおける有限要素解析のための共役勾配法の性能評価}, author={{菱沼 利彰, 井原 遊, 高村 守幸, 平野 哲, 萩原 孝, 岩田 直樹, 奥田 洋司}}, journal={{情報処理学会研究報告}}, volume={2020-HPC-175}, number={18}, pages={1--10}, year={2020} } Links 情報処理学会 電子図書館</description>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc175, title={SX-Aurora TSUBASAにおける有限要素解析のための共役勾配法の性能評価}, author={{菱沼 利彰，井原 遊，高村 守幸，平野 哲，萩原 孝，岩田 直樹，奥田 洋司}}, journal={{情報処理学会研究報告}}, volume={2020-HPC-175}, number={18}, pages={1--10}, year={2020} } Links 情報処理学会 電子図書館</description>
     </item>
     
     <item>
@@ -274,7 +283,7 @@ Links HPCS2013
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/wo_review/opencae2020/</guid>
-      <description>Download PDF  Citation (bibtex) @article{hishinuma_opencae_fistr2020, title={{SX-Aurora TSUBASAでのFrontISTRの性能評価}}, author={{菱沼 利彰, 五十嵐 亮, 森田 直樹, 高村 守幸, 平野 哲, 萩原 孝, 岩田 直樹, 井原 遊, 奥田 洋司}}, journal={{オープンCAE・FrontISTR合同シンポジウム2020 梗概集}}, pages={1--10}, number={B-16}, year={2020} } </description>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_opencae_fistr2020, title={{SX-Aurora TSUBASAでのFrontISTRの性能評価}}, author={{菱沼 利彰，五十嵐 亮，森田 直樹，高村 守幸，平野 哲，萩原 孝，岩田 直樹，井原 遊，奥田 洋司}}, journal={{オープンCAE・FrontISTR合同シンポジウム2020 梗概集}}, pages={1--10}, number={B-16}, year={2020} } </description>
     </item>
     
   </channel>
