@@ -162,6 +162,16 @@ bind-key -n M-Up resize-pane -U 5 bind-key -n M-Down resize-pane -D 5 bind-key -
     </item>
     
     <item>
+      <title>技術関係はzennに移行しようか悩んでます</title>
+      <link>https://hishinuma-t.dev/posts/zenn/</link>
+      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/zenn/</guid>
+      <description>ということですので，リンクを貼っておきます
+https://zenn.dev/hishinuma_t</description>
+    </item>
+    
+    <item>
       <title>ブラウザからサーバにファイルをuploadするためにdroppyを試す</title>
       <link>https://hishinuma-t.dev/posts/tools/droppy/</link>
       <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>

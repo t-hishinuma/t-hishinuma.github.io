@@ -213,6 +213,16 @@ bind-key -n M-Up resize-pane -U 5 bind-key -n M-Down resize-pane -D 5 bind-key -
     </item>
     
     <item>
+      <title>技術関係はzennに移行しようか悩んでます</title>
+      <link>https://hishinuma-t.dev/posts/zenn/</link>
+      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/posts/zenn/</guid>
+      <description>ということですので，リンクを貼っておきます
+https://zenn.dev/hishinuma_t</description>
+    </item>
+    
+    <item>
       <title>SX-Aurora TSUBASAにおける有限要素解析のための共役勾配法の性能評価</title>
       <link>https://hishinuma-t.dev/papers/wo_review/hpc175/</link>
       <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
