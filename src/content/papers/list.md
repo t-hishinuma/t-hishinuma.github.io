@@ -71,6 +71,16 @@ pp. 23--31, 東京, 2013.1. \
 1. Masanobu.Horie, **Toshiaki.Hishinuma**, Accelerating Simulation Process Using GPUs and Reliable Neural Networks,
 NVIDIA GTC2022 ([Talk](https://www.nvidia.com/gtc/session-catalog/#/session/1642155579023001yUL5)). 
 
+1. 山浦朴人，福永晋司，**菱沼 利彰**，藤井 昭宏，田中 輝雄，
+ディレクティブベースのGPUプログラミングモデルを用いた倍々精度演算の性能評価，
+第84回情報処理学会全国大会, pp. 1--2, オンライン, 2022.3.\
+[**More Information (pdf, citation, other)**](/papers/wo_review/ipsj_yamaura)
+
+1. 福永晋司，山浦朴人，**菱沼 利彰**，藤井 昭宏，田中 輝雄，
+倍々精度演算におけるSIMD命令利用時のデータレイアウトによる性能差分析，
+第84回情報処理学会全国大会, pp. 1--2, オンライン, 2022.3.\
+[**More Information (pdf, citation, other)**](/papers/wo_review/ipsj_fukunaga)
+
 1. **菱沼 利彰**，五十嵐 亮，寺村 俊紀，森田 直樹，井原 遊,
 統一的なオープンソース線形代数ライブラリmonolishの提案, 
 情報処理学会研究報告, Vol. 2021-HPC-180 (SWoPP2021), No. 3, pp. 1--11, 2021.08．\

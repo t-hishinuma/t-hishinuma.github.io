@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Mon, 19 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Mar 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hishinuma-t.dev/papers/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,24 @@
 Journal  菱沼 利彰，藤井 昭宏，田中 輝雄，長谷川 秀彦， AVX2を用いた倍精度BCRS形式疎行列と倍々精度ベクトル積の高速化, 情報処理学会論文誌コンピューティングシステム(ACS), Vol. 7, No.4, pp. 25&amp;ndash;33, 2014.
 More Information (pdf, citation, other)  Conference Proceedings (with review)   Masanobu Horie, Naoki Morita, Toshiaki Hishinuma, Yu Ihara, and Naoto Mitsume, Isometric Transformation Invariant and Equivariant Graph Convolutional Networks, International Conference on Learning Representations (ICLR), 2021. [arXiv]
   Toshiaki Hishinuma and Maho Nakata, pzqd: PEZY-SC2 acceleration of double-double precision arithmetic library for high-precision BLAS, International Conference on Computational and Experimental Engineering and Sciences, Mechanisms and Machine Science, Vol.</description>
+    </item>
+    
+    <item>
+      <title>ディレクティブベースのGPUプログラミングモデルを用いた倍々精度演算の性能評価</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/ipsj_yamaura/</link>
+      <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/ipsj_yamaura/</guid>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_ipsj2022_fukunaga, title={{ディレクティブベースのGPUプログラミングモデルを用いた倍々精度演算の性能評価}}. author={山浦朴人 and 福永晋司 and 菱沼利彰 and 藤井昭宏 and 田中輝雄}, journal={{第82回情報処理学会全国大会}}, pages={1--2}, year={2022} } </description>
+    </item>
+    
+    <item>
+      <title>倍々精度演算におけるSIMD命令利用時のデータレイアウトによる性能差分析</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/ipsj_fukunaga/</link>
+      <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/ipsj_fukunaga/</guid>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_ipsj2022_fukunaga, title={{倍々精度演算におけるSIMD命令利用時のデータレイアウトによる性能差分析}}, author={ 福永晋司 and 山浦朴人 and 菱沼利彰 and 藤井昭宏 and 田中輝雄}, journal={{第82回情報処理学会全国大会}}, pages={1--2}, year={2022} } </description>
     </item>
     
     <item>
