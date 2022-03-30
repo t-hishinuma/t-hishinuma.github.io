@@ -68,6 +68,9 @@ pp. 23--31, 東京, 2013.1. \
 [**More Information (pdf, citation, other)**](/papers/with_review/hpcs2013)
 
 # Conference Proceedings and talks (without review)
+1. Masanobu.Horie, **Toshiaki.Hishinuma**, Accelerating Simulation Process Using GPUs and Reliable Neural Networks,
+NVIDIA GTC2022 ([Talk](https://www.nvidia.com/gtc/session-catalog/#/session/1642155579023001yUL5)). 
+
 1. **菱沼 利彰**，五十嵐 亮，寺村 俊紀，森田 直樹，井原 遊,
 統一的なオープンソース線形代数ライブラリmonolishの提案, 
 情報処理学会研究報告, Vol. 2021-HPC-180 (SWoPP2021), No. 3, pp. 1--11, 2021.08．\
