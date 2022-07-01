@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Wed, 19 Feb 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://hishinuma-t.dev/tags/poster/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 19 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hishinuma-t.dev/tags/poster/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>An Evaluation of Double-Double Precision Operation for Iterative Solver Library Using AVX</title>
       <link>https://hishinuma-t.dev/papers/wo_review/isat_hishinuma/</link>

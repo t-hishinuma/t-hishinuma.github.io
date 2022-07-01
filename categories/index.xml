@@ -6,10 +6,6 @@
     <description>Recent content in Categories on hpc::numa.blog()</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    
-	<atom:link href="https://hishinuma-t.dev/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright><atom:link href="https://hishinuma-t.dev/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

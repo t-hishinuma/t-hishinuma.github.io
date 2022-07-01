@@ -59,7 +59,7 @@ Type-10Bと呼ばれるVEの諸元を以下の表に示します．
 <meta property='og:site_name' content='hpc::numa.blog()'>
 <meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='HPC'><meta property='article:tag' content='SX-Aurora'><meta property='article:published_time' content='2020-12-13T00:00:00Z'/><meta property='article:modified_time' content='2020-12-13T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@summary'>
 
-<meta name="generator" content="Hugo 0.68.3" />
+<meta name="generator" content="Hugo 0.92.2" />
 
   <title>スパコンポエムAdC2020 Day13 SX-Aurora TSUBASAについて酒を飲みながら書いたポエム ,  hpc::numa.blog()</title>
   <link rel='canonical' href='https://hishinuma-t.dev/posts/advent2020/super_con_poem_day13/'>
@@ -276,8 +276,8 @@ if (!doNotTrack) {
         <a href='/papers/list/'>Publications</a>
       </li><li class='item'>
         <a href='/works/list/'>Works</a>
-      </li><li class='item'>
-        <a href='/posts/'>blog</a>
+      </li><li class='item current'>
+        <a aria-current='page' href='/posts/'>blog</a>
       </li></ul>
   </div>
 </nav><div class='header-widgets'>
@@ -489,7 +489,7 @@ OSSにするならもう少しオープンに開発したり出来ないのか�
 <li>std::vectorやstd::cout</li>
 </ul>
 <p>など，ホストでは当然やりたいような要素を入れときました．</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;omp.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;omp.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">**</span> argv){

@@ -41,7 +41,7 @@ docker run -p 8080:8989 -v $PWD:/files/ -e UID=$(id -u) -e GID=$(id -g) silverwi
 <meta property='og:site_name' content='hpc::numa.blog()'>
 <meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='Software'><meta property='article:published_time' content='2020-06-29T00:00:00Z'/><meta property='article:modified_time' content='2020-06-29T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@summary'>
 
-<meta name="generator" content="Hugo 0.68.3" />
+<meta name="generator" content="Hugo 0.92.2" />
 
   <title>ブラウザからサーバにファイルをuploadするためにdroppyを試す ,  hpc::numa.blog()</title>
   <link rel='canonical' href='https://hishinuma-t.dev/posts/tools/droppy/'>
@@ -258,8 +258,8 @@ if (!doNotTrack) {
         <a href='/papers/list/'>Publications</a>
       </li><li class='item'>
         <a href='/works/list/'>Works</a>
-      </li><li class='item'>
-        <a href='/posts/'>blog</a>
+      </li><li class='item current'>
+        <a aria-current='page' href='/posts/'>blog</a>
       </li></ul>
   </div>
 </nav><div class='header-widgets'>
@@ -338,7 +338,7 @@ dockerで構築できて，ブラウザから利用できる物を探した．</
 </ol>
 <p>他にもやりようはいくらでもある．</p>
 <p>ちなみに2.は</p>
-<pre><code>cargo install basic-http-server
+<pre tabindex="0"><code>cargo install basic-http-server
 basic-http-server -x -a 0.0.0.0:8080&quot;
 </code></pre><p>で現在いるディレクトリがhttpで公開されてこんな風に見える</p>
 <p><img src="/images/simple-http.png" alt="simple-http"></p>
@@ -350,7 +350,7 @@ basic-http-server -x -a 0.0.0.0:8080&quot;
 なんとdocker imagesで確認すると99.5 MBしかない．</p>
 <p>root権限でuploadなんかされたらたまったもんじゃないので，ユーザをちゃんと指定してあげることにして，次のようにすればOK．
 configのフォルダをマウントしてオプションを色々設定できるみたいだけど，ディレクトリ一覧が見れてちょっとuploadできればいいのでデフォルトに任せた．</p>
-<pre><code>docker run -p 8080:8989 -v $PWD:/files/ -e UID=$(id -u) -e GID=$(id -g) silverwind/droppy
+<pre tabindex="0"><code>docker run -p 8080:8989 -v $PWD:/files/ -e UID=$(id -u) -e GID=$(id -g) silverwind/droppy
 </code></pre><p>見た目はこんな感じ．画面分割もできる．
 <img src="/images/droppy.png" alt="droppy"></p>
 <p>上げるとユーザ名を聞かれるが，適当なユーザ名とパスワードを入れるとログインできる．

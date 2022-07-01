@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://hishinuma-t.dev/tags/sx-aurora/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hishinuma-t.dev/tags/sx-aurora/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>スパコンポエムAdC2020 Day13 SX-Aurora TSUBASAについて酒を飲みながら書いたポエム</title>
       <link>https://hishinuma-t.dev/posts/advent2020/super_con_poem_day13/</link>

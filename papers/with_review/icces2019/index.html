@@ -2,16 +2,16 @@
 <html lang='en' dir='auto'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='Download PDF  Citation (bibtex) @inproceedings{hishinuma2019pzqd, title={pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS}, author={Hishinuma, Toshiaki and Nakata, Maho}, booktitle={International Conference on Computational \&amp; Experimental Engineering and Sciences}, pages={717--736}, year={2019}, organization={Springer} } Abstract We implemented pzqd, a high precision arithmetic library for the PEZY-SC2 that is based on Hida \etal{}&lsquo;s QD library. PEZY-SC2 is an MIMD (multiple instruction stream, multiple data stream) -type many-core processor. We optimized matrix-matrix multiplication (Rgemm) in double-double precision (DD) on the PEZY-SC2.'>
+<meta name='description' content='Download PDF  Citation (bibtex) @inproceedings{hishinuma2019pzqd, title={pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS}, author={Hishinuma, Toshiaki and Nakata, Maho}, booktitle={International Conference on Computational \&amp; Experimental Engineering and Sciences}, pages={717--736}, year={2019}, organization={Springer} } Abstract We implemented pzqd, a high precision arithmetic library for the PEZY-SC2 that is based on Hida \etal{}&rsquo;s QD library. PEZY-SC2 is an MIMD (multiple instruction stream, multiple data stream) -type many-core processor. We optimized matrix-matrix multiplication (Rgemm) in double-double precision (DD) on the PEZY-SC2.'>
 <meta name='theme-color' content='black'>
 
 <meta property='og:title' content='pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS. ,  hpc::numa.blog()'>
-<meta property='og:description' content='Download PDF  Citation (bibtex) @inproceedings{hishinuma2019pzqd, title={pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS}, author={Hishinuma, Toshiaki and Nakata, Maho}, booktitle={International Conference on Computational \&amp; Experimental Engineering and Sciences}, pages={717--736}, year={2019}, organization={Springer} } Abstract We implemented pzqd, a high precision arithmetic library for the PEZY-SC2 that is based on Hida \etal{}&lsquo;s QD library. PEZY-SC2 is an MIMD (multiple instruction stream, multiple data stream) -type many-core processor. We optimized matrix-matrix multiplication (Rgemm) in double-double precision (DD) on the PEZY-SC2.'>
+<meta property='og:description' content='Download PDF  Citation (bibtex) @inproceedings{hishinuma2019pzqd, title={pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS}, author={Hishinuma, Toshiaki and Nakata, Maho}, booktitle={International Conference on Computational \&amp; Experimental Engineering and Sciences}, pages={717--736}, year={2019}, organization={Springer} } Abstract We implemented pzqd, a high precision arithmetic library for the PEZY-SC2 that is based on Hida \etal{}&rsquo;s QD library. PEZY-SC2 is an MIMD (multiple instruction stream, multiple data stream) -type many-core processor. We optimized matrix-matrix multiplication (Rgemm) in double-double precision (DD) on the PEZY-SC2.'>
 <meta property='og:url' content='https://hishinuma-t.dev/papers/with_review/icces2019/'>
 <meta property='og:site_name' content='hpc::numa.blog()'>
 <meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='papers'><meta property='article:tag' content='Paper'><meta property='article:tag' content='Multi-Precision'><meta property='article:tag' content='PEZY'><meta property='article:tag' content='with_review'><meta property='article:published_time' content='2020-02-19T00:00:00Z'/><meta property='article:modified_time' content='2020-02-19T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@summary'>
 
-<meta name="generator" content="Hugo 0.68.3" />
+<meta name="generator" content="Hugo 0.92.2" />
 
   <title>pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS. ,  hpc::numa.blog()</title>
   <link rel='canonical' href='https://hishinuma-t.dev/papers/with_review/icces2019/'>
@@ -293,7 +293,7 @@ if (!doNotTrack) {
   <div class='container entry-content'>
   <h1 id="download-pdf-httpsstoragegoogleapiscomnuma_blogetcicon_pdfpng1">Download PDF <a href="https://storage.googleapis.com/numa_blog/publications/icces2019.pdf"><img src="https://storage.googleapis.com/numa_blog/etc/icon_pdf.png" alt=""></a></h1>
 <h1 id="citation-bibtex">Citation (bibtex)</h1>
-<pre><code>@inproceedings{hishinuma2019pzqd,
+<pre tabindex="0"><code>@inproceedings{hishinuma2019pzqd,
 	title={pzqd: PEZY-SC2 Acceleration of Double-Double Precision Arithmetic Library for High-Precision BLAS},
 	author={Hishinuma, Toshiaki and Nakata, Maho},
 	booktitle={International Conference on Computational \&amp; Experimental Engineering and Sciences},
@@ -302,7 +302,7 @@ if (!doNotTrack) {
 	organization={Springer}
 }
 </code></pre><h1 id="abstract">Abstract</h1>
-<p>We implemented pzqd, a high precision arithmetic library for the PEZY-SC2 that is based on Hida \etal{}&lsquo;s QD library. PEZY-SC2 is an MIMD (multiple instruction stream, multiple data stream) -type many-core processor. We optimized matrix-matrix multiplication (Rgemm) in double-double precision (DD) on the PEZY-SC2. Porting the CPU code to PEZY-SC2 code is relatively easy because PEZY-SC2 is a MIMD-type processor; it runs all the threads independently. As a proof of concept, we ported pzqd with minimal modifications to the original QD library; pzqd can treat a DD type variable in a unified way on the host CPU and the PEZY-SC2. The performance of our implementation of Rgemm in DD (DD-Rgemm) on the PEZY-SC2 attained 75% of the peak performance of DD, which is 20 times faster than an Intel Xeon E5-2618L v3, even including the communication time between the host CPU and the PEZY-SC2. The most important technique for optimizing the DD-Rgemm on the PEZY-SC2 is to make use of the high-speed scratch-pad memory (local memory) installed in each core. We stored the 2x2 DD block matrices and other temporary variables in local memory by reducing the number of threads to increase the local memory size per thread as they occupy local memory even for this block size.</p>
+<p>We implemented pzqd, a high precision arithmetic library for the PEZY-SC2 that is based on Hida \etal{}&rsquo;s QD library. PEZY-SC2 is an MIMD (multiple instruction stream, multiple data stream) -type many-core processor. We optimized matrix-matrix multiplication (Rgemm) in double-double precision (DD) on the PEZY-SC2. Porting the CPU code to PEZY-SC2 code is relatively easy because PEZY-SC2 is a MIMD-type processor; it runs all the threads independently. As a proof of concept, we ported pzqd with minimal modifications to the original QD library; pzqd can treat a DD type variable in a unified way on the host CPU and the PEZY-SC2. The performance of our implementation of Rgemm in DD (DD-Rgemm) on the PEZY-SC2 attained 75% of the peak performance of DD, which is 20 times faster than an Intel Xeon E5-2618L v3, even including the communication time between the host CPU and the PEZY-SC2. The most important technique for optimizing the DD-Rgemm on the PEZY-SC2 is to make use of the high-speed scratch-pad memory (local memory) installed in each core. We stored the 2x2 DD block matrices and other temporary variables in local memory by reducing the number of threads to increase the local memory size per thread as they occupy local memory even for this block size.</p>
 <h1 id="links">Links</h1>
 <p><a href="http://www.iccesconf.org/">The International Conference on computational &amp; Experimental Engineering and Sciences</a></p>
 <p><a href="https://link.springer.com/chapter/10.1007/978-3-030-27053-7_61">Springer</a></p>
@@ -318,7 +318,7 @@ if (!doNotTrack) {
   <line x1="7" y1="7" x2="7" y2="7"/>
 
 </svg>
-<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/multi-precision/'>Multi-Precision</a>, <a class='tag' href='/tags/paper/'>Paper</a>, <a class='tag' href='/tags/pezy/'>PEZY</a>, <a class='tag' href='/tags/with_review/'>with_review</a></div>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/paper/'>Paper</a>, <a class='tag' href='/tags/multi-precision/'>Multi-Precision</a>, <a class='tag' href='/tags/pezy/'>PEZY</a>, <a class='tag' href='/tags/with_review/'>with_review</a></div>
 
   </div>
 </footer>

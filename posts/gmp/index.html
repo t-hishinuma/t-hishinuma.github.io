@@ -53,7 +53,7 @@ GMPを用いたプログラム GMPはGNU Multi Precision Arithmetic Libraryの�
 <meta property='og:site_name' content='hpc::numa.blog()'>
 <meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='HPC'><meta property='article:tag' content='Multi-precision'><meta property='article:tag' content='Programming'><meta property='article:published_time' content='2020-05-18T00:00:00Z'/><meta property='article:modified_time' content='2020-05-18T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@summary'>
 
-<meta name="generator" content="Hugo 0.68.3" />
+<meta name="generator" content="Hugo 0.92.2" />
 
   <title>gmpの実装とC&#43;&#43;からの利用法，性能について(1) [gmp multi-precision] ,  hpc::numa.blog()</title>
   <link rel='canonical' href='https://hishinuma-t.dev/posts/gmp/'>
@@ -270,8 +270,8 @@ if (!doNotTrack) {
         <a href='/papers/list/'>Publications</a>
       </li><li class='item'>
         <a href='/works/list/'>Works</a>
-      </li><li class='item'>
-        <a href='/posts/'>blog</a>
+      </li><li class='item current'>
+        <a aria-current='page' href='/posts/'>blog</a>
       </li></ul>
   </div>
 </nav><div class='header-widgets'>
@@ -368,7 +368,7 @@ GMPは変数の宣言時，またはどこかでデフォルトの仮数部の�
 C++版を使えば演算子オーバーロードによって比較的簡単に実装することができます．</p>
 <p>すべての変数が同じ精度で良い場合は，<code>mpf_set_default_prec()</code>という関数を使って精度を指定すればよいです．
 簡単なプログラムは以下のようになります．</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;gmpxx.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;gmpxx.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
 	mpf_set_default_prec(<span style="color:#ae81ff">1024</span>);
@@ -407,7 +407,7 @@ C++版を使えば演算子オーバーロードによって比較的簡単に�
 <p>ただ，ここでも更に問題があり，「精度によって切り替わる」というのが変数の初期化時に指定した精度ではなく，
 実際に値が入っている桁数によって動的に切り替わるという点です．
 これはGMPの浮動小数点型であるmpf_t型の宣言を見るのがわかりやすいです．</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>
 {
 	<span style="color:#66d9ef">int</span> _mp_prec;         <span style="color:#75715e">/* Max precision, in number of `mp_limb_t&#39;s. Set by mpf_init and modified by mpf_set_prec.  The area pointed to by the _mp_d field contains `prec&#39; + 1 limbs.  */</span>
 	<span style="color:#66d9ef">int</span> _mp_size;         <span style="color:#75715e">/* abs(_mp_size) is the number of limbs the last field points to.  If _mp_size is negative this is a negative number.  */</span>
@@ -529,7 +529,7 @@ OSは<code>CentOS Linux release 8.0.1905 (Core)</code></p>
   <line x1="7" y1="7" x2="7" y2="7"/>
 
 </svg>
-<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/multi-precision/'>Multi-Precision</a>, <a class='tag' href='/tags/hpc/'>HPC</a>, <a class='tag' href='/tags/programming/'>Programming</a></div>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/hpc/'>HPC</a>, <a class='tag' href='/tags/multi-precision/'>Multi-Precision</a>, <a class='tag' href='/tags/programming/'>Programming</a></div>
 
   </div>
 </footer>

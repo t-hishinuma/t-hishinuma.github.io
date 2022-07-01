@@ -13,7 +13,7 @@ bind-key -n M-Up resize-pane -U 5 bind-key -n M-Down resize-pane -D 5 bind-key -
 <meta property='og:site_name' content='hpc::numa.blog()'>
 <meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='Software'><meta property='article:published_time' content='2020-08-22T00:00:00Z'/><meta property='article:modified_time' content='2020-08-22T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@summary'>
 
-<meta name="generator" content="Hugo 0.68.3" />
+<meta name="generator" content="Hugo 0.92.2" />
 
   <title>tmuxでAlt&#43;矢印キーでペインサイズを変更する ,  hpc::numa.blog()</title>
   <link rel='canonical' href='https://hishinuma-t.dev/posts/tools/tmux_arrow/'>
@@ -230,8 +230,8 @@ if (!doNotTrack) {
         <a href='/papers/list/'>Publications</a>
       </li><li class='item'>
         <a href='/works/list/'>Works</a>
-      </li><li class='item'>
-        <a href='/posts/'>blog</a>
+      </li><li class='item current'>
+        <a aria-current='page' href='/posts/'>blog</a>
       </li></ul>
   </div>
 </nav><div class='header-widgets'>
@@ -294,7 +294,7 @@ One min read
 
   <div class='container entry-content'>
   <p>よく忘れるので書いておきます</p>
-<pre><code>bind-key -n M-Up resize-pane -U 5
+<pre tabindex="0"><code>bind-key -n M-Up resize-pane -U 5
 bind-key -n M-Down resize-pane -D 5
 bind-key -n M-Left resize-pane -L 5
 bind-key -n M-Right resize-pane -R 5

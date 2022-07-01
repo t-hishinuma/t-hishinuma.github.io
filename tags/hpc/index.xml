@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Sat, 29 May 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://hishinuma-t.dev/tags/hpc/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 29 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hishinuma-t.dev/tags/hpc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GCPにおけるvCPUはハイパースレッディングが有効なので実際のコア数は半分という話</title>
       <link>https://hishinuma-t.dev/posts/gcp_thread/</link>

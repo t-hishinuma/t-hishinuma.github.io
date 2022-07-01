@@ -33,7 +33,7 @@ github pagesというのはgithubのトップディレクトリにindex.htmlが�
 <meta property='og:site_name' content='hpc::numa.blog()'>
 <meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='雑記'><meta property='article:tag' content='Web'><meta property='article:published_time' content='2020-02-21T00:00:00Z'/><meta property='article:modified_time' content='2020-02-21T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@summary'>
 
-<meta name="generator" content="Hugo 0.68.3" />
+<meta name="generator" content="Hugo 0.92.2" />
 
   <title>Webサイトをgithub pages &#43; Hugoに移行した話 ,  hpc::numa.blog()</title>
   <link rel='canonical' href='https://hishinuma-t.dev/posts/hugo_web/'>
@@ -250,8 +250,8 @@ if (!doNotTrack) {
         <a href='/papers/list/'>Publications</a>
       </li><li class='item'>
         <a href='/works/list/'>Works</a>
-      </li><li class='item'>
-        <a href='/posts/'>blog</a>
+      </li><li class='item current'>
+        <a aria-current='page' href='/posts/'>blog</a>
       </li></ul>
   </div>
 </nav><div class='header-widgets'>
@@ -383,7 +383,7 @@ Update作業の流れみたいなものを掴んで，「ああ簡単そうだ�
 <h2 id="hugoインストール">Hugoインストール</h2>
 <p>基本的な流れはMarkdownで書かれた記事やyaml or toml形式のconfigを書いて，<code>hugo</code> コマンドでHTMLを生成する．</p>
 <p>hugoのバージョン0.6を使った．</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ hugo version
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ hugo version
 Hugo Static Site Generator v0.60.1-96066756 linux/amd64 BuildDate: 2019-11-29T14:57:23Z
 </code></pre></div><p>Hugoのインストールは<a href="https://github.com/gohugoio/hugo/releases">公式github</a>にdebファイルが置いてあるので，最新版をwgetしてきて<code>sudo dpkg -i hogehoge.deb</code>すれば簡単に入る．
 Windows用にexeも置いてあるようだが，こっちは試していない．</p>
@@ -412,7 +412,7 @@ serverだけ打ってアクセスできてもHTMLが最新になっていない�
 <p><code>hugo server</code>コマンドは引数なしでも使えるが，外部アクセスの場合はIPなどを渡さないといけないので，
 自動でIP取得してサーバを立ててくれるように，以下のようなMakefileで作業した
 (本当は<code>build</code>に依存関係を書こうと思ったがHTMLの生成が速いので気にしないことにした．)．</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#a6e22e">all</span><span style="color:#f92672">:</span>  build
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#a6e22e">all</span><span style="color:#f92672">:</span>  build
 
 <span style="color:#a6e22e">build</span><span style="color:#f92672">:</span>
 	hugo
@@ -443,7 +443,7 @@ githubとgoogle cloud storageの速度が少し不安だったが無事100点で
   <line x1="7" y1="7" x2="7" y2="7"/>
 
 </svg>
-<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/web/'>Web</a>, <a class='tag' href='/tags/%E9%9B%91%E8%A8%98/'>雑記</a></div>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/%E9%9B%91%E8%A8%98/'>雑記</a>, <a class='tag' href='/tags/web/'>Web</a></div>
 
   </div>
 </footer>

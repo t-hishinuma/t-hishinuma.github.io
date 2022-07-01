@@ -15,9 +15,7 @@ SNSアカウント等：[github][5], [Twitter][2], [Linkedin][6], [researchmap][
 
 お仕事の依頼等はTwitterのDMかhishinuma.toshiaki[at]gmail.comまで
 
-プログラミングのメンタリング(講師)を[MENTA][9]にて行っていますので1からHPCを学習したい方は是非
-
-このブログについてなにかコメントありましたら[Issue][2]か[Twitter][1]まで
+このWebページについてなにかコメントありましたら[Issue][2]か[Twitter][1]まで
 
 応援してくださる方: [欲しい物リスト][4]
 
@@ -39,4 +37,3 @@ SNSアカウント等：[github][5], [Twitter][2], [Linkedin][6], [researchmap][
 [6]: https://www.linkedin.com/in/toshiaki-hishinuma-a34247157/
 [7]: https://researchmap.jp/hishinuma-t
 [8]: https://zenn.dev/hishinuma_t
-[9]: https://menta.work/user/14731
