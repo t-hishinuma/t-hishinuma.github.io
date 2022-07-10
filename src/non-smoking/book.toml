@@ -1,8 +1,0 @@
-[book]
-authors = ["Toshiaki Hishinuma"]
-src = "src"
-title = "禁煙を始めたので記録をつける"
-
-[output.html]
-mathjax-support = true
-google-analytics = "UA-45816416-4"

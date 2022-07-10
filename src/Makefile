@@ -6,9 +6,6 @@ build:
 	make -C ./HPC4CAE_book/ build
 	- rm -rf static/HPC4CAE/
 	mv HPC4CAE_book/HPC4CAE static
-	make -C ./non-smoking/ 
-	- rm -rf static/non-smoking/
-	mv non-smoking/non-smoking/ static/non-smoking/
 	hugo
 	touch ../.nojekyll
 
