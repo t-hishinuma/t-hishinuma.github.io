@@ -13,8 +13,8 @@ mathjax: true
 ---
 
 # Current Status
-* [科学計算総合研究所][3] 主任研究員\
-	(Chief Researcher, RICOS. Co. Ltd.)
+* OPPO日本研究所, 顧問 \
+    (Software Engineering Adviser, OPPO Japan Research Center)
 * 筑波大学 図書館情報メディア研究科 博士 (情報学) \
 	(Ph.D. in Informatics, Univ. of Tsukuba)
 * 情報処理学会 正会員\
