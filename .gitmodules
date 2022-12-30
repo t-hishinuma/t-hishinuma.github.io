@@ -1,0 +1,9 @@
+[submodule "HPC4CAE_book"]
+	path = HPC4CAE_book
+	url = https://github.com/t-hishinuma/HPC4CAE_book.git
+[submodule "src/HPC4CAE_book"]
+	path = src/HPC4CAE_book
+	url = https://github.com/t-hishinuma/HPC4CAE_book.git
+[submodule "src/themes/themes"]
+	path = src/themes/themes
+	url = git@github.com:MunifTanjim/minimo.git
