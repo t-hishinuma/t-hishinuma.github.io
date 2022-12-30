@@ -7,16 +7,13 @@ weight: -1
 images: [images/logo.png]
 ---
 
-HPCエンジニアの[Hishinuma\_t][1] の個人ページです．
-
-SNSアカウント等：[github][5], [Twitter][2], [Linkedin][6], [researchmap][7], [Zenn][8]
-
+HPCエンジニアの[Hishinuma\_t][1] の個人ページです．\
 業績やソフトウェアの紹介およびBlog目的で運用しています．
 
-お仕事の依頼等はTwitterのDMかhishinuma.toshiaki[at]gmail.comまで
-
+お仕事の依頼等はTwitterのDMかhishinuma.toshiaki[at]gmail.comまで\
 このWebページについてなにかコメントありましたら[Issue][2]か[Twitter][1]まで
 
+SNSアカウント等：[github][5], [Twitter][2], [Linkedin][6], [researchmap][7], [Zenn][8]\
 応援してくださる方: [欲しい物リスト][4]
 
 プライバシーポリシーについては[こちら](about/privacy)
