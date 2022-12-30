@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Thu, 29 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://hishinuma-t.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://hishinuma-t.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>研究業績</title>
       <link>https://hishinuma-t.dev/papers/list/</link>
@@ -38,16 +38,7 @@ Xev-GMP-Web
 Xev-GMP-Web converts a C source code which uses double variables into a C source code which uses GNU GMP library.
 Lis_DD_AVXkernels
 LisのDD機能をAVX, AVX2に拡張する差分，およびマージスクリプト
-Documents  CAEエンジニアのためのHPC (書き途中, ほぼ白紙)  Other   博士論文を情報処理学会 2019年度研究会推薦博士論文速報にて取り上げていただきました．URL, (魚拓)</description>
-    </item>
-    
-    <item>
-      <title>2022年振り返り</title>
-      <link>https://hishinuma-t.dev/posts/summary/2022summary/</link>
-      <pubDate>Thu, 29 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://hishinuma-t.dev/posts/summary/2022summary/</guid>
-      <description></description>
+Articles  疎行列とベクトルを掛けたい貴方に  Other   博士論文を情報処理学会 2019年度研究会推薦博士論文速報にて取り上げていただきました．URL, (魚拓)</description>
     </item>
     
     <item>
@@ -236,16 +227,6 @@ bind-key -n M-Up resize-pane -U 5 bind-key -n M-Down resize-pane -D 5 bind-key -
     </item>
     
     <item>
-      <title>技術関係はzennに移行しようか悩んでます</title>
-      <link>https://hishinuma-t.dev/posts/zenn/</link>
-      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hishinuma-t.dev/posts/zenn/</guid>
-      <description>ということですので，リンクを貼っておきます
-https://zenn.dev/hishinuma_t</description>
-    </item>
-    
-    <item>
       <title>SX-Aurora TSUBASAにおける有限要素解析のための共役勾配法の性能評価</title>
       <link>https://hishinuma-t.dev/papers/wo_review/hpc175/</link>
       <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
@@ -372,19 +353,6 @@ git clone git@github.com:t-hishinuma/numa_benchmark.git # vim benchmark_config #
       
       <guid>https://hishinuma-t.dev/papers/dr_thesis/</guid>
       <description>Download PDF  Information  著者: 菱沼 利彰 学位授与大学: 筑波大学 (University of Tsukuba) 取得学位: 博士（情報学） / Doctor of Philosophy in Informatics JaLC DOI: info:doi/10.15068/00160612 学位授与年月日: 2020-03-25 報告番号: 12102甲第9609号  etc.  博士論文を情報処理学会 2019年度研究会推薦博士論文速報にて取り上げていただきました．URL, (魚拓) 上記の研究会推薦博士論文速報が情報処理 第61巻，第9月号に掲載されました．URL (記念写真1, 2)  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://hishinuma-t.dev/posts/monolish/v0_14_0/</link>
-      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hishinuma-t.dev/posts/monolish/v0_14_0/</guid>
-      <description>2011年，5月のリリースでgcc4.6から4倍精度が入った． 昔のブログで軽く使い方を書いたが他のサイトに情報があまり増えてなかったし，私の記事もできが悪かったのでこっちに移転したので改めてまとめてみた．
-g++ -fopenacc -foffload=nvptx-none=&amp;quot;-misa=sm_35&amp;quot; -O3 -std=c++11 -fopenmp -fcf-protection=none acc.cpp -o acc.out mkoffload: fatal error: either &#39;-fopenacc&#39; or &#39;-fopenmp&#39; must be set compilation terminated. lto-wrapper: fatal error: /usr/lib/gcc/x86_64-linux-gnu/10//accel/nvptx-none/mkoffload returned 1 exit status compilation terminated. /usr/bin/ld: error: lto-wrapper failed collect2: error: ld returned 1 exit status make: *** [Makefile:22: acc.out] Error 1 使い方 簡単な使い方としては， libquadmathを使うことになる．
-__float128 型を宣言して使う．倍精度を代入して使うこともできる． 4倍精度数を表現したい場合には後ろに q をつけて使う．
-四則演算子や代入なども使えるが，printfだけはchar型の配列に変換してから使う必要がある． 適当なサンプルは以下のとおり：
-#include&amp;lt;quadmath.h&amp;gt;#include&amp;lt;stdio.h&amp;gt;int main(){ char str[128]; __float128 a = 1.2345678901234567890q; __float128 b = 1.</description>
     </item>
     
     <item>

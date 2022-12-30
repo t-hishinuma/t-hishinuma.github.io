@@ -7,16 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
-    <lastBuildDate>Thu, 29 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://hishinuma-t.dev/tags/%E9%9B%91%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>2022年振り返り</title>
-      <link>https://hishinuma-t.dev/posts/summary/2022summary/</link>
-      <pubDate>Thu, 29 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://hishinuma-t.dev/posts/summary/2022summary/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Fri, 21 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hishinuma-t.dev/tags/%E9%9B%91%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Webサイトをgithub pages &#43; Hugoに移行した話</title>
       <link>https://hishinuma-t.dev/posts/hugo_web/</link>
