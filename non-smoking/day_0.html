@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Day 0 はじめに (禁煙外来初診) - 禁煙を始めたので記録をつける</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="day_0.html" class="active"><strong aria-hidden="true">1.</strong> Day 0 はじめに (禁煙外来初診)</a></li><li class="chapter-item expanded "><a href="day_1.html"><strong aria-hidden="true">2.</strong> Day 1</a></li><li class="chapter-item expanded "><a href="day_2.html"><strong aria-hidden="true">3.</strong> Day 2</a></li><li class="chapter-item expanded "><a href="day_3.html"><strong aria-hidden="true">4.</strong> Day 3</a></li><li class="chapter-item expanded "><a href="day_4.html"><strong aria-hidden="true">5.</strong> Day 4</a></li><li class="chapter-item expanded "><a href="day_5.html"><strong aria-hidden="true">6.</strong> Day 5</a></li><li class="chapter-item expanded "><a href="day_6.html"><strong aria-hidden="true">7.</strong> Day 6</a></li><li class="chapter-item expanded "><a href="day_7.html"><strong aria-hidden="true">8.</strong> Day 7</a></li><li class="chapter-item expanded "><a href="day_8.html"><strong aria-hidden="true">9.</strong> Day 8</a></li><li class="chapter-item expanded "><a href="day_9.html"><strong aria-hidden="true">10.</strong> Day 9</a></li><li class="chapter-item expanded "><a href="day_10.html"><strong aria-hidden="true">11.</strong> Day 10</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">禁煙を始めたので記録をつける</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="day-0-はじめに-禁煙外来初診"><a class="header" href="#day-0-はじめに-禁煙外来初診">Day 0 はじめに (禁煙外来初診)</a></h1>
+<p>禁煙を始めたので記録をつけます</p>
+<p>2021/07/01</p>
+<h2 id="禁煙外来に行った"><a class="header" href="#禁煙外来に行った">禁煙外来に行った</a></h2>
+<p>家計簿を見ていたら月に2万円も煙草に使っていることに気付いた．
+私はなにかに依存することに何の抵抗もない人間なので，禁煙というものを考えたことは人生で一度もなかった．
+しかし煙草より金のほうが依存度が高い．私は現金がないと死んでしまう現金中毒者なので，より優先される中毒症状のために禁煙することにした．</p>
+<p>禁煙しようと思い適当に調べると，住んでいる区の禁煙外来マップというものを見つけた．
+幸い我が家の近くでも禁煙外来をやっているところがあるようだ．
+禁煙外来は保険も効くということで，国の税金と科学に寄生して禁煙することにした．</p>
+<p>何も考えずにそこそこ近い病院に電話．1時間後なら予約が取れるので来てくれと言われて行く．
+煙草を何年続けているかとか，日に何本吸うのかとかを問診票に書いて提出．</p>
+<p>診察室でも問診票と同じようなことを聞かれて，特に問題なかったらしく，じゃあ禁煙を始めるぞと言われる．</p>
+<p>飲み薬と貼り薬(いわゆるニコチンパッチ）の2つの治療法が保険適用の禁煙外来で取れる手法らしいが，
+飲み薬は2021.7現在では出荷制限がかかっていて処方できないのと，眠くなるんだそう．
+まぁ無いものは仕方がないし眠くなるのは嫌なのでニコチンパッチを選ぶことに．</p>
+<p>治療は2ヶ月間に渡って続けられ，その間で病院に行くのは5回とのこと．
+2ヶ月を超えたり，6回目の診療を希望する場合は保険は適用されず自費になるんだそう．
+まあダラダラとやめられない人の相手は出来ないということか．わかる．</p>
+<p>薬の説明と治療方針の説明を受けてあっさり終わり．
+今日からすぐに始めるのは辛いでしょうから，明日から始めましょうと言われる．
+がんばってね～みたいな感じで診察は終わり．</p>
+<p>最後に別室で呼気に一酸化炭素濃度を測ることに．
+しかし計測してみるとゼロ．
+どうもアイコスさんは流石なようで，水蒸気だから一酸化炭素は含まれないというのは本当だったらしい．
+本来ならこれがどんどん減っていったりするのを見て楽しめるらしい．俺の楽しみを奪ったアイコスを許さない．</p>
+<p>禁煙ガイドブックというものも貰い，本当に終了．</p>
+<h2 id="会計とパッチの処方"><a class="header" href="#会計とパッチの処方">会計とパッチの処方</a></h2>
+<p>初回の診察料は．初診だったので初診料が373点，医学管理等というところが230点，投薬が68点．3割負担で2,010円．</p>
+<p>帰りに薬局でニコチンパッチを処方される．ニコチネルTTS30というらしい．
+どうやらシールの大きさで30,20,10とあるらしく，最初は30らしい．何週間かしたら20になるのだろうか？
+こちらは2,150円だった．</p>
+<p>ということで第一回は4,160円．</p>
+<p>これが5回続いたら4,160 * 5=20,800円ということになるが，
+今回は初診料が入っているし，パッチも小さくなったら安いかもしれないから，トータルはきっともうちょっと安いんじゃないか．しらんけど</p>
+<p>帰ってきて開けてみるとこんな感じ．これが14枚で，好きな所に貼るらしい．
+肌が荒れるから毎日違う場所に貼るようにと言われた．</p>
+<p><img src="https://storage.googleapis.com/share-tmp/IMG20210702072237.jpg" alt="" /></p>
+<p>子供が開けられないように特殊な包装になっているのでハサミで開けろと書いてある．
+信じないで頑張って開けようとしてみたが私の爪や歯では太刀打ちできなかった．</p>
+<p>ということで明日から禁煙ということになった．今日はせいぜい煙草を楽しむことにする．</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next" href="day_1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next" href="day_1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-45816416-4', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

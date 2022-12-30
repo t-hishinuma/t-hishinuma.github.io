@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang='en' dir='auto'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='20201217追記：よくよく読み返してみるとタイトルが「混合精度」なのに話してることが「高精度」だけで精度を混ぜる話なんにもしてないことに気づいたのでこっそり「前編」だったことにしました．後編は今度書きます．
+はじめに この記事は数値計算 Advent Calendar 2020の16日目の記事です．
+みなさん連立一次方程式解いてますか？
+この研究は脳筋マゾヒストが何も分からずにKrylov部分空間法という闇を殴り続けている過程について書きます．
+本記事では連立一次方程式解法の1つのカテゴリであるKrylov部分空間法と， Krylov部分空間法を高精度演算で行うことについて扱います．
+高精度と聞いて円周率みたいな細かい桁のシミュレーションと思った方, そういう話じゃありません． 本記事ではみなさんが普段やるような1.0e-8とかの近似解を求める場合に高精度演算を使うと良さそうだ．という話をします．
+なお，
+ Krylov部分空間法の詳しい説明はしませんので詳しいことが知りたい人はSaad大先生の本を読んでください(PDF落ちてます) 作成者はHPCと高精度演算の人なので理論方面の説明はざっくりです このブログでmathjaxを使うのが初で苦戦してます．数式周りは心の目で見てください 最後まで読んでも高精度演算でKrylov部分空間を実装すると便利だなあ！とはなりません．僕の苦しみが共有されるだけです．応用研究に協力してくれる人を募集しています この記事は個人として書いているので所属とは関係ない Qiitaが嫌いなので個人サイトに書いてますが，コメント等あったらTwitterかメールなりで頂けたらと思います  それでは本編を始めます．
+ 連立一次方程式 $$ Ax = b $$ の求解アルゴリズムは様々なものが提案されています．
+(mathjax使えた～よかった～設定疲れた～)
+最も有名なものは直接解法に分類されるLU分解 (ガウスの消去法)かと思います．
+これはN*Nの行列に対して， \[{2 \over 3}N^3 (後退代入を含む) \] の計算量で求解できる優れたアルゴリズムです．
+一方で多くの物理シミュレーションで現れる偏微分方程式などを差分法や有限要素法などを用いて離散化することによって得られる行列は疎行列 (行列の要素がほとんどゼロの行列)です．
+疎行列は解析領域を格子分割するなどによって得られ，解析領域を細かく分割することによって離散化誤差を減らし精度の高いシミュレーションを行えますが，行列のサイズは大きくなり求解にかかる時間が増大します．
+一般的に離散化により得られる疎行列は格子点数に依存した次元数および各格子点の節点間の接続に依存した非零要素をもつため， このとき1行あたりの非零要素は変わらず，行列の次元数だけが増えていくことが多いため，行列の密度はどんどん減っていきます．
+ ※ 1行あたりの非零要素数は元の問題にも依存しますが，多くて100くらいが一般的に思います (例外はいくらでもありますが)．
+そのためN*N行の行列全体の非零要素数は100N程度しかないような行列になります．
+※ 実際にこのような行列がどのようにして現れるかについては@nqomorita氏が数値計算Advent Calendar 2018で書かれた 有限要素法と反復法線形ソルバのはじめの一歩[前編]などを読んでください (仕事が明らかに忙しいのは知ってますが後編楽しみに待ってます！)
+ 話を戻すとこのような疎行列はメモリ使用量を節約するために行番号や列番号のインデックス配列を用いて零要素を記憶しない格納形式を用います (詳しくはCRS形式などを調べてください)．
+このような疎行列のメモリレイアウトを用いた場合，後から値を挿入(fill-in)したり列方向にアクセスしたりするのが非常に面倒です．
+気軽な気持ちで行列行列積なんかした日には結果として密行列が出てくるので台無しです(疎×疎は疎とは限らない)．
+そのため疎行列を係数とする連立一次方程式解法では疎行列の値の書き換えや挿入が頻繁に行われるLU分解などの直接解法でなく反復解法がよく使われます． (なお，マルチフロンタル法など疎行列を疎のままでLU分解する手法もありますが，それについては触れません)
+Krylov部分空間法と共役勾配法 Krylov部分空間法は， 連立一次方程式$$Ax = b$$ に対する 初期近似解x_0に対応する初期残差ベクトル $$ r_0 = b - Ax_0$$ を用いて Aのべき乗とr_0の積の像が張る空間から近似解を探索する反復法アルゴリズムの一つのカテゴリで， 行列の性質に応じて様々なアルゴリズムがあります．'>
+<meta name='theme-color' content='black'>
+
+<meta property='og:title' content='混合精度Krylov部分空間法による連立一次方程式の求解について (前編) ,  hpc::numa.blog()'>
+<meta property='og:description' content='20201217追記：よくよく読み返してみるとタイトルが「混合精度」なのに話してることが「高精度」だけで精度を混ぜる話なんにもしてないことに気づいたのでこっそり「前編」だったことにしました．後編は今度書きます．
+はじめに この記事は数値計算 Advent Calendar 2020の16日目の記事です．
+みなさん連立一次方程式解いてますか？
+この研究は脳筋マゾヒストが何も分からずにKrylov部分空間法という闇を殴り続けている過程について書きます．
+本記事では連立一次方程式解法の1つのカテゴリであるKrylov部分空間法と， Krylov部分空間法を高精度演算で行うことについて扱います．
+高精度と聞いて円周率みたいな細かい桁のシミュレーションと思った方, そういう話じゃありません． 本記事ではみなさんが普段やるような1.0e-8とかの近似解を求める場合に高精度演算を使うと良さそうだ．という話をします．
+なお，
+ Krylov部分空間法の詳しい説明はしませんので詳しいことが知りたい人はSaad大先生の本を読んでください(PDF落ちてます) 作成者はHPCと高精度演算の人なので理論方面の説明はざっくりです このブログでmathjaxを使うのが初で苦戦してます．数式周りは心の目で見てください 最後まで読んでも高精度演算でKrylov部分空間を実装すると便利だなあ！とはなりません．僕の苦しみが共有されるだけです．応用研究に協力してくれる人を募集しています この記事は個人として書いているので所属とは関係ない Qiitaが嫌いなので個人サイトに書いてますが，コメント等あったらTwitterかメールなりで頂けたらと思います  それでは本編を始めます．
+ 連立一次方程式 $$ Ax = b $$ の求解アルゴリズムは様々なものが提案されています．
+(mathjax使えた～よかった～設定疲れた～)
+最も有名なものは直接解法に分類されるLU分解 (ガウスの消去法)かと思います．
+これはN*Nの行列に対して， \[{2 \over 3}N^3 (後退代入を含む) \] の計算量で求解できる優れたアルゴリズムです．
+一方で多くの物理シミュレーションで現れる偏微分方程式などを差分法や有限要素法などを用いて離散化することによって得られる行列は疎行列 (行列の要素がほとんどゼロの行列)です．
+疎行列は解析領域を格子分割するなどによって得られ，解析領域を細かく分割することによって離散化誤差を減らし精度の高いシミュレーションを行えますが，行列のサイズは大きくなり求解にかかる時間が増大します．
+一般的に離散化により得られる疎行列は格子点数に依存した次元数および各格子点の節点間の接続に依存した非零要素をもつため， このとき1行あたりの非零要素は変わらず，行列の次元数だけが増えていくことが多いため，行列の密度はどんどん減っていきます．
+ ※ 1行あたりの非零要素数は元の問題にも依存しますが，多くて100くらいが一般的に思います (例外はいくらでもありますが)．
+そのためN*N行の行列全体の非零要素数は100N程度しかないような行列になります．
+※ 実際にこのような行列がどのようにして現れるかについては@nqomorita氏が数値計算Advent Calendar 2018で書かれた 有限要素法と反復法線形ソルバのはじめの一歩[前編]などを読んでください (仕事が明らかに忙しいのは知ってますが後編楽しみに待ってます！)
+ 話を戻すとこのような疎行列はメモリ使用量を節約するために行番号や列番号のインデックス配列を用いて零要素を記憶しない格納形式を用います (詳しくはCRS形式などを調べてください)．
+このような疎行列のメモリレイアウトを用いた場合，後から値を挿入(fill-in)したり列方向にアクセスしたりするのが非常に面倒です．
+気軽な気持ちで行列行列積なんかした日には結果として密行列が出てくるので台無しです(疎×疎は疎とは限らない)．
+そのため疎行列を係数とする連立一次方程式解法では疎行列の値の書き換えや挿入が頻繁に行われるLU分解などの直接解法でなく反復解法がよく使われます． (なお，マルチフロンタル法など疎行列を疎のままでLU分解する手法もありますが，それについては触れません)
+Krylov部分空間法と共役勾配法 Krylov部分空間法は， 連立一次方程式$$Ax = b$$ に対する 初期近似解x_0に対応する初期残差ベクトル $$ r_0 = b - Ax_0$$ を用いて Aのべき乗とr_0の積の像が張る空間から近似解を探索する反復法アルゴリズムの一つのカテゴリで， 行列の性質に応じて様々なアルゴリズムがあります．'>
+<meta property='og:url' content='https://hishinuma-t.dev/posts/advent2020/numerical_analysis16/'>
+<meta property='og:site_name' content='hpc::numa.blog()'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='HPC'><meta property='article:tag' content='Multi-precision'><meta property='article:tag' content='Programming'><meta property='article:published_time' content='2020-12-15T00:00:00Z'/><meta property='article:modified_time' content='2020-12-15T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@summary'>
+
+<meta name="generator" content="Hugo 0.92.2" />
+
+  <title>混合精度Krylov部分空間法による連立一次方程式の求解について (前編) ,  hpc::numa.blog()</title>
+  <link rel='canonical' href='https://hishinuma-t.dev/posts/advent2020/numerical_analysis16/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><style>
+:root{--color-accent:black;}
+</style>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-45816416-4', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+
+</head>
+<body class='page type-posts has-sidebar has-emoji'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+      <a href='/'>
+      hpc::numa.blog()
+      </a>
+    </h2>
+    <div class='desc'>
+    Toshiaki Hishinuma&#39;s web site
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/t-hishinuma' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+
+</svg>
+</a>
+      </li><li>
+        <a href='https://twitter.com/hishinuma_t' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Twitter account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <title>Twitter icon</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:hishinuma.toshiaki@gmail.com' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</a>
+      </li><li>
+        <a href='https://linkedin.com/in/toshiaki-hishinuma-a34247157' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+      </li><li>
+        <a href='https://scholar.google.com/citations?user=zWHEb6AAAAAJ' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Google_scholar account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <title>Google Scholar icon</title><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section><section class='widget widget-recent_posts sep-after'>
+  <header>
+    <h4 class='title widget-title'>Recent Posts</h4>
+  </header>
+
+  <ul class='list'>
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2020-11-24T00:00:00Z'>2020, Nov 24</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/papers/list/'>研究業績</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2020-02-16T00:00:00Z'>2020, Feb 16</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/works/list/'>Works (Software and Documents)</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2022-12-29T00:00:00Z'>2022, Dec 29</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/summary/2022summary/'>2022年振り返り</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2022-03-04T00:00:00Z'>2022, Mar 04</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/papers/wo_review/ipsj_yamaura/'>ディレクティブベースのGPUプログラミングモデルを用いた倍々精度演算の性能評価</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2022-03-04T00:00:00Z'>2022, Mar 04</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/papers/wo_review/ipsj_fukunaga/'>倍々精度演算におけるSIMD命令利用時のデータレイアウトによる性能差分析</a>
+    </h3>
+  </header>
+</li>
+
+  
+  </ul>
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+
+</svg>
+</span>
+  <span class='close'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+
+</svg>
+</span>
+</button>
+    <ul><li class='item'>
+        <a href='/'>Home</a>
+      </li><li class='item'>
+        <a href='/about/'>About</a>
+      </li><li class='item'>
+        <a href='/papers/list/'>Publications</a>
+      </li><li class='item'>
+        <a href='/works/list/'>Works</a>
+      </li><li class='item current'>
+        <a aria-current='page' href='/posts/'>blog</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>hpc::numa.blog()</p><p class='desc site-desc'>Toshiaki Hishinuma&#39;s web site</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>混合精度Krylov部分空間法による連立一次方程式の求解について (前編)</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2020-12-15T00:00:00Z'>2020, Dec 15</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+
+</svg>
+2 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <p><strong>20201217追記：よくよく読み返してみるとタイトルが「混合精度」なのに話してることが「高精度」だけで精度を混ぜる話なんにもしてないことに気づいたのでこっそり「前編」だったことにしました．後編は今度書きます．</strong></p>
+<h1 id="はじめに">はじめに</h1>
+<p><strong>この記事は<a href="https://qiita.com/advent-calendar/2020/numerical_analysis">数値計算 Advent Calendar 2020</a>の16日目の記事です．</strong></p>
+<p>みなさん連立一次方程式解いてますか？</p>
+<p>この研究は脳筋マゾヒストが何も分からずにKrylov部分空間法という闇を殴り続けている過程について書きます．</p>
+<p>本記事では連立一次方程式解法の1つのカテゴリであるKrylov部分空間法と，
+Krylov部分空間法を高精度演算で行うことについて扱います．</p>
+<p><strong>高精度と聞いて円周率みたいな細かい桁のシミュレーションと思った方, そういう話じゃありません．</strong>
+本記事ではみなさんが普段やるような1.0e-8とかの近似解を求める場合に高精度演算を使うと良さそうだ．という話をします．</p>
+<p>なお，</p>
+<ul>
+<li>Krylov部分空間法の詳しい説明はしませんので詳しいことが知りたい人は<a href="https://www-users.cs.umn.edu/~saad/books.html">Saad大先生の本</a>を読んでください(PDF落ちてます)</li>
+<li>作成者はHPCと高精度演算の人なので理論方面の説明はざっくりです</li>
+<li>このブログでmathjaxを使うのが初で苦戦してます．数式周りは心の目で見てください</li>
+<li>最後まで読んでも高精度演算でKrylov部分空間を実装すると便利だなあ！とはなりません．僕の苦しみが共有されるだけです．応用研究に協力してくれる人を募集しています</li>
+<li>この記事は個人として書いているので<a href="https://www.ricos.co.jp/">所属</a>とは関係ない</li>
+<li>Qiitaが嫌いなので個人サイトに書いてますが，コメント等あったら<a href="https://twitter.com/Hishinuma_t">Twitter</a>かメールなりで頂けたらと思います</li>
+</ul>
+<p>それでは本編を始めます．</p>
+<hr>
+<p>連立一次方程式 $$ Ax = b $$ の求解アルゴリズムは様々なものが提案されています．<br>
+(mathjax使えた～よかった～設定疲れた～)</p>
+<p>最も有名なものは直接解法に分類されるLU分解 (ガウスの消去法)かと思います．</p>
+<p>これはN*Nの行列に対して，
+\[{2 \over 3}N^3 (後退代入を含む) \]
+の計算量で求解できる優れたアルゴリズムです．</p>
+<p>一方で多くの物理シミュレーションで現れる偏微分方程式などを差分法や有限要素法などを用いて離散化することによって得られる行列は疎行列 (行列の要素がほとんどゼロの行列)です．</p>
+<p>疎行列は解析領域を格子分割するなどによって得られ，解析領域を細かく分割することによって離散化誤差を減らし精度の高いシミュレーションを行えますが，行列のサイズは大きくなり求解にかかる時間が増大します．</p>
+<p>一般的に離散化により得られる疎行列は格子点数に依存した次元数および各格子点の節点間の接続に依存した非零要素をもつため，
+このとき1行あたりの非零要素は変わらず，行列の次元数だけが増えていくことが多いため，行列の密度はどんどん減っていきます．</p>
+<hr>
+<p>※ 1行あたりの非零要素数は元の問題にも依存しますが，多くて100くらいが一般的に思います (例外はいくらでもありますが)．<br>
+そのためN*N行の行列全体の非零要素数は100N程度しかないような行列になります．</p>
+<p>※ 実際にこのような行列がどのようにして現れるかについては@nqomorita氏が数値計算Advent Calendar 2018で書かれた
+<a href="https://qiita.com/nqomorita/items/6fc4940c1a9532f02c10">有限要素法と反復法線形ソルバのはじめの一歩[前編]</a>などを読んでください (仕事が明らかに忙しいのは知ってますが後編楽しみに待ってます！)</p>
+<hr>
+<p>話を戻すとこのような疎行列はメモリ使用量を節約するために行番号や列番号のインデックス配列を用いて零要素を記憶しない格納形式を用います (詳しくはCRS形式などを調べてください)．</p>
+<p>このような疎行列のメモリレイアウトを用いた場合，後から値を挿入(fill-in)したり列方向にアクセスしたりするのが非常に面倒です．<br>
+気軽な気持ちで行列行列積なんかした日には結果として密行列が出てくるので台無しです(疎×疎は疎とは限らない)．</p>
+<p>そのため疎行列を係数とする連立一次方程式解法では疎行列の値の書き換えや挿入が頻繁に行われるLU分解などの直接解法でなく反復解法がよく使われます．
+(なお，マルチフロンタル法など疎行列を疎のままでLU分解する手法もありますが，それについては触れません)</p>
+<h1 id="krylov部分空間法と共役勾配法">Krylov部分空間法と共役勾配法</h1>
+<p>Krylov部分空間法は，
+連立一次方程式$$Ax = b$$ に対する
+初期近似解<code>x_0</code>に対応する初期残差ベクトル
+$$ r_0 =  b - Ax_0$$ を用いて
+Aのべき乗と<code>r_0</code>の積の像が張る空間から近似解を探索する反復法アルゴリズムの一つのカテゴリで，
+行列の性質に応じて様々なアルゴリズムがあります．</p>
+<p>ここで理屈について説明してると大変なので，何となく行列をかけたり，ベクトルの内積取ったりしてるんだな．程度の理解をしていただければOKです．<br>
+どういう理屈なのかについては日本語なら <a href="https://www.slideshare.net/tmaehara/krylov-19503034">前原先生のスライド</a>や<a href="https://www.r-ccs.riken.jp/r-ccssite/wp-content/uploads/2017/04/tokuronA_17_10_yamamoto.pdf">山本先生のスライド</a>
+などを見てください．</p>
+<p>また，Krylov部分空間にはLanczos法やArnoldi法のように連立一次方程式解法だけでなく固有値解法なども含まれます．</p>
+<h2 id="共役勾配法">共役勾配法</h2>
+<p>Krylov部分空間法の代表的な連立一次方程式解法に共役勾配法 (CG法)があります．
+もう数式を書くのに疲れてきたのでWikipediaの共役勾配法のページから拾ってきた画像を引用します．</p>
+<p><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/021e02360a28c46188bc915eb06533dfa84a3002" alt=""></p>
+<p>図1 共役勾配法のアルゴリズム (出典：<a href="https://en.wikipedia.org/wiki/Conjugate_gradient_method">Wikiperia</a>)</p>
+<p>一般的にアルゴリズム中の残差ベクトル<code>r</code> に対する相対残差ノルムが十分に小さくなるまでこれを繰り返します．</p>
+<p>共役勾配法は理論上はN回で収束することが知られています．</p>
+<p>つまり計算量について考えてみると，</p>
+<ul>
+<li>ループ中に現れる行列 <code>A</code> への計算は <code>Ap_k</code> の計算だけ(2回出てくるけど使い回せばいいので1回)</li>
+<li><code>x</code> や <code>r</code> に対する内積やらベクトル和やらが10回くらい</li>
+<li>行列 <code>A</code> は更新されない (コードの左辺に来てないでしょ？)</li>
+</ul>
+<p>なので，行列 <code>A</code>　の次元数がNで，非零要素数が <code>nnz</code> 個だとすると，</p>
+<ul>
+<li>行列ベクトル積 <code>Ap_k</code> の計算量は <code>nnz</code></li>
+<li>内積などは10回*N</li>
+</ul>
+<p>くらいです．仮に1行あたりの非零要素数を100とすれば，</p>
+<blockquote>
+<p>(100<em>N (行列ベクトル積) +  10</em>N (ベクトル演算)) * N (反復)</p>
+</blockquote>
+<p>ということで110N^2くらいの計算量で求めることができて，2/3N^3かかるLU分解よりも少なく済みます (なおSparse直接解法は本記事ではry)．</p>
+<p>しかし，
+<strong>Krylov部分空間法って最高じゃん！もうLU分解なんて窓から投げ捨てようぜ！！！とは残念ながらなりません．</strong></p>
+<p><strong>P.S. 疎な構造なのに密行列で持つなんて発想は窓から投げ捨ててください</strong></p>
+<p>問題について語っていきます．</p>
+<h2 id="krylov部分空間法の問題点と高精度演算">Krylov部分空間法の問題点と高精度演算</h2>
+<p><strong>Krylov部分空間法はN回で必ず収束すると言ったな．あれは嘘だ</strong></p>
+<p>N回というのは<strong>理論上</strong>の話で，これは無誤差な場合に限定されます (ここで誤差とは丸め誤差を指す)．</p>
+<p>一般的に収束判定は1.0e-8とかにすることが多いのですが，問題規模や条件によって内積や行列積を繰り返すうちに誤差が蓄積していつまでも収束しない現象が起きます．
+N回以上に回していれば解けるケースもあれば，一生解けない場合(停滞)や，どっかに値が吹っ飛んでいく(発散)ケースもあります．</p>
+<p>つまり残差の判定がアキレスと亀状態になったり，しまいにはどこかに吹っ飛んでいったり，循環してしまったりするということです．</p>
+<p>計算機の発展，つまり演算性能やメモリサイズが増大に伴って，扱われる問題の規模が大きくなってきており丸め誤差による収束への影響も増大しています <a href="https://ieeexplore.ieee.org/document/6545912">出典</a>(<a href="http://arith21.arithsymposium.org/papers/paper_33.pdf">PDF</a>)．</p>
+<p><strong>そのため，今まで解けていた解析対象であったとしても規模を大きく(メッシュを細かく切るなど)によって急に解けなくなったりする可能性があります．</strong>
+(内積するベクトルのサイズが増加→誤差もより蓄積)</p>
+<p>ああなんて恐ろしいんでしょう．</p>
+<p>これに対して前処理をしたり，アルゴリズム自体を改良したりといった工夫によってアルゴリズムの収束性を高めたりする研究が盛んに行われています．</p>
+<p>しかし，アルゴリズムを変えたところで解けるかどうかわからないとか，数学的に同じことをやっているのかとか，まぁいろんな問題がつきまといます．</p>
+<p><strong>これを解決する手法の1つが高精度演算です．</strong></p>
+<p><strong>つまり誤差が問題であるならば桁を上げて誤差を吸収してやろうという力技です</strong></p>
+<p>LAPACKチームの調査によると，16%のユーザーがよくまたは時々高精度を使っているらしいです (原典がわからないけど出典は<a href="https://hpc-phys.kek.jp/workshop/workshop190318/nakata_20190318.pdf">こちら</a>)．</p>
+<p><strong>それではこれを見て感動してください！！！！！</strong></p>
+<p><img src="https://storage.googleapis.com/numa_blog/blog_photo/rhis.png" alt=""></p>
+<p>図2 ある問題における収束履歴の例1</p>
+<p><img src="https://storage.googleapis.com/numa_blog/blog_photo/rhis2.png" alt=""></p>
+<p>図3 ある問題における収束履歴の例2</p>
+<p>これはある2つの問題を相対残差1.0e-12になるまでCG法で解いた結果をプロットしたものです．</p>
+<p>黒が64bit(倍精度)で，赤がGMPによる1024 bitの結果です．(GMPについては<a href="https://hishinuma-t.dev/posts/gmp/">過去の記事</a>もよろしくね)</p>
+<p>この図では横軸が反復回数，縦軸が相対残差で，下の方に最初にたどり着いた人が勝ちという単純なグラフです．</p>
+<p><strong>なんと！！！！高精度演算が圧勝しました！！！！！！</strong></p>
+<p><strong>きっとより精度の高い解を得たり解けない問題を解けるようになります！！！！</strong></p>
+<p><strong>＼大勝利！！！！！！／</strong></p>
+<hr>
+<p>お わ り</p>
+<p>制作・著作</p>
+<p>━━━━━━</p>
+<p>ⒽⓅⒸ</p>
+<hr>
+<p><strong>そんなわけあるかい</strong></p>
+<h1 id="高精度演算の問題点">高精度演算の問題点</h1>
+<p>私としては前の章で終わりたかったですが，ここからが問題です．</p>
+<p>確かに高精度演算を使えば，</p>
+<ul>
+<li><strong>解けない問題が解けたり</strong></li>
+<li><strong>少ない反復回数で計算が終わったり</strong></li>
+</ul>
+<p>することがわかりました．</p>
+<p>前の章では示しませんでしたが，1024 bitでは更に進めていくと相対残差がもっと小さい(精度の良い)答えまで求めることができます．</p>
+<p>この時点で，</p>
+<ul>
+<li><strong>既に倍精度では解けないことがわかっていたり，</strong></li>
+<li><strong>倍精度では表現できないくらい精度のよい答えが知りたい</strong></li>
+</ul>
+<p>という人には有益でしょう．</p>
+<p>しかし，</p>
+<blockquote>
+<p>計算機の発展，つまり演算性能やメモリサイズが増大に伴って，扱われる問題の規模が大きくなってきており丸め誤差による収束への影響も増大しています <a href="https://ieeexplore.ieee.org/document/6545912">出典</a>(<a href="http://arith21.arithsymposium.org/papers/paper_33.pdf">PDF</a>)．
+そのため，今まで解けていた解析対象であったとしても規模を大きく(メッシュを細かく切るなど)によって急に解けなくなったりする可能性があります．</p>
+</blockquote>
+<p>こちらのニーズとしては微妙です．<strong>なぜならGMPは遅いからです</strong>．</p>
+<p><strong>64 bitと1024 bitでは1反復あたりの計算時間が100倍くらい違います</strong>
+つまり横軸の&quot;1反復&quot;のコストが違うのです．</p>
+<p>さらに1024 bitに増やしたことでメモリも大量に使います．
+また，今回使った1024bitというのは適当な数字で，本当にユーザが使うアプリケーションで1024 bitで十分なのかは分かりません．
+もしかすると10,000 bitくらいないとダメなのかもしれません．</p>
+<p>また，最初に直接解法(LU分解)を否定しましたが，直接解法であれば<strong>必ず解ける</strong>のです．
+10,000 bitも使うくらいなら密行列として持ってLAPACKなりに突っ込んだほうがマシかもしれません．
+(直接法も蓄積誤差はありますが．．．それは精度保証の人などの論文を読んでください．．そっちに興味がある方は<a href="http://verifiedby.me/">kvライブラリ</a>など使ってみると良いんじゃないでしょうか)</p>
+<p>もっと言えば，不完全LU分解などの収束性の高い前処理を使ったほうが全然良いかもしれません(前処理については各自調べてください)．</p>
+<p>ということで，精度を上げるという1つの改善策としては有効性は示されましたが，
+実アプリケーションにおける応用としては疑問が残ります．</p>
+<p>ここからは実アプリケーションに向けた私の研究について紹介していきます．
+ただし，実際に実アプリケーションに応用できるという結論にはたどり着きません．最後はポエムです．</p>
+<h1 id="応用に向けた検証とポエム">応用に向けた検証と，ポエム</h1>
+<h2 id="私の研究dd演算の高速化について">私の研究：DD演算の高速化について</h2>
+<p>私の研究は，実アプリケーションで実用的に高精度演算という「改善策」を選択肢の一つとして選べるようにすることです．</p>
+<p>そのためのアプローチとして，まずは倍精度の2倍の精度の128 bitの演算の高速化と，C++から標準型のように使うためのインタフェースの開発をしています．</p>
+<p>これらの成果は
+<a href="https://github.com/t-hishinuma/DD-AVX_v3">DD-AVX_v3</a>
+として公開されており，<a href="https://hishinuma-t.dev/posts/tools/dd-avx_v10/">こっちの記事</a>に詳しく書きましたので，良ければ見てください．<br>
+あと，githubにスターなど頂けたら励みになるのでよろしくおねがいします．</p>
+<p>最近ではこれらの成果をいくつかの研究会などで報告しており，見ていただいた方もいるかも知れませんが，
+<strong>128 bitのDD型でも倍精度と比べて1.2~1.5倍くらいの時間で計算ができる</strong>ようなライブラリになっています．</p>
+<p>反復回数の変化についてはもっと実問題の応用を積み重ねて有効な適用範囲を見つけていくつもりですが，
+<strong>仮に反復回数が変わらなくても1.5倍程度の時間の増加で済みます</strong>．</p>
+<p>倍精度を使って解けなかったときのリスク回避に払うコストが1.5倍というのは，悪くない賭けじゃないかと思いますので，
+よかったら使って感想をいただけたら幸いです．</p>
+<hr>
+<h2 id="精度を変えると何が起きているのかのポエム">精度を変えると何が起きているのかのポエム</h2>
+<p>ここで終わっておけばよかったんだよこの記事</p>
+<p>でも書きたかったんだよ．</p>
+<p><strong>読者の皆様，ここでブラウザを閉じれば気持ちよく終われます</strong></p>
+<hr>
+<p>さて，<strong>1反復の時間が1.2~1.5倍なら反復回数を70%くらいまで減らせれば高精度なのに倍精度より速く(しかも解ける確率も高く)なるんじゃね？</strong>
+という欲が出てきました．</p>
+<p>そうなると<strong>事前に高精度化の効果がどのくらいなのかを自動で判定したい</strong>などの欲も出てきます．</p>
+<p>よーし傾向を調べるぞ～～！！！と思い，1000問くらいの問題をバカみたいにスクリプトで解いてみました．</p>
+<p>行列データは<a href="https://sparse.tamu.edu/">Suite Sparse Matrix Collection</a>という行列コレクションから大きい順に全部引っ張ってきました．</p>
+<p>先程までとは違うのですが対称と非対称を区別せずに行列を引っ張ってきたので，非対称でも解けるBiCGSTAB法というアルゴリズムで解きました．<br>
+倍精度と128 bitで1000問解いたところ，</p>
+<ul>
+<li>解けなかった問題が433問</li>
+<li>反復回数が128 bitにしたことで1回でも減ったケースは529問</li>
+<li>反復回数が変わらなかったケースは36問</li>
+<li>反復回数が増えたケースは2問</li>
+</ul>
+<p>でした．</p>
+<p>倍精度とくらべて倍々精度のほうが速いケースもありました．ただケーススタディ止まりなので紹介はやめておきます．</p>
+<p>行列は何も考えずに引っ張ってきてるので，解けなかった433問は数学的にBiCGSTABでは解けなかったのかもしれません．分母から省くべきでしょう．
+そうすると<strong>567問のうち収束が多少なり改善したのは93%</strong> です．</p>
+<p>いや～～～よかった～～～～</p>
+<p>　<br>
+　<br>
+　<br>
+　<br>
+　</p>
+<blockquote>
+<p>反復回数が増えたケースは2問</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>「反復回数が増えたケースは2問」</strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>「「「反復回数が増えたケースは2問」」」</strong></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><strong>なにこれ？？？？？？？</strong></p>
+<p><strong>は？？？？？？？？？？？</strong></p>
+<p>犯人のうち1人は<a href="https://sparse.tamu.edu/Averous/epb1">epb1</a>とかいう名前の行列でした．</p>
+<p>64, 128, 256, 512, 1024 bitそれぞれで解いたときの収束履歴を以下に示します．</p>
+<p><img src="https://storage.googleapis.com/numa_blog/blog_photo/soutai.png" alt=""></p>
+<p>図 4 epb1のBiCGSTAB法の収束履歴</p>
+<p><strong>見てください倍精度が一番早く(もちろん速く)解けるのです</strong></p>
+<p>全く意味が分かりません．</p>
+<p>この問題について詳しく見てみます．</p>
+<p>以下のグラフは，BiCGSTAB法のalphaという変数を，1024 bitを真値だと思って各反復で相対誤差をとったものです．</p>
+<p><img src="https://storage.googleapis.com/numa_blog/blog_photo/soutai_alpha.png" alt=""></p>
+<p>図 5 epb1で1024 bitを真値としたalphaの相対誤差</p>
+<p>この結果から，最初のうちは精度を上げるとちゃんとalphaが1024 bitに近い (精度の良い)値になっていることが分かりますが，
+400反復もすると誤差が積もるらしく訳がわからない事になっているようです．</p>
+<p>数値が悪すぎるのか？桁落ちでもしてるのか？<br>
+とにかく最終的に運が悪くて反復回数が増えるようです．</p>
+<p>じゃあちゃんとDDにして収束が改善したやつではどうでしょうか？<br>
+<a href="https://www.cise.ufl.edu/research/sparse/matrices/Langemyr/comsol.html">comsolという行列</a>も見てみます．</p>
+<p><img src="https://storage.googleapis.com/numa_blog/blog_photo/95_rireki.png" alt=""></p>
+<p>図 6 comsolのBiCGSTAB法の収束履歴</p>
+<ul>
+<li>ご覧の通り反復回数は減っていて，倍精度だけが遅い結果です．</li>
+<li>128~1024 bitは同じような収束履歴になっていることが分かります．</li>
+</ul>
+<p>ではalphaの値はどうでしょうか？</p>
+<p><img src="https://storage.googleapis.com/numa_blog/blog_photo/95alpha.png" alt=""></p>
+<p>図 7 comsolで1024 bitを真値としたalphaの相対誤差</p>
+<p>全くズレています．</p>
+<p>ちなみに「収束した」と判定されたときのalphaの値はそれぞれ</p>
+<ul>
+<li>64 bit: 3.13E+00</li>
+<li>128 bit: 2.04E-01</li>
+<li>256 bit: 2.17E+00</li>
+<li>512 bit: -9.16E+01</li>
+<li>1024 bit: -9.16E+01</li>
+</ul>
+<p>となっていました．128 bitだと-0.2で1024 bitだと-91.6です．どうして同じような収束履歴をたどったんでしょうか？</p>
+<p>何を見れば良いのかさっぱり分かりません．ちなみにどれも収束はしています．<br>
+<code>b-Ax</code> してみてもちゃんと答えはあっているようです．</p>
+<p>無誤差な状態で少なくなるのは分かるのですが，64 bitと128 bitくらいだとどこが良くなったのか見つけるのがなかなか難しく，今回の分析はここまでにしました．</p>
+<p>誰かこれの分析方法についてアイデアがある人は教えて下さい．</p>
+<h1 id="おわりに">おわりに</h1>
+<p>皆さんが普段楽しく使っているKrylovがマジで訳がわからない話をしました．</p>
+<p>一方で高精度演算の有用性については分かって頂けたのではないでしょうか．</p>
+<p><strong>高精度演算をつかってKrylov部分空間法の収束を改善することの強みはアルゴリズムの並列性を崩さない</strong>ことにあります．
+本文ではあまり触れませんでしたが，ILUなどの並列度の低いアルゴリズムはGPUなどでは性能が出ないですが，そういったアルゴリズムを使わずに収束性を改善することができます．</p>
+<p>Krylov部分空間法を使う上で現状のパラメタは「解法」と「前処理」ですが，そこに「精度」を加えることで，新しい世界が拓けるのではないかと思っています．</p>
+<p>プログラム自体は簡単なものですし，天才的な数学的才能が求められている研究でもないと思います．
+あまり掘られていない分野なので，興味を持った方がいたら是非連絡いただけたらと思います．</p>
+<p>また，本文では触れませんでしたが最後の結果についてどういう比較方法をすればいいのかには疑問が残ります．
+ただ，この実験をするのにかなりの手作業が入っていて，高精度な数をファイルI/Oするとよく分からんので，1024 bitを1反復して値を取ってきて同じプログラムの中で比較したりと，かなり面倒なことをしました．</p>
+<p>精度を自在にコントロールしたり，複数の精度でプログラムをはしらせ，gdbみたいな感じで対話っぽく精度を比較できると精度検証がしやすいのですが，
+中々そういう環境がないのがつらいところですし，どうやって作るかというのも難しい問題です．</p>
+<p>結論として現状では訳が分からなかったわけですが，収束と精度の関係を調べる話は沼なので置いておくとしても，
+また，精度を上げてゴリ押しすれば解けることはご理解いただけたんじゃないでしょうか．</p>
+<p>精度を上げて収束を安定させることのメリットは，アルゴリズムを変えなくて良いことだけでなく，元のアルゴリズムの並列度を維持できるということにもあります．
+GPUなどでILUなどの並列性の低い前処理をするのはどうしても難しいですが，精度に関しては並列度に寄与しないので，高い並列度を維持したままで収束性をコントロールすることが出来ます．
+そのため，精度の高い演算を使えるプログラムというのは1つ持っておいても良いんじゃないでしょうか．</p>
+<hr>
+<p>最後にCMですが，私は所属している<a href="https://www.ricos.co.jp/">科学計算総合研究所</a>で
+FOCUSにおける<a href="https://www.j-focus.or.jp/archives/001/202006/FrontISTR_Support_RICOS_20200603.pdf">FrontISTRのサポート</a>や，
+A64fx, SX-Aurora TSUBASA, GPUなどにおけるFrontISTRの高速化を担当しています．</p>
+<p>これらの並列化環境においては前述の通り前処理アルゴリズムの並列性が課題となってくるため，
+弊社では大規模・悪条件な構造解析に対して高精度演算を使って高い並列度で計算するアルゴリズムを開発し，
+FrontISTRへの組み込みなども行っています．</p>
+<p>通常では倍精度かつCPUでしか動かないFrontISTRを高速なアクセラレータや高い精度で動かしたいというご要望のある方は連絡いただけたら私ががんばります．
+また，FOCUSのリンクにある機械学習による設計フローの加速についても是非よろしくお願いします．</p>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/hpc/'>HPC</a>, <a class='tag' href='/tags/multi-precision/'>Multi-Precision</a>, <a class='tag' href='/tags/programming/'>Programming</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/posts/advent2020/super_con_poem_day13/'>
+        <span aria-hidden='true'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>スパコンポエムAdC2020 Day13 SX-Aurora TSUBASAについて酒を飲みながら書いたポエム</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/posts/gcp_thread/'>
+        <span class='screen-reader-text'>Next post: </span>GCPにおけるvCPUはハイパースレッディングが有効なので実際のコア数は半分という話<span aria-hidden='true'>Next <svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><div class='copyright'>
+  <p>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script><script type='text/x-mathjax-config'>
+  MathJax.Hub.Config({})
+</script>
+
+<script type='text/javascript' async src='//unpkg.com/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+</body>
+
+</html>
+

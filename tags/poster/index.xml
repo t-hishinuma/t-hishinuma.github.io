@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Poster on hpc::numa.blog()</title>
+    <link>https://hishinuma-t.dev/tags/poster/</link>
+    <description>Recent content in Poster on hpc::numa.blog()</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</copyright>
+    <lastBuildDate>Wed, 19 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hishinuma-t.dev/tags/poster/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An Evaluation of Double-Double Precision Operation for Iterative Solver Library Using AVX</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/isat_hishinuma/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/isat_hishinuma/</guid>
+      <description>Download PDF  Download Poster PDF  </description>
+    </item>
+    
+    <item>
+      <title>AVXを用いた倍々精度疎行列ベクトル積 -転置行列-</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/hpcs2013_poster/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/hpcs2013_poster/</guid>
+      <description>Download PDF  Download Poster PDF  </description>
+    </item>
+    
+    <item>
+      <title>Shorting of Transfer Duration Using File Transfer Striping</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/isat_kayama/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/isat_kayama/</guid>
+      <description>Download PDF  </description>
+    </item>
+    
+    <item>
+      <title>疎行列ベクトル積に対するOpenMPスケジューリング方式の分析</title>
+      <link>https://hishinuma-t.dev/papers/wo_review/hpcs2014/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hishinuma-t.dev/papers/wo_review/hpcs2014/</guid>
+      <description>Download PDF  Download Poster PDF  </description>
+    </item>
+    
+  </channel>
+</rss>

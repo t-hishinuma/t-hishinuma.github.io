@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang='en' dir='auto'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='はじめに この記事はスパコンポエムAdC202013日目の記事です．
+山田先輩に誘われたはいいものの，私はQiitaのテーマカラーの緑が嫌いなので自分のブログに勝手に書きます．
+コメントしたいけどQiitaじゃないからコメントできない！！！と思った人はTwitterにでも書いてください．頑張って発掘します．
+今回の記事はSX-Aurora TSUBASA (SXAT)です． SXATはスパコンじゃないだろって？ 何いってんだここにスパコンだって書いてある．
+まぁ冗談はさておき東北大のAOBA-AやNIFSの雷神に搭載なので問題ないでしょう． あと次期地球シミュレータにも搭載らしいですね．
+この記事ではSXATの演算器構成と，さすがNECとも呼べる自動ベクトル化を最大に活かしたプログラミングモデルについて紹介します． 最後に簡単にSTREAM代わりの内積プログラムの性能について紹介していこうと思います．
+いくつかの注意  僕は1ノードまでしか使ったことないので1ノードに限定して書きます 使ってるモデルがType 10-Bというやつなので，東北大や雷神とは動作周波数などが若干違います 明らかに [1] [2]関係者ですが公開情報に基づいて書いています．ただしチャンピオンデータを使った神輿担ぎはしてません この記事は個人として書いているので所属とは関係ない  以上についてご了承ください．
+SX-Aurora TSUBASAとは SX-Aurora TSUBASAはシステム全体の名前で，
+ ホストとなるマシンをVH (Vector Host), PCIe Gen3接続のアクセラレータボードをVE (Vector Engine)  と呼びます．
+↑これ大事
+で，VEですが，
+これがVEだ！！！！！！！！
+＼バーン／
+ ～おわり～
+制作・著作
+━━━━━━
+ⒽⓅⒸ
+ ↑これは後輩の@recorderさんが作ってくれました．
+本題に戻りますが赤いボードだそうです．NECって赤でしたっけ？
+半導体に詳しい山田さんはこれを見るだけで演算器構成が透けて見えると思いますが， 僕のような若輩にはまだまだ無理なので，ここからちゃんと調べた結果を紹介します．
+ちなみに大体の情報はここにあります．
+現状ではVHはIntel CPUのモデルだけのようですが，次期地球シミュレータではEPYCになるらしいので，今後PCIeのカード販売が進むにつれて色々なモデルがでるんじゃないでしょうか．
+VEの性能 特徴的なのはVEで，これがいわゆるベクトル機になっています．
+Type-10Bと呼ばれるVEの諸元を以下の表に示します．
+   Model name Type 10B, 1.4 GHz, 8 core     Peak 2.'>
+<meta name='theme-color' content='black'>
+
+<meta property='og:title' content='スパコンポエムAdC2020 Day13 SX-Aurora TSUBASAについて酒を飲みながら書いたポエム ,  hpc::numa.blog()'>
+<meta property='og:description' content='はじめに この記事はスパコンポエムAdC202013日目の記事です．
+山田先輩に誘われたはいいものの，私はQiitaのテーマカラーの緑が嫌いなので自分のブログに勝手に書きます．
+コメントしたいけどQiitaじゃないからコメントできない！！！と思った人はTwitterにでも書いてください．頑張って発掘します．
+今回の記事はSX-Aurora TSUBASA (SXAT)です． SXATはスパコンじゃないだろって？ 何いってんだここにスパコンだって書いてある．
+まぁ冗談はさておき東北大のAOBA-AやNIFSの雷神に搭載なので問題ないでしょう． あと次期地球シミュレータにも搭載らしいですね．
+この記事ではSXATの演算器構成と，さすがNECとも呼べる自動ベクトル化を最大に活かしたプログラミングモデルについて紹介します． 最後に簡単にSTREAM代わりの内積プログラムの性能について紹介していこうと思います．
+いくつかの注意  僕は1ノードまでしか使ったことないので1ノードに限定して書きます 使ってるモデルがType 10-Bというやつなので，東北大や雷神とは動作周波数などが若干違います 明らかに [1] [2]関係者ですが公開情報に基づいて書いています．ただしチャンピオンデータを使った神輿担ぎはしてません この記事は個人として書いているので所属とは関係ない  以上についてご了承ください．
+SX-Aurora TSUBASAとは SX-Aurora TSUBASAはシステム全体の名前で，
+ ホストとなるマシンをVH (Vector Host), PCIe Gen3接続のアクセラレータボードをVE (Vector Engine)  と呼びます．
+↑これ大事
+で，VEですが，
+これがVEだ！！！！！！！！
+＼バーン／
+ ～おわり～
+制作・著作
+━━━━━━
+ⒽⓅⒸ
+ ↑これは後輩の@recorderさんが作ってくれました．
+本題に戻りますが赤いボードだそうです．NECって赤でしたっけ？
+半導体に詳しい山田さんはこれを見るだけで演算器構成が透けて見えると思いますが， 僕のような若輩にはまだまだ無理なので，ここからちゃんと調べた結果を紹介します．
+ちなみに大体の情報はここにあります．
+現状ではVHはIntel CPUのモデルだけのようですが，次期地球シミュレータではEPYCになるらしいので，今後PCIeのカード販売が進むにつれて色々なモデルがでるんじゃないでしょうか．
+VEの性能 特徴的なのはVEで，これがいわゆるベクトル機になっています．
+Type-10Bと呼ばれるVEの諸元を以下の表に示します．
+   Model name Type 10B, 1.4 GHz, 8 core     Peak 2.'>
+<meta property='og:url' content='https://hishinuma-t.dev/posts/advent2020/super_con_poem_day13/'>
+<meta property='og:site_name' content='hpc::numa.blog()'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://hishinuma-t.dev/images/logo.png'><meta property='article:section' content='posts'><meta property='article:tag' content='HPC'><meta property='article:tag' content='SX-Aurora'><meta property='article:published_time' content='2020-12-13T00:00:00Z'/><meta property='article:modified_time' content='2020-12-13T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@summary'>
+
+<meta name="generator" content="Hugo 0.92.2" />
+
+  <title>スパコンポエムAdC2020 Day13 SX-Aurora TSUBASAについて酒を飲みながら書いたポエム ,  hpc::numa.blog()</title>
+  <link rel='canonical' href='https://hishinuma-t.dev/posts/advent2020/super_con_poem_day13/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><style>
+:root{--color-accent:black;}
+</style>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-45816416-4', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+
+</head>
+<body class='page type-posts has-sidebar has-emoji'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+      <a href='/'>
+      hpc::numa.blog()
+      </a>
+    </h2>
+    <div class='desc'>
+    Toshiaki Hishinuma&#39;s web site
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/t-hishinuma' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+
+</svg>
+</a>
+      </li><li>
+        <a href='https://twitter.com/hishinuma_t' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Twitter account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <title>Twitter icon</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:hishinuma.toshiaki@gmail.com' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</a>
+      </li><li>
+        <a href='https://linkedin.com/in/toshiaki-hishinuma-a34247157' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+      </li><li>
+        <a href='https://scholar.google.com/citations?user=zWHEb6AAAAAJ' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Google_scholar account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <title>Google Scholar icon</title><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section><section class='widget widget-recent_posts sep-after'>
+  <header>
+    <h4 class='title widget-title'>Recent Posts</h4>
+  </header>
+
+  <ul class='list'>
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2020-11-24T00:00:00Z'>2020, Nov 24</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/papers/list/'>研究業績</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2020-02-16T00:00:00Z'>2020, Feb 16</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/works/list/'>Works (Software and Documents)</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2022-12-29T00:00:00Z'>2022, Dec 29</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/posts/summary/2022summary/'>2022年振り返り</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2022-03-04T00:00:00Z'>2022, Mar 04</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/papers/wo_review/ipsj_yamaura/'>ディレクティブベースのGPUプログラミングモデルを用いた倍々精度演算の性能評価</a>
+    </h3>
+  </header>
+</li>
+
+  
+    <li class='item'>
+  <div class='meta'>
+    <span>
+  <span class='screen-reader-text'>Posted on </span>
+  <time datetime='2022-03-04T00:00:00Z'>2022, Mar 04</time>
+</span>
+
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='/papers/wo_review/ipsj_fukunaga/'>倍々精度演算におけるSIMD命令利用時のデータレイアウトによる性能差分析</a>
+    </h3>
+  </header>
+</li>
+
+  
+  </ul>
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+
+</svg>
+</span>
+  <span class='close'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+
+</svg>
+</span>
+</button>
+    <ul><li class='item'>
+        <a href='/'>Home</a>
+      </li><li class='item'>
+        <a href='/about/'>About</a>
+      </li><li class='item'>
+        <a href='/papers/list/'>Publications</a>
+      </li><li class='item'>
+        <a href='/works/list/'>Works</a>
+      </li><li class='item current'>
+        <a aria-current='page' href='/posts/'>blog</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>hpc::numa.blog()</p><p class='desc site-desc'>Toshiaki Hishinuma&#39;s web site</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>スパコンポエムAdC2020 Day13 SX-Aurora TSUBASAについて酒を飲みながら書いたポエム</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2020-12-13T00:00:00Z'>2020, Dec 13</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+
+</svg>
+2 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <h1 id="はじめに">はじめに</h1>
+<p>この記事は<a href="https://qiita.com/advent-calendar/2020/sc_poem">スパコンポエムAdC2020</a>13日目の記事です．</p>
+<p><a href="https://twitter.com/telmin_orca">山田先輩</a>に誘われたはいいものの，私はQiitaのテーマカラーの緑が嫌いなので自分のブログに勝手に書きます．</p>
+<p>コメントしたいけどQiitaじゃないからコメントできない！！！と思った人はTwitterにでも書いてください．頑張って発掘します．</p>
+<p>今回の記事はSX-Aurora TSUBASA (SXAT)です．
+SXATはスパコンじゃないだろって？
+<strong>何いってんだ<a href="https://cloud.watch.impress.co.jp/docs/news/1290133.html">ここ</a>にスパコンだって書いてある．</strong></p>
+<p>まぁ冗談はさておき東北大の<a href="https://www.ss.cc.tohoku.ac.jp/sx-aurora/">AOBA-A</a>やNIFSの<a href="https://www.nifs.ac.jp/press/200630.html">雷神</a>に搭載なので問題ないでしょう．
+あと<a href="https://xtech.nikkei.com/atcl/nxt/column/18/00001/04756/">次期地球シミュレータにも搭載らしい</a>ですね．</p>
+<p>この記事ではSXATの演算器構成と，さすがNECとも呼べる自動ベクトル化を最大に活かしたプログラミングモデルについて紹介します．
+最後に簡単にSTREAM代わりの内積プログラムの性能について紹介していこうと思います．</p>
+<h3 id="いくつかの注意">いくつかの注意</h3>
+<ul>
+<li>僕は1ノードまでしか使ったことないので1ノードに限定して書きます</li>
+<li>使ってるモデルが<a href="https://jpn.nec.com/hpc/sxauroratsubasa/specification/index.html">Type 10-B</a>というやつなので，東北大や雷神とは動作周波数などが若干違います</li>
+<li>明らかに <a href="/papers/wo_review/hpc175/">[1]</a> <a href="/papers/wo_review/opencae2020/">[2]</a>関係者ですが公開情報に基づいて書いています．ただしチャンピオンデータを使った神輿担ぎはしてません</li>
+<li>この記事は個人として書いているので所属とは関係ない</li>
+</ul>
+<p>以上についてご了承ください．</p>
+<h1 id="sx-aurora-tsubasaとは">SX-Aurora TSUBASAとは</h1>
+<p><strong>SX-Aurora TSUBASAはシステム全体の名前で，</strong></p>
+<ul>
+<li><strong>ホストとなるマシンをVH (Vector Host),</strong></li>
+<li><strong>PCIe Gen3接続のアクセラレータボードをVE (Vector Engine)</strong></li>
+</ul>
+<p><strong>と呼びます．</strong></p>
+<p>↑これ大事</p>
+<p>で，VEですが，</p>
+<p><strong>これがVEだ！！！！！！！！</strong></p>
+<p><img src="https://www.nec.com/en/global/solutions/hpc/sx/images/Aurora-card.png" alt="ve"></p>
+<p>＼バーン／</p>
+<hr>
+<p>～おわり～</p>
+<p>制作・著作</p>
+<p>━━━━━━</p>
+<p>ⒽⓅⒸ</p>
+<hr>
+<p>↑これは後輩の<a href="https://twitter.com/recorder">@recorder</a>さんが作ってくれました．</p>
+<p>本題に戻りますが赤いボードだそうです．NECって赤でしたっけ？</p>
+<p>半導体に詳しい山田さんはこれを見るだけで演算器構成が透けて見えると思いますが，
+僕のような若輩にはまだまだ無理なので，ここからちゃんと調べた結果を紹介します．</p>
+<p>ちなみに大体の情報は<a href="https://www.hpc.nec/documentation">ここ</a>にあります．</p>
+<p>現状ではVHはIntel CPUのモデルだけのようですが，<a href="https://xtech.nikkei.com/atcl/nxt/column/18/00001/04756/">次期地球シミュレータではEPYCになるらしい</a>ので，今後PCIeのカード販売が進むにつれて色々なモデルがでるんじゃないでしょうか．</p>
+<h2 id="veの性能">VEの性能</h2>
+<p>特徴的なのはVEで，これがいわゆるベクトル機になっています．<br>
+Type-10Bと呼ばれるVEの諸元を以下の表に示します．</p>
+<table>
+<thead>
+<tr>
+<th>Model name</th>
+<th>Type   10B, 1.4 GHz,   8 core</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Peak</td>
+<td>2.15   TFlops (DP) / 4.3 TFLOPS (SP)</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>HBM2 48 GB   (B/W 1,228 GB/s)</td>
+</tr>
+<tr>
+<td>LLC</td>
+<td>16   MB</td>
+</tr>
+</tbody>
+</table>
+<p>DPeak 2.15 TFlopsとそこそこ高いピーク性能とHBM2が48GB載っているのが特徴です．
+48GBというのは今度出るNVIDIA A100 (80GB)を除けば恐らく最大容量です．
+1枚のメモリが大きいというのは機械学習や数値シミュレーションではMPIをやらなくて良い分有利なので，個人的には好きです．</p>
+<p>先程の<a href="https://cloud.watch.impress.co.jp/docs/news/1290133.html">記事</a>によるとVEのカード1枚の価格は114万4000円からとのことで，対抗他社製品と比べてもそんなに高くないんじゃないでしょうか．</p>
+<p>では，2.15TFLOPSというピーク性能の内訳について，演算器構成を見ていきます．</p>
+<p><img src="https://storage.googleapis.com/numa_blog/blog_photo/SX-Aurora.png" alt="sxat">
+SX-Aurora TSUBASAの構成 (Type-10B) (出典：菱沼 利彰, 井原 遊, 高村 守幸, 平野 哲, 萩原 孝, 岩田 直樹, 奥田 洋司, SX-Aurora TSUBASAにおける有限要素解析のための共役勾配法の性能評価, 情報処理学会研究報告, Vol. 2020-HPC-175 (SWoPP2020), No. 18, pp. 1–10, 2020.07．)</p>
+<p>この図では，下の小さい箱がVH，上の大きい箱がVEとして書いています．</p>
+<p>VEは8つのコアを搭載していて，各コアには型に依らず最大256要素を格納するベクトルレジスタが64本と倍精度32要素に対して同時にFMA (Fused Multiply and Add)演算を実行できるFPUが3器搭載されています．</p>
+<p>ベクトルレジスタに格納，演算できるデータ数は可変で，データ数が256要素に満たない場合でもデータを256の倍数に揃えずにベクトル計算を実行できます．</p>
+<p>ベクトルレジスタ内にデータが256要素格納されているとき，FPUはベクトルレジスタのデータに対して256 / 32 = 8 サイクルかけて計算を行う形で処理されます．</p>
+<p>そのためVEにおいて倍精度演算を行う場合のピーク性能は次のように計算できます．</p>
+<blockquote>
+<p>1.4 [GHz] × 8 [core] × 32 (要素) × 6 (FMA × 3基) = 2.15 [TFLOPS]</p>
+</blockquote>
+<p>周波数についてはいくつかのモデルがあるそうです．お手元のVEが何クロックで動いているかは手を触れるだけで水晶発振器の振動が読み取れると噂の山田さんに聞いてください．</p>
+<p>プログラマとして考えなければいけないのは，</p>
+<ul>
+<li>8つあるコアのためのスレッド並列</li>
+<li>倍精度32要素を同時に処理するSIMDのデータ並列</li>
+</ul>
+<p>の2つになってきます．</p>
+<p>続いて帯域関係の話に移ると，</p>
+<ul>
+<li>メモリ帯域は1,228 GB/sで，Byte / Flop (B/F)は1,228 / 2,150 = 0.57</li>
+<li>コア共有のLLC (Last Level Cache)のサイズは16 MBで，各コアとLLC間の帯域は358.4 GB/s</li>
+</ul>
+<p>ここがちょっと面倒で，VEは1コアあたりのLLCとの帯域が358.4 GB/sなので，メモリバンド幅である1,228 GB/sを引きだすためには1,228 / 358.4 = 3.4 コア相当の帯域が必要で，
+スレッド並列は必須になってきます．</p>
+<h2 id="sx-aurora-tsubasaのプログラミングモデル">SX-Aurora TSUBASAのプログラミングモデル</h2>
+<p>SXATはこれまでのアクセラレータボードとは違う，特徴的とも言えるプログラミング方式を採用しています．</p>
+<p>一般的にアクセラレータボードのプログラミング方式は</p>
+<ol>
+<li>Xeon PhiやCell B.E.のようにアクセラレータボード上で動作するOSにログインしてプログラムを実行する (データ転送はscpなど)</li>
+<li>GPUのように関数なりpragmaなりでデータ転送を記述してデバイス上で動作するプロセスをホストから明示的に上げる</li>
+</ol>
+<p>の2つかと思います．</p>
+<p>一方，SXATではどちらとも違う，
+<strong>VHからVE向けにコンパイルされたバイナリを実行すると自動的にVEにプロセスが上がる</strong>
+という方式をとっています．</p>
+<p>VH上で動作するVEOSとよばれるVE上で動作するプロセスを制御するソフトウェアが提供されています．
+VEOSはVEからはOSのように見えていて，VEにLinuxシステムコールなどを提供します．</p>
+<p>VEOS側は必要に応じてVE側のプロセスに対してデータ制御などを行ってくれるため，
+I/Oやシステムコールなどの処理は自動的にVEOSを通じてVHと協調して行われます．</p>
+<p>そのため，NECコンパイラを用いてVE向けにコンパイルしたプログラムをVHから実行するだけで，
+VEOSによってプロセスがVE上に展開されて処理が行われ，ユーザがプログラムを変更したり，VEとVH間の転送を意識する必要がありません．</p>
+<p>また，SXATではVHとVEを連携させて計算するハイブリッド計算用の<a href="https://github.com/SX-Aurora/aveo">AVEO</a>というAPIも提供されており，
+VHのプログラムはOpenCLっぽい記述でデータオフロードを書いてgccでコンパイル，NECコンパイラで作ったバイナリを呼ぶような形になってます．</p>
+<p>コンパイラとしてはC/C++/Fortranのコンパイラが動作するようになっています．
+今のところ何でもコンパイルできていて，トラブルは特にぶつかってないです．</p>
+<p>高速化の方法は，スレッド並列にはOpenMPやpthread, プロセス並列にはMPIが使用できます．
+これらの環境変数などの挙動も普通の環境と同じです．</p>
+<p>コア内のベクトル化にはコンパイラによる自動ベクトル化，およびコンパイラへの指示句を利用できます．</p>
+<p>コンパイラが賢いらしく指示句を使わなくても間接参照が必要な疎行列ベクトル積を自動ベクトル化してくれました．
+明示的に特殊な命令を使いたい場合じゃなければ使わなくていいんじゃないでしょうか．</p>
+<h2 id="実際どうなの">実際どうなの</h2>
+<p>はじめからスレッド並列されてるプログラムなら特に何もしないで動いて帯域を引いてくれます．
+たとえばSTREAMとかReference BLASなどは勝手に自動化してくれ，帯域を引く程度まで自動ベクトル化してくれました．</p>
+<p>Reference BLAS程度の大きさのソフトウェアがコンパイラをgccからnccに変えるだけで10倍くらい速くなったのは良い感じかと思います．</p>
+<p>また，48 GBと大きいメモリが使えるだけでなく，Xeon PhiやCell B.E.のようにログインして使うわけではないので，
+デバイス側のOSに入力ファイルなどが溜まって圧迫してこないことも良い点かと思いました．</p>
+<p>STREAMみたいなソフトであれば実行と同時にプロセスがVEに上がって，VEの中でメモリを確保して舐めるだけなので，
+起動みたいな時間が違って目立つとかは感じず，ホスト実行と同じような感覚で実行し，プログラム全体の時間が純粋に速くなっているように感じました．</p>
+<p>また，コンパイラは周辺ソフトウェアはyumで管理されていて，NECリポジトリを登録して色々落としてきてねということになっているので，
+コンパイラとかのバージョン管理は楽だと思います．</p>
+<p>本音を言えばコンパイラもgithubで配布してくれればテストなどの継続保守が楽になるので検討して欲しいとこなのが1つ．
+GeForce(もっと欲を言えばJetson)のように安価に手元で試しやすいモデルを検討してほしいのが1つでしょうか．
+<a href="https://jpn.nec.com/press/202011/20201113_01.html">NECはAWSと協業するという話</a>があるので，将来的にAWSなどから使えるようになると幸せなのですが．</p>
+<p>githubで色々調べるとほとんどのソフトは<a href="https://github.com/efocht">Erich Focht</a>氏が書いているように見えます．
+まだまだユーザが少ないのは仕方ないですが，NEC社の人がpull requestしていたりするのが見えないので，
+OSSにするならもう少しオープンに開発したり出来ないのかなとか思いました(ポエム</p>
+<p>そしてこのErich氏すごい．<br>
+私の頭の中では勝手にこの人をNECモスと呼んでいます(´・ω・｀)</p>
+<h1 id="性能評価">性能評価</h1>
+<p>ポエムに疲れてきたので，適当なコードを1つ使って簡単な性能評価をして終わろうと思います．</p>
+<p>STREAMをやろうとおもいましたが，あえてC++で，かつ集約計算が必要な内積を書いてやってみました．</p>
+<ul>
+<li>標準出力からの配列サイズの受け取り</li>
+<li>OpenMPとOpenMPのreduction</li>
+<li>std::vectorやstd::cout</li>
+</ul>
+<p>など，ホストでは当然やりたいような要素を入れときました．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;omp.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">**</span> argv){
+    size_t N <span style="color:#f92672">=</span> atoi(argv[<span style="color:#ae81ff">1</span>]);
+    std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> x(N, <span style="color:#ae81ff">1.0</span>);
+    std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> y(N, <span style="color:#ae81ff">2.0</span>);
+    <span style="color:#66d9ef">double</span> ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+    <span style="color:#66d9ef">double</span> stime <span style="color:#f92672">=</span> omp_get_wtime();
+    <span style="color:#75715e">#pragma omp parallel for reduction(+:ans)
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> N; i<span style="color:#f92672">++</span>){
+        ans <span style="color:#f92672">+=</span> x[i] <span style="color:#f92672">*</span> y[i];
+    }
+    <span style="color:#66d9ef">double</span> time <span style="color:#f92672">=</span> omp_get_wtime() <span style="color:#f92672">-</span> stime;
+
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> stime <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;,&#34;</span> <span style="color:#f92672">&lt;&lt;</span> ans <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+}
+</code></pre></div><p>それではコンパイルです．普通にVHにsshして
+VE用のバイナリと</p>
+<blockquote>
+<p>nc++ -O3 -fopenmp -mvector test.cpp -o ve.out</p>
+</blockquote>
+<p>VH用のバイナリを作ります</p>
+<blockquote>
+<p>g++ 2.5.1 -O3 -fopenmp test.cpp -o vh.out</p>
+</blockquote>
+<p>全く同じコードです．
+あとは出てきたバイナリを叩くだけです．</p>
+<p>ちなみに <code>-mvector</code> をつけると自動ベクトル化がマッハで頑張りだすみたいな噂を聞きましたがつけてもつけなくても変わらんかったけどおまじないだと思ってつけてます．</p>
+<p>では実行性能です．<code>2N/time</code> でプロットしてるのと，100回平均で時間はかってます．</p>
+<p><img src="https://storage.googleapis.com/numa_blog/blog_photo/SX_dot.png" alt="sxat"></p>
+<p>ちゃんとVEで1050 GB/sくらいまで帯域が引けて，VHの10倍くらいの性能が出ていることが分かります．</p>
+<p>このときプロファイラによるベクトル化率は99%, 平均ベクトル長は255.7 (最大256)で，集約計算を含むような計算でもちゃんと自動ベクトル化されたことが分かります．</p>
+<p>ちなみにCRS形式のSpMVのような間接参照が必要なケースでもちゃんと自動ベクトル化されました．<a href="/papers/wo_review/hpc175/">[1]</a></p>
+<p>ちなみにSTREAM系でも同じスコアが出ることを確認してます．</p>
+<p>このように，<strong>何もしなくても</strong>というのが，本当にほとんど何もしないでそこそこでたのは驚きでした．
+(Xeon Phiさんの「何もしない」に100回騙された)</p>
+<p>その他の疎行列ベクトル積やFEM構造解析の<a href="https://www.frontistr.com/">FrontISTR</a>の性能については
+文献<a href="/papers/wo_review/hpc175/">[1]</a>, 文献<a href="/papers/wo_review/opencae2020/">[2]</a>にあるので興味があったら読んでみてください．</p>
+<h1 id="おわりに">おわりに</h1>
+<p>本当にコンパイラを変えるだけでちゃんと動いてメモリを引ける，そんなSX-Aurora TSUBASAについて紹介してみました．</p>
+<p>実際はマルチデバイスなんかをやろうとすると少し手間が入るんですが，
+48GBというサイズに収まる範囲であればほとんど修正せずに動くというのは1つの完成された形な気がします．</p>
+<p>GPUでもOpenACCやOpenMP Offloadingなどが使えますが，こちらはpragmaを入れずとも動いてくれるので，
+簡単に動かしたいというニーズに対してはこちらのほうが叶えられているのではないでしょうか．</p>
+<p>スレッドで稼がず，FMA演算器(3器)とベクトル(倍精度x32)というアプローチで計算性能を稼いでおり，単純な計算では流石はベクトル機といった性能でした．</p>
+<p>このモデルを維持して何世代か続けられれば，x86_64やNVIDIAのGPUと戦ってくれる．戦ってほしいという感想です．
+一方でOSSの開発プラットフォームははまだまだ発展途上という印象で，我々も含めて頑張らないといけないところです．</p>
+<p>AWSなどに入ってくれればかなりCIなどでの継続テストもしやすくなるので，個人的にはそっちに期待です．</p>
+<p>実際にSX-Auroraを使いたいという人は<a href="https://www.j-focus.or.jp/LP/FX700.html?gclid=Cj0KCQiA8dH-BRD_ARIsAC24umZvJIrBTOBu2J9lRTW66XmVy_ns91jADnAqq3CqYlW-duunmY4e3S4aArQtEALw_wcB">FOCUSスパコンにも導入されている</a>ので，そこから使うのが簡単かもしれません．</p>
+<p>最後にCMですが，私は所属している<a href="https://www.ricos.co.jp/">科学計算総合研究所</a>で
+FOCUSにおける<a href="https://www.j-focus.or.jp/archives/001/202006/FrontISTR_Support_RICOS_20200603.pdf">FrontISTRのサポート</a>や，
+A64fx, SX-Aurora TSUBASA, GPUなどにおけるFrontISTRの高速化を担当しています．</p>
+<p>通常ではCPUでしか動かないFrontISTRを高速なアクセラレータで動かしたいというご要望のある方は連絡いただけたら私ががんばります．
+また，FOCUSのリンクにある機械学習による設計フローの加速についても是非よろしくお願いします．</p>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/hpc/'>HPC</a>, <a class='tag' href='/tags/sx-aurora/'>SX-Aurora</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/posts/tools/dd-avx_v10/'>
+        <span aria-hidden='true'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>混合精度疎行列計算ライブラリDD-AVX v3のv1.0をリリースした</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/posts/advent2020/numerical_analysis16/'>
+        <span class='screen-reader-text'>Next post: </span>混合精度Krylov部分空間法による連立一次方程式の求解について (前編)<span aria-hidden='true'>Next <svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><div class='copyright'>
+  <p>Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved.</p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script><script type='text/x-mathjax-config'>
+  MathJax.Hub.Config({})
+</script>
+
+<script type='text/javascript' async src='//unpkg.com/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+</body>
+
+</html>
+
