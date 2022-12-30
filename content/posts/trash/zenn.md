@@ -6,7 +6,7 @@ date: 2020-08-21
 
 tags: ["etc"]
 
-draft: false
+draft: true
 emoji: true
 mathjax: true
 ---

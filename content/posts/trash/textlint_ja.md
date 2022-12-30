@@ -2,12 +2,9 @@
 title: "日本語のLatexファイルをtextlintで文書校閲しようとした話"
 images: [images/logo.png]
 
-date: 2030-12-14T05:00:48+09:00
-# lastmod: 2019-12-05T05:01:48+09:00
-
 tags: ["雑記", "markdown"]
 
-draft: false
+draft: true
 emoji: true
 mathjax: true
 #cover: "/favicon.ico"

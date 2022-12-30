@@ -118,11 +118,11 @@ I have not only implemented these functions but also considered easy-to-use APIs
 
 
 # Other informations
-* 1990.03 生まれ (birth)
 * 博士 (情報学)　(2020)
 * 修士 (情報学)　(2015)
 * 基本情報技術者 (2010)
 * 普通自動車免許 (2009)
+* 誕生 (birth) (1990/03/23)
 
 [1]: http://hpcl.info.kogakuin.ac.jp/
 [2]: https://tgosros.wixsite.com/hasegawaken

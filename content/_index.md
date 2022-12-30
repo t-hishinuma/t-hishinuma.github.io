@@ -13,6 +13,8 @@ HPCエンジニアの[Hishinuma\_t][1] の個人ページです．\
 お仕事の依頼等はTwitterのDMかhishinuma.toshiaki[at]gmail.comまで\
 このWebページについてなにかコメントありましたら[Issue][2]か[Twitter][1]まで
 
+本Webページのブログ記事はほとんど更新されません．新しい記事は[Zenn][8]に追加されていく予定です．
+
 SNSアカウント等：[github][5], [Twitter][2], [Linkedin][6], [researchmap][7], [Zenn][8]\
 応援してくださる方: [欲しい物リスト][4]
 
