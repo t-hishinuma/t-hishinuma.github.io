@@ -13,7 +13,7 @@ mathjax: true
 ---
 
 # Current Status
-* Software Engineer, Braid Technologies K.K.
+* Software Engineer, [Braid Technologies K.K.](https://braid.tech/)
 * 筑波大学 図書館情報メディア研究科 博士 (情報学) \
 	(Ph.D. in Informatics, Univ. of Tsukuba)
 * 情報処理学会 正会員\
