@@ -38,7 +38,7 @@ Xev-GMP-Web
 Xev-GMP-Web converts a C source code which uses double variables into a C source code which uses GNU GMP library.
 Lis_DD_AVXkernels
 LisのDD機能をAVX, AVX2に拡張する差分，およびマージスクリプト
-Articles  疎行列とベクトルを掛けたい貴方に  Other   博士論文を情報処理学会 2019年度研究会推薦博士論文速報にて取り上げていただきました．URL, (魚拓)</description>
+Articles  疎行列とベクトルを掛けたい貴方に  Other   2022年度（令和4年度）山下記念研究賞を受賞しました．(URL)</description>
     </item>
     
     <item>
@@ -65,7 +65,7 @@ Articles  疎行列とベクトルを掛けたい貴方に  Other   博士論文
       <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://hishinuma-t.dev/papers/wo_review/hpc180/</guid>
-      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc180, title={統一的なオープンソース線形代数ライブラリmonolishの提案}, author={{菱沼 利彰，五十嵐 亮，寺村 俊紀，森田 直樹，井原 遊}}, journal={{情報処理学会研究報告}}, volume={2021-HPC-180}, number={3}, pages={1--11}, year={2021} } Links 情報処理学会 電子図書館</description>
+      <description>Download PDF  Citation (bibtex) @article{hishinuma_hpc180, title={統一的なオープンソース線形代数ライブラリmonolishの提案}, author={{菱沼 利彰，五十嵐 亮，寺村 俊紀，森田 直樹，井原 遊}}, journal={{情報処理学会研究報告}}, volume={2021-HPC-180}, number={3}, pages={1--11}, year={2021} } 2022年度（令和4年度）山下記念研究賞 受賞 Links 情報処理学会 電子図書館</description>
     </item>
     
     <item>
