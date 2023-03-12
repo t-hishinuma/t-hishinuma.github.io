@@ -81,10 +81,11 @@ NVIDIA GTC2022 ([Talk](https://www.nvidia.com/gtc/session-catalog/#/session/1642
 第84回情報処理学会全国大会, pp. 1--2, オンライン, 2022.3.\
 [**More Information (pdf, citation, other)**](/papers/wo_review/ipsj_fukunaga)
 
-1. **菱沼 利彰**，五十嵐 亮，寺村 俊紀，森田 直樹，井原 遊,
+1. **== [2022年度（令和4年度）山下記念研究賞 受賞](https://www.ipsj.or.jp/award/yamashita2022.html) ==** \
+**菱沼 利彰**，五十嵐 亮，寺村 俊紀，森田 直樹，井原 遊,
 統一的なオープンソース線形代数ライブラリmonolishの提案, 
 情報処理学会研究報告, Vol. 2021-HPC-180 (SWoPP2021), No. 3, pp. 1--11, 2021.08．\
-[**More Information (pdf, citation, other)**](/papers/wo_review/hpc180/)
+[**More Information (pdf, citation, other)**](/papers/wo_review/hpc180/) 
 
 1. **Toshiaki Hishinuma**, Ryo Igarashi, Naoki Morita, Yu Ihara, Moriyuki Takamura, Hiroshi Hirano, Takashi Hagiwara, Naoki Iwata, and Hiroshi Okuda,
 Acceleration of Structural Analysis Software FrontISTR on NEC SX-Aurora TSUBASA,

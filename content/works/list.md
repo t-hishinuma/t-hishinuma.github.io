@@ -42,6 +42,8 @@ mathjax: true
 * [疎行列とベクトルを掛けたい貴方に](https://zenn.dev/hishinuma_t/books/sparse-matrix-and-vector-product)
 
 # Other
+* 2022年度（令和4年度）山下記念研究賞を受賞しました．([URL][yamashita])
+
 * 博士論文を情報処理学会 2019年度研究会推薦博士論文速報にて取り上げていただきました．[URL][hakushi], ([魚拓][gyotaku])
 * 上記の研究会推薦博士論文速報が情報処理 第61巻，第9月号に掲載されました．[URL][jouhou] (記念写真[1][pic2], [2][pic1])
 
@@ -54,3 +56,4 @@ mathjax: true
 [pic1]: https://storage.googleapis.com/numa_blog/hakushi/IMG20200822113851.jpg
 [pic2]: https://storage.googleapis.com/numa_blog/hakushi/IMG20200822113836.jpg
 [numa_bench]:https://github.com/t-hishinuma/numa_benchmark
+[yamashita]:https://www.ipsj.or.jp/award/yamashita2022.html
