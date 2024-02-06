@@ -14,7 +14,7 @@ mathjax: true
 
 # Current Status
 * SB Intuitions株式会社，シニアHPCエンジニア \
-(Senior HPC Engineer, SB Intuitions K.K.)
+(Senior HPC Engineer, SB Intuitions Corp.)
 * 筑波大学 図書館情報メディア研究科 博士 (情報学) \
 	(Ph.D. in Informatics, Univ. of Tsukuba)
 * 情報処理学会 正会員\
@@ -70,7 +70,7 @@ I have not only implemented these functions but also considered easy-to-use APIs
 
 # Work Experience
 * **2024.02 - present** SB Intuitions株式会社，シニアHPCエンジニア \
-(Senior HPC Engineer, SB Intuitions K.K.)
+(Senior HPC Engineer, SB Intuitions Corp.)
 * **2023.01 - 2023.01 Software Engineer, Braid Technologies Inc. \
 (ブレイドテクノロジーズ株式会社，ソフトウェアエンジニア)
 * **2022.07 - 2022.12** 天進技術株式会社 (OPPO日本研究所), 顧問\
