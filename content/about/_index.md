@@ -71,7 +71,7 @@ I have not only implemented these functions but also considered easy-to-use APIs
 # Work Experience
 * **2024.02 - present** SB Intuitions株式会社，シニアHPCエンジニア \
 (Senior HPC Engineer, SB Intuitions Corp.)
-* **2023.01 - 2023.01 Software Engineer, Braid Technologies Inc. \
+* **2023.01 - 2024.01** Software Engineer, Braid Technologies Inc. \
 (ブレイドテクノロジーズ株式会社，ソフトウェアエンジニア)
 * **2022.07 - 2022.12** 天進技術株式会社 (OPPO日本研究所), 顧問\
 (Software Engineering Adviser, OPPO Japan Research Center)
