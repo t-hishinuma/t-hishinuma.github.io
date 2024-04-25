@@ -24,6 +24,8 @@ SNSアカウント等：[github][5], [Twitter][2], [Linkedin][6], [researchmap][
 * シニアHPCエンジニア, [SB Intuitions株式会社](https://www.sbintuitions.co.jp/)
 * 筑波大学 図書館情報メディア研究科 博士 (情報学) \
 	(Ph.D. in Informatics, Univ. of Tsukuba)
+* 情報処理学会 HPC研究会 運営委員 \
+    (Steering committee member, SIG-HPC)
 * 情報処理学会 正会員\
    	(Member, Information Processing Society of Japan)
 
