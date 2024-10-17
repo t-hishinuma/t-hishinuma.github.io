@@ -21,7 +21,7 @@ SNSアカウント等：[github][5], [Twitter][2], [Linkedin][6], [researchmap][
 プライバシーポリシーについては[こちら](about/privacy)
 
 ## Current Status
-* プリンシパルHPCエンジニア、超並列計算基盤チーム リーダー, [SB Intuitions株式会社](https://www.sbintuitions.co.jp/) ¥
+* プリンシパルHPCエンジニア、超並列計算基盤チーム リーダー, [SB Intuitions株式会社](https://www.sbintuitions.co.jp/) \
     (Principal HPC Engineer, Leader of HPC Team, SB Intuitions Corp.)
 * 筑波大学 図書館情報メディア研究科 博士 (情報学) \
 	(Ph.D. in Informatics, Univ. of Tsukuba)
