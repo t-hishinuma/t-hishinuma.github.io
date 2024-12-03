@@ -13,8 +13,8 @@ mathjax: true
 ---
 
 # Current Status
-* SB Intuitions株式会社，シニアHPCエンジニア \
-(Senior HPC Engineer, SB Intuitions Corp.)
+* SB Intuitions株式会社、プリンシパルHPCエンジニア、超並列計算基盤チーム リーダー \
+(Principal HPC Engineer, Leader of HPC Team, SB Intuitions Corp.)
 * 筑波大学 図書館情報メディア研究科 博士 (情報学) \
 	(Ph.D. in Informatics, Univ. of Tsukuba)
 * 情報処理学会 HPC研究会 運営委員 \
