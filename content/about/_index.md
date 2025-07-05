@@ -13,7 +13,7 @@ mathjax: true
 ---
 
 # Current Status
-* プリンシパルHPCエンジニア、Computing PF部 部長, SB Intuitions株式会社 [SB Intuitions株式会社](https://www.sbintuitions.co.jp/) ¥
+* プリンシパルHPCエンジニア、Computing PF部 部長, SB Intuitions株式会社 [SB Intuitions株式会社](https://www.sbintuitions.co.jp/)
 (Principal HPC Engineer, Director of Computing PF Department, [SB Intuitions Corp.](https://www.sbintuitions.co.jp/)
 * 筑波大学 図書館情報メディア研究科 博士 (情報学) \
 	(Ph.D. in Informatics, Univ. of Tsukuba)
@@ -129,7 +129,7 @@ I have not only implemented these functions but also considered easy-to-use APIs
     - GitHub: https://github.com/t-hishinuma/DD-AVX_v3
 
 
-# Other informations
+# Other information
 * 博士 (情報学)　(2020)
 * 修士 (情報学)　(2015)
 * 基本情報技術者 (2010)
