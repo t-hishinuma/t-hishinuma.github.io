@@ -11,21 +11,26 @@ draft: false
 emoji: true
 mathjax: true
 ---
+# From 2024 onward
 
-# Tag Search
+
+---
+# Before 2023
+
+## Tag Search
 [High precision arithmetic](/tags/multi-precision),
 [With Review](/tags/with_review),
 [PEZY](/tags/pezy),
 [SIMD](/tags/simd),
 [Poster](/tags/poster),
 
-# Journal
+## Journal
 1. **菱沼 利彰**，藤井 昭宏，田中 輝雄，長谷川 秀彦，
 AVX2を用いた倍精度BCRS形式疎行列と倍々精度ベクトル積の高速化, 
 情報処理学会論文誌コンピューティングシステム(ACS), Vol. 7, No.4, pp. 25--33, 2014.\
 [**More Information (pdf, citation, other)**](/papers/with_review/acs48/)
 
-# Conference Proceedings (with review)
+## Conference Proceedings (with review)
 1. Masanobu Horie, Naoki Morita, **Toshiaki Hishinuma**, Yu Ihara, and Naoto Mitsume,
 [Isometric Transformation Invariant and Equivariant Graph Convolutional Networks](https://openreview.net/forum?id=FX0vR39SJ5q),
 International Conference on Learning Representations (ICLR), 2021. \[[arXiv](https://arxiv.org/abs/2005.06316)\]
