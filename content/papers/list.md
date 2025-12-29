@@ -11,8 +11,14 @@ draft: false
 emoji: true
 mathjax: true
 ---
-# From 2024 onward
-
+# Recent Activities (2024-)
+1. **菱沼 利彰**, チュートリアル4: AI研究を支える計算基盤, [第28回情報論的学習理論ワークショップ](https://ibisml.org/ibis2025/tutorial/), 2025.
+1. **菱沼 利彰**, 国内最大級の大規模言語モデルの開発に向けた弊社の取り組み, [Super Computing Japan 2025](http://scj2025.supercomputing-japan.org/index.php/program_1/), 2025.
+1. **菱沼 利彰**, (BoF-2) HPC研究の過去とこれから ーAI/量子時代のHPC研究ー, [SWoPP2025](https://swopp.github.io/2025/program/), 2025.
+1. **菱沼 利彰**, 福地成彦, スーパーコンピューターから始めるフルスクラッチ LLM 検索Agent開発, [AI Engineering Summit](https://findy-tools.io/events/514e9e96e02e17c68649), 2025.
+1. **菱沼 利彰**, 国内最大級の大規模言語モデルの開発に向けた NVIDIA DGX B200 の評価, [GTC 2025 Followup Webinar](https://info.nvidia.com/JP-GTC25-Follow-Up-Webinar.html), 2025.
+1. **Toshiaki Hishinuma**, Sho Takase, Building a Strategic Foundation for Generative AI, [NVIDIA AI Summit Japan 2024](https://www.nvidia.com/ja-jp/events/ai-summit/), 2024.
+1. **菱沼 利彰**, (BoF-2) 次世代スパコンに期待すること, [SWoPP2024](https://swopp.github.io/2024/program/), 2024.
 
 ---
 # Before 2023
