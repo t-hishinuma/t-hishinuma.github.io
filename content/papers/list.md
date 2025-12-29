@@ -78,7 +78,7 @@ AVXを用いた倍々精度疎行列ベクトル積の高速化,
 pp. 23--31, 東京, 2013.1. \
 [**More Information (pdf, citation, other)**](/papers/with_review/hpcs2013)
 
-# Conference Proceedings and talks (without review)
+## Conference Proceedings and talks (without review)
 1. Masanobu.Horie, **Toshiaki.Hishinuma**, Accelerating Simulation Process Using GPUs and Reliable Neural Networks,
 NVIDIA GTC2022 ([Talk](https://www.nvidia.com/gtc/session-catalog/#/session/1642155579023001yUL5)). 
 
@@ -290,11 +290,11 @@ P-E12-I, Kogakuin University, Tokyo, Oct., 2012 (Poster presentation).\
 情報処理学会研究報告, vol. 2012-HPC-135 (SWoPP2012), No. 16, pp. 1--6, 鳥取, 2012.8.\
 [**More Information (pdf, citation, other)**](/papers/wo_review/hpc135)
 
-# Dr. Thesis
+## Dr. Thesis
 1. SIMD演算を用いた高精度疎行列計算ソフトウェアの高速化, 筑波大学博士論文, 2020/03/25 修了, 博士 (情報学)． \
 [**More Information (pdf, citation, other)**](/papers/dr_thesis/)
 
-# 情報処理学会の論文や研究報告について
+## 情報処理学会の論文や研究報告について
 ここに掲載した情報処理学会の著作物の利用に関する注意 
 
 本著作物の著作権は情報処理学会に帰属します。本著作物は著作権者である情報処理学会の許可のもとに掲載するものです。ご利用に当たっては「著作権法」ならびに「情報処理学会倫理綱領」に従うことをお願いいたします。
