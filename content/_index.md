@@ -7,28 +7,42 @@ weight: -1
 images: [images/logo.png]
 ---
 
-HPCエンジニアの[Hishinuma\_t][1] の個人ページです．\
-業績やソフトウェアの紹介およびBlog目的で運用しています．
+{{< text center >}}
+# 👋 Welcome
+{{< /text >}}
 
-お仕事の依頼等はTwitterのDMかhishinuma.toshiaki[at]gmail.comまで\
-このWebページについてなにかコメントありましたら[Issue][2]か[Twitter][1]まで
+HPCエンジニアの [Hishinuma_t][1] の個人ページです。
+これまでの業績やソフトウェアの紹介、技術的な記録を共有しています。
 
-本Webページのブログ記事はほとんど更新されません．新しい記事は[Zenn][8]に追加されていく予定です．
+お仕事の依頼等は X (Twitter) のDMか hishinuma.toshiaki[at]gmail.com まで。
+このWebページについてなにかコメントありましたら [Issue][2] か [X (Twitter)][1] まで。
 
-SNSアカウント等：[github][5], [Twitter][2], [Linkedin][6], [researchmap][7], [Zenn][8]\
-応援してくださる方: [欲しい物リスト][4]
+本Webページのブログ記事はほとんど更新されません。新しい記事は [Zenn][8] に追加されていく予定です。
 
-プライバシーポリシーについては[こちら](about/privacy)
+---
 
 ## Current Status
-* CTO & プロダクト開発本部 本部長、プリンシパルHPCエンジニア、[SB Intuitions株式会社](https://www.sbintuitions.co.jp/) \
-(CTO & Vice President, Product Development Division, Principal HPC Engineer, [SB Intuitions Corp.](https://www.sbintuitions.co.jp/)
-* 筑波大学 図書館情報メディア研究科 博士 (情報学) \
-	(Ph.D. in Informatics, Univ. of Tsukuba)
-* 情報処理学会 HPC研究会 運営委員 \
-    (Steering committee member, SIG-HPC)
-* 情報処理学会 正会員\
-   	(Member, Information Processing Society of Japan)
+
+### Industry Role
+* **CTO & プロダクト開発本部 本部長、プリンシパルHPCエンジニア**
+  [SB Intuitions株式会社](https://www.sbintuitions.co.jp/)
+  *(CTO & Vice President, Product Development Division, Principal HPC Engineer, [SB Intuitions Corp.](https://www.sbintuitions.co.jp/))*
+
+### Academic & Professional Societies
+* **博士 (情報学)**, 筑波大学 図書館情報メディア研究科
+  *(Ph.D. in Informatics, Univ. of Tsukuba)*
+* **運営委員**, 情報処理学会 HPC研究会
+  *(Steering committee member, SIG-HPC)*
+* **正会員**, 情報処理学会
+  *(Member, Information Processing Society of Japan)*
+
+---
+
+### 🔗 SNS / Links
+[GitHub][5] / [X (Twitter)][1] / [LinkedIn][6] / [researchmap][7] / [Zenn][8]
+
+- **Supporters:** [欲しい物リスト][4]
+- **Policy:** [プライバシーポリシー](about/privacy)
 
 [1]: https://twitter.com/Hishinuma_t
 [2]: https://github.com/t-hishinuma/t-hishinuma.github.io/issues
