@@ -1,12 +1,12 @@
 baseURL = "https://hishinuma-t.dev/"
 title = "hpc::numa.blog()"
-copyright = "Copyright (C) 2020 Toshiaki Hishinuma, All rights reserved."
+copyright = "Copyright (C) 2020-2026 Toshiaki Hishinuma, All rights reserved."
 theme = "minimo"
 publishDir = "./public/"
 ################################################
 
 disqusShortname = ""
-googleAnalytics = "UA-45816416-4"
+googleAnalytics = "G-KB2WY7H8RW"
 
 
 Paginate = 5
@@ -95,12 +95,12 @@ scriptSrc = "" # "https://isso.example.com/js/embed.min.js"
 dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author='true'"
 
 [params.comments.staticman]
-enable = true
+enable = false
 apiEndpoint = "https://api.staticman.net/v2/entry"
 maxDepth = 2
 username = "t-hishinuma"
-repository = "minimo"
-branch = "master"
+repository = ""
+branch = ""
 
 # Utterances: https://utteranc.es
 [params.comments.utterances]
