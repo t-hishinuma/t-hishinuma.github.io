@@ -119,8 +119,10 @@ searchApiKey = ""
 [permalinks]
 page = "/:slug/"
 
-[blackfriday]
-hrefTargetBlank = true
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [languages]
 [languages.en]
